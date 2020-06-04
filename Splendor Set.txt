@@ -1,0 +1,90 @@
+G Mine S 1 4R
+G Mine S 0 2G 2BLA
+G Mine S 0 1W 2G 2R
+G Mine S 0 3BLA
+G Mine S 0 1BLU 3G 1R
+G Mine S 0 1W 1G 1R 1BLA
+G Mine S 0 1W 1G 2R 1BLA
+G Mine S 0 1W 2BLA
+G Mine E 1 4BLA
+G Mine E 0 3R
+G Mine E 0 1BLU 2R 2BLA
+G Mine E 0 1W 1BLU 1R 1BLA
+G Mine E 0 1W 1BLU 1R 2BLA
+G Mine E 0 1W 3BLU 1G
+G Mine E 0 2BLU 2R
+G Mine E 0 2W 1BLU
+G Mine R 1 4W
+G Mine R 0 2W 2R
+G Mine R 0 1W 1BLU 1G 1BLA
+G Mine R 0 1W 2BLU 1G 1BLA
+G Mine R 0 2W 1G 1BLA
+G Mine R 0 2BLU 1G
+G Mine R 0 1W 1R 3BLA
+G Mine R 0 3W
+G Mine D 1 4G
+G Mine D 0 3W 1BLU 1BLA
+G Mine D 0 1BLU 2G 1R 1BLA
+G Mine D 0 2BLU 2BLA
+G Mine D 0 3BLU
+G Mine D 0 1BLU 1G 1R 1BLA
+G Mine D 0 2R 1BLA
+G Mine D 0 2BLU 2G 1BLA
+G Mine O 1 4BLU
+G Mine O 0 2W 2BLU 2R
+G Mine O 0 1W 2BLU 1G 1R
+G Mine O 0 3G
+G Mine O 0 1G 3R 1BLA
+G Mine O 0 2W 2G
+G Mine O 0 2G 1R
+G Mine O 0 1W 1BLU 1G 1R
+Y Merchant S 3 6BLU
+Y Merchant S 2 2W 1R 4BLA
+Y Merchant S 2 5BLU
+Y Transports S 2 3W 3BLU
+Y Transports S 1 2BLU 3G 3BLA
+Y Transports S 1 2BLU 2G 3R
+Y Transports E 3 6G
+Y Transports E 2 3BLU 3G
+Y Transports E 2 5G
+Y Merchant E 2 4W 2BLU 1BLA
+Y Merchant E 1 2W 3BLU 2BLA
+Y Merchant E 1 3W 2G 3R
+Y Merchant R 3 6R
+Y Merchant R 2 5BLA
+Y Merchant R 2 3W 5BLA
+Y Transports R 2 1W 4BLU 2G
+Y Transports R 1 2W 2R 3BLA
+Y Transports R 1 3BLU 2R 3BLA
+Y Merchant D 3 6W
+Y Merchant D 2 5R 3BLA
+Y Merchant D 2 5R
+Y Transports D 2 1G 4R 2BLA
+Y Transports D 1 2W 3BLU 3R
+Y Transports D 1 3G 2R 2BLA
+Y Merchant O 3 6BLA
+Y Merchant O 2 5G 3R
+Y Merchant O 2 5W
+Y Transports O 2 1BLU 4G 2R
+Y Transports O 1 3W 3G 2BLA
+Y Transports O 1 3W 3BLU 2G
+B Town S 5 7W 3BLU
+B Town S 4 6W 3BLU 3BLA
+B Shop S 4 7W 3BLU
+B Shop S 3 3W 3G 3R 5BLA
+B Town E 5 7BLU 3G
+B Shop E 4 7BLU
+B Shop E 4 3W 6BLU 3G
+B Town E 3 5W 3BLU 3R 3BLA
+B Town R 5 7G 3R
+B Town R 4 3BLU 6G 3R
+B Shop R 4 7G
+B Shop R 3 3W 5BLU 3G 3B
+B Shop D 5 3W 7BLA
+B Town D 4 3W 3R 6BLA
+B Town D 4 7BLA
+B Shop D 3 3BLU 3G 5R 3BLA
+B Town O 5 7R 3BLA
+B Shop O 4 3G 6R 3BLA
+B Shop O 4 7R
+B Town O 3 3W 3BLU 5G 3R
