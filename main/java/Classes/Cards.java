@@ -1,34 +1,43 @@
+package Classes;
 import java.util.ArrayList;
 
-public class Noble 
+public class Cards implements Comparable
 {
-	private String name;
-	private final int pt = 3;
+	private int pt;
 	private ArrayList<Tokens> cost;
-	private Player owner;
+	private Tokens resource;
+	private String name;
 	
-	public Noble(String name, ArrayList<Tokens> cost) {
-		super();
-		this.name = name;
+	public Cards(int pt, ArrayList<Tokens> cost, String name, Tokens resource)
+	{
+		this.pt = pt;
 		this.cost = cost;
-	}
-
-	public Player getOwner() {
-		return owner;
-	}
-
-	public void setOwner(Player owner) {
-		this.owner = owner;
-	}
-
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
 		this.name = name;
+		this.resource = resource;
 	}
+	
+	public Cards(String resource)
+	{
+		this.resource = new Tokens(resource);
+		pt = 0;
+		cost = new ArrayList<Tokens>();
+		name = "HACK";
+	}
+	
+	public Tokens getResource() {
+		return resource;
+	}
+
+	public void setResource(Tokens token) {
+		resource = token;
+	}
+
 	public int getPt() {
 		return pt;
+	}
+
+	public void setPt(int pt) {
+		this.pt = pt;
 	}
 
 	public ArrayList<Tokens> getCost() {
@@ -37,6 +46,14 @@ public class Noble
 
 	public void setCost(ArrayList<Tokens> cost) {
 		this.cost = cost;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	public int whiteCost()
@@ -91,14 +108,13 @@ public class Noble
 				r++;
 		}
 		
-		
 		return r;
 	}
-	
+
 	public String toString()
 	{
 		String r = "";
-		r = r + "******* " + name + "*******" + "\n"; // 5 starss on both side
+		r = r + pt + "     " + resource + "  " + name + "\n";
 		
 		int whiteCost = whiteCost();
 		int redCost = redCost();
@@ -106,31 +122,45 @@ public class Noble
 		int blackCost = blackCost();
 		int blueCost = blueCost();
 		
-	
 		if(whiteCost != 0){
-			r += "   Diamond x" + whiteCost + " ";
+			r = r + "Diamond x" + whiteCost + " ";
 		}
 		
 		if(redCost != 0){
-			r += "   Rubby x" + redCost + " ";
+			r = r + "Rubby x" + redCost + " ";
 		}
 		
 		if(greenCost != 0){
-			r += "   Emerald x" + greenCost + " ";
+			r = r + "Emerald x" + greenCost + " ";
 		}
 		
 		if(blackCost != 0){
-			r += "   Onyx x" + blackCost + " ";
+			r = r + "Onyx x" + blackCost + " ";
 		}
 		
 		if(blueCost != 0){
-			r += "   Sapphire x" + blueCost + " ";
+			r = r+ "Sapphire x" + blueCost + " ";
 		}
 		
 		r = r + "\n";
 		
 		return r;
-		
+	}
+	
+	
+	
+	public int compareTo(Object o)
+	{
+		Cards c = (Cards)o;
+		if(c.getResource() != resource){
+			if(c.getName() != name){
+				return pt - c.getPt();
+			}else{
+				return name.compareTo(c.getName());
+			}
+		}else{
+			return resource.compareTo(c.getResource());
+		}
 	}
 
 }
