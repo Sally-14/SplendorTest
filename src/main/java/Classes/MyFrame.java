@@ -1,5 +1,8 @@
 package Classes;
 
+import Exceptions.*;
+import Classes.*;
+
 import java.awt.*;
 
 import javax.swing.*;

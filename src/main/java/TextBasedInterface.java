@@ -6,6 +6,9 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import Exceptions.*;
+import Classes.*;
+
 public class TextBasedInterface 
 {
 	public static void main(String[] args) throws FileNotFoundException, InterruptedException, NotEnoughTokensOnTable, InvalidCardsSelectionOfCardsOnTable, PlayerAlreadyHoldsThreeReserveCards, SelectedDeckRanOutOfCards, PlayerDoesNotHaveEnoughResourcesToBuySelectedCard, PlayerDoesNotHaveSelectedCardInReserve, InvalidCardsSelectionOfCardsInReserve

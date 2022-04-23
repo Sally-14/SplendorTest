@@ -1,5 +1,8 @@
 package Classes;
 
+import Exceptions.*;
+import Classes.*;
+
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
