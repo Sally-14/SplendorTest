@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GraphicInterface.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Final Project</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">GraphicInterface.java</span></div><h1>GraphicInterface.java</h1><pre class="source lang-java linenums">import static java.lang.System.out;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import Exceptions.*;
+import Classes.*;
+
+<span class="nc" id="L11">public class GraphicInterface </span>
+{
+	public static void main(String[] args) throws FileNotFoundException
+	{
+		
+<span class="nc" id="L16">		ArrayList&lt;Cards&gt; blueDeck = new ArrayList&lt;Cards&gt;();</span>
+<span class="nc" id="L17">		ArrayList&lt;Cards&gt; yellowDeck = new ArrayList&lt;Cards&gt;();</span>
+<span class="nc" id="L18">		ArrayList&lt;Cards&gt; greenDeck = new ArrayList&lt;Cards&gt;();</span>
+		
+<span class="nc" id="L20">		Scanner cardsFile = new Scanner(new File(&quot;Splendor Set.txt&quot;));</span>
+<span class="nc" id="L21">		Scanner sc = new Scanner(System.in);</span>
+		
+<span class="nc bnc" id="L23" title="All 2 branches missed.">		while(cardsFile.hasNextLine()){  //(int pt, ArrayList&lt;Tokens&gt; cost, String name, Tokens resource)</span>
+<span class="nc" id="L24">			addCards(cardsFile.nextLine().trim(), blueDeck, yellowDeck, greenDeck);</span>
+		}
+		
+<span class="nc" id="L27">		int numP = 2;</span>
+		
+<span class="nc" id="L29">		ArrayList&lt;Player&gt; p = instantiatePlayers(numP);</span>
+<span class="nc" id="L30">		out.println(&quot;Check0 completed&quot;);</span>
+<span class="nc" id="L31">		ArrayList&lt;Tokens&gt; t = instantiateTokens(numP);</span>
+<span class="nc" id="L32">		out.println(&quot;Check1 completed&quot;);</span>
+<span class="nc" id="L33">		ArrayList&lt;Noble&gt; n = instantiateNobles(numP);</span>
+<span class="nc" id="L34">		out.println(&quot;Check2 completed&quot;);</span>
+<span class="nc" id="L35">		Cards[][] cot = instantiateCOT(blueDeck,yellowDeck, greenDeck);</span>
+<span class="nc" id="L36">		out.println(&quot;Check3 completed&quot;);</span>
+		
+<span class="nc" id="L38">		Game g = new Game(p, blueDeck, yellowDeck, greenDeck, cot, n, t);</span>
+<span class="nc" id="L39">		out.println(&quot;check4 completed\nAwesome! lets start the game!\n\n&quot;);</span>
+		
+		
+<span class="nc" id="L42">		g.setPlayers(p);</span>
+		
+<span class="nc" id="L44">		MyFrame frame = new MyFrame(&quot;Splendor&quot;, g);</span>
+		
+		
+	
+		
+		
+		
+		
+		
+		
+<span class="nc" id="L54">	}</span>
+	
+	
+	
+	
+	
+	public static Tokens returnTokens(int n)
+	{
+<span class="nc bnc" id="L62" title="All 2 branches missed.">		if(n == 1){</span>
+<span class="nc" id="L63">			return new Tokens(&quot;Onyx&quot;);</span>
+<span class="nc bnc" id="L64" title="All 2 branches missed.">		}else if(n == 2){</span>
+<span class="nc" id="L65">			return new Tokens(&quot;Sapphire&quot;);</span>
+<span class="nc bnc" id="L66" title="All 2 branches missed.">		}else if(n == 3){</span>
+<span class="nc" id="L67">			return new Tokens(&quot;Emerald&quot;);</span>
+<span class="nc bnc" id="L68" title="All 2 branches missed.">		}else if(n == 4){</span>
+<span class="nc" id="L69">			return new Tokens(&quot;Diamond&quot;);</span>
+		}else{
+<span class="nc" id="L71">			return new Tokens(&quot;Rubby&quot;);</span>
+		}
+	}
+	
+	
+	
+	public static Cards[][] instantiateCOT(ArrayList&lt;Cards&gt; blueDeck, ArrayList&lt;Cards&gt; yellowDeck, ArrayList&lt;Cards&gt; greenDeck)
+	{
+<span class="nc" id="L79">		Cards[][] cot = new Cards[3][4]; //roll 1:blue deck; roll 2: yellow deck; roll 3: green deck;</span>
+<span class="nc bnc" id="L80" title="All 2 branches missed.">		for(int i=0; i&lt;3; i++){</span>
+<span class="nc bnc" id="L81" title="All 2 branches missed.">			for(int j=0; j&lt;4; j++){</span>
+<span class="nc bnc" id="L82" title="All 2 branches missed.">				if(i == 0){</span>
+<span class="nc" id="L83">					int r = (int)(Math.random()*blueDeck.size());</span>
+<span class="nc" id="L84">					cot[i][j] = blueDeck.get(r);</span>
+<span class="nc bnc" id="L85" title="All 2 branches missed.">				}else if(i==1){</span>
+<span class="nc" id="L86">					int r = (int)(Math.random()*yellowDeck.size());</span>
+<span class="nc" id="L87">					cot[i][j] = yellowDeck.get(r);</span>
+<span class="nc" id="L88">				}else{</span>
+<span class="nc" id="L89">					int r = (int)(Math.random()*blueDeck.size());</span>
+<span class="nc" id="L90">					cot[i][j] = greenDeck.get(r);</span>
+				}
+			}
+		}
+		
+<span class="nc" id="L95">		return cot;</span>
+		
+	}
+	
+	public static ArrayList&lt;Tokens&gt; instantiateTokens(int numP)
+	{
+<span class="nc" id="L101">		ArrayList&lt;Tokens&gt; t = new ArrayList&lt;Tokens&gt;();</span>
+<span class="nc bnc" id="L102" title="All 2 branches missed.">		if(numP == 4){</span>
+<span class="nc bnc" id="L103" title="All 2 branches missed.">			for(int i=1; i&lt;=7; i++){</span>
+<span class="nc" id="L104">				t.add(new Tokens(&quot;Rubby&quot;));</span>
+<span class="nc" id="L105">				t.add(new Tokens(&quot;Sapphire&quot;));</span>
+<span class="nc" id="L106">				t.add(new Tokens(&quot;Onyx&quot;));</span>
+<span class="nc" id="L107">				t.add(new Tokens(&quot;Emerald&quot;));</span>
+<span class="nc" id="L108">				t.add(new Tokens(&quot;Diamond&quot;));</span>
+<span class="nc bnc" id="L109" title="All 2 branches missed.">				if(i&lt;5){</span>
+<span class="nc" id="L110">					t.add(new Tokens(&quot;Gold&quot;));</span>
+				}
+				//out.println(t);
+			}
+<span class="nc bnc" id="L114" title="All 2 branches missed.">		}else if(numP == 3){</span>
+<span class="nc bnc" id="L115" title="All 2 branches missed.">			for(int i=1; i&lt;=5; i++){</span>
+<span class="nc" id="L116">				t.add(new Tokens(&quot;Rubby&quot;));</span>
+<span class="nc" id="L117">				t.add(new Tokens(&quot;Sapphire&quot;));</span>
+<span class="nc" id="L118">				t.add(new Tokens(&quot;Onyx&quot;));</span>
+<span class="nc" id="L119">				t.add(new Tokens(&quot;Emerald&quot;));</span>
+<span class="nc" id="L120">				t.add(new Tokens(&quot;Diamond&quot;));</span>
+<span class="nc bnc" id="L121" title="All 2 branches missed.">				if(i&lt;5){</span>
+<span class="nc" id="L122">					t.add(new Tokens(&quot;Gold&quot;));</span>
+				}
+				}
+		}else{
+<span class="nc bnc" id="L126" title="All 2 branches missed.">			for(int i=1; i&lt;=4; i++){</span>
+<span class="nc" id="L127">				t.add(new Tokens(&quot;Rubby&quot;));</span>
+<span class="nc" id="L128">				t.add(new Tokens(&quot;Sapphire&quot;));</span>
+<span class="nc" id="L129">				t.add(new Tokens(&quot;Onyx&quot;));</span>
+<span class="nc" id="L130">				t.add(new Tokens(&quot;Emerald&quot;));</span>
+<span class="nc" id="L131">				t.add(new Tokens(&quot;Diamond&quot;));</span>
+<span class="nc bnc" id="L132" title="All 2 branches missed.">				if(i&lt;5){</span>
+<span class="nc" id="L133">					t.add(new Tokens(&quot;Gold&quot;));</span>
+				}
+			}
+		}
+		
+<span class="nc" id="L138">		return t;</span>
+	
+	
+	}
+	
+	public static ArrayList&lt;Noble&gt; instantiateNobles(int numP) throws FileNotFoundException
+	{
+<span class="nc" id="L145">		ArrayList&lt;Noble&gt; r = new ArrayList&lt;Noble&gt;();</span>
+<span class="nc" id="L146">		Scanner sc = new Scanner(new File(&quot;Nobles.txt&quot;));</span>
+<span class="nc bnc" id="L147" title="All 2 branches missed.">		while(sc.hasNextLine()){</span>
+<span class="nc" id="L148">			String[] info = sc.nextLine().split(&quot; &quot;);</span>
+<span class="nc" id="L149">			String name = &quot;&quot;;</span>
+<span class="nc" id="L150">			ArrayList&lt;Tokens&gt; cost = new ArrayList&lt;Tokens&gt;();</span>
+<span class="nc" id="L151">			int i = 0;</span>
+<span class="nc bnc" id="L152" title="All 4 branches missed.">			while(i&lt;info.length &amp;&amp; info[i].charAt(0) &gt;= 65){</span>
+<span class="nc" id="L153">				name = name + info[i] + &quot; &quot;;</span>
+<span class="nc" id="L154">				i++;</span>
+			}
+			
+<span class="nc bnc" id="L157" title="All 2 branches missed.">			for(int j=i; j&lt;info.length; j++){</span>
+<span class="nc" id="L158">				String t = info[j];</span>
+<span class="nc" id="L159">				String c = t.substring(1);</span>
+				//out.println(j + &quot; &quot; + info.length);
+<span class="nc" id="L161">				int num = Integer.parseInt(t.charAt(0)+&quot;&quot;);</span>
+				//out.println(c);
+				//for(int k=0; k&lt;num; k++){
+<span class="nc bnc" id="L164" title="All 2 branches missed.">					if(c.equalsIgnoreCase(&quot;R&quot;)){</span>
+<span class="nc" id="L165">						addTokens(cost, num, new Tokens(&quot;Rubby&quot;));</span>
+						//out.println(num);
+<span class="nc bnc" id="L167" title="All 2 branches missed.">					}else if(c.equalsIgnoreCase(&quot;G&quot;)){</span>
+<span class="nc" id="L168">						addTokens(cost, num, new Tokens(&quot;Emerald&quot;));</span>
+<span class="nc bnc" id="L169" title="All 2 branches missed.">					}else if(c.equalsIgnoreCase(&quot;BLU&quot;)){</span>
+<span class="nc" id="L170">						addTokens(cost, num, new Tokens(&quot;Sapphire&quot;));</span>
+<span class="nc bnc" id="L171" title="All 2 branches missed.">					}else if(c.equalsIgnoreCase(&quot;BLA&quot;)){</span>
+<span class="nc" id="L172">						addTokens(cost, num, new Tokens(&quot;Onyx&quot;));</span>
+<span class="nc bnc" id="L173" title="All 2 branches missed.">					}else if(c.equalsIgnoreCase(&quot;W&quot;)){</span>
+<span class="nc" id="L174">						addTokens(cost, num, new Tokens(&quot;Diamond&quot;));</span>
+					}
+				//}
+			}
+			
+<span class="nc" id="L179">			Noble noble = new Noble(name, cost);</span>
+			//out.println(noble);
+			//out.println(cost);
+<span class="nc" id="L182">			r.add(noble);</span>
+			
+			
+<span class="nc" id="L185">		}</span>
+		
+<span class="nc" id="L187">		int n = 0;</span>
+		
+<span class="nc bnc" id="L189" title="All 2 branches missed.">		if(numP == 4){</span>
+<span class="nc bnc" id="L190" title="All 2 branches missed.">			for(int i=0; i&lt;5; i++){</span>
+<span class="nc" id="L191">				r.remove((int)(Math.random()*(10-n)));</span>
+<span class="nc" id="L192">				n++;</span>
+			}
+<span class="nc bnc" id="L194" title="All 2 branches missed.">		}else if(numP == 3){</span>
+<span class="nc bnc" id="L195" title="All 2 branches missed.">			for(int i=0; i&lt;6; i++){</span>
+<span class="nc" id="L196">				r.remove((int)(Math.random()*(10-n)));</span>
+<span class="nc" id="L197">				n++;</span>
+			}
+		}else{
+<span class="nc bnc" id="L200" title="All 2 branches missed.">			for(int i=0; i&lt;7; i++){</span>
+<span class="nc" id="L201">				r.remove((int)(Math.random()*(10-n)));</span>
+<span class="nc" id="L202">				n++;</span>
+			}
+		}
+		
+<span class="nc" id="L206">		return r;</span>
+	}
+	
+	public static void addCards(String temp, ArrayList&lt;Cards&gt; bd, ArrayList&lt;Cards&gt; yd, ArrayList&lt;Cards&gt; gd)
+	{
+<span class="nc" id="L211">		String[] info = temp.split(&quot; &quot;);</span>
+		
+<span class="nc" id="L213">		String deck = info[0];</span>
+<span class="nc" id="L214">		String name = instantiateName(info[1]);</span>
+<span class="nc" id="L215">		Tokens resource = instantiateResource(info[2]);</span>
+<span class="nc" id="L216">		int pt = Integer.parseInt(info[3]);</span>
+<span class="nc" id="L217">		ArrayList&lt;Tokens&gt; cost = new ArrayList&lt;Tokens&gt;();</span>
+		
+<span class="nc bnc" id="L219" title="All 2 branches missed.">		for(int i=4; i&lt;info.length; i++){</span>
+<span class="nc" id="L220">			String t = info[i];</span>
+			//out.println(t);
+<span class="nc" id="L222">			String c = info[i].substring(1);</span>
+<span class="nc" id="L223">			int num = Integer.parseInt(t.charAt(0)+&quot;&quot;);</span>
+			//out.println(num);
+			//for(int j=0; j&lt;num; j++){
+<span class="nc bnc" id="L226" title="All 2 branches missed.">				if(c.equalsIgnoreCase(&quot;R&quot;)){</span>
+<span class="nc" id="L227">					addTokens(cost, num, new Tokens(&quot;Rubby&quot;));</span>
+					//out.println(j);
+<span class="nc bnc" id="L229" title="All 2 branches missed.">				}else if(c.equalsIgnoreCase(&quot;G&quot;)){</span>
+<span class="nc" id="L230">					addTokens(cost, num, new Tokens(&quot;Emerald&quot;));</span>
+<span class="nc bnc" id="L231" title="All 2 branches missed.">				}else if(c.equalsIgnoreCase(&quot;BLU&quot;)){</span>
+<span class="nc" id="L232">					addTokens(cost, num, new Tokens(&quot;Sapphire&quot;));</span>
+<span class="nc bnc" id="L233" title="All 2 branches missed.">				}else if(c.equalsIgnoreCase(&quot;BLA&quot;)){</span>
+<span class="nc" id="L234">					addTokens(cost, num, new Tokens(&quot;Onyx&quot;));</span>
+<span class="nc bnc" id="L235" title="All 2 branches missed.">				}else if(c.equalsIgnoreCase(&quot;W&quot;)){</span>
+<span class="nc" id="L236">					addTokens(cost, num, new Tokens(&quot;Diamond&quot;));</span>
+				}
+			//}
+		}
+		
+		//out.println(cost);
+		
+<span class="nc" id="L243">		Cards c = new Cards(pt, cost, name, resource);</span>
+		
+<span class="nc bnc" id="L245" title="All 2 branches missed.">		if(deck.equalsIgnoreCase(&quot;B&quot;)){</span>
+<span class="nc" id="L246">			bd.add(c);</span>
+<span class="nc bnc" id="L247" title="All 2 branches missed.">		}else if(deck.equals(&quot;Y&quot;)){</span>
+<span class="nc" id="L248">			yd.add(c);</span>
+		}else{
+<span class="nc" id="L250">			gd.add(c);</span>
+		}
+<span class="nc" id="L252">	}</span>
+	
+	public static ArrayList&lt;Player&gt; instantiatePlayers(int num) //(int score, ArrayList&lt;Tokens&gt; tokens, ArrayList&lt;Cards&gt; cards, ArrayList&lt;Noble&gt; nobles, ArrayList&lt;Cards&gt; reserve, String name)
+	{
+<span class="nc" id="L256">		ArrayList&lt;Player&gt; p = new ArrayList&lt;Player&gt;();</span>
+<span class="nc bnc" id="L257" title="All 2 branches missed.">		for(int i=0; i&lt;num; i++){</span>
+<span class="nc" id="L258">			ArrayList&lt;Tokens&gt; t = new ArrayList&lt;Tokens&gt;();</span>
+<span class="nc" id="L259">			ArrayList&lt;Cards&gt; c = new ArrayList&lt;Cards&gt;();</span>
+<span class="nc" id="L260">			ArrayList&lt;Noble&gt; nobles = new ArrayList&lt;Noble&gt;();</span>
+<span class="nc" id="L261">			ArrayList&lt;Cards&gt; r = new ArrayList&lt;Cards&gt;();</span>
+			
+			
+<span class="nc" id="L264">			p.add(new Player(0, t, c, nobles, r, &quot;Player &quot; + (i + 1)));</span>
+		}
+		
+<span class="nc" id="L267">		return p;</span>
+	}
+	
+	public static void addTokens(ArrayList&lt;Tokens&gt; r, int num, Tokens t)
+	{
+<span class="nc bnc" id="L272" title="All 2 branches missed.">		for(int i=0; i&lt;num; i++){</span>
+<span class="nc" id="L273">			r.add(t);</span>
+		}
+<span class="nc" id="L275">	}</span>
+	
+	public static Tokens instantiateResource(String c)
+	{
+<span class="nc bnc" id="L279" title="All 2 branches missed.">		if(c.equalsIgnoreCase(&quot;R&quot;)){</span>
+<span class="nc" id="L280">			return new Tokens(&quot;Rubby&quot;);</span>
+<span class="nc bnc" id="L281" title="All 2 branches missed.">		}else if(c.equalsIgnoreCase(&quot;E&quot;)){</span>
+<span class="nc" id="L282">			return new Tokens(&quot;Emerald&quot;);</span>
+<span class="nc bnc" id="L283" title="All 2 branches missed.">		}else if(c.equalsIgnoreCase(&quot;S&quot;)){</span>
+<span class="nc" id="L284">			return new Tokens(&quot;Sapphire&quot;);</span>
+<span class="nc bnc" id="L285" title="All 2 branches missed.">		}else if(c.equalsIgnoreCase(&quot;O&quot;)){</span>
+<span class="nc" id="L286">			return new Tokens(&quot;Onyx&quot;);</span>
+<span class="nc bnc" id="L287" title="All 2 branches missed.">		}else if(c.equalsIgnoreCase(&quot;D&quot;)){</span>
+<span class="nc" id="L288">			return new Tokens(&quot;Diamond&quot;);</span>
+		}else{
+<span class="nc" id="L290">			return null;</span>
+		}
+	}
+	
+	public static String instantiateName(String n)
+	{
+<span class="nc bnc" id="L296" title="All 2 branches missed.">		if(n.equalsIgnoreCase(&quot;M&quot;)){</span>
+<span class="nc" id="L297">			return &quot;Mine&quot;;</span>
+<span class="nc bnc" id="L298" title="All 2 branches missed.">		}else if(n.equalsIgnoreCase(&quot;ME&quot;)){</span>
+<span class="nc" id="L299">			return &quot;Merchant&quot;;</span>
+<span class="nc bnc" id="L300" title="All 2 branches missed.">		}else if(n.equalsIgnoreCase(&quot;T&quot;)){</span>
+<span class="nc" id="L301">			return &quot;Transports&quot;;</span>
+<span class="nc bnc" id="L302" title="All 2 branches missed.">		}else if(n.equalsIgnoreCase(&quot;S&quot;)){</span>
+<span class="nc" id="L303">			return &quot;Shops&quot;;</span>
+		}else{
+<span class="nc" id="L305">			return &quot;Town&quot;;</span>
+		}
+	}
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

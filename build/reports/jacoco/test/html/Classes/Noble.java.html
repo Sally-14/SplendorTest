@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Noble.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Final Project</a> &gt; <a href="index.source.html" class="el_package">Classes</a> &gt; <span class="el_source">Noble.java</span></div><h1>Noble.java</h1><pre class="source lang-java linenums">package Classes;
+
+import Exceptions.*;
+import Classes.*;
+
+import java.util.ArrayList;
+
+public class Noble 
+{
+	private String name;
+<span class="nc" id="L11">	private final int pt = 3;</span>
+	private ArrayList&lt;Tokens&gt; cost;
+	private Player owner;
+	
+	public Noble(String name, ArrayList&lt;Tokens&gt; cost) {
+<span class="nc" id="L16">		super();</span>
+<span class="nc" id="L17">		this.name = name;</span>
+<span class="nc" id="L18">		this.cost = cost;</span>
+<span class="nc" id="L19">	}</span>
+
+	public Player getOwner() {
+<span class="nc" id="L22">		return owner;</span>
+	}
+
+	public void setOwner(Player owner) {
+<span class="nc" id="L26">		this.owner = owner;</span>
+<span class="nc" id="L27">	}</span>
+
+	public String getName() {
+<span class="nc" id="L30">		return name;</span>
+	}
+	public void setName(String name) {
+<span class="nc" id="L33">		this.name = name;</span>
+<span class="nc" id="L34">	}</span>
+	public int getPt() {
+<span class="nc" id="L36">		return pt;</span>
+	}
+
+	public ArrayList&lt;Tokens&gt; getCost() {
+<span class="nc" id="L40">		return cost;</span>
+	}
+
+	public void setCost(ArrayList&lt;Tokens&gt; cost) {
+<span class="nc" id="L44">		this.cost = cost;</span>
+<span class="nc" id="L45">	}</span>
+	
+	public int whiteCost()
+	{
+<span class="nc" id="L49">		int r = 0;</span>
+<span class="nc bnc" id="L50" title="All 2 branches missed.">		for(int i=0; i&lt;cost.size(); i++){</span>
+<span class="nc bnc" id="L51" title="All 2 branches missed.">			if(cost.get(i).toString().equals(&quot;Diamond&quot;))</span>
+<span class="nc" id="L52">				r++;</span>
+		}
+		
+<span class="nc" id="L55">		return r;</span>
+	}
+	
+	public int greenCost()
+	{
+<span class="nc" id="L60">		int r = 0;</span>
+<span class="nc bnc" id="L61" title="All 2 branches missed.">		for(int i=0; i&lt;cost.size(); i++){</span>
+<span class="nc bnc" id="L62" title="All 2 branches missed.">			if(cost.get(i).toString().equals(&quot;Emerald&quot;))</span>
+<span class="nc" id="L63">				r++;</span>
+		}
+		
+<span class="nc" id="L66">		return r;</span>
+	}
+	
+	public int blueCost()
+	{
+<span class="nc" id="L71">		int r = 0;</span>
+<span class="nc bnc" id="L72" title="All 2 branches missed.">		for(int i=0; i&lt;cost.size(); i++){</span>
+<span class="nc bnc" id="L73" title="All 2 branches missed.">			if(cost.get(i).toString().equals(&quot;Sapphire&quot;))</span>
+<span class="nc" id="L74">				r++;</span>
+		}
+		
+<span class="nc" id="L77">		return r;</span>
+	}
+	
+	public int blackCost()
+	{
+<span class="nc" id="L82">		int r = 0;</span>
+<span class="nc bnc" id="L83" title="All 2 branches missed.">		for(int i=0; i&lt;cost.size(); i++){</span>
+<span class="nc bnc" id="L84" title="All 2 branches missed.">			if(cost.get(i).toString().equals(&quot;Onyx&quot;))</span>
+<span class="nc" id="L85">				r++;</span>
+		}
+		
+<span class="nc" id="L88">		return r;</span>
+	}
+	
+	public int redCost()
+	{
+<span class="nc" id="L93">		int r = 0;</span>
+<span class="nc bnc" id="L94" title="All 2 branches missed.">		for(int i=0; i&lt;cost.size(); i++){</span>
+<span class="nc bnc" id="L95" title="All 2 branches missed.">			if(cost.get(i).toString().equals(&quot;Rubby&quot;))</span>
+<span class="nc" id="L96">				r++;</span>
+		}
+		
+		
+<span class="nc" id="L100">		return r;</span>
+	}
+	
+	public String toString()
+	{
+<span class="nc" id="L105">		String r = &quot;&quot;;</span>
+<span class="nc" id="L106">		r = r + &quot;******* &quot; + name + &quot;*******&quot; + &quot;\n&quot;; // 5 starss on both side</span>
+		
+<span class="nc" id="L108">		int whiteCost = whiteCost();</span>
+<span class="nc" id="L109">		int redCost = redCost();</span>
+<span class="nc" id="L110">		int greenCost = greenCost();</span>
+<span class="nc" id="L111">		int blackCost = blackCost();</span>
+<span class="nc" id="L112">		int blueCost = blueCost();</span>
+		
+	
+<span class="nc bnc" id="L115" title="All 2 branches missed.">		if(whiteCost != 0){</span>
+<span class="nc" id="L116">			r += &quot;   Diamond x&quot; + whiteCost + &quot; &quot;;</span>
+		}
+		
+<span class="nc bnc" id="L119" title="All 2 branches missed.">		if(redCost != 0){</span>
+<span class="nc" id="L120">			r += &quot;   Rubby x&quot; + redCost + &quot; &quot;;</span>
+		}
+		
+<span class="nc bnc" id="L123" title="All 2 branches missed.">		if(greenCost != 0){</span>
+<span class="nc" id="L124">			r += &quot;   Emerald x&quot; + greenCost + &quot; &quot;;</span>
+		}
+		
+<span class="nc bnc" id="L127" title="All 2 branches missed.">		if(blackCost != 0){</span>
+<span class="nc" id="L128">			r += &quot;   Onyx x&quot; + blackCost + &quot; &quot;;</span>
+		}
+		
+<span class="nc bnc" id="L131" title="All 2 branches missed.">		if(blueCost != 0){</span>
+<span class="nc" id="L132">			r += &quot;   Sapphire x&quot; + blueCost + &quot; &quot;;</span>
+		}
+		
+<span class="nc" id="L135">		r = r + &quot;\n&quot;;</span>
+		
+<span class="nc" id="L137">		return r;</span>
+		
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

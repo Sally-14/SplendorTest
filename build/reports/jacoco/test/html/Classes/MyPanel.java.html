@@ -1,0 +1,1677 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MyPanel.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Final Project</a> &gt; <a href="index.source.html" class="el_package">Classes</a> &gt; <span class="el_source">MyPanel.java</span></div><h1>MyPanel.java</h1><pre class="source lang-java linenums">package Classes;
+
+import Exceptions.*;
+import Classes.*;
+
+import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.ArrayList;
+
+import javax.swing.*;
+
+
+public class MyPanel extends JPanel implements MouseListener
+{
+	private Game game;
+	private ArrayList&lt;Tokens&gt; t;
+	
+	public MyPanel (Game g)
+	{
+<span class="nc" id="L21">		super();</span>
+<span class="nc" id="L22">		setSize(1600,800);</span>
+<span class="nc" id="L23">		addMouseListener(this);</span>
+		
+<span class="nc" id="L25">		game = g;</span>
+<span class="nc" id="L26">		t = new ArrayList&lt;Tokens&gt;();</span>
+		
+<span class="nc" id="L28">	}</span>
+	
+	public void paint(Graphics g)
+	{
+<span class="nc" id="L32">		super.paintComponent(g);</span>
+		
+<span class="nc" id="L34">		Font currentFont = g.getFont();</span>
+<span class="nc" id="L35">		Font newFont = currentFont.deriveFont(currentFont.getSize() * 7F);</span>
+<span class="nc" id="L36">		g.setFont(newFont);</span>
+		
+		//System.out.println(game.win());
+		
+<span class="nc bnc" id="L40" title="All 2 branches missed.">		if(!game.getPlayers().get(game.getCurrentPlayer()).nobleVisit(game).isEmpty()){</span>
+<span class="nc" id="L41">			game.getPlayers().get(game.getCurrentPlayer()).visit((int)(Math.random()*game.getPlayers().get(game.getCurrentPlayer()).nobleVisit(game).size()+1), game);</span>
+<span class="nc" id="L42">			repaint();</span>
+		}
+		
+<span class="nc" id="L45">		currentFont = g.getFont();</span>
+<span class="nc" id="L46">		newFont = currentFont.deriveFont(currentFont.getSize()/7F);</span>
+<span class="nc" id="L47">		g.setFont(newFont);</span>
+		
+<span class="nc" id="L49">		g.setColor(Color.BLACK);</span>
+		
+<span class="nc bnc" id="L51" title="All 2 branches missed.">		for(int i=0; i&lt;1601; i+=40){</span>
+<span class="nc" id="L52">			g.drawLine(i, 0, i, 800);</span>
+<span class="nc" id="L53">			g.drawString(i+&quot;&quot;, i, 20);</span>
+		}
+		
+<span class="nc bnc" id="L56" title="All 2 branches missed.">		for(int j=0; j&lt;801; j+=40){</span>
+<span class="nc" id="L57">			g.drawLine(0, j, 1600, j);</span>
+<span class="nc" id="L58">			g.drawString(j+&quot;&quot;, 0, j);</span>
+		}
+		
+<span class="nc" id="L61">		repaint();</span>
+		
+<span class="nc" id="L63">		currentFont = g.getFont();</span>
+<span class="nc" id="L64">		newFont = currentFont.deriveFont(currentFont.getSize() * 2F);</span>
+<span class="nc" id="L65">		g.setFont(newFont);</span>
+		
+<span class="nc bnc" id="L67" title="All 2 branches missed.">		for(int x=160; x&lt;=560; x+=80){</span>
+<span class="nc bnc" id="L68" title="All 2 branches missed.">			if(x - 160 == 0){</span>
+<span class="nc" id="L69">				g.setColor(Color.BLACK);</span>
+<span class="nc" id="L70">				g.fillOval(40, x, 39, 39);</span>
+<span class="nc" id="L71">				g.drawString(&quot;x&quot; + tokenCounts(new Tokens(&quot;Onyx&quot;), game.getTokens()), 80, x + 40);</span>
+<span class="nc bnc" id="L72" title="All 2 branches missed.">			}else if(x - 160 == 80){</span>
+<span class="nc" id="L73">				g.setColor(Color.BLUE);</span>
+<span class="nc" id="L74">				g.fillOval(40, x, 39, 39);</span>
+<span class="nc" id="L75">				g.drawString(&quot;x&quot; + tokenCounts(new Tokens(&quot;Sapphire&quot;), game.getTokens()), 80, x + 40);</span>
+<span class="nc bnc" id="L76" title="All 2 branches missed.">			}else if(x - 160 == 160){</span>
+<span class="nc" id="L77">				g.setColor(Color.GREEN);</span>
+<span class="nc" id="L78">				g.fillOval(40, x, 39, 39);</span>
+<span class="nc" id="L79">				g.drawString(&quot;x&quot; + tokenCounts(new Tokens(&quot;Emerald&quot;), game.getTokens()), 80, x + 40);</span>
+<span class="nc bnc" id="L80" title="All 2 branches missed.">			}else if(x - 160 == 240){</span>
+<span class="nc" id="L81">				g.setColor(Color.WHITE);</span>
+<span class="nc" id="L82">				g.fillOval(40, x, 39, 39);</span>
+<span class="nc" id="L83">				g.drawString(&quot;x&quot; + tokenCounts(new Tokens(&quot;Diamond&quot;), game.getTokens()), 80, x + 40);</span>
+<span class="nc bnc" id="L84" title="All 2 branches missed.">			}else if(x - 160 == 320){</span>
+<span class="nc" id="L85">				g.setColor(Color.RED);</span>
+<span class="nc" id="L86">				g.fillOval(40, x, 39, 39);</span>
+<span class="nc" id="L87">				g.drawString(&quot;x&quot; + tokenCounts(new Tokens(&quot;Rubby&quot;), game.getTokens()), 80, x + 40);</span>
+<span class="nc bnc" id="L88" title="All 2 branches missed.">			}else if(x - 160 == 400){</span>
+<span class="nc" id="L89">				g.setColor(Color.YELLOW);</span>
+<span class="nc" id="L90">				g.fillOval(40, x, 39, 39);</span>
+<span class="nc" id="L91">				g.drawString(&quot;x&quot; + tokenCounts(new Tokens(&quot;Gold&quot;), game.getTokens()), 80, x + 40);</span>
+			}   
+		}
+		
+		
+		
+		
+		
+<span class="nc" id="L99">		currentFont = g.getFont();</span>
+<span class="nc" id="L100">		newFont = currentFont.deriveFont(currentFont.getSize() * 1.5F);</span>
+		
+<span class="nc bnc" id="L102" title="All 2 branches missed.">		for(int y=160; y&lt;=480; y+=160){</span>
+<span class="nc bnc" id="L103" title="All 2 branches missed.">			if(y - 160 == 0){</span>
+<span class="nc" id="L104">				g.setColor(Color.BLUE);</span>
+<span class="nc" id="L105">				g.fillRect(160, y, 80, 120);</span>
+<span class="nc" id="L106">				g.setColor(Color.WHITE);</span>
+				
+<span class="nc" id="L108">				currentFont = g.getFont();</span>
+<span class="nc" id="L109">				newFont = currentFont.deriveFont(currentFont.getSize() * 1.7F);</span>
+				
+<span class="nc" id="L111">				g.setFont(newFont);</span>
+<span class="nc" id="L112">				g.drawString(&quot;Blue&quot;, 160, y+80);</span>
+<span class="nc bnc" id="L113" title="All 2 branches missed.">			}else if(y - 160 == 160){</span>
+<span class="nc" id="L114">				g.setColor(Color.YELLOW);</span>
+<span class="nc" id="L115">				g.fillRect(160, y, 80, 120);</span>
+<span class="nc" id="L116">				g.setColor(Color.WHITE);</span>
+				
+<span class="nc" id="L118">				currentFont = g.getFont();</span>
+<span class="nc" id="L119">				newFont = currentFont.deriveFont(currentFont.getSize() / 1.50F);</span>
+<span class="nc" id="L120">				g.setFont(newFont);</span>
+				
+<span class="nc" id="L122">				g.drawString(&quot;Yellow&quot;, 160, y+80);</span>
+			}else{
+<span class="nc" id="L124">				g.setColor(Color.GREEN);</span>
+<span class="nc" id="L125">				g.fillRect(160, y, 80, 120);</span>
+<span class="nc" id="L126">				g.setColor(Color.WHITE);</span>
+				
+<span class="nc" id="L128">				currentFont = g.getFont();</span>
+<span class="nc" id="L129">				newFont = currentFont.deriveFont(currentFont.getSize() * 1.07F);</span>
+<span class="nc" id="L130">				g.setFont(newFont);</span>
+				
+<span class="nc" id="L132">				g.drawString(&quot;Green&quot;, 160, y+80);</span>
+			}
+		}
+		
+		
+		
+		
+	
+		
+<span class="nc" id="L141">		g.setColor(Color.GRAY);</span>
+		
+<span class="nc bnc" id="L143" title="All 2 branches missed.">		for(int a=320; a&lt;=680; a+=120){</span>
+<span class="nc bnc" id="L144" title="All 2 branches missed.">			for(int b=160; b&lt;=480; b+=160){</span>
+<span class="nc" id="L145">				g.fillRect(a, b, 80, 120);  </span>
+			
+<span class="nc" id="L147">				Cards c = game.getCardsOnTable()[(b-160)/160][(a-320)/120];</span>
+				
+<span class="nc" id="L149">				g.setColor(c.getResource().returnColor());</span>
+				
+<span class="nc" id="L151">				currentFont = g.getFont();</span>
+<span class="nc" id="L152">				newFont = currentFont.deriveFont(28F);</span>
+<span class="nc" id="L153">				g.setFont(newFont);</span>
+				
+<span class="nc" id="L155">				g.fillOval(a, b, 20, 20);</span>
+<span class="nc" id="L156">				g.drawString(c.getPt()+&quot;&quot;, a+65, b+25);</span>
+				
+<span class="nc" id="L158">				currentFont = g.getFont();</span>
+<span class="nc" id="L159">				newFont = currentFont.deriveFont(15F);</span>
+<span class="nc" id="L160">				g.setFont(newFont);</span>
+				
+				
+				
+<span class="nc" id="L164">				g.drawString(&quot;Reserve&quot;, a+12, b+50);</span>
+<span class="nc" id="L165">				g.fill3DRect(a+5 , b+55, 70, 3, true);</span>
+<span class="nc" id="L166">				g.drawString(&quot;Buy&quot;, a+28, b+75);</span>
+				
+<span class="nc" id="L168">				int bc = c.blackCost();</span>
+<span class="nc" id="L169">				int wc = c.whiteCost();</span>
+<span class="nc" id="L170">				int gc = c.greenCost();</span>
+<span class="nc" id="L171">				int rc = c.redCost();</span>
+<span class="nc" id="L172">				int bluC = c.blueCost();</span>
+				
+				//System.out.println(bc + &quot; &quot; + wc + &quot; &quot; + gc + &quot; &quot; + rc + &quot; &quot; + bluC);
+				
+<span class="nc bnc" id="L176" title="All 2 branches missed.">				if(bc != 0){</span>
+<span class="nc bnc" id="L177" title="All 2 branches missed.">					for(int d=0; d&lt;bc; d++){</span>
+<span class="nc" id="L178">						g.setColor(Color.BLACK);</span>
+<span class="nc" id="L179">						g.fillOval(a, b+80, 6, 6);</span>
+						
+<span class="nc" id="L181">						currentFont = g.getFont();</span>
+<span class="nc" id="L182">						newFont = currentFont.deriveFont(9F);</span>
+<span class="nc" id="L183">						g.setFont(newFont);</span>
+						
+<span class="nc" id="L185">						g.drawString(&quot;x &quot; + bc, a+10, b+80+7);</span>
+						
+<span class="nc" id="L187">						newFont = currentFont.deriveFont(28F);</span>
+<span class="nc" id="L188">						g.setFont(newFont);</span>
+					}
+				}
+				
+<span class="nc bnc" id="L192" title="All 2 branches missed.">				if(bluC != 0){</span>
+<span class="nc bnc" id="L193" title="All 2 branches missed.">					for(int d=0; d&lt;bluC; d++){</span>
+<span class="nc" id="L194">						g.setColor(Color.BLUE);</span>
+<span class="nc" id="L195">						g.fillOval(a, b+86, 6, 8);</span>
+						
+<span class="nc" id="L197">						currentFont = g.getFont();</span>
+<span class="nc" id="L198">						newFont = currentFont.deriveFont(9F);</span>
+<span class="nc" id="L199">						g.setFont(newFont);</span>
+						
+<span class="nc" id="L201">						g.drawString(&quot;x &quot; + bluC, a+10, b+88+7);</span>
+						
+<span class="nc" id="L203">						newFont = currentFont.deriveFont(28F);</span>
+<span class="nc" id="L204">						g.setFont(newFont);</span>
+					}
+				}
+				
+<span class="nc bnc" id="L208" title="All 2 branches missed.">				if(gc != 0){</span>
+<span class="nc bnc" id="L209" title="All 2 branches missed.">					for(int d=0; d&lt;gc; d++){</span>
+<span class="nc" id="L210">						g.setColor(Color.GREEN);</span>
+<span class="nc" id="L211">						g.fillOval(a, b+96, 6, 6);</span>
+						
+<span class="nc" id="L213">						currentFont = g.getFont();</span>
+<span class="nc" id="L214">						newFont = currentFont.deriveFont(9F);</span>
+<span class="nc" id="L215">						g.setFont(newFont);</span>
+						
+<span class="nc" id="L217">						g.drawString(&quot;x &quot; + gc, a+10, b+96+7);</span>
+						
+<span class="nc" id="L219">						newFont = currentFont.deriveFont(28F);</span>
+<span class="nc" id="L220">						g.setFont(newFont);</span>
+					}
+				}
+				
+<span class="nc bnc" id="L224" title="All 2 branches missed.">				if(wc != 0){</span>
+<span class="nc bnc" id="L225" title="All 2 branches missed.">					for(int d=0; d&lt;wc; d++){</span>
+<span class="nc" id="L226">						g.setColor(Color.WHITE);</span>
+<span class="nc" id="L227">						g.fillOval(a, b+104, 6, 6);</span>
+						
+<span class="nc" id="L229">						currentFont = g.getFont();</span>
+<span class="nc" id="L230">						newFont = currentFont.deriveFont(9F);</span>
+<span class="nc" id="L231">						g.setFont(newFont);</span>
+						
+<span class="nc" id="L233">						g.drawString(&quot;x &quot; + wc, a+10, b+104+7);</span>
+						
+<span class="nc" id="L235">						newFont = currentFont.deriveFont(28F);</span>
+<span class="nc" id="L236">						g.setFont(newFont);</span>
+					}
+				}
+				
+<span class="nc bnc" id="L240" title="All 2 branches missed.">				if(rc != 0){</span>
+<span class="nc bnc" id="L241" title="All 2 branches missed.">					for(int d=0; d&lt;rc; d++){</span>
+<span class="nc" id="L242">						g.setColor(Color.RED);</span>
+<span class="nc" id="L243">						g.fillOval(a, b+112, 6, 6);</span>
+						
+<span class="nc" id="L245">						currentFont = g.getFont();</span>
+<span class="nc" id="L246">						newFont = currentFont.deriveFont(9F);</span>
+<span class="nc" id="L247">						g.setFont(newFont);</span>
+						
+<span class="nc" id="L249">						g.drawString(&quot;x &quot; + rc, a+10, b+112+7);</span>
+						
+<span class="nc" id="L251">						newFont = currentFont.deriveFont(28F);</span>
+<span class="nc" id="L252">						g.setFont(newFont);</span>
+					}
+				}
+				
+<span class="nc" id="L256">				g.setColor(Color.GRAY);</span>
+				
+				
+			}
+		}
+		
+		//Onyx x0 ,Sapphire x0 ,Emerlad x0 ,Diamond x0 ,Rubby x0 ,Gold x0
+		
+		
+		
+<span class="nc bnc" id="L266" title="All 2 branches missed.">		for(int i=120; i&lt;=600; i+=120){</span>
+<span class="nc" id="L267">			g.setColor(Color.LIGHT_GRAY);</span>
+<span class="nc" id="L268">			currentFont = g.getFont();</span>
+<span class="nc" id="L269">			newFont = currentFont.deriveFont(28F);</span>
+<span class="nc" id="L270">			g.setFont(newFont);</span>
+			
+			
+<span class="nc" id="L273">			Noble n = null;</span>
+<span class="nc bnc" id="L274" title="All 2 branches missed.">			if((i-120)/120 &lt; game.getTiles().size()){</span>
+<span class="nc" id="L275">				n = game.getTiles().get((i-120)/120);</span>
+<span class="nc bnc" id="L276" title="All 2 branches missed.">			}else if(!game.containNoble().isEmpty()){</span>
+<span class="nc bnc" id="L277" title="All 2 branches missed.">				for(int j=i; j&lt;=600; j+=120){</span>
+<span class="nc" id="L278">					ArrayList&lt;Noble&gt; nobles = new ArrayList&lt;Noble&gt;(game.containNoble());</span>
+					
+<span class="nc bnc" id="L280" title="All 2 branches missed.">					if((j-120)/120 &gt;= nobles.size()){</span>
+<span class="nc" id="L281">						break;</span>
+					}
+					
+<span class="nc" id="L284">					n = nobles.get((j-120)/120);</span>
+					
+<span class="nc" id="L286">					g.setColor(n.getOwner().getColor());</span>
+<span class="nc" id="L287">					currentFont = g.getFont();</span>
+<span class="nc" id="L288">					newFont = currentFont.deriveFont(23F);</span>
+<span class="nc" id="L289">					g.setFont(newFont);</span>
+					
+<span class="nc" id="L291">					g.drawString(n.getOwner().getName(), j, 40-15);</span>
+<span class="nc" id="L292">					g.drawRect(j-5, 35, 90, 90);</span>
+					
+					
+<span class="nc" id="L295">					g.setColor(Color.BLACK);</span>
+<span class="nc" id="L296">					g.drawString(3 + &quot;&quot;, j+60, 65);</span>
+					
+<span class="nc" id="L298">					g.setColor(Color.LIGHT_GRAY);</span>
+<span class="nc" id="L299">					g.fillRect(j, 40, 80, 80);</span>
+					
+<span class="nc" id="L301">					currentFont = g.getFont();</span>
+<span class="nc" id="L302">					newFont = currentFont.deriveFont(9F);</span>
+<span class="nc" id="L303">					g.setFont(newFont);</span>
+					
+					
+<span class="nc bnc" id="L306" title="All 2 branches missed.">					if(n.blackCost() != 0){</span>
+<span class="nc" id="L307">						g.setColor(Color.BLACK);</span>
+<span class="nc" id="L308">						g.fillOval(j, 80, 6, 6);</span>
+						
+<span class="nc" id="L310">						g.drawString(&quot;x &quot; + n.blackCost(), j+10, 86);</span>
+					}
+					
+<span class="nc bnc" id="L313" title="All 2 branches missed.">					if(n.blueCost() != 0){</span>
+<span class="nc" id="L314">						g.setColor(Color.BLUE);</span>
+<span class="nc" id="L315">						g.fillOval(j, 88, 6, 6);</span>
+						
+<span class="nc" id="L317">						g.drawString(&quot;x &quot; + n.blueCost(), j+10, 94);</span>
+					}
+					
+<span class="nc bnc" id="L320" title="All 2 branches missed.">					if(n.greenCost() != 0){</span>
+<span class="nc" id="L321">						g.setColor(Color.GREEN);</span>
+<span class="nc" id="L322">						g.fillOval(j, 96, 6, 6);</span>
+						
+<span class="nc" id="L324">						g.drawString(&quot;x &quot; + n.greenCost(), j+10, 102);</span>
+					}
+					
+<span class="nc bnc" id="L327" title="All 2 branches missed.">					if(n.whiteCost() != 0){</span>
+<span class="nc" id="L328">						g.setColor(Color.WHITE);</span>
+<span class="nc" id="L329">						g.fillOval(j, 104, 6, 6);</span>
+						
+<span class="nc" id="L331">						g.drawString(&quot;x &quot; + n.whiteCost(), j+10, 110);</span>
+					}
+					
+<span class="nc bnc" id="L334" title="All 2 branches missed.">					if(n.redCost() != 0){</span>
+<span class="nc" id="L335">						g.setColor(Color.RED);</span>
+<span class="nc" id="L336">						g.fillOval(j, 112, 6, 6);</span>
+						
+<span class="nc" id="L338">						g.drawString(&quot;x &quot; + n.redCost(), j+10, 118);</span>
+					}
+					
+<span class="nc" id="L341">					g.setColor(Color.GRAY);</span>
+				}
+				
+<span class="nc" id="L344">				break;</span>
+				
+			}else{
+				break;
+			}
+			
+<span class="nc" id="L350">			g.fillRect(i, 40, 80, 80);</span>
+			
+<span class="nc" id="L352">			g.setColor(Color.BLACK);</span>
+<span class="nc" id="L353">			g.drawString(3 + &quot;&quot;, i+60, 65);</span>
+			
+			
+			
+<span class="nc" id="L357">			currentFont = g.getFont();</span>
+<span class="nc" id="L358">			newFont = currentFont.deriveFont(9F);</span>
+<span class="nc" id="L359">			g.setFont(newFont);</span>
+			
+			
+<span class="nc bnc" id="L362" title="All 2 branches missed.">			if(n.blackCost() != 0){</span>
+<span class="nc" id="L363">				g.setColor(Color.BLACK);</span>
+<span class="nc" id="L364">				g.fillOval(i, 80, 6, 6);</span>
+				
+<span class="nc" id="L366">				g.drawString(&quot;x &quot; + n.blackCost(), i+10, 86);</span>
+			}
+			
+<span class="nc bnc" id="L369" title="All 2 branches missed.">			if(n.blueCost() != 0){</span>
+<span class="nc" id="L370">				g.setColor(Color.BLUE);</span>
+<span class="nc" id="L371">				g.fillOval(i, 88, 6, 6);</span>
+				
+<span class="nc" id="L373">				g.drawString(&quot;x &quot; + n.blueCost(), i+10, 94);</span>
+			}
+			
+<span class="nc bnc" id="L376" title="All 2 branches missed.">			if(n.greenCost() != 0){</span>
+<span class="nc" id="L377">				g.setColor(Color.GREEN);</span>
+<span class="nc" id="L378">				g.fillOval(i, 96, 6, 6);</span>
+				
+<span class="nc" id="L380">				g.drawString(&quot;x &quot; + n.greenCost(), i+10, 102);</span>
+			}
+			
+<span class="nc bnc" id="L383" title="All 2 branches missed.">			if(n.whiteCost() != 0){</span>
+<span class="nc" id="L384">				g.setColor(Color.WHITE);</span>
+<span class="nc" id="L385">				g.fillOval(i, 104, 6, 6);</span>
+				
+<span class="nc" id="L387">				g.drawString(&quot;x &quot; + n.whiteCost(), i+10, 110);</span>
+			}
+			
+<span class="nc bnc" id="L390" title="All 2 branches missed.">			if(n.redCost() != 0){</span>
+<span class="nc" id="L391">				g.setColor(Color.RED);</span>
+<span class="nc" id="L392">				g.fillOval(i, 112, 6, 6);</span>
+				
+<span class="nc" id="L394">				g.drawString(&quot;x &quot; + n.redCost(), i+10, 118);</span>
+			}
+			
+<span class="nc" id="L397">			g.setColor(Color.GRAY);</span>
+		}
+		
+		
+		
+		
+		
+		
+<span class="nc" id="L405">		g.setColor(Color.GRAY);</span>
+
+<span class="nc" id="L407">		Player currentPlayer = game.getPlayers().get(game.getCurrentPlayer());</span>
+		
+<span class="nc" id="L409">		currentFont = g.getFont();</span>
+<span class="nc" id="L410">		newFont = currentFont.deriveFont(28F);</span>
+<span class="nc" id="L411">		g.setFont(newFont);</span>
+		
+<span class="nc" id="L413">		g.drawString(currentPlayer.getName() + &quot;: &quot; + currentPlayer.getPoints() + &quot; Points&quot;, 200, 630);</span>
+
+		
+<span class="nc" id="L416">		int onyx = currentPlayer.blackTokens();</span>
+<span class="nc" id="L417">		int sapphire = currentPlayer.blueTokens();</span>
+<span class="nc" id="L418">		int emerald = currentPlayer.greenTokens();</span>
+<span class="nc" id="L419">		int diamond = currentPlayer.whiteTokens();</span>
+<span class="nc" id="L420">		int rubby = currentPlayer.redTokens();</span>
+<span class="nc" id="L421">		int gold = currentPlayer.yellowTokens();</span>
+		
+		
+<span class="nc" id="L424">		currentFont = g.getFont();</span>
+<span class="nc" id="L425">		newFont = currentFont.deriveFont(18F);</span>
+<span class="nc" id="L426">		g.setFont(newFont);</span>
+		
+		
+<span class="nc bnc" id="L429" title="All 2 branches missed.">		if(game.getPlayers().get(game.getCurrentPlayer()).tooMuchTokens()){</span>
+<span class="nc" id="L430">			g.setColor(Color.RED);</span>
+<span class="nc" id="L431">			g.fillOval(522, 602, 36, 36);</span>
+<span class="nc" id="L432">			g.setColor(Color.YELLOW);</span>
+<span class="nc" id="L433">			g.fillRect(539, 604, 5, 18);</span>
+<span class="nc" id="L434">			g.fillRect(539, 630, 5, 5);</span>
+<span class="nc" id="L435">			g.setColor(Color.RED);</span>
+<span class="nc" id="L436">			g.drawString(&quot;TOKENS COUNT EXCEEDS 10! DOUBLE CLICK ON TOKEN TO DISCARD!&quot;, 560, 636);</span>
+		}
+		
+		
+<span class="nc" id="L440">		currentFont = g.getFont();</span>
+<span class="nc" id="L441">		newFont = currentFont.deriveFont(26F);</span>
+<span class="nc" id="L442">		g.setFont(newFont);</span>
+		
+<span class="nc" id="L444">		g.setColor(Color.BLACK);</span>
+<span class="nc" id="L445">		g.fillOval(600, 640, 19, 19);</span>
+<span class="nc" id="L446">		g.drawString(&quot;x &quot; + onyx, 620, 656);</span>
+		
+<span class="nc" id="L448">		g.setColor(Color.BLUE);</span>
+<span class="nc" id="L449">		g.fillOval(600, 660, 19, 19);</span>
+<span class="nc" id="L450">		g.drawString(&quot;x &quot; + sapphire, 620, 676);</span>
+		
+<span class="nc" id="L452">		g.setColor(Color.GREEN);</span>
+<span class="nc" id="L453">		g.fillOval(600, 680, 19, 19);</span>
+<span class="nc" id="L454">		g.drawString(&quot;x &quot; + emerald, 620, 696);</span>
+		
+<span class="nc" id="L456">		g.setColor(Color.RED);</span>
+<span class="nc" id="L457">		g.fillOval(600, 700, 19, 19);</span>
+<span class="nc" id="L458">		g.drawString(&quot;x &quot; + rubby, 620, 716);</span>
+		
+<span class="nc" id="L460">		g.setColor(Color.WHITE);</span>
+<span class="nc" id="L461">		g.fillOval(600, 720, 19, 19);</span>
+<span class="nc" id="L462">		g.drawString(&quot;x &quot; + diamond, 620, 736);</span>
+		
+<span class="nc" id="L464">		g.setColor(Color.YELLOW);</span>
+<span class="nc" id="L465">		g.fillOval(600, 740, 19, 19);</span>
+<span class="nc" id="L466">		g.drawString(&quot;x &quot; + gold, 620, 756);</span>
+		
+		//System.out.println(blackCards);
+		
+		/*ArrayList&lt;Cards&gt; r = new ArrayList&lt;Cards&gt;();
+		r.add(game.getCardsOnTable()[0][0]);
+		r.add(game.getCardsOnTable()[0][1]);
+		r.add(game.getCardsOnTable()[0][2]);
+		
+		game.getPlayers().get(game.getCurrentPlayer()).setReserve(r);*/
+		
+<span class="nc" id="L477">		g.setColor(Color.GRAY);</span>
+		
+<span class="nc" id="L479">		currentFont = g.getFont();</span>
+<span class="nc" id="L480">		newFont = currentFont.deriveFont(28F);</span>
+<span class="nc" id="L481">		g.setFont(newFont);</span>
+		
+<span class="nc" id="L483">		g.drawString(currentPlayer.getName() + &quot;'s reserve: &quot;, 720, 670);</span>
+		
+<span class="nc bnc" id="L485" title="All 2 branches missed.">		for(int i=680; i&lt;=920; i+=120){</span>
+	
+<span class="nc" id="L487">			currentFont = g.getFont();</span>
+<span class="nc" id="L488">			newFont = currentFont.deriveFont(28F);</span>
+<span class="nc" id="L489">			g.setFont(newFont);</span>
+			
+<span class="nc" id="L491">			Cards c = null;</span>
+<span class="nc bnc" id="L492" title="All 2 branches missed.">			if((i-680)/120 &lt; game.getPlayers().get(game.getCurrentPlayer()).getReserve().size()){</span>
+<span class="nc" id="L493">				c = game.getPlayers().get(game.getCurrentPlayer()).getReserve().get((i-680)/120);</span>
+			}else{
+				break;
+			}
+			
+<span class="nc" id="L498">			g.fillRect(i, 680, 80, 120);</span>
+			
+<span class="nc" id="L500">			g.setColor(c.getResource().returnColor());</span>
+			
+<span class="nc" id="L502">			g.fillOval(i, 680, 19, 19);</span>
+<span class="nc" id="L503">			g.drawString(c.getPt()+&quot;&quot;, i+40+25, 680+25);</span>
+			
+<span class="nc" id="L505">			currentFont = g.getFont();</span>
+<span class="nc" id="L506">			newFont = currentFont.deriveFont(18F);</span>
+<span class="nc" id="L507">			g.setFont(newFont);</span>
+			
+<span class="nc" id="L509">			g.setColor(Color.ORANGE);</span>
+			
+<span class="nc" id="L511">			g.fill3DRect(i+23, 723, 35, 20, false);</span>
+<span class="nc" id="L512">			g.drawString(&quot;Buy&quot;, i+25, 738);</span>
+			
+			
+<span class="nc" id="L515">			int bc = c.blackCost();</span>
+<span class="nc" id="L516">			int wc = c.whiteCost();</span>
+<span class="nc" id="L517">			int gc = c.greenCost();</span>
+<span class="nc" id="L518">			int rc = c.redCost();</span>
+<span class="nc" id="L519">			int bluC = c.blueCost();</span>
+			
+			//System.out.println(bc + &quot; &quot; + wc + &quot; &quot; + gc + &quot; &quot; + rc + &quot; &quot; + bluC);
+			
+<span class="nc bnc" id="L523" title="All 2 branches missed.">			if(bc != 0){</span>
+<span class="nc bnc" id="L524" title="All 2 branches missed.">				for(int d=0; d&lt;bc; d++){</span>
+<span class="nc" id="L525">					g.setColor(Color.BLACK);</span>
+<span class="nc" id="L526">					g.fillOval(i, 680+80, 6, 6);</span>
+					
+<span class="nc" id="L528">					currentFont = g.getFont();</span>
+<span class="nc" id="L529">					newFont = currentFont.deriveFont(9F);</span>
+<span class="nc" id="L530">					g.setFont(newFont);</span>
+					
+<span class="nc" id="L532">					g.drawString(&quot;x &quot; + bc, i+8, 680+80+6);</span>
+					
+<span class="nc" id="L534">					newFont = currentFont.deriveFont(28F);</span>
+<span class="nc" id="L535">					g.setFont(newFont);</span>
+				}
+			}
+			
+<span class="nc bnc" id="L539" title="All 2 branches missed.">			if(bluC != 0){</span>
+<span class="nc bnc" id="L540" title="All 2 branches missed.">				for(int d=0; d&lt;bluC; d++){</span>
+<span class="nc" id="L541">					g.setColor(Color.BLUE);</span>
+<span class="nc" id="L542">					g.fillOval(i, 680+88, 6, 6);</span>
+					
+<span class="nc" id="L544">					currentFont = g.getFont();</span>
+<span class="nc" id="L545">					newFont = currentFont.deriveFont(9F);</span>
+<span class="nc" id="L546">					g.setFont(newFont);</span>
+					
+<span class="nc" id="L548">					g.drawString(&quot;x &quot; + bluC, i+8, 680+88+6);</span>
+					
+<span class="nc" id="L550">					newFont = currentFont.deriveFont(28F);</span>
+<span class="nc" id="L551">					g.setFont(newFont);</span>
+				}
+			}
+			
+<span class="nc bnc" id="L555" title="All 2 branches missed.">			if(gc != 0){</span>
+<span class="nc bnc" id="L556" title="All 2 branches missed.">				for(int d=0; d&lt;gc; d++){</span>
+<span class="nc" id="L557">					g.setColor(Color.GREEN);</span>
+<span class="nc" id="L558">					g.fillOval(i, 680+96, 6, 6);</span>
+					
+<span class="nc" id="L560">					currentFont = g.getFont();</span>
+<span class="nc" id="L561">					newFont = currentFont.deriveFont(9F);</span>
+<span class="nc" id="L562">					g.setFont(newFont);</span>
+					
+<span class="nc" id="L564">					g.drawString(&quot;x &quot; + gc, i+8, 680+96+6);</span>
+					
+<span class="nc" id="L566">					newFont = currentFont.deriveFont(28F);</span>
+<span class="nc" id="L567">					g.setFont(newFont);</span>
+				}
+			}
+			
+<span class="nc bnc" id="L571" title="All 2 branches missed.">			if(wc != 0){</span>
+<span class="nc bnc" id="L572" title="All 2 branches missed.">				for(int d=0; d&lt;wc; d++){</span>
+<span class="nc" id="L573">					g.setColor(Color.WHITE);</span>
+<span class="nc" id="L574">					g.fillOval(i, 680+102, 6, 6);</span>
+					
+<span class="nc" id="L576">					currentFont = g.getFont();</span>
+<span class="nc" id="L577">					newFont = currentFont.deriveFont(9F);</span>
+<span class="nc" id="L578">					g.setFont(newFont);</span>
+					
+<span class="nc" id="L580">					g.drawString(&quot;x &quot; + wc, i+8, 680+102+6);</span>
+					
+<span class="nc" id="L582">					newFont = currentFont.deriveFont(28F);</span>
+<span class="nc" id="L583">					g.setFont(newFont);</span>
+				}
+			}
+			
+<span class="nc bnc" id="L587" title="All 2 branches missed.">			if(rc != 0){</span>
+<span class="nc bnc" id="L588" title="All 2 branches missed.">				for(int d=0; d&lt;rc; d++){</span>
+<span class="nc" id="L589">					g.setColor(Color.RED);</span>
+<span class="nc" id="L590">					g.fillOval(i, 680+110, 6, 6);</span>
+					
+<span class="nc" id="L592">					currentFont = g.getFont();</span>
+<span class="nc" id="L593">					newFont = currentFont.deriveFont(9F);</span>
+<span class="nc" id="L594">					g.setFont(newFont);</span>
+					
+<span class="nc" id="L596">					g.drawString(&quot;x &quot; + rc, i+8, 680+110+6);</span>
+					
+<span class="nc" id="L598">					newFont = currentFont.deriveFont(28F);</span>
+<span class="nc" id="L599">					g.setFont(newFont);</span>
+				}
+			}
+			
+<span class="nc" id="L603">			g.setColor(Color.GRAY);</span>
+			
+			
+		}
+		
+		
+		
+<span class="nc" id="L610">		g.setColor(Color.GRAY);</span>
+		
+<span class="nc" id="L612">		ArrayList&lt;Cards&gt; blackCards = currentPlayer.blackCards();</span>
+<span class="nc" id="L613">		ArrayList&lt;Cards&gt; blueCards = currentPlayer.blueCards();</span>
+<span class="nc" id="L614">		ArrayList&lt;Cards&gt; greenCards = currentPlayer.greenCards();</span>
+<span class="nc" id="L615">		ArrayList&lt;Cards&gt; whiteCards = currentPlayer.whiteCards();</span>
+<span class="nc" id="L616">		ArrayList&lt;Cards&gt; redCards = currentPlayer.redCards();</span>
+		
+<span class="nc" id="L618">		int yAdj = 0;</span>
+<span class="nc bnc" id="L619" title="All 2 branches missed.">		for(int e=0; e&lt;blackCards.size(); e++){</span>
+<span class="nc bnc" id="L620" title="All 2 branches missed.">			if(blackCards.size() == 0){</span>
+<span class="nc" id="L621">				break;</span>
+			}
+			
+<span class="nc" id="L624">			g.fillRect(0, 640+yAdj, 80, 20);</span>
+			
+<span class="nc" id="L626">			g.setColor(Color.BLACK);</span>
+<span class="nc" id="L627">			g.fillOval(0, 640+yAdj, 19, 19);</span>
+<span class="nc" id="L628">			g.drawLine(0, 640+yAdj, 80, 640+yAdj);</span>
+			
+<span class="nc" id="L630">			currentFont = g.getFont();</span>
+<span class="nc" id="L631">			newFont = currentFont.deriveFont(20F);</span>
+<span class="nc" id="L632">			g.setFont(newFont);</span>
+			
+<span class="nc" id="L634">			g.drawString(blackCards.get(e).getPt()+&quot;&quot;, 40+20, 658+yAdj ); </span>
+			
+<span class="nc" id="L636">			g.setColor(Color.GRAY);</span>
+			
+<span class="nc" id="L638">			yAdj += 20;</span>
+			
+		}
+		
+<span class="nc" id="L642">		yAdj = 0;</span>
+<span class="nc bnc" id="L643" title="All 2 branches missed.">		for(int e=0; e&lt;blueCards.size(); e++){</span>
+<span class="nc bnc" id="L644" title="All 2 branches missed.">			if(blueCards.size() == 0){</span>
+<span class="nc" id="L645">				break;</span>
+			}
+			
+<span class="nc" id="L648">			g.fillRect(120, 640+yAdj, 80, 20);</span>
+			
+<span class="nc" id="L650">			g.setColor(Color.BLUE);</span>
+<span class="nc" id="L651">			g.fillOval(120, 640+yAdj, 19, 19);</span>
+<span class="nc" id="L652">			g.drawLine(120, 640+yAdj, 200, 640+yAdj);</span>
+			
+<span class="nc" id="L654">			currentFont = g.getFont();</span>
+<span class="nc" id="L655">			newFont = currentFont.deriveFont(20F);</span>
+<span class="nc" id="L656">			g.setFont(newFont);</span>
+			
+<span class="nc" id="L658">			g.drawString(blueCards.get(e).getPt()+&quot;&quot;, 160+20, 658+yAdj);</span>
+			
+<span class="nc" id="L660">			g.setColor(Color.GRAY);</span>
+			
+<span class="nc" id="L662">			yAdj += 20;</span>
+			
+		}
+		
+<span class="nc" id="L666">		yAdj = 0;</span>
+<span class="nc bnc" id="L667" title="All 2 branches missed.">		for(int e=0; e&lt;greenCards.size(); e++){</span>
+<span class="nc bnc" id="L668" title="All 2 branches missed.">			if(greenCards.size() == 0){</span>
+<span class="nc" id="L669">				break;</span>
+			}
+			
+<span class="nc" id="L672">			g.fillRect(240, 640+yAdj, 80, 20);</span>
+			
+<span class="nc" id="L674">			g.setColor(Color.GREEN);</span>
+<span class="nc" id="L675">			g.fillOval(240, 640+yAdj, 19, 19);</span>
+<span class="nc" id="L676">			g.drawLine(240, 640+yAdj, 320, 640+yAdj);</span>
+			
+<span class="nc" id="L678">			currentFont = g.getFont();</span>
+<span class="nc" id="L679">			newFont = currentFont.deriveFont(20F);</span>
+<span class="nc" id="L680">			g.setFont(newFont);</span>
+			
+<span class="nc" id="L682">			g.drawString(greenCards.get(e).getPt()+&quot;&quot;, 240+20, 658+yAdj);</span>
+			
+<span class="nc" id="L684">			g.setColor(Color.GRAY);</span>
+			
+<span class="nc" id="L686">			yAdj += 20;</span>
+			
+		}
+		
+<span class="nc" id="L690">		yAdj = 0;</span>
+<span class="nc bnc" id="L691" title="All 2 branches missed.">		for(int e=0; e&lt;whiteCards.size(); e++){</span>
+<span class="nc bnc" id="L692" title="All 2 branches missed.">			if(whiteCards.size() == 0){</span>
+<span class="nc" id="L693">				break;</span>
+			}
+			
+<span class="nc" id="L696">			g.fillRect(360, 640+yAdj, 80, 20);</span>
+			
+<span class="nc" id="L698">			g.setColor(Color.WHITE);</span>
+<span class="nc" id="L699">			g.fillOval(360, 640+yAdj, 19, 19);</span>
+<span class="nc" id="L700">			g.drawLine(360, 640+yAdj, 440, 640+yAdj);</span>
+			
+<span class="nc" id="L702">			currentFont = g.getFont();</span>
+<span class="nc" id="L703">			newFont = currentFont.deriveFont(20F);</span>
+<span class="nc" id="L704">			g.setFont(newFont);</span>
+			
+<span class="nc" id="L706">			g.drawString(whiteCards.get(e).getPt()+&quot;&quot;, 400+20, 658+yAdj);</span>
+			
+<span class="nc" id="L708">			g.setColor(Color.GRAY);</span>
+			
+<span class="nc" id="L710">			yAdj += 20;</span>
+			
+		}
+		
+<span class="nc" id="L714">		yAdj = 0;</span>
+<span class="nc bnc" id="L715" title="All 2 branches missed.">		for(int e=0; e&lt;redCards.size(); e++){</span>
+<span class="nc bnc" id="L716" title="All 2 branches missed.">			if(redCards.size() == 0){</span>
+<span class="nc" id="L717">				break;</span>
+			}
+			
+<span class="nc" id="L720">			g.fillRect(480, 640+yAdj, 80, 20);</span>
+			
+<span class="nc" id="L722">			g.setColor(Color.RED);</span>
+<span class="nc" id="L723">			g.fillOval(480, 640+yAdj, 19, 19);</span>
+<span class="nc" id="L724">			g.drawLine(480, 640+yAdj, 560, 640+yAdj);</span>
+			
+<span class="nc" id="L726">			currentFont = g.getFont();</span>
+<span class="nc" id="L727">			newFont = currentFont.deriveFont(20F);</span>
+<span class="nc" id="L728">			g.setFont(newFont);</span>
+			
+<span class="nc" id="L730">			g.drawString(redCards.get(e).getPt()+&quot;&quot;, 520+20, 658+yAdj);</span>
+			
+<span class="nc" id="L732">			g.setColor(Color.GRAY);</span>
+			
+<span class="nc" id="L734">			yAdj += 20;</span>
+			
+		}
+		
+		
+		/*currentFont = g.getFont();
+		newFont = currentFont.deriveFont(12F);
+		g.setFont(newFont);*/
+		
+		
+		
+		
+		
+		
+		
+		
+<span class="nc" id="L750">		g.setColor(Color.GRAY);</span>
+		
+		
+<span class="nc" id="L753">		int Adj = 40;</span>
+<span class="nc" id="L754">		yAdj = 0;</span>
+<span class="nc" id="L755">		for(int i = game.getCurrentPlayer()+1; ; i++){</span>
+<span class="nc bnc" id="L756" title="All 2 branches missed.">			if(i == game.getPlayers().size()){</span>
+<span class="nc" id="L757">				i = 0;</span>
+			}
+			
+<span class="nc bnc" id="L760" title="All 2 branches missed.">			if(i == game.getCurrentPlayer()){</span>
+<span class="nc" id="L761">				break;</span>
+			}
+			
+			//System.out.println(&quot;WATUP&quot;);
+			
+<span class="nc" id="L766">			Player p = game.getPlayers().get(i);</span>
+			
+<span class="nc" id="L768">			onyx = p.blackTokens();</span>
+<span class="nc" id="L769">			sapphire = p.blueTokens();</span>
+<span class="nc" id="L770">			emerald = p.greenTokens();</span>
+<span class="nc" id="L771">			diamond = p.whiteTokens();</span>
+<span class="nc" id="L772">			rubby = p.redTokens();</span>
+<span class="nc" id="L773">			gold = p.yellowTokens();</span>
+			
+			
+<span class="nc" id="L776">			currentFont = g.getFont();</span>
+<span class="nc" id="L777">			newFont = currentFont.deriveFont(20F);</span>
+<span class="nc" id="L778">			g.setFont(newFont);</span>
+			
+			
+<span class="nc" id="L781">			g.setColor(Color.BLACK);</span>
+<span class="nc" id="L782">			g.fillOval(1480, Adj, 19, 19);</span>
+<span class="nc" id="L783">			g.drawString(&quot;x&quot; + onyx, 1500, Adj+17);</span>
+			
+<span class="nc" id="L785">			g.setColor(Color.BLUE);</span>
+<span class="nc" id="L786">			g.fillOval(1480, Adj+20, 19, 19);</span>
+<span class="nc" id="L787">			g.drawString(&quot;x&quot; + sapphire, 1500, Adj+37);</span>
+			
+<span class="nc" id="L789">			g.setColor(Color.GREEN);</span>
+<span class="nc" id="L790">			g.fillOval(1480, Adj+40, 19, 19);</span>
+<span class="nc" id="L791">			g.drawString(&quot;x&quot; + emerald, 1500, Adj+57);</span>
+			
+<span class="nc" id="L793">			g.setColor(Color.RED);</span>
+<span class="nc" id="L794">			g.fillOval(1480, Adj+60, 19, 19);</span>
+<span class="nc" id="L795">			g.drawString(&quot;x&quot; + rubby, 1500, Adj+77);</span>
+			
+<span class="nc" id="L797">			g.setColor(Color.WHITE);</span>
+<span class="nc" id="L798">			g.fillOval(1480, Adj+80, 19, 19);</span>
+<span class="nc" id="L799">			g.drawString(&quot;x&quot; + diamond, 1500, Adj+97);</span>
+			
+<span class="nc" id="L801">			g.setColor(Color.YELLOW);</span>
+<span class="nc" id="L802">			g.fillOval(1480, Adj+100, 19, 19);</span>
+<span class="nc" id="L803">			g.drawString(&quot;x&quot; + gold, 1500, Adj+117);</span>
+			
+			
+			
+<span class="nc" id="L807">			g.setColor(Color.GRAY);</span>
+<span class="nc" id="L808">			g.drawString(p.getReserve().size() + &quot; cards in reserve.&quot;, 1080, Adj+145);</span>
+<span class="nc" id="L809">			g.fill3DRect(840, Adj+160, 680, 5, true);</span>
+			
+			
+			
+			
+			
+			
+<span class="nc" id="L816">			currentFont = g.getFont();</span>
+<span class="nc" id="L817">			newFont = currentFont.deriveFont(28F);</span>
+<span class="nc" id="L818">			g.setFont(newFont);</span>
+			
+<span class="nc" id="L820">			g.drawString(game.getPlayers().get(i).getName() + &quot;: &quot; + game.getPlayers().get(i).getScore() + &quot; Points&quot;, 1080, Adj-10);</span>
+			
+<span class="nc" id="L822">			blackCards = p.blackCards();</span>
+<span class="nc" id="L823">			blueCards = p.blueCards();</span>
+<span class="nc" id="L824">			greenCards = p.greenCards();</span>
+<span class="nc" id="L825">			whiteCards = p.whiteCards();</span>
+<span class="nc" id="L826">			redCards = p.redCards();</span>
+			
+<span class="nc" id="L828">			yAdj = 0;</span>
+<span class="nc bnc" id="L829" title="All 2 branches missed.">			for(int e=0; e&lt;blackCards.size(); e++){</span>
+<span class="nc bnc" id="L830" title="All 2 branches missed.">				if(blackCards.size() == 0){</span>
+<span class="nc" id="L831">					break;</span>
+				}
+				
+<span class="nc" id="L834">				g.fillRect(880, Adj+yAdj, 80, 20);</span>
+				
+<span class="nc" id="L836">				g.setColor(Color.BLACK);</span>
+<span class="nc" id="L837">				g.fillOval(880, Adj+yAdj, 19, 19);</span>
+<span class="nc" id="L838">				g.drawLine(880, Adj+yAdj, 960, Adj+yAdj);</span>
+				
+<span class="nc" id="L840">				currentFont = g.getFont();</span>
+<span class="nc" id="L841">				newFont = currentFont.deriveFont(20F);</span>
+<span class="nc" id="L842">				g.setFont(newFont);</span>
+				
+<span class="nc" id="L844">				g.drawString(blackCards.get(e).getPt()+&quot;&quot;, 948, 58+yAdj+Adj-40);</span>
+				
+<span class="nc" id="L846">				g.setColor(Color.GRAY);</span>
+				
+<span class="nc" id="L848">				yAdj += 20;</span>
+				
+			}
+			
+<span class="nc" id="L852">			yAdj = 0;</span>
+<span class="nc bnc" id="L853" title="All 2 branches missed.">			for(int e=0; e&lt;blueCards.size(); e++){</span>
+<span class="nc bnc" id="L854" title="All 2 branches missed.">				if(blueCards.size() == 0){</span>
+<span class="nc" id="L855">					break;</span>
+				}
+				
+<span class="nc" id="L858">				g.fillRect(1000, Adj+yAdj, 80, 20);</span>
+				
+<span class="nc" id="L860">				g.setColor(Color.BLUE);</span>
+<span class="nc" id="L861">				g.fillOval(1000, Adj+yAdj, 19, 19);</span>
+<span class="nc" id="L862">				g.drawLine(1000, Adj+yAdj, 1080, Adj+yAdj);</span>
+				
+<span class="nc" id="L864">				currentFont = g.getFont();</span>
+<span class="nc" id="L865">				newFont = currentFont.deriveFont(20F);</span>
+<span class="nc" id="L866">				g.setFont(newFont);</span>
+				
+<span class="nc" id="L868">				g.drawString(blueCards.get(e).getPt()+&quot;&quot;, 1068, 58+yAdj+Adj-40);</span>
+				
+<span class="nc" id="L870">				g.setColor(Color.GRAY);</span>
+				
+<span class="nc" id="L872">				yAdj += 20;</span>
+				
+			}
+			
+<span class="nc" id="L876">			yAdj = 0;</span>
+<span class="nc bnc" id="L877" title="All 2 branches missed.">			for(int e=0; e&lt;greenCards.size(); e++){</span>
+<span class="nc bnc" id="L878" title="All 2 branches missed.">				if(greenCards.size() == 0){</span>
+<span class="nc" id="L879">					break;</span>
+				}
+				
+<span class="nc" id="L882">				g.fillRect(1120, Adj+yAdj, 80, 20);</span>
+				
+<span class="nc" id="L884">				g.setColor(Color.GREEN);</span>
+<span class="nc" id="L885">				g.fillOval(1120, Adj+yAdj, 19, 19);</span>
+<span class="nc" id="L886">				g.drawLine(1120, Adj+yAdj, 1200, Adj+yAdj);</span>
+				
+<span class="nc" id="L888">				currentFont = g.getFont();</span>
+<span class="nc" id="L889">				newFont = currentFont.deriveFont(20F);</span>
+<span class="nc" id="L890">				g.setFont(newFont);</span>
+				
+<span class="nc" id="L892">				g.drawString(greenCards.get(e).getPt()+&quot;&quot;, 1188, 58+yAdj+Adj-40);</span>
+				
+<span class="nc" id="L894">				g.setColor(Color.GRAY);</span>
+				
+<span class="nc" id="L896">				yAdj += 20;</span>
+				
+			}
+			
+<span class="nc" id="L900">			yAdj = 0;</span>
+<span class="nc bnc" id="L901" title="All 2 branches missed.">			for(int e=0; e&lt;whiteCards.size(); e++){</span>
+<span class="nc bnc" id="L902" title="All 2 branches missed.">				if(whiteCards.size() == 0){</span>
+<span class="nc" id="L903">					break;</span>
+				}
+				
+<span class="nc" id="L906">				g.fillRect(1240, Adj+yAdj, 80, 20);</span>
+				
+<span class="nc" id="L908">				g.setColor(Color.WHITE);</span>
+<span class="nc" id="L909">				g.fillOval(1240, Adj+yAdj, 19, 19);</span>
+<span class="nc" id="L910">				g.drawLine(1240, Adj+yAdj, 1320, Adj+yAdj);</span>
+				
+<span class="nc" id="L912">				currentFont = g.getFont();</span>
+<span class="nc" id="L913">				newFont = currentFont.deriveFont(20F);</span>
+<span class="nc" id="L914">				g.setFont(newFont);</span>
+				
+<span class="nc" id="L916">				g.drawString(whiteCards.get(e).getPt()+&quot;&quot;, 1308, 58+yAdj+Adj-40);</span>
+				
+<span class="nc" id="L918">				g.setColor(Color.GRAY);</span>
+				
+<span class="nc" id="L920">				yAdj += 20;</span>
+				
+			}
+			
+<span class="nc" id="L924">			yAdj = 0;</span>
+<span class="nc bnc" id="L925" title="All 2 branches missed.">			for(int e=0; e&lt;redCards.size(); e++){</span>
+<span class="nc bnc" id="L926" title="All 2 branches missed.">				if(redCards.size() == 0){</span>
+<span class="nc" id="L927">					break;</span>
+				}
+				
+<span class="nc" id="L930">				g.fillRect(1360, Adj+yAdj, 80, 20);</span>
+				
+<span class="nc" id="L932">				g.setColor(Color.RED);</span>
+<span class="nc" id="L933">				g.fillOval(1360, Adj+yAdj, 19, 19);</span>
+<span class="nc" id="L934">				g.drawLine(1360, Adj+yAdj, 1440, Adj+yAdj);</span>
+				
+<span class="nc" id="L936">				currentFont = g.getFont();</span>
+<span class="nc" id="L937">				newFont = currentFont.deriveFont(20F);</span>
+<span class="nc" id="L938">				g.setFont(newFont);</span>
+				
+<span class="nc" id="L940">				g.drawString(redCards.get(e).getPt()+&quot;&quot;, 1428, 58+yAdj+Adj-40);</span>
+				
+<span class="nc" id="L942">				g.setColor(Color.GRAY);</span>
+				
+<span class="nc" id="L944">				yAdj += 20;</span>
+				
+			}
+			
+<span class="nc" id="L948">			currentFont = g.getFont();</span>
+<span class="nc" id="L949">			newFont = currentFont.deriveFont(28F);</span>
+<span class="nc" id="L950">			g.setFont(newFont);</span>
+			
+			
+			
+			
+			
+			
+			
+<span class="nc" id="L958">			Adj += 200;</span>
+			
+			
+		}
+		
+		
+<span class="nc" id="L964">		currentFont = g.getFont();</span>
+<span class="nc" id="L965">		newFont = currentFont.deriveFont(currentFont.getSize() * 3F);</span>
+<span class="nc" id="L966">		g.setFont(newFont);</span>
+		
+		//System.out.println(game.win());
+		
+		
+		
+<span class="nc" id="L972">		game.win();</span>
+<span class="nc bnc" id="L973" title="All 4 branches missed.">		if(!game.getWinner().isEmpty() &amp;&amp; game.getCurrentPlayer() == game.getStartingPlayer()){</span>
+<span class="nc" id="L974">			Player actualWinner = game.getWinner().get(0);</span>
+<span class="nc bnc" id="L975" title="All 2 branches missed.">			boolean tie = game.getWinner().size() &gt; 1;</span>
+			
+<span class="nc bnc" id="L977" title="All 2 branches missed.">			for(int j=1; j&lt;game.getWinner().size(); j++){</span>
+<span class="nc bnc" id="L978" title="All 2 branches missed.">				if(game.getWinner().get(j).getCards().size() &lt; actualWinner.getCards().size()){</span>
+<span class="nc" id="L979">					actualWinner = game.getWinner().get(j);</span>
+<span class="nc" id="L980">					tie = false;</span>
+				}
+			}
+			
+<span class="nc bnc" id="L984" title="All 2 branches missed.">			if(!tie){</span>
+				try {
+<span class="nc" id="L986">					Thread.sleep(500);</span>
+<span class="nc" id="L987">				} catch (InterruptedException e) {</span>
+					// TODO Auto-generated catch block
+<span class="nc" id="L989">					e.printStackTrace();</span>
+<span class="nc" id="L990">				}</span>
+<span class="nc" id="L991">				super.paintComponent(g);</span>
+				
+<span class="nc" id="L993">				System.out.println(&quot;WORKING&quot;);</span>
+				
+<span class="nc" id="L995">				g.setColor(new Color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255)));</span>
+<span class="nc" id="L996">				g.drawString(&quot;CONGRATULATIONS   TO&quot;, 290, 160);</span>
+<span class="nc" id="L997">				g.drawString(/*game.getWinner().get(0).getName()*/game.getPlayers().get(0).getName() + &quot; !!&quot;, 600, 320);</span>
+<span class="nc" id="L998">				g.drawString(&quot;You Won!!!&quot;, 575, 520);</span>
+				
+				
+<span class="nc" id="L1001">				repaint();</span>
+				
+				
+				
+			}
+		}
+		
+
+		
+		
+		
+<span class="nc" id="L1012">	}</span>
+	
+	public int tokenCounts(Tokens token, ArrayList&lt;Tokens&gt; t)
+	{
+<span class="nc" id="L1016">		int count = 0;</span>
+		
+<span class="nc bnc" id="L1018" title="All 2 branches missed.">		if(token.equals(new Tokens(&quot;Onyx&quot;))){</span>
+<span class="nc bnc" id="L1019" title="All 2 branches missed.">			for(int i=0; i&lt;t.size(); i++){</span>
+<span class="nc bnc" id="L1020" title="All 2 branches missed.">				if(t.get(i).equals(new Tokens(&quot;Onyx&quot;))){</span>
+<span class="nc" id="L1021">					count++;</span>
+				}
+			}
+<span class="nc bnc" id="L1024" title="All 2 branches missed.">		}else if(token.equals(new Tokens(&quot;Rubby&quot;))){</span>
+<span class="nc bnc" id="L1025" title="All 2 branches missed.">			for(int i=0; i&lt;t.size(); i++){</span>
+<span class="nc bnc" id="L1026" title="All 2 branches missed.">				if(t.get(i).equals(new Tokens(&quot;Rubby&quot;))){</span>
+<span class="nc" id="L1027">					count++;</span>
+				}
+			}
+<span class="nc bnc" id="L1030" title="All 2 branches missed.">		}else if(token.equals(new Tokens(&quot;Emerald&quot;))){</span>
+<span class="nc bnc" id="L1031" title="All 2 branches missed.">			for(int i=0; i&lt;t.size(); i++){</span>
+<span class="nc bnc" id="L1032" title="All 2 branches missed.">				if(t.get(i).equals(new Tokens(&quot;Emerald&quot;))){</span>
+<span class="nc" id="L1033">					count++;</span>
+				}
+			}
+<span class="nc bnc" id="L1036" title="All 2 branches missed.">		}else if(token.equals(new Tokens(&quot;Diamond&quot;))){</span>
+<span class="nc bnc" id="L1037" title="All 2 branches missed.">			for(int i=0; i&lt;t.size(); i++){</span>
+<span class="nc bnc" id="L1038" title="All 2 branches missed.">				if(t.get(i).equals(new Tokens(&quot;Diamond&quot;))){</span>
+<span class="nc" id="L1039">					count++;</span>
+				}
+			}
+<span class="nc bnc" id="L1042" title="All 2 branches missed.">		}else if(token.equals(new Tokens(&quot;Sapphire&quot;))){</span>
+<span class="nc bnc" id="L1043" title="All 2 branches missed.">			for(int i=0; i&lt;t.size(); i++){</span>
+<span class="nc bnc" id="L1044" title="All 2 branches missed.">				if(t.get(i).equals(new Tokens(&quot;Sapphire&quot;))){</span>
+<span class="nc" id="L1045">					count++;</span>
+				}
+			}
+<span class="nc bnc" id="L1048" title="All 2 branches missed.">		}else if(token.equals(new Tokens(&quot;Gold&quot;))){</span>
+<span class="nc bnc" id="L1049" title="All 2 branches missed.">			for(int i=0; i&lt;t.size(); i++){</span>
+<span class="nc bnc" id="L1050" title="All 2 branches missed.">				if(t.get(i).equals(new Tokens(&quot;Gold&quot;))){</span>
+<span class="nc" id="L1051">					count++;</span>
+				}
+			}
+		}
+		
+<span class="nc" id="L1056">		return count;</span>
+	}
+	
+	public void mousePressed(MouseEvent e)
+<span class="nc" id="L1060">	{	}</span>
+	
+	public void mouseReleased(MouseEvent e)
+	{	
+		
+<span class="nc" id="L1065">	}</span>
+	
+	public void mouseClicked(MouseEvent e)
+	{	
+		// get the x and y where the mouse was clicked
+		
+		//System.out.println(game.getPlayers().get((game.getCurrentPlayer())).getName());
+		
+		//e.consume();
+		
+		int x;
+		int y;
+		
+<span class="nc bnc" id="L1078" title="All 2 branches missed.">		if(game.getPlayers().get(game.getCurrentPlayer()).tooMuchTokens()){</span>
+<span class="nc bnc" id="L1079" title="All 4 branches missed.">			if(e.getClickCount() == 2 &amp;&amp; !e.isConsumed()){</span>
+<span class="nc" id="L1080">				e.consume();</span>
+				
+<span class="nc" id="L1082">				x = e.getX();</span>
+<span class="nc" id="L1083">				y = e.getY();</span>
+				
+<span class="nc" id="L1085">				System.out.println(x + &quot; &quot; + y + &quot;Hola&quot;);</span>
+				
+<span class="nc bnc" id="L1087" title="All 8 branches missed.">				if(x &gt;= 600 &amp;&amp; x &lt;= 680 &amp;&amp; y &gt;= 640 &amp;&amp; y &lt;= 659){</span>
+					try {
+<span class="nc" id="L1089">						game.getPlayers().get(game.getCurrentPlayer()).discardToken(new Tokens(&quot;Onyx&quot;), game);</span>
+<span class="nc" id="L1090">					} catch (InvalidTokensSelection e1) {</span>
+<span class="nc" id="L1091">						repaint();</span>
+<span class="nc" id="L1092">					}</span>
+<span class="nc bnc" id="L1093" title="All 8 branches missed.">				}else if(x &gt;= 600 &amp;&amp; x &lt;= 680 &amp;&amp; y &gt;= 660 &amp;&amp; y &lt;= 679){</span>
+					try {
+<span class="nc" id="L1095">						game.getPlayers().get(game.getCurrentPlayer()).discardToken(new Tokens(&quot;Sapphire&quot;), game);</span>
+<span class="nc" id="L1096">					} catch (InvalidTokensSelection e1) {</span>
+						// TODO Auto-generated catch block
+<span class="nc" id="L1098">						repaint();</span>
+<span class="nc" id="L1099">					}</span>
+<span class="nc bnc" id="L1100" title="All 8 branches missed.">				}else if(x &gt;= 600 &amp;&amp; x &lt;= 680 &amp;&amp; y &gt;= 679 &amp;&amp; y &lt;= 699){</span>
+					try {
+<span class="nc" id="L1102">						game.getPlayers().get(game.getCurrentPlayer()).discardToken(new Tokens(&quot;Emerald&quot;), game);</span>
+<span class="nc" id="L1103">					} catch (InvalidTokensSelection e1) {</span>
+						// TODO Auto-generated catch block
+<span class="nc" id="L1105">						repaint();</span>
+<span class="nc" id="L1106">					}</span>
+<span class="nc bnc" id="L1107" title="All 8 branches missed.">				}else if(x &gt;= 600 &amp;&amp; x &lt;= 680 &amp;&amp; y &gt;= 699 &amp;&amp; y &lt;= 719){</span>
+					try {
+<span class="nc" id="L1109">						game.getPlayers().get(game.getCurrentPlayer()).discardToken(new Tokens(&quot;Rubby&quot;), game);</span>
+<span class="nc" id="L1110">					} catch (InvalidTokensSelection e1) {</span>
+						// TODO Auto-generated catch block
+<span class="nc" id="L1112">						repaint();</span>
+<span class="nc" id="L1113">					}</span>
+<span class="nc bnc" id="L1114" title="All 8 branches missed.">				}else if(x &gt;= 600 &amp;&amp; x &lt;= 680 &amp;&amp; y &gt;= 719 &amp;&amp; y &lt;= 739){</span>
+					try {
+<span class="nc" id="L1116">						game.getPlayers().get(game.getCurrentPlayer()).discardToken(new Tokens(&quot;Diamond&quot;), game);</span>
+<span class="nc" id="L1117">					} catch (InvalidTokensSelection e1) {</span>
+						// TODO Auto-generated catch block
+<span class="nc" id="L1119">						repaint();</span>
+<span class="nc" id="L1120">					}</span>
+<span class="nc bnc" id="L1121" title="All 8 branches missed.">				}else if(x &gt;= 600 &amp;&amp; x &lt;= 680 &amp;&amp; y &gt;= 739 &amp;&amp; y &lt;= 679){</span>
+					try {
+<span class="nc" id="L1123">						game.getPlayers().get(game.getCurrentPlayer()).discardToken(new Tokens(&quot;Gold&quot;), game);</span>
+<span class="nc" id="L1124">					} catch (InvalidTokensSelection e1) {</span>
+						// TODO Auto-generated catch block
+<span class="nc" id="L1126">						repaint();</span>
+<span class="nc" id="L1127">					}</span>
+				}
+				
+				
+				
+	
+				
+			}
+		}
+		
+		
+		
+		
+<span class="nc bnc" id="L1140" title="All 2 branches missed.">		if(e.getButton() == e.BUTTON3){</span>
+<span class="nc" id="L1141">			e.consume();</span>
+
+<span class="nc" id="L1143">			x = e.getX();</span>
+<span class="nc" id="L1144">			y = e.getY();</span>
+<span class="nc" id="L1145">			System.out.println(x + &quot; &quot; + y);</span>
+
+<span class="nc bnc" id="L1147" title="All 8 branches missed.">			if(x &gt;= 40 &amp;&amp; x &lt;= 120 &amp;&amp; y &gt; 160 &amp;&amp; y &lt; 200){</span>
+<span class="nc" id="L1148">				t.add(new Tokens(&quot;Onyx&quot;));</span>
+				//System.out.println(t);
+<span class="nc" id="L1150">				repaint();</span>
+<span class="nc bnc" id="L1151" title="All 8 branches missed.">			}else if(x &gt;= 40 &amp;&amp; x &lt;= 120 &amp;&amp; y &gt; 240 &amp;&amp; y &lt; 280){</span>
+<span class="nc" id="L1152">				t.add(new Tokens(&quot;Sapphire&quot;));</span>
+				//System.out.println(t);
+<span class="nc" id="L1154">				repaint();</span>
+<span class="nc bnc" id="L1155" title="All 8 branches missed.">			}else if(x &gt;= 40 &amp;&amp; x &lt;= 120 &amp;&amp; y &gt; 320 &amp;&amp; y &lt; 360){</span>
+<span class="nc" id="L1156">				t.add(new Tokens(&quot;Emerald&quot;));</span>
+				//System.out.println(t);
+<span class="nc" id="L1158">				repaint();</span>
+<span class="nc bnc" id="L1159" title="All 8 branches missed.">			}else if(x &gt;= 40 &amp;&amp; x &lt;= 120 &amp;&amp; y &gt; 400 &amp;&amp; y &lt; 440){</span>
+<span class="nc" id="L1160">				t.add(new Tokens(&quot;Diamond&quot;));</span>
+<span class="nc" id="L1161">				repaint();</span>
+<span class="nc bnc" id="L1162" title="All 8 branches missed.">			}else if(x &gt;= 40 &amp;&amp; x &lt;= 120 &amp;&amp; y &gt; 480 &amp;&amp; y &lt; 520){</span>
+<span class="nc" id="L1163">				t.add(new Tokens(&quot;Rubby&quot;));</span>
+<span class="nc" id="L1164">				repaint();</span>
+			}
+			
+<span class="nc bnc" id="L1167" title="All 4 branches missed.">			if(t.size() == 3 &amp;&amp; allDifferent(t)){</span>
+				try {
+<span class="nc" id="L1169">					game.getPlayers().get(game.getCurrentPlayer()).getOneOfEachTokens(t.get(0), t.get(1), t.get(2), game);</span>
+<span class="nc" id="L1170">					t.clear();</span>
+<span class="nc" id="L1171">				} catch (NotEnoughTokensOnTable e1) {</span>
+<span class="nc" id="L1172">					repaint();</span>
+<span class="nc" id="L1173">				}</span>
+<span class="nc bnc" id="L1174" title="All 4 branches missed.">			}else if(t.size() &gt;= 3 &amp;&amp; !allDifferent(t)){</span>
+<span class="nc" id="L1175">				t.clear();</span>
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+<span class="nc bnc" id="L1190" title="All 6 branches missed.">		if(e.getClickCount() == 2 &amp;&amp; !e.isConsumed() &amp;&amp; !game.getPlayers().get(game.getCurrentPlayer()).tooMuchTokens()){</span>
+			
+<span class="nc" id="L1192">		     e.consume();</span>
+<span class="nc" id="L1193">		     x = e.getX();</span>
+<span class="nc" id="L1194">			 y = e.getY();</span>
+			 
+<span class="nc" id="L1196">			 System.out.println(x + &quot; &quot; + y + &quot; &quot; + &quot;hi&quot;);</span>
+			 
+<span class="nc" id="L1198">			 ArrayList&lt;Cards&gt; cc = game.getPlayers().get(game.getCurrentPlayer()).getCards();</span>
+			 
+<span class="nc bnc" id="L1200" title="All 8 branches missed.">			 if(x &gt;= 40 &amp;&amp; x &lt;= 120 &amp;&amp; y &gt; 160 &amp;&amp; y &lt; 200){</span>
+				 try {
+<span class="nc" id="L1202">					game.getPlayers().get(game.getCurrentPlayer()).getTwoTokens(new Tokens(&quot;Onyx&quot;), game);</span>
+<span class="nc" id="L1203">				} catch (NotEnoughTokensOnTable e1) {</span>
+					// TODO Auto-generated catch block
+<span class="nc" id="L1205">					System.out.println(e1.getStackTrace());</span>
+<span class="nc" id="L1206">					repaint();</span>
+<span class="nc" id="L1207">				}</span>
+<span class="nc bnc" id="L1208" title="All 8 branches missed.">			 }else if(x &gt;= 40 &amp;&amp; x &lt;= 120 &amp;&amp; y &gt; 240 &amp;&amp; y &lt; 280){</span>
+				 try {
+<span class="nc" id="L1210">					game.getPlayers().get(game.getCurrentPlayer()).getTwoTokens(new Tokens(&quot;Sapphire&quot;), game);</span>
+<span class="nc" id="L1211">				} catch (NotEnoughTokensOnTable e1) {</span>
+					// TODO Auto-generated catch block
+<span class="nc" id="L1213">					repaint();</span>
+<span class="nc" id="L1214">				}</span>
+<span class="nc bnc" id="L1215" title="All 8 branches missed.">			 }else if(x &gt;= 40 &amp;&amp; x &lt;= 120 &amp;&amp; y &gt; 320 &amp;&amp; y &lt; 360){</span>
+				 try {
+<span class="nc" id="L1217">					game.getPlayers().get(game.getCurrentPlayer()).getTwoTokens(new Tokens(&quot;Emerald&quot;), game);</span>
+<span class="nc" id="L1218">				} catch (NotEnoughTokensOnTable e1) {</span>
+					// TODO Auto-generated catch block
+<span class="nc" id="L1220">					repaint();</span>
+<span class="nc" id="L1221">				}</span>
+<span class="nc bnc" id="L1222" title="All 8 branches missed.">			 }else if(x &gt;= 40 &amp;&amp; x &lt;= 120 &amp;&amp; y &gt; 400 &amp;&amp; y &lt; 440){</span>
+				 try {
+<span class="nc" id="L1224">					game.getPlayers().get(game.getCurrentPlayer()).getTwoTokens(new Tokens(&quot;Diamond&quot;), game);</span>
+<span class="nc" id="L1225">				} catch (NotEnoughTokensOnTable e1) {</span>
+					// TODO Auto-generated catch block
+<span class="nc" id="L1227">					repaint();</span>
+<span class="nc" id="L1228">				}</span>
+<span class="nc bnc" id="L1229" title="All 8 branches missed.">			 }else if(x &gt;= 40 &amp;&amp; x &lt;= 120 &amp;&amp; y &gt; 480 &amp;&amp; y &lt; 520){</span>
+				 try {
+<span class="nc" id="L1231">					game.getPlayers().get(game.getCurrentPlayer()).getTwoTokens(new Tokens(&quot;Rubby&quot;), game);</span>
+<span class="nc" id="L1232">				} catch (NotEnoughTokensOnTable e1) {</span>
+					// TODO Auto-generated catch block
+<span class="nc" id="L1234">					repaint();</span>
+<span class="nc" id="L1235">				}</span>
+			 }
+			 
+			 //e.consume();
+			 
+<span class="nc bnc" id="L1240" title="All 4 branches missed.">			 if(x &lt;= 40 &amp;&amp; y &lt;= 40){</span>
+<span class="nc" id="L1241">				 ArrayList&lt;Cards&gt; c = new ArrayList&lt;Cards&gt;(cc);</span>
+<span class="nc" id="L1242">				 c.add(new Cards(&quot;Onyx&quot;));</span>
+<span class="nc" id="L1243">				 c.add(new Cards(&quot;Sapphire&quot;));</span>
+<span class="nc" id="L1244">				 c.add(new Cards(&quot;Emerald&quot;));</span>
+<span class="nc" id="L1245">				 c.add(new Cards(&quot;Diamond&quot;));</span>
+<span class="nc" id="L1246">				 c.add(new Cards(&quot;Rubby&quot;));</span>
+				 
+				 
+				 
+<span class="nc" id="L1250">				 game.getPlayers().get(game.getCurrentPlayer()).setCards(c);</span>
+				 
+<span class="nc" id="L1252">				 repaint();</span>
+			 }
+			 
+			 
+<span class="nc bnc" id="L1256" title="All 4 branches missed.">			 if(x &gt;= 1560 &amp;&amp; y &gt;= 760){</span>
+<span class="nc" id="L1257">				 System.out.println(x + &quot; &quot; + y + &quot; &quot; + &quot;ho&quot;);</span>
+<span class="nc bnc" id="L1258" title="All 2 branches missed.">				 for(int i=0; i&lt;game.getPlayers().size(); i++){</span>
+<span class="nc" id="L1259">					 cc = new ArrayList&lt;Cards&gt;(game.getPlayers().get(i).getCards());</span>
+<span class="nc" id="L1260">					 cc.add(new Cards(&quot;Onyx&quot;));</span>
+<span class="nc" id="L1261">					 cc.add(new Cards(&quot;Sapphire&quot;));</span>
+<span class="nc" id="L1262">					 cc.add(new Cards(&quot;Emerald&quot;));</span>
+<span class="nc" id="L1263">					 cc.add(new Cards(&quot;Diamond&quot;));</span>
+<span class="nc" id="L1264">					 cc.add(new Cards(&quot;Rubby&quot;));</span>
+					 
+<span class="nc" id="L1266">					 game.getPlayers().get(i).setCards(cc);</span>
+					 
+					 //System.out.println(game.getPlayers().get(i).getCards());
+					 
+					 
+				 }
+				 
+<span class="nc" id="L1273">				 repaint();</span>
+			 }
+			 
+<span class="nc bnc" id="L1276" title="All 4 branches missed.">			 if(x &gt; 320 &amp;&amp; x &lt; 400){</span>
+<span class="nc bnc" id="L1277" title="All 4 branches missed.">				 if(y &lt; 218 &amp;&amp; y &gt; 160){</span>
+					try {
+<span class="nc" id="L1279">						game.getPlayers().get(game.getCurrentPlayer()).reserveCard(1, 1, game);</span>
+<span class="nc" id="L1280">						repaint();</span>
+<span class="nc" id="L1281">					} catch (InvalidCardsSelectionOfCardsOnTable</span>
+							| PlayerAlreadyHoldsThreeReserveCards e1) {
+						// TODO Auto-generated catch block
+
+<span class="nc" id="L1285">						repaint();</span>
+<span class="nc" id="L1286">					}</span>
+					
+<span class="nc bnc" id="L1288" title="All 4 branches missed.">				 }else if(y &gt; 218 &amp;&amp; y &lt; 280){</span>
+					 try {
+<span class="nc" id="L1290">						game.getPlayers().get(game.getCurrentPlayer()).buyCardOnTable(1, 1, game);</span>
+<span class="nc" id="L1291">						repaint();</span>
+<span class="nc" id="L1292">					} catch (PlayerDoesNotHaveEnoughResourcesToBuySelectedCard</span>
+							| InvalidCardsSelectionOfCardsInReserve
+							| InvalidCardsSelectionOfCardsOnTable e1) {
+						// TODO Auto-generated catch block
+
+<span class="nc" id="L1297">						repaint();</span>
+<span class="nc" id="L1298">					}</span>
+				 }
+				 
+				 
+				 
+<span class="nc bnc" id="L1303" title="All 4 branches missed.">				 else if(y &gt; 320 &amp;&amp; y &lt; 378 ){</span>
+					 try {
+<span class="nc" id="L1305">						game.getPlayers().get(game.getCurrentPlayer()).reserveCard(2, 1, game);</span>
+<span class="nc" id="L1306">						repaint();</span>
+<span class="nc" id="L1307">					} catch (InvalidCardsSelectionOfCardsOnTable</span>
+							| PlayerAlreadyHoldsThreeReserveCards e1) {
+						// TODO Auto-generated catch block
+
+<span class="nc" id="L1311">						repaint();</span>
+<span class="nc" id="L1312">					}</span>
+<span class="nc bnc" id="L1313" title="All 4 branches missed.">				 }else if(y &gt; 378 &amp;&amp; y &lt; 440){</span>
+					 try {
+<span class="nc" id="L1315">						game.getPlayers().get(game.getCurrentPlayer()).buyCardOnTable(2, 1, game);</span>
+<span class="nc" id="L1316">						repaint();</span>
+<span class="nc" id="L1317">					} catch (PlayerDoesNotHaveEnoughResourcesToBuySelectedCard</span>
+							| InvalidCardsSelectionOfCardsInReserve
+							| InvalidCardsSelectionOfCardsOnTable e1) {
+						// TODO Auto-generated catch block
+
+<span class="nc" id="L1322">						repaint();</span>
+<span class="nc" id="L1323">					}</span>
+				 }
+				 
+				 
+				 
+<span class="nc bnc" id="L1328" title="All 4 branches missed.">				 else if(y &gt; 480 &amp;&amp; y &lt; 538){</span>
+					 try {
+<span class="nc" id="L1330">						game.getPlayers().get(game.getCurrentPlayer()).reserveCard(3, 1, game);</span>
+<span class="nc" id="L1331">						repaint();</span>
+<span class="nc" id="L1332">					} catch (InvalidCardsSelectionOfCardsOnTable</span>
+							| PlayerAlreadyHoldsThreeReserveCards e1) {
+						// TODO Auto-generated catch block
+
+<span class="nc" id="L1336">						repaint();</span>
+<span class="nc" id="L1337">					}</span>
+<span class="nc bnc" id="L1338" title="All 4 branches missed.">				 }else if(y &gt; 538 &amp;&amp; y &lt; 600){</span>
+					 try {
+<span class="nc" id="L1340">						game.getPlayers().get(game.getCurrentPlayer()).buyCardOnTable(3, 1, game);</span>
+<span class="nc" id="L1341">						repaint();</span>
+<span class="nc" id="L1342">					} catch (PlayerDoesNotHaveEnoughResourcesToBuySelectedCard</span>
+							| InvalidCardsSelectionOfCardsInReserve
+							| InvalidCardsSelectionOfCardsOnTable e1) {
+						// TODO Auto-generated catch block
+						
+<span class="nc" id="L1347">						System.out.println(e1);</span>
+						
+<span class="nc" id="L1349">						repaint();</span>
+						
+<span class="nc" id="L1351">					}</span>
+				 }
+			 }
+			 
+			 
+<span class="nc bnc" id="L1356" title="All 4 branches missed.">			 if(x &gt; 440 &amp;&amp; x &lt; 520){</span>
+<span class="nc bnc" id="L1357" title="All 4 branches missed.">				 if(y &lt; 218 &amp;&amp; y &gt; 160){</span>
+						try {
+<span class="nc" id="L1359">							game.getPlayers().get(game.getCurrentPlayer()).reserveCard(1, 2, game);</span>
+<span class="nc" id="L1360">							repaint();</span>
+<span class="nc" id="L1361">						} catch (InvalidCardsSelectionOfCardsOnTable</span>
+								| PlayerAlreadyHoldsThreeReserveCards e1) {
+							// TODO Auto-generated catch block
+
+<span class="nc" id="L1365">							repaint();</span>
+<span class="nc" id="L1366">						}</span>
+						
+<span class="nc bnc" id="L1368" title="All 4 branches missed.">					 }else if(y &gt; 218 &amp;&amp; y &lt; 280){</span>
+						 try {
+<span class="nc" id="L1370">							game.getPlayers().get(game.getCurrentPlayer()).buyCardOnTable(1, 2, game);</span>
+<span class="nc" id="L1371">							repaint();</span>
+<span class="nc" id="L1372">						} catch (PlayerDoesNotHaveEnoughResourcesToBuySelectedCard</span>
+								| InvalidCardsSelectionOfCardsInReserve
+								| InvalidCardsSelectionOfCardsOnTable e1) {
+							// TODO Auto-generated catch block
+
+<span class="nc" id="L1377">							repaint();</span>
+<span class="nc" id="L1378">						}</span>
+					 }
+					 
+					 
+					 
+<span class="nc bnc" id="L1383" title="All 4 branches missed.">					 else if(y &gt; 320 &amp;&amp; y &lt; 378 ){</span>
+						 try {
+<span class="nc" id="L1385">							game.getPlayers().get(game.getCurrentPlayer()).reserveCard(2, 2, game);</span>
+<span class="nc" id="L1386">							repaint();</span>
+<span class="nc" id="L1387">						} catch (InvalidCardsSelectionOfCardsOnTable</span>
+								| PlayerAlreadyHoldsThreeReserveCards e1) {
+							// TODO Auto-generated catch block
+
+<span class="nc" id="L1391">							repaint();</span>
+<span class="nc" id="L1392">						}</span>
+<span class="nc bnc" id="L1393" title="All 4 branches missed.">					 }else if(y &gt; 378 &amp;&amp; y &lt; 440){</span>
+						 try {
+<span class="nc" id="L1395">							game.getPlayers().get(game.getCurrentPlayer()).buyCardOnTable(2, 2, game);</span>
+<span class="nc" id="L1396">							repaint();</span>
+<span class="nc" id="L1397">						} catch (PlayerDoesNotHaveEnoughResourcesToBuySelectedCard</span>
+								| InvalidCardsSelectionOfCardsInReserve
+								| InvalidCardsSelectionOfCardsOnTable e1) {
+							// TODO Auto-generated catch block
+
+<span class="nc" id="L1402">							repaint();</span>
+<span class="nc" id="L1403">						}</span>
+					 }
+					 
+					 
+					 
+<span class="nc bnc" id="L1408" title="All 4 branches missed.">					 else if(y &gt; 480 &amp;&amp; y &lt; 538){</span>
+						 try {
+<span class="nc" id="L1410">							game.getPlayers().get(game.getCurrentPlayer()).reserveCard(3, 2, game);</span>
+<span class="nc" id="L1411">							repaint();</span>
+<span class="nc" id="L1412">						} catch (InvalidCardsSelectionOfCardsOnTable</span>
+								| PlayerAlreadyHoldsThreeReserveCards e1) {
+							// TODO Auto-generated catch block
+
+<span class="nc" id="L1416">							repaint();</span>
+<span class="nc" id="L1417">						}</span>
+<span class="nc bnc" id="L1418" title="All 4 branches missed.">					 }else if(y &gt; 538 &amp;&amp; y &lt; 600){</span>
+						 try {
+<span class="nc" id="L1420">							game.getPlayers().get(game.getCurrentPlayer()).buyCardOnTable(3, 2, game);</span>
+<span class="nc" id="L1421">							repaint();</span>
+<span class="nc" id="L1422">						} catch (PlayerDoesNotHaveEnoughResourcesToBuySelectedCard</span>
+								| InvalidCardsSelectionOfCardsInReserve
+								| InvalidCardsSelectionOfCardsOnTable e1) {
+							// TODO Auto-generated catch block
+							
+<span class="nc" id="L1427">							System.out.println(e1);</span>
+							
+<span class="nc" id="L1429">							repaint();</span>
+<span class="nc" id="L1430">						}</span>
+					 }
+			 }
+			 
+<span class="nc bnc" id="L1434" title="All 4 branches missed.">			 if(x &gt; 560 &amp;&amp; x &lt; 640){</span>
+<span class="nc bnc" id="L1435" title="All 4 branches missed.">				 if(y &lt; 218 &amp;&amp; y &gt; 160){</span>
+						try {
+<span class="nc" id="L1437">							game.getPlayers().get(game.getCurrentPlayer()).reserveCard(1, 3, game);</span>
+<span class="nc" id="L1438">							repaint();</span>
+<span class="nc" id="L1439">						} catch (InvalidCardsSelectionOfCardsOnTable</span>
+								| PlayerAlreadyHoldsThreeReserveCards e1) {
+							// TODO Auto-generated catch block
+
+<span class="nc" id="L1443">							repaint();</span>
+<span class="nc" id="L1444">						}</span>
+						
+<span class="nc bnc" id="L1446" title="All 4 branches missed.">					 }else if(y &gt; 218 &amp;&amp; y &lt; 280){</span>
+						 try {
+<span class="nc" id="L1448">							game.getPlayers().get(game.getCurrentPlayer()).buyCardOnTable(1, 3, game);</span>
+<span class="nc" id="L1449">							repaint();</span>
+<span class="nc" id="L1450">						} catch (PlayerDoesNotHaveEnoughResourcesToBuySelectedCard</span>
+								| InvalidCardsSelectionOfCardsInReserve
+								| InvalidCardsSelectionOfCardsOnTable e1) {
+							// TODO Auto-generated catch block
+
+<span class="nc" id="L1455">							repaint();</span>
+<span class="nc" id="L1456">						}</span>
+					 }
+					 
+					 
+					 
+<span class="nc bnc" id="L1461" title="All 4 branches missed.">					 else if(y &gt; 320 &amp;&amp; y &lt; 378 ){</span>
+						 try {
+<span class="nc" id="L1463">							game.getPlayers().get(game.getCurrentPlayer()).reserveCard(2, 3, game);</span>
+<span class="nc" id="L1464">							repaint();</span>
+<span class="nc" id="L1465">						} catch (InvalidCardsSelectionOfCardsOnTable</span>
+								| PlayerAlreadyHoldsThreeReserveCards e1) {
+							// TODO Auto-generated catch block
+
+<span class="nc" id="L1469">							repaint();</span>
+<span class="nc" id="L1470">						}</span>
+<span class="nc bnc" id="L1471" title="All 4 branches missed.">					 }else if(y &gt; 378 &amp;&amp; y &lt; 440){</span>
+						 try {
+<span class="nc" id="L1473">							game.getPlayers().get(game.getCurrentPlayer()).buyCardOnTable(2, 3, game);</span>
+<span class="nc" id="L1474">							repaint();</span>
+<span class="nc" id="L1475">						} catch (PlayerDoesNotHaveEnoughResourcesToBuySelectedCard</span>
+								| InvalidCardsSelectionOfCardsInReserve
+								| InvalidCardsSelectionOfCardsOnTable e1) {
+							// TODO Auto-generated catch block
+
+<span class="nc" id="L1480">							repaint();</span>
+<span class="nc" id="L1481">						}</span>
+					 }
+					 
+					 
+					 
+<span class="nc bnc" id="L1486" title="All 4 branches missed.">					 else if(y &gt; 480 &amp;&amp; y &lt; 538){</span>
+						 try {
+<span class="nc" id="L1488">							game.getPlayers().get(game.getCurrentPlayer()).reserveCard(3, 3, game);</span>
+<span class="nc" id="L1489">							repaint();</span>
+<span class="nc" id="L1490">						} catch (InvalidCardsSelectionOfCardsOnTable</span>
+								| PlayerAlreadyHoldsThreeReserveCards e1) {
+							// TODO Auto-generated catch block
+
+<span class="nc" id="L1494">							repaint();</span>
+<span class="nc" id="L1495">						}</span>
+<span class="nc bnc" id="L1496" title="All 4 branches missed.">					 }else if(y &gt; 538 &amp;&amp; y &lt; 600){</span>
+						 try {
+<span class="nc" id="L1498">							game.getPlayers().get(game.getCurrentPlayer()).buyCardOnTable(3, 3, game);</span>
+<span class="nc" id="L1499">							repaint();</span>
+<span class="nc" id="L1500">						} catch (PlayerDoesNotHaveEnoughResourcesToBuySelectedCard</span>
+								| InvalidCardsSelectionOfCardsInReserve
+								| InvalidCardsSelectionOfCardsOnTable e1) {
+							// TODO Auto-generated catch block
+							
+<span class="nc" id="L1505">							System.out.println(e1);</span>
+							
+<span class="nc" id="L1507">							repaint();</span>
+<span class="nc" id="L1508">						}</span>
+					 }
+			 }
+			 
+<span class="nc bnc" id="L1512" title="All 4 branches missed.">			 if(x &gt; 680 &amp;&amp; x &lt; 760){</span>
+<span class="nc bnc" id="L1513" title="All 4 branches missed.">				 if(y &lt; 218 &amp;&amp; y &gt; 160){</span>
+						try {
+<span class="nc" id="L1515">							game.getPlayers().get(game.getCurrentPlayer()).reserveCard(1, 4, game);</span>
+<span class="nc" id="L1516">							repaint();</span>
+<span class="nc" id="L1517">						} catch (InvalidCardsSelectionOfCardsOnTable</span>
+								| PlayerAlreadyHoldsThreeReserveCards e1) {
+							// TODO Auto-generated catch block
+
+<span class="nc" id="L1521">							repaint();</span>
+<span class="nc" id="L1522">						}</span>
+						
+<span class="nc bnc" id="L1524" title="All 4 branches missed.">					 }else if(y &gt; 218 &amp;&amp; y &lt; 280){</span>
+						 try {
+<span class="nc" id="L1526">							game.getPlayers().get(game.getCurrentPlayer()).buyCardOnTable(1, 4, game);</span>
+<span class="nc" id="L1527">							repaint();</span>
+<span class="nc" id="L1528">						} catch (PlayerDoesNotHaveEnoughResourcesToBuySelectedCard</span>
+								| InvalidCardsSelectionOfCardsInReserve
+								| InvalidCardsSelectionOfCardsOnTable e1) {
+							// TODO Auto-generated catch block
+
+<span class="nc" id="L1533">							repaint();</span>
+<span class="nc" id="L1534">						}</span>
+					 }
+					 
+					 
+					 
+<span class="nc bnc" id="L1539" title="All 4 branches missed.">					 else if(y &gt; 320 &amp;&amp; y &lt; 378 ){</span>
+						 try {
+<span class="nc" id="L1541">							game.getPlayers().get(game.getCurrentPlayer()).reserveCard(2, 4, game);</span>
+<span class="nc" id="L1542">							repaint();</span>
+<span class="nc" id="L1543">						} catch (InvalidCardsSelectionOfCardsOnTable</span>
+								| PlayerAlreadyHoldsThreeReserveCards e1) {
+							// TODO Auto-generated catch block
+
+<span class="nc" id="L1547">							repaint();</span>
+<span class="nc" id="L1548">						}</span>
+<span class="nc bnc" id="L1549" title="All 4 branches missed.">					 }else if(y &gt; 378 &amp;&amp; y &lt; 440){</span>
+						 try {
+<span class="nc" id="L1551">							game.getPlayers().get(game.getCurrentPlayer()).buyCardOnTable(2, 4, game);</span>
+<span class="nc" id="L1552">							repaint();</span>
+<span class="nc" id="L1553">						} catch (PlayerDoesNotHaveEnoughResourcesToBuySelectedCard</span>
+								| InvalidCardsSelectionOfCardsInReserve
+								| InvalidCardsSelectionOfCardsOnTable e1) {
+							// TODO Auto-generated catch block
+
+<span class="nc" id="L1558">							repaint();</span>
+<span class="nc" id="L1559">						}</span>
+					 }
+					 
+					 
+					 
+<span class="nc bnc" id="L1564" title="All 4 branches missed.">					 else if(y &gt; 480 &amp;&amp; y &lt; 538){</span>
+						 try {
+<span class="nc" id="L1566">							game.getPlayers().get(game.getCurrentPlayer()).reserveCard(3, 4, game);</span>
+<span class="nc" id="L1567">							repaint();</span>
+<span class="nc" id="L1568">						} catch (InvalidCardsSelectionOfCardsOnTable</span>
+								| PlayerAlreadyHoldsThreeReserveCards e1) {
+							// TODO Auto-generated catch block
+
+<span class="nc" id="L1572">							repaint();</span>
+<span class="nc" id="L1573">						}</span>
+<span class="nc bnc" id="L1574" title="All 4 branches missed.">					 }else if(y &gt; 538 &amp;&amp; y &lt; 600){</span>
+						 try {
+<span class="nc" id="L1576">							game.getPlayers().get(game.getCurrentPlayer()).buyCardOnTable(3, 4, game);</span>
+<span class="nc" id="L1577">							repaint();</span>
+<span class="nc" id="L1578">						} catch (PlayerDoesNotHaveEnoughResourcesToBuySelectedCard</span>
+								| InvalidCardsSelectionOfCardsInReserve
+								| InvalidCardsSelectionOfCardsOnTable e1) {
+							// TODO Auto-generated catch block
+							
+<span class="nc" id="L1583">							System.out.println(e1);</span>
+							
+<span class="nc" id="L1585">							repaint();</span>
+<span class="nc" id="L1586">						}</span>
+					 }
+			 }
+			 
+			 
+<span class="nc bnc" id="L1591" title="All 2 branches missed.">			 if(y &gt;= 680){</span>
+<span class="nc bnc" id="L1592" title="All 6 branches missed.">				 if(game.getPlayers().get(game.getCurrentPlayer()).getReserve().size() &gt;= 1 &amp;&amp; x &gt;= 680 &amp;&amp; x &lt;= 760){</span>
+					 try {
+<span class="nc" id="L1594">						game.getPlayers().get(game.getCurrentPlayer()).placeCardFromReserve(game.getPlayers().get(game.getCurrentPlayer()).getReserve().get(0), game);</span>
+<span class="nc" id="L1595">					} catch (PlayerDoesNotHaveEnoughResourcesToBuySelectedCard</span>
+							| PlayerDoesNotHaveSelectedCardInReserve e1) {
+						// TODO Auto-generated catch block
+<span class="nc" id="L1598">						repaint();</span>
+<span class="nc" id="L1599">					}</span>
+<span class="nc bnc" id="L1600" title="All 6 branches missed.">				 }else if(game.getPlayers().get(game.getCurrentPlayer()).getReserve().size() &gt;= 2 &amp;&amp; x &gt;= 800 &amp;&amp; x &lt;= 880){</span>
+					 try {
+<span class="nc" id="L1602">						game.getPlayers().get(game.getCurrentPlayer()).placeCardFromReserve(game.getPlayers().get(game.getCurrentPlayer()).getReserve().get(1), game);</span>
+<span class="nc" id="L1603">					} catch (PlayerDoesNotHaveEnoughResourcesToBuySelectedCard</span>
+							| PlayerDoesNotHaveSelectedCardInReserve e1) {
+						// TODO Auto-generated catch block
+<span class="nc" id="L1606">						repaint();</span>
+<span class="nc" id="L1607">					}</span>
+<span class="nc bnc" id="L1608" title="All 6 branches missed.">				 }else if(game.getPlayers().get(game.getCurrentPlayer()).getReserve().size() &gt;= 3 &amp;&amp; x &gt;= 920 &amp;&amp; x &lt;= 1000){</span>
+					 try {
+<span class="nc" id="L1610">						game.getPlayers().get(game.getCurrentPlayer()).placeCardFromReserve(game.getPlayers().get(game.getCurrentPlayer()).getReserve().get(2), game);</span>
+<span class="nc" id="L1611">					} catch (PlayerDoesNotHaveEnoughResourcesToBuySelectedCard</span>
+							| PlayerDoesNotHaveSelectedCardInReserve e1) {
+						// TODO Auto-generated catch block
+<span class="nc" id="L1614">						repaint();</span>
+<span class="nc" id="L1615">					}</span>
+				 }
+			 }
+			 
+<span class="nc bnc" id="L1619" title="All 4 branches missed.">			 if(x &gt; 160 &amp;&amp; x &lt; 240){</span>
+<span class="nc bnc" id="L1620" title="All 4 branches missed.">				 if(y &gt; 160 &amp;&amp; y &lt; 280){</span>
+					 try {
+<span class="nc" id="L1622">						game.getPlayers().get(game.getCurrentPlayer()).reserveCard(&quot;blue&quot;, game);</span>
+<span class="nc" id="L1623">					} catch (SelectedDeckRanOutOfCards e1) {</span>
+						// TODO Auto-generated catch block
+<span class="nc" id="L1625">						repaint();</span>
+<span class="nc" id="L1626">					}</span>
+<span class="nc bnc" id="L1627" title="All 4 branches missed.">				 }else if(y &gt; 320 &amp;&amp; y &lt; 440){</span>
+					 try {
+<span class="nc" id="L1629">						game.getPlayers().get(game.getCurrentPlayer()).reserveCard(&quot;yellow&quot;, game);</span>
+<span class="nc" id="L1630">					} catch (SelectedDeckRanOutOfCards e1) {</span>
+						// TODO Auto-generated catch block
+<span class="nc" id="L1632">						repaint();</span>
+<span class="nc" id="L1633">					}</span>
+<span class="nc bnc" id="L1634" title="All 4 branches missed.">				 }else if(y &gt; 480 &amp;&amp; y &lt; 600){</span>
+					 try {
+<span class="nc" id="L1636">						game.getPlayers().get(game.getCurrentPlayer()).reserveCard(&quot;green&quot;, game);</span>
+<span class="nc" id="L1637">					} catch (SelectedDeckRanOutOfCards e1) {</span>
+						// TODO Auto-generated catch block
+<span class="nc" id="L1639">						repaint();</span>
+<span class="nc" id="L1640">					}</span>
+				 }
+			 }
+		     
+			 
+			 //handle double click event.
+		}
+		
+		
+		
+		
+<span class="nc" id="L1651">		repaint();</span>
+		
+	
+<span class="nc" id="L1654">	}</span>
+	
+	
+	
+	public void mouseEntered(MouseEvent e)
+<span class="nc" id="L1659">	{	}</span>
+	
+	public void mouseExited(MouseEvent e)
+<span class="nc" id="L1662">	{	}</span>
+	
+	public boolean allDifferent(ArrayList&lt;Tokens&gt; t)
+	{
+<span class="nc" id="L1666">		boolean r = true;</span>
+		
+<span class="nc bnc" id="L1668" title="All 2 branches missed.">		for(int i=0; i&lt;t.size()-1; i++){</span>
+<span class="nc bnc" id="L1669" title="All 2 branches missed.">			if(t.get(i).equals(t.get(i+1))){</span>
+<span class="nc" id="L1670">				r = false;</span>
+			}
+		}
+		
+<span class="nc" id="L1674">		return r;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

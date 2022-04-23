@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Cards.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Final Project</a> &gt; <a href="index.source.html" class="el_package">Classes</a> &gt; <span class="el_source">Cards.java</span></div><h1>Cards.java</h1><pre class="source lang-java linenums">package Classes;
+import java.util.ArrayList;
+
+public class Cards implements Comparable
+{
+	private int pt;
+	private ArrayList&lt;Tokens&gt; cost;
+	private Tokens resource;
+	private String name;
+	
+	public Cards(int pt, ArrayList&lt;Tokens&gt; cost, String name, Tokens resource)
+<span class="nc" id="L12">	{</span>
+<span class="nc" id="L13">		this.pt = pt;</span>
+<span class="nc" id="L14">		this.cost = cost;</span>
+<span class="nc" id="L15">		this.name = name;</span>
+<span class="nc" id="L16">		this.resource = resource;</span>
+<span class="nc" id="L17">	}</span>
+	
+	public Cards(String resource)
+<span class="nc" id="L20">	{</span>
+<span class="nc" id="L21">		this.resource = new Tokens(resource);</span>
+<span class="nc" id="L22">		pt = 0;</span>
+<span class="nc" id="L23">		cost = new ArrayList&lt;Tokens&gt;();</span>
+<span class="nc" id="L24">		name = &quot;HACK&quot;;</span>
+<span class="nc" id="L25">	}</span>
+	
+	public Tokens getResource() {
+<span class="nc" id="L28">		return resource;</span>
+	}
+
+	public void setResource(Tokens token) {
+<span class="nc" id="L32">		resource = token;</span>
+<span class="nc" id="L33">	}</span>
+
+	public int getPt() {
+<span class="nc" id="L36">		return pt;</span>
+	}
+
+	public void setPt(int pt) {
+<span class="nc" id="L40">		this.pt = pt;</span>
+<span class="nc" id="L41">	}</span>
+
+	public ArrayList&lt;Tokens&gt; getCost() {
+<span class="nc" id="L44">		return cost;</span>
+	}
+
+	public void setCost(ArrayList&lt;Tokens&gt; cost) {
+<span class="nc" id="L48">		this.cost = cost;</span>
+<span class="nc" id="L49">	}</span>
+
+	public String getName() {
+<span class="nc" id="L52">		return name;</span>
+	}
+
+	public void setName(String name) {
+<span class="nc" id="L56">		this.name = name;</span>
+<span class="nc" id="L57">	}</span>
+	
+	public int whiteCost()
+	{
+<span class="nc" id="L61">		int r = 0;</span>
+<span class="nc bnc" id="L62" title="All 2 branches missed.">		for(int i=0; i&lt;cost.size(); i++){</span>
+<span class="nc bnc" id="L63" title="All 2 branches missed.">			if(cost.get(i).toString().equals(&quot;Diamond&quot;))</span>
+<span class="nc" id="L64">				r++;</span>
+		}
+		
+<span class="nc" id="L67">		return r;</span>
+	}
+	
+	public int greenCost()
+	{
+<span class="nc" id="L72">		int r = 0;</span>
+<span class="nc bnc" id="L73" title="All 2 branches missed.">		for(int i=0; i&lt;cost.size(); i++){</span>
+<span class="nc bnc" id="L74" title="All 2 branches missed.">			if(cost.get(i).toString().equals(&quot;Emerald&quot;))</span>
+<span class="nc" id="L75">				r++;</span>
+		}
+		
+<span class="nc" id="L78">		return r;</span>
+	}
+	
+	public int blueCost()
+	{
+<span class="nc" id="L83">		int r = 0;</span>
+<span class="nc bnc" id="L84" title="All 2 branches missed.">		for(int i=0; i&lt;cost.size(); i++){</span>
+<span class="nc bnc" id="L85" title="All 2 branches missed.">			if(cost.get(i).toString().equals(&quot;Sapphire&quot;))</span>
+<span class="nc" id="L86">				r++;</span>
+		}
+		
+<span class="nc" id="L89">		return r;</span>
+	}
+	
+	public int blackCost()
+	{
+<span class="nc" id="L94">		int r = 0;</span>
+<span class="nc bnc" id="L95" title="All 2 branches missed.">		for(int i=0; i&lt;cost.size(); i++){</span>
+<span class="nc bnc" id="L96" title="All 2 branches missed.">			if(cost.get(i).toString().equals(&quot;Onyx&quot;))</span>
+<span class="nc" id="L97">				r++;</span>
+		}
+		
+<span class="nc" id="L100">		return r;</span>
+	}
+	
+	public int redCost()
+	{
+<span class="nc" id="L105">		int r = 0;</span>
+<span class="nc bnc" id="L106" title="All 2 branches missed.">		for(int i=0; i&lt;cost.size(); i++){</span>
+<span class="nc bnc" id="L107" title="All 2 branches missed.">			if(cost.get(i).toString().equals(&quot;Rubby&quot;))</span>
+<span class="nc" id="L108">				r++;</span>
+		}
+		
+<span class="nc" id="L111">		return r;</span>
+	}
+
+	public String toString()
+	{
+<span class="nc" id="L116">		String r = &quot;&quot;;</span>
+<span class="nc" id="L117">		r = r + pt + &quot;     &quot; + resource + &quot;  &quot; + name + &quot;\n&quot;;</span>
+		
+<span class="nc" id="L119">		int whiteCost = whiteCost();</span>
+<span class="nc" id="L120">		int redCost = redCost();</span>
+<span class="nc" id="L121">		int greenCost = greenCost();</span>
+<span class="nc" id="L122">		int blackCost = blackCost();</span>
+<span class="nc" id="L123">		int blueCost = blueCost();</span>
+		
+<span class="nc bnc" id="L125" title="All 2 branches missed.">		if(whiteCost != 0){</span>
+<span class="nc" id="L126">			r = r + &quot;Diamond x&quot; + whiteCost + &quot; &quot;;</span>
+		}
+		
+<span class="nc bnc" id="L129" title="All 2 branches missed.">		if(redCost != 0){</span>
+<span class="nc" id="L130">			r = r + &quot;Rubby x&quot; + redCost + &quot; &quot;;</span>
+		}
+		
+<span class="nc bnc" id="L133" title="All 2 branches missed.">		if(greenCost != 0){</span>
+<span class="nc" id="L134">			r = r + &quot;Emerald x&quot; + greenCost + &quot; &quot;;</span>
+		}
+		
+<span class="nc bnc" id="L137" title="All 2 branches missed.">		if(blackCost != 0){</span>
+<span class="nc" id="L138">			r = r + &quot;Onyx x&quot; + blackCost + &quot; &quot;;</span>
+		}
+		
+<span class="nc bnc" id="L141" title="All 2 branches missed.">		if(blueCost != 0){</span>
+<span class="nc" id="L142">			r = r+ &quot;Sapphire x&quot; + blueCost + &quot; &quot;;</span>
+		}
+		
+<span class="nc" id="L145">		r = r + &quot;\n&quot;;</span>
+		
+<span class="nc" id="L147">		return r;</span>
+	}
+	
+	
+	
+	public int compareTo(Object o)
+	{
+<span class="nc" id="L154">		Cards c = (Cards)o;</span>
+<span class="nc bnc" id="L155" title="All 2 branches missed.">		if(c.getResource() != resource){</span>
+<span class="nc bnc" id="L156" title="All 2 branches missed.">			if(c.getName() != name){</span>
+<span class="nc" id="L157">				return pt - c.getPt();</span>
+			}else{
+<span class="nc" id="L159">				return name.compareTo(c.getName());</span>
+			}
+		}else{
+<span class="nc" id="L162">			return resource.compareTo(c.getResource());</span>
+		}
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

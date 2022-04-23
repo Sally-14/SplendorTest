@@ -1,0 +1,18 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Final Project,default,TextBasedInterface,2503,0,206,0,624,0,123,0,20,0
+Final Project,default,GraphicInterface,848,0,100,0,170,0,61,0,11,0
+Final Project,Exceptions,InvalidTokensSelection,3,0,0,0,1,0,1,0,1,0
+Final Project,Exceptions,PlayerDoesNotHaveSelectedCardInReserve,3,0,0,0,1,0,1,0,1,0
+Final Project,Exceptions,PlayerDoesNotHaveEnoughResourcesToBuySelectedCard,3,0,0,0,1,0,1,0,1,0
+Final Project,Exceptions,InvalidCardsSelectionOfCardsInReserve,3,0,0,0,1,0,1,0,1,0
+Final Project,Exceptions,SelectedDeckRanOutOfCards,3,0,0,0,1,0,1,0,1,0
+Final Project,Exceptions,NotEnoughTokensOnTable,3,0,0,0,1,0,1,0,1,0
+Final Project,Exceptions,PlayerAlreadyHoldsThreeReserveCards,3,0,0,0,1,0,1,0,1,0
+Final Project,Exceptions,InvalidCardsSelectionOfCardsOnTable,3,0,0,0,1,0,1,0,1,0
+Final Project,Classes,Player,2024,0,218,0,405,0,156,0,47,0
+Final Project,Classes,MyPanel,4760,0,510,0,908,0,264,0,9,0
+Final Project,Classes,Game,865,0,122,0,189,0,107,0,46,0
+Final Project,Classes,Noble,207,0,30,0,59,0,29,0,14,0
+Final Project,Classes,Tokens,2,71,1,9,1,21,1,11,0,7
+Final Project,Classes,Cards,270,0,34,0,74,0,34,0,17,0
+Final Project,Classes,MyFrame,57,0,0,0,14,0,1,0,1,0

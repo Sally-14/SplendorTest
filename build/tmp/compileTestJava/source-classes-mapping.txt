@@ -1,0 +1,6 @@
+whiteBoxTest/CardsTest.java
+ whiteBoxTest.CardsTest
+whiteBoxTest/NobleTest.java
+ whiteBoxTest.NobleTest
+whiteBoxTest/TokensTest.java
+ whiteBoxTest.TokensTest

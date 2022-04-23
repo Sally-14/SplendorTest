@@ -1,0 +1,959 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TextBasedInterface.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Final Project</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">TextBasedInterface.java</span></div><h1>TextBasedInterface.java</h1><pre class="source lang-java linenums">import java.io.File;
+
+import static java.lang.System.*;
+
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import Exceptions.*;
+import Classes.*;
+
+<span class="nc" id="L12">public class TextBasedInterface </span>
+{
+	public static void main(String[] args) throws FileNotFoundException, InterruptedException, NotEnoughTokensOnTable, InvalidCardsSelectionOfCardsOnTable, PlayerAlreadyHoldsThreeReserveCards, SelectedDeckRanOutOfCards, PlayerDoesNotHaveEnoughResourcesToBuySelectedCard, PlayerDoesNotHaveSelectedCardInReserve, InvalidCardsSelectionOfCardsInReserve
+	{
+<span class="nc" id="L16">		ArrayList&lt;Cards&gt; blueDeck = new ArrayList&lt;Cards&gt;();</span>
+<span class="nc" id="L17">		ArrayList&lt;Cards&gt; yellowDeck = new ArrayList&lt;Cards&gt;();</span>
+<span class="nc" id="L18">		ArrayList&lt;Cards&gt; greenDeck = new ArrayList&lt;Cards&gt;();</span>
+		
+<span class="nc" id="L20">		Scanner cardsFile = new Scanner(new File(&quot;Splendor Set.txt&quot;));</span>
+<span class="nc" id="L21">		Scanner sc = new Scanner(System.in);</span>
+		
+<span class="nc bnc" id="L23" title="All 2 branches missed.">		while(cardsFile.hasNextLine()){  //(int pt, ArrayList&lt;Tokens&gt; cost, String name, Tokens resource)</span>
+<span class="nc" id="L24">			addCards(cardsFile.nextLine().trim(), blueDeck, yellowDeck, greenDeck);</span>
+		}
+		
+<span class="nc" id="L27">		out.println(&quot;Welcome to Splendor! How many player(s) do you wish to have(including yourself)?&quot;);</span>
+<span class="nc" id="L28">		out.println(&quot;2. 2    3. 3.    4. 4&quot;);</span>
+		
+<span class="nc" id="L30">		String t0 = sc.nextLine();</span>
+<span class="nc" id="L31">		int numP = 0;</span>
+		
+		try{
+<span class="nc" id="L34">			numP = Integer.parseInt(t0);</span>
+<span class="nc" id="L35">		}catch(NumberFormatException e){</span>
+<span class="nc" id="L36">			numP = 2;</span>
+<span class="nc" id="L37">		}</span>
+		
+<span class="nc" id="L39">		ArrayList&lt;Player&gt; p = instantiatePlayers(numP);</span>
+<span class="nc" id="L40">		out.println(&quot;Check0 completed&quot;);</span>
+<span class="nc" id="L41">		ArrayList&lt;Tokens&gt; t = instantiateTokens(numP);</span>
+<span class="nc" id="L42">		out.println(&quot;Check1 completed&quot;);</span>
+<span class="nc" id="L43">		ArrayList&lt;Noble&gt; n = instantiateNobles(numP);</span>
+<span class="nc" id="L44">		out.println(&quot;Check2 completed&quot;);</span>
+<span class="nc" id="L45">		Cards[][] cot = instantiateCOT(blueDeck,yellowDeck, greenDeck);</span>
+<span class="nc" id="L46">		out.println(&quot;Check3 completed&quot;);</span>
+		
+<span class="nc" id="L48">		Game g = new Game(p, blueDeck, yellowDeck, greenDeck, cot, n, t);</span>
+<span class="nc" id="L49">		out.println(&quot;check4 completed\nAwesome! lets start the game!\n\n&quot;);</span>
+		
+		
+<span class="nc" id="L52">		g.setPlayers(p);</span>
+		
+<span class="nc" id="L54">		out.println(g);</span>
+		//out.println(p);
+		
+<span class="nc" id="L57">		int i = (int)(Math.random())*numP;</span>
+<span class="nc" id="L58">		int startingSpot = i;</span>
+		
+		//*****TEST CASES GOES HERE*******\\
+		
+		
+<span class="nc" id="L63">		boolean tf = false;</span>
+<span class="nc" id="L64">		boolean atf = false;</span>
+		
+		do{
+<span class="nc" id="L67">			out.println(&quot;It is &quot; + g.getPlayers().get(i).getName() + &quot;'s turn!&quot;);</span>
+<span class="nc" id="L68">			out.println(g.getPlayers().get(i).getName() + &quot;, here is what you currently have:\n\n&quot;);</span>
+<span class="nc" id="L69">			out.println(g.getPlayers().get(i).toStringWithCardsInReserve());</span>
+<span class="nc" id="L70">			out.println(g.getPlayers().get(i).getName() + &quot;, what do you wish to do this round?\n&quot;);</span>
+<span class="nc" id="L71">			out.println(&quot;1. Take 2 tokens of the same color from the table(may only be performed if there is 4 or more tokens in the color of your chosing)&quot;);</span>
+<span class="nc" id="L72">			out.println(&quot;2. Take 1 token from each of 3 different types of tokens(excluding gold)&quot;);</span>
+<span class="nc" id="L73">			out.println(&quot;3. Reserve a card on the table and receive one gold token(keep in mind you may only have three reserved cards maximum. Also, you will not recieve any gold token if there is non on the table)&quot;);</span>
+<span class="nc" id="L74">			out.println(&quot;4. Reserve an unknown card from the top of a chosen deck&quot;);</span>
+<span class="nc" id="L75">			out.println(&quot;5. Buy a card from your reserved cards&quot;);</span>
+<span class="nc" id="L76">			out.println(&quot;6. Buy a card on the table&quot;);</span>
+			
+<span class="nc" id="L78">			String t00 = &quot;&quot;;</span>
+<span class="nc" id="L79">			t00 = sc.nextLine();</span>
+<span class="nc" id="L80">			int choice = 1;</span>
+			
+			try{
+<span class="nc" id="L83">				choice = Integer.parseInt(t00);</span>
+<span class="nc" id="L84">			}catch(NumberFormatException e){</span>
+<span class="nc" id="L85">				out.println(&quot;Invalid choice made.&quot;);</span>
+<span class="nc" id="L86">				redoChoice(i, g);</span>
+<span class="nc" id="L87">			}</span>
+			
+			
+			
+<span class="nc" id="L91">			String action = &quot;&quot;;</span>
+			
+<span class="nc bnc" id="L93" title="All 2 branches missed.">			if(choice == 1){</span>
+<span class="nc" id="L94">				action1(i, g);</span>
+<span class="nc" id="L95">				out.println(&quot;\n\n\n\n&quot;);</span>
+<span class="nc" id="L96">				action = &quot;Attention! Player &quot; + (i+1) + &quot; chose to take two tokens!&quot;;</span>
+<span class="nc bnc" id="L97" title="All 2 branches missed.">			}else if(choice == 2){</span>
+<span class="nc" id="L98">				action2(i, g);</span>
+<span class="nc" id="L99">				out.println(&quot;\n\n\n\n&quot;);</span>
+<span class="nc" id="L100">				action = &quot;Attention! Player &quot; + (i+1) + &quot; chose to take three tokens of different color!&quot;;</span>
+<span class="nc bnc" id="L101" title="All 2 branches missed.">			}else if(choice == 3){</span>
+<span class="nc" id="L102">				action3(i, g);</span>
+<span class="nc" id="L103">				out.println(&quot;\n\n\n\n&quot;);</span>
+<span class="nc" id="L104">				action = &quot;Attention! Player &quot; + (i+1) + &quot; chose to reserve a card on the table!&quot;;</span>
+<span class="nc bnc" id="L105" title="All 2 branches missed.">			}else if(choice == 4){</span>
+<span class="nc" id="L106">				action4(i ,g);</span>
+<span class="nc" id="L107">				out.println(&quot;\n\n\n\n&quot;);</span>
+<span class="nc" id="L108">				action = &quot;Attention! Player &quot; + (i+1) + &quot; chose to reserve a card from the deck!&quot;;</span>
+<span class="nc bnc" id="L109" title="All 2 branches missed.">			}else if(choice == 5){</span>
+<span class="nc" id="L110">				action5(i, g);</span>
+<span class="nc" id="L111">				out.println(&quot;\n\n\n\n&quot;);</span>
+<span class="nc" id="L112">				action = &quot;Attention! Player &quot; + (i+1) + &quot; chose to buy a card in his reserve!&quot;;</span>
+<span class="nc bnc" id="L113" title="All 2 branches missed.">			}else if(choice == 6){</span>
+<span class="nc" id="L114">				action6(i, g);</span>
+<span class="nc" id="L115">				out.println(&quot;\n\n\n\n&quot;);</span>
+<span class="nc" id="L116">				action = &quot;Attention! Player &quot; + (i+1) + &quot; chose to buy a card on the table!&quot;;</span>
+<span class="nc bnc" id="L117" title="All 2 branches missed.">			}else if(choice == 3180){</span>
+<span class="nc" id="L118">				ArrayList&lt;Cards&gt; t000 = new ArrayList&lt;Cards&gt;();</span>
+<span class="nc" id="L119">				t000.add(new Cards(&quot;Onyx&quot;));</span>
+<span class="nc" id="L120">				t000.add(new Cards(&quot;Onyx&quot;));</span>
+<span class="nc" id="L121">				t000.add(new Cards(&quot;Onyx&quot;));</span>
+				
+<span class="nc" id="L123">				t000.add(new Cards(&quot;Sapphire&quot;));</span>
+<span class="nc" id="L124">				t000.add(new Cards(&quot;Sapphire&quot;));</span>
+<span class="nc" id="L125">				t000.add(new Cards(&quot;Sapphire&quot;));</span>
+				
+<span class="nc" id="L127">				t000.add(new Cards(&quot;Emerald&quot;));</span>
+<span class="nc" id="L128">				t000.add(new Cards(&quot;Emerald&quot;));</span>
+<span class="nc" id="L129">				t000.add(new Cards(&quot;Emerald&quot;));</span>
+				
+<span class="nc" id="L131">				t000.add(new Cards(&quot;Diamond&quot;));</span>
+<span class="nc" id="L132">				t000.add(new Cards(&quot;Diamond&quot;));</span>
+<span class="nc" id="L133">				t000.add(new Cards(&quot;Diamond&quot;));</span>
+				
+<span class="nc" id="L135">				t000.add(new Cards(&quot;Rubby&quot;));</span>
+<span class="nc" id="L136">				t000.add(new Cards(&quot;Rubby&quot;));</span>
+<span class="nc" id="L137">				t000.add(new Cards(&quot;Rubby&quot;));</span>
+				
+<span class="nc" id="L139">				g.getPlayers().get(i).setCards(t000);</span>
+				
+			}
+			
+<span class="nc bnc" id="L143" title="All 2 branches missed.">			if(nobleVisit(i, g)){</span>
+<span class="nc" id="L144">				action = &quot;Player &quot; + (i+1) + &quot; also recieved a noble visit!&quot;;</span>
+			}
+			
+<span class="nc" id="L147">			out.println(g);</span>
+			
+<span class="nc" id="L149">			out.println(action);</span>
+			
+			
+			
+			
+<span class="nc" id="L154">		tf = g.win();</span>
+<span class="nc" id="L155">		atf = g.getWinner().isEmpty();</span>
+		
+		//out.println(g.getWinner());
+		//out.println(i == startingSpot);
+		/*for(int x=0; x&lt;g.getPlayers().size(); x++){
+			out.print(g.getPlayers().get(x).getScore() + &quot;  &quot;);
+		}*/
+		
+<span class="nc" id="L163">		i++;</span>
+		
+<span class="nc bnc" id="L165" title="All 2 branches missed.">		if(i&gt;numP-1){</span>
+<span class="nc" id="L166">			i = startingSpot;</span>
+		}
+			
+<span class="nc bnc" id="L169" title="All 4 branches missed.">		}while(atf || i != startingSpot);</span>
+		
+		
+		
+		
+<span class="nc" id="L174">		Player actualWinner = g.getWinner().get(0);</span>
+<span class="nc bnc" id="L175" title="All 2 branches missed.">		boolean tie = g.getWinner().size() &gt; 1;</span>
+		
+<span class="nc bnc" id="L177" title="All 2 branches missed.">		for(int j=1; j&lt;g.getWinner().size(); j++){</span>
+<span class="nc bnc" id="L178" title="All 2 branches missed.">			if(g.getWinner().get(j).getCards().size() &lt; actualWinner.getCards().size()){</span>
+<span class="nc" id="L179">				actualWinner = g.getWinner().get(j);</span>
+<span class="nc" id="L180">				tie = false;</span>
+			}
+		}
+		
+<span class="nc" id="L184">		out.println(&quot;\n\n\n\n\n\n\n\n\n\n&quot;);</span>
+		
+<span class="nc bnc" id="L186" title="All 2 branches missed.">		if(!tie){</span>
+<span class="nc" id="L187">			out.println(&quot;Congratulation to &quot; + actualWinner.getName() + &quot;!\n You won the game!&quot;);</span>
+		}else{
+<span class="nc" id="L189">			String p0 = &quot;Congratulation to &quot;;</span>
+<span class="nc bnc" id="L190" title="All 2 branches missed.">			for(int y=0; y&lt;g.getWinner().size(); y++){</span>
+<span class="nc bnc" id="L191" title="All 2 branches missed.">				if(y == g.getWinner().size()-1){</span>
+<span class="nc" id="L192">					p0 = p0 + g.getWinner().get(y).getName();</span>
+				}else{
+<span class="nc" id="L194">					p0 = p0 + g.getWinner().get(y).getName() + &quot;, &quot;;</span>
+				}
+			}
+<span class="nc" id="L197">			p0 = p0 + &quot;, y'all had a tie!&quot;;</span>
+<span class="nc" id="L198">			out.println(p0);</span>
+		}
+		
+		//out.println(g.getWinner());
+		
+<span class="nc" id="L203">	}</span>
+	
+	public static boolean nobleVisit(int i, Game g)
+	{
+<span class="nc" id="L207">		Scanner sc = new Scanner(System.in);</span>
+		
+<span class="nc bnc" id="L209" title="All 2 branches missed.">		if(g.getPlayers().get(i).nobleVisit(g).size() != 0){</span>
+<span class="nc" id="L210">			System.out.println(&quot;Congratulation to Player&quot; + (i+1) + &quot;! You are eligible for a noble visit! Which of the noble(s) below would you like?(They all give 3 points and does not consume your resources or tokens.)&quot;);</span>
+			
+<span class="nc bnc" id="L212" title="All 2 branches missed.">			for(int r=0; r&lt;g.getPlayers().get(i).nobleVisit(g).size(); r++){</span>
+<span class="nc" id="L213">				System.out.println(&quot;Noble &quot; + (r+1) + &quot;\n&quot; + g.getPlayers().get(i).nobleVisit(g).get(r) + &quot;\n&quot;);</span>
+			}
+			
+<span class="nc" id="L216">			String t1 = sc.nextLine();</span>
+<span class="nc" id="L217">			int choice0 = 1;</span>
+			
+			try{
+<span class="nc" id="L220">				choice0 = Integer.parseInt(t1);</span>
+<span class="nc" id="L221">			}catch(NumberFormatException e){</span>
+<span class="nc" id="L222">				System.out.println(&quot;Invalid choice.&quot;);</span>
+<span class="nc" id="L223">				nobleVisit(i, g);</span>
+<span class="nc" id="L224">			}</span>
+			
+<span class="nc" id="L226">			g.getPlayers().get(i).visit(choice0, g);</span>
+			
+<span class="nc" id="L228">			return true;</span>
+			
+		}else{
+<span class="nc" id="L231">			return false;</span>
+		}
+	}
+	
+	public static void action1(int i, Game g) throws InterruptedException  //checked. Works for now
+	{
+		
+<span class="nc" id="L238">		out.println(&quot;Please choose the tokens you want to take.&quot;);</span>
+<span class="nc" id="L239">		out.println(&quot;1. Onyx x&quot; + g.getPlayers().get(i).blackTokens() + &quot; 2. Sapphire x&quot; + g.getPlayers().get(i).blueTokens() + &quot; 3. Emerald x&quot; + g.getPlayers().get(i).greenTokens() + &quot; 4. Diamond x&quot; + g.getPlayers().get(i).whiteTokens() + &quot; 5. Rubby x&quot; + g.getPlayers().get(i).redTokens());</span>
+<span class="nc" id="L240">		Scanner sc = new Scanner(System.in);</span>
+<span class="nc" id="L241">		String s = sc.nextLine();</span>
+<span class="nc" id="L242">		int c = 1;</span>
+		
+		
+		try{
+<span class="nc" id="L246">			c = Integer.parseInt(s);</span>
+<span class="nc" id="L247">		}catch(NumberFormatException e){</span>
+<span class="nc" id="L248">			out.println(&quot;Invalid choice made.\n&quot;);</span>
+<span class="nc" id="L249">			Thread.sleep(1000);</span>
+<span class="nc" id="L250">			action1(i, g);</span>
+<span class="nc" id="L251">		}</span>
+		
+		
+<span class="nc bnc" id="L254" title="All 2 branches missed.">		if(c == 1){</span>
+<span class="nc" id="L255">			Tokens t = new Tokens(&quot;Onyx&quot;);</span>
+			try{
+<span class="nc" id="L257">				g.getPlayers().get(i).getTwoTokens(t, g);</span>
+<span class="nc" id="L258">			}catch(NotEnoughTokensOnTable e){</span>
+<span class="nc" id="L259">				out.println(&quot;Sorry. There is not enough tokens on the table. Please re-enter what you want.&quot;);</span>
+<span class="nc" id="L260">				action1(i, g);</span>
+<span class="nc" id="L261">			}</span>
+<span class="nc bnc" id="L262" title="All 2 branches missed.">		}else if(c == 2){</span>
+<span class="nc" id="L263">			Tokens t = new Tokens(&quot;Sapphire&quot;);</span>
+			try{
+<span class="nc" id="L265">				g.getPlayers().get(i).getTwoTokens(t, g);</span>
+<span class="nc" id="L266">			}catch(NotEnoughTokensOnTable e){</span>
+<span class="nc" id="L267">				out.println(&quot;Sorry. There is not enough tokens on the table. Please re-enter what you want.&quot;);</span>
+<span class="nc" id="L268">				action1(i, g);</span>
+<span class="nc" id="L269">			}</span>
+<span class="nc bnc" id="L270" title="All 2 branches missed.">		}else if(c == 3){</span>
+<span class="nc" id="L271">			Tokens t = new Tokens(&quot;Emerald&quot;);</span>
+			try{
+<span class="nc" id="L273">				g.getPlayers().get(i).getTwoTokens(t, g);</span>
+<span class="nc" id="L274">			}catch(NotEnoughTokensOnTable e){</span>
+<span class="nc" id="L275">				out.println(&quot;Sorry. There is not enough tokens on the table. Please re-enter what you want.&quot;);</span>
+<span class="nc" id="L276">				action1(i, g);</span>
+<span class="nc" id="L277">			}</span>
+<span class="nc bnc" id="L278" title="All 2 branches missed.">		}else if(c == 4){</span>
+<span class="nc" id="L279">			Tokens t = new Tokens(&quot;Diamond&quot;);</span>
+			try{
+<span class="nc" id="L281">				g.getPlayers().get(i).getTwoTokens(t, g);</span>
+<span class="nc" id="L282">			}catch(NotEnoughTokensOnTable e){</span>
+<span class="nc" id="L283">				out.println(&quot;Sorry. There is not enough tokens on the table. Please re-enter what you want.&quot;);</span>
+<span class="nc" id="L284">				action1(i, g);</span>
+<span class="nc" id="L285">			}</span>
+<span class="nc" id="L286">		}else{</span>
+<span class="nc" id="L287">			Tokens t = new Tokens(&quot;Rubby&quot;);</span>
+			try{
+<span class="nc" id="L289">				g.getPlayers().get(i).getTwoTokens(t, g);</span>
+<span class="nc" id="L290">			}catch(NotEnoughTokensOnTable e){</span>
+<span class="nc" id="L291">				out.println(&quot;Sorry. There is not enough tokens on the table. Please re-enter what you want.&quot;);</span>
+<span class="nc" id="L292">				action1(i, g);</span>
+<span class="nc" id="L293">			}</span>
+		}
+		
+		
+<span class="nc bnc" id="L297" title="All 2 branches missed.">		if(g.getPlayers().get(i).getTokens().size() &gt;= 10){</span>
+<span class="nc" id="L298">			out.println(&quot;Your token counts have exceeded please discard until you only have 10.&quot;);</span>
+<span class="nc" id="L299">			out.println(&quot;Please discard tokens until you have only 10 tokens left.&quot;);</span>
+<span class="nc" id="L300">			discard(g.getPlayers().get(i), g);</span>
+		}
+		
+<span class="nc" id="L303">	}</span>
+	
+	public static void discard(Player p, Game g)  //checked. Works for now
+	{
+		
+<span class="nc" id="L308">		out.println(&quot;Choose a token to discard.&quot;);</span>
+<span class="nc" id="L309">		out.println(&quot;1. Onyx x&quot; + p.blackTokens() + &quot; 2. Sapphire x&quot; + p.blueTokens() + &quot; 3. Emerald x&quot; + p.greenTokens() + &quot; 4. Diamond x&quot; + p.whiteTokens() + &quot; 5. Rubby x&quot; + p.redTokens() + &quot; 6. Gold x&quot; + p.yellowTokens());</span>
+		
+<span class="nc" id="L311">		Scanner sc = new Scanner(System.in);</span>
+<span class="nc" id="L312">		String s = sc.nextLine();</span>
+<span class="nc" id="L313">		int c = 1;</span>
+		
+		try{
+<span class="nc" id="L316">			c = Integer.parseInt(s);</span>
+<span class="nc" id="L317">		}catch(NumberFormatException e){</span>
+<span class="nc" id="L318">			out.println(&quot;Invalid choice made.\n&quot;);</span>
+<span class="nc" id="L319">			discard(p, g);</span>
+<span class="nc" id="L320">		}</span>
+		
+<span class="nc bnc" id="L322" title="All 2 branches missed.">		if(c == 1){</span>
+			try{
+<span class="nc" id="L324">				p.discardToken(new Tokens(&quot;Onyx&quot;), g);</span>
+<span class="nc" id="L325">				out.println(true);</span>
+<span class="nc" id="L326">			}catch(InvalidTokensSelection e){</span>
+<span class="nc" id="L327">				out.println(&quot;Invalid choice made. You do not have any Onyx.&quot;);</span>
+<span class="nc" id="L328">				discard(p, g);</span>
+<span class="nc" id="L329">			}</span>
+<span class="nc bnc" id="L330" title="All 2 branches missed.">		}else if(c == 2){</span>
+			try{
+<span class="nc" id="L332">				p.discardToken(new Tokens(&quot;Sapphire&quot;), g);</span>
+<span class="nc" id="L333">			}catch(InvalidTokensSelection e){</span>
+<span class="nc" id="L334">				out.println(&quot;Invalid choice made. You do not have any Sapphire.&quot;);</span>
+<span class="nc" id="L335">				discard(p, g);</span>
+<span class="nc" id="L336">			}</span>
+<span class="nc bnc" id="L337" title="All 2 branches missed.">		}else if(c == 3){</span>
+			try{
+<span class="nc" id="L339">				p.discardToken(new Tokens(&quot;Emerald&quot;), g);</span>
+<span class="nc" id="L340">			}catch(InvalidTokensSelection e){</span>
+<span class="nc" id="L341">				out.println(&quot;Invalid choice made. You do not have any Emerald.&quot;);</span>
+<span class="nc" id="L342">				discard(p, g);</span>
+<span class="nc" id="L343">			}</span>
+<span class="nc bnc" id="L344" title="All 2 branches missed.">		}else if(c == 4){</span>
+			try{
+<span class="nc" id="L346">				p.discardToken(new Tokens(&quot;Diamond&quot;), g);</span>
+<span class="nc" id="L347">			}catch(InvalidTokensSelection e){</span>
+<span class="nc" id="L348">				out.println(&quot;Invalid choice made. You do not have any Diamond.&quot;);</span>
+<span class="nc" id="L349">				discard(p, g);</span>
+<span class="nc" id="L350">			}</span>
+<span class="nc bnc" id="L351" title="All 2 branches missed.">		}else if(c == 5){</span>
+			try{
+<span class="nc" id="L353">				p.discardToken(new Tokens(&quot;Rubby&quot;), g);</span>
+<span class="nc" id="L354">			}catch(InvalidTokensSelection e){</span>
+<span class="nc" id="L355">				out.println(&quot;Invalid choice made. You do not have any Rubby.&quot;);</span>
+<span class="nc" id="L356">				discard(p, g);</span>
+<span class="nc" id="L357">			}</span>
+		}else{
+			try{
+<span class="nc" id="L360">				p.discardToken(new Tokens(&quot;Gold&quot;), g);</span>
+<span class="nc" id="L361">			}catch(InvalidTokensSelection e){</span>
+<span class="nc" id="L362">				out.println(&quot;Invalid choice made. You do not have any Gold.&quot;);</span>
+<span class="nc" id="L363">				discard(p, g);</span>
+<span class="nc" id="L364">			}</span>
+		}
+		
+		
+<span class="nc bnc" id="L368" title="All 2 branches missed.">		if(p.getTokens().size() &gt; 10){</span>
+<span class="nc" id="L369">			discard(p, g);</span>
+		}
+		
+		
+<span class="nc" id="L373">	}</span>
+	
+	public static void action2(int p, Game g) throws NotEnoughTokensOnTable
+	{
+<span class="nc" id="L377">		Scanner sc = new Scanner(System.in);</span>
+<span class="nc" id="L378">		int choice1 = 1;</span>
+<span class="nc" id="L379">		int choice2 = 2;</span>
+<span class="nc" id="L380">		int choice3 = 3;</span>
+		
+<span class="nc" id="L382">		out.println(&quot;Choose a token to take.&quot;);</span>
+<span class="nc" id="L383">		out.println(&quot;1. Onyx x&quot; + g.blackTokens() + &quot; 2. Sapphire x&quot; + g.blueTokens() + &quot; 3. Emerald x&quot; + g.greenTokens() + &quot; 4. Diamond x&quot; + g.whiteTokens() + &quot; 5. Rubby x&quot; + g.redTokens());</span>
+<span class="nc" id="L384">		String s = sc.nextLine();</span>
+		try{
+<span class="nc" id="L386">			choice1 = Integer.parseInt(s);</span>
+<span class="nc" id="L387">		}catch(NumberFormatException e){</span>
+<span class="nc" id="L388">			choice1 = 1;</span>
+<span class="nc" id="L389">		}</span>
+<span class="nc" id="L390">		Tokens t1 = returnTokens(choice1);</span>
+		
+<span class="nc" id="L392">		out.println(&quot;Choose a different token that you have not selected.&quot;);</span>
+<span class="nc" id="L393">		out.println(&quot;1. Onyx x&quot; + g.blackTokens() + &quot; 2. Sapphire x&quot; + g.blueTokens() + &quot; 3. Emerald x&quot; + g.greenTokens() + &quot; 4. Diamond x&quot; + g.whiteTokens() + &quot; 5. Rubby x&quot; + g.redTokens());</span>
+<span class="nc" id="L394">		s = sc.nextLine();</span>
+		try{
+<span class="nc" id="L396">			choice2 = Integer.parseInt(s);</span>
+<span class="nc" id="L397">		}catch(NumberFormatException e){</span>
+<span class="nc" id="L398">			choice2 = 2;</span>
+<span class="nc" id="L399">		}</span>
+<span class="nc" id="L400">		Tokens t2 = returnTokens(choice2);</span>
+<span class="nc bnc" id="L401" title="All 2 branches missed.">		if(choice2 == choice1){</span>
+<span class="nc" id="L402">			out.println(&quot;Invalid choice. You have chosen this token already.&quot;);</span>
+<span class="nc" id="L403">			action2(p, g);</span>
+		}
+		
+<span class="nc" id="L406">		out.println(&quot;Choose another different token that you have not selected.&quot;);</span>
+<span class="nc" id="L407">		out.println(&quot;1. Onyx x&quot; + g.blackTokens() + &quot; 2. Sapphire x&quot; + g.blueTokens() + &quot; 3. Emerald x&quot; + g.greenTokens() + &quot; 4. Diamond&quot; + g.whiteTokens() + &quot; 5. Rubby x&quot; + g.redTokens() + &quot; 6. Gold x&quot; + g.yellowTokens());</span>
+<span class="nc" id="L408">		s = sc.nextLine();</span>
+		try{
+<span class="nc" id="L410">			choice3 = Integer.parseInt(s);</span>
+<span class="nc" id="L411">		}catch(NumberFormatException e){</span>
+<span class="nc" id="L412">			choice3 = 3;</span>
+<span class="nc" id="L413">		}</span>
+<span class="nc" id="L414">		Tokens t3 = returnTokens(choice3);</span>
+<span class="nc bnc" id="L415" title="All 4 branches missed.">		if(choice2 == choice1 || choice2 == choice3){</span>
+<span class="nc" id="L416">			out.println(&quot;Invalid choice. You have chosen this token already.&quot;);</span>
+<span class="nc" id="L417">			action2(p, g);</span>
+		}
+		
+		
+		try{
+<span class="nc" id="L422">			g.getPlayers().get(p).getOneOfEachTokens(t1, t2, t3, g);</span>
+<span class="nc" id="L423">		}catch(NotEnoughTokensOnTable e){</span>
+<span class="nc" id="L424">			out.println(&quot;Invalid choice. There is not enough token of your choosing on the table&quot;);</span>
+<span class="nc" id="L425">			action2(p, g);</span>
+<span class="nc" id="L426">		}</span>
+	
+<span class="nc" id="L428">	}</span>
+	
+	public static void action3(int p, Game g) throws InvalidCardsSelectionOfCardsOnTable   //roll 1:blue deck; roll 2: yellow deck; roll 3: green deck;
+, PlayerAlreadyHoldsThreeReserveCards, InterruptedException, NotEnoughTokensOnTable, SelectedDeckRanOutOfCards, PlayerDoesNotHaveEnoughResourcesToBuySelectedCard, PlayerDoesNotHaveSelectedCardInReserve, InvalidCardsSelectionOfCardsInReserve
+	{
+<span class="nc" id="L433">		Scanner sc = new Scanner(System.in);</span>
+<span class="nc" id="L434">		String t = &quot;&quot;;</span>
+<span class="nc" id="L435">		int choiceColor = 1;</span>
+<span class="nc" id="L436">		int choiceCardNum = 1;</span>
+		
+<span class="nc" id="L438">		out.println(&quot;Which type of card do you wish to reserve?&quot;);</span>
+<span class="nc" id="L439">		out.println(&quot;1. Blue   2. Yellow   3. Green&quot;);</span>
+<span class="nc" id="L440">		t = sc.nextLine();</span>
+		
+		try{
+<span class="nc" id="L443">			choiceColor = Integer.parseInt(t);</span>
+<span class="nc" id="L444">		}catch(NumberFormatException e){</span>
+<span class="nc" id="L445">			out.println(&quot;Invalid choice made.&quot;);</span>
+<span class="nc" id="L446">			action3(p, g);</span>
+<span class="nc" id="L447">		}</span>
+		
+<span class="nc" id="L449">		out.println(&quot;Which card do you wish to reserve?&quot;);</span>
+<span class="nc bnc" id="L450" title="All 2 branches missed.">		if(choiceColor == 1){</span>
+<span class="nc" id="L451">			out.println(&quot;1. Blue Card 1 *** 2. Blue Card 2 *** 3. Blue Card 3&quot;);</span>
+<span class="nc" id="L452">			t = sc.nextLine();</span>
+			
+			try{
+<span class="nc" id="L455">				choiceCardNum = Integer.parseInt(t);</span>
+<span class="nc" id="L456">			}catch(NumberFormatException e){</span>
+<span class="nc" id="L457">				out.println(&quot;Invalid choice made.&quot;);</span>
+<span class="nc" id="L458">				action3(p, g);</span>
+<span class="nc" id="L459">			}</span>
+<span class="nc bnc" id="L460" title="All 2 branches missed.">		}else if(choiceColor == 2){</span>
+<span class="nc" id="L461">			out.println(&quot;1. Yellow Card 1 *** 2. Yellow Card 2 *** 3. Yellow Card 3&quot;);</span>
+<span class="nc" id="L462">			t = sc.nextLine();</span>
+			
+			try{
+<span class="nc" id="L465">				choiceCardNum = Integer.parseInt(t);</span>
+<span class="nc" id="L466">			}catch(NumberFormatException e){</span>
+<span class="nc" id="L467">				out.println(&quot;Invalid choice made.&quot;);</span>
+<span class="nc" id="L468">				action3(p, g);</span>
+<span class="nc" id="L469">			}</span>
+<span class="nc bnc" id="L470" title="All 2 branches missed.">		}if(choiceColor == 3){</span>
+<span class="nc" id="L471">			out.println(&quot;1. Green Card 1 *** 2. Green Card 2 *** 3. Green Card&quot;);</span>
+<span class="nc" id="L472">			t = sc.nextLine();</span>
+			
+			try{
+<span class="nc" id="L475">				choiceCardNum = Integer.parseInt(t);</span>
+<span class="nc" id="L476">			}catch(NumberFormatException e){</span>
+<span class="nc" id="L477">				out.println(&quot;Invalid choice made.&quot;);</span>
+<span class="nc" id="L478">				action3(p, g);</span>
+<span class="nc" id="L479">			}</span>
+		}
+		
+		try{	
+<span class="nc" id="L483">			g.getPlayers().get(p).reserveCard(choiceColor, choiceCardNum, g);</span>
+<span class="nc" id="L484">		}catch(InvalidCardsSelectionOfCardsOnTable e){</span>
+<span class="nc" id="L485">			out.println(&quot;Sorry. That is a invalid position.&quot;);</span>
+<span class="nc" id="L486">			redoChoice(p, g);</span>
+<span class="nc" id="L487">		}catch(PlayerAlreadyHoldsThreeReserveCards e){</span>
+<span class="nc" id="L488">			out.println(&quot;Sorry; you already have three cards in reserve&quot;);</span>
+<span class="nc" id="L489">			redoChoice(p, g);</span>
+<span class="nc" id="L490">		}</span>
+		
+<span class="nc" id="L492">	}</span>
+	
+	public static void action4(int p, Game g) throws SelectedDeckRanOutOfCards  //Reserve random card from the chosen deck  //roll 1:blue deck; roll 2: yellow deck; roll 3: green deck;
+	{
+<span class="nc" id="L496">		Scanner sc = new Scanner(System.in);</span>
+		
+<span class="nc" id="L498">		out.println(&quot;Which deck do you wish to reserve card from?&quot;);</span>
+<span class="nc" id="L499">		out.println(&quot;1. Blue Deck   2. Yellow Deck   3. Green Deck&quot;);</span>
+		
+<span class="nc" id="L501">		String t = sc.nextLine();</span>
+<span class="nc" id="L502">		int choice = 1;</span>
+		
+		try{
+<span class="nc" id="L505">			choice = Integer.parseInt(t);</span>
+<span class="nc" id="L506">		}catch(NumberFormatException e){</span>
+<span class="nc" id="L507">			out.println(&quot;Invalid choice made.&quot;);</span>
+<span class="nc" id="L508">			action4(p, g);</span>
+<span class="nc" id="L509">		}</span>
+		
+<span class="nc bnc" id="L511" title="All 2 branches missed.">		if(choice == 1){</span>
+			try{
+<span class="nc" id="L513">				g.getPlayers().get(p).reserveCard(&quot;blue&quot;, g);</span>
+<span class="nc" id="L514">			}catch(SelectedDeckRanOutOfCards e){</span>
+<span class="nc" id="L515">				out.println(&quot;The deck you chose ran out of cards. Please choose another one.&quot;);</span>
+<span class="nc" id="L516">				action4(p, g);</span>
+<span class="nc" id="L517">			}</span>
+<span class="nc bnc" id="L518" title="All 2 branches missed.">		}else if(choice == 2){</span>
+			try{
+<span class="nc" id="L520">				g.getPlayers().get(p).reserveCard(&quot;yellow&quot;, g);</span>
+<span class="nc" id="L521">			}catch(SelectedDeckRanOutOfCards e){</span>
+<span class="nc" id="L522">				out.println(&quot;The deck you chose ran out of cards. Please choose another one.&quot;);</span>
+<span class="nc" id="L523">				action4(p, g);</span>
+<span class="nc" id="L524">			}</span>
+<span class="nc bnc" id="L525" title="All 2 branches missed.">		}else if(choice == 3){</span>
+			try{
+<span class="nc" id="L527">				g.getPlayers().get(p).reserveCard(&quot;green&quot;, g);</span>
+<span class="nc" id="L528">			}catch(SelectedDeckRanOutOfCards e){</span>
+<span class="nc" id="L529">				out.println(&quot;The deck you chose ran out of cards. Please choose another one.&quot;);</span>
+<span class="nc" id="L530">				action4(p, g);</span>
+<span class="nc" id="L531">			}</span>
+		}
+<span class="nc" id="L533">	}</span>
+	
+	public static void action5(int p, Game g) throws PlayerDoesNotHaveEnoughResourcesToBuySelectedCard, PlayerDoesNotHaveSelectedCardInReserve //buy a card from your reserved cards
+, InterruptedException, NotEnoughTokensOnTable, InvalidCardsSelectionOfCardsOnTable, PlayerAlreadyHoldsThreeReserveCards, SelectedDeckRanOutOfCards, InvalidCardsSelectionOfCardsInReserve
+	{
+<span class="nc" id="L538">		Scanner sc = new Scanner(System.in);</span>
+		
+<span class="nc bnc" id="L540" title="All 2 branches missed.">		if(g.getPlayers().get(p).getReserve().size() == 0){</span>
+<span class="nc" id="L541">			out.println(&quot;You do not have any cards in reserve. Please choose another option&quot;);</span>
+<span class="nc" id="L542">			redoChoice(p, g);</span>
+<span class="nc" id="L543">			return;</span>
+		}
+		
+<span class="nc" id="L546">		String r = &quot;&quot;;</span>
+<span class="nc" id="L547">		out.println(&quot;Which card do you wish to buy?&quot;);</span>
+		
+<span class="nc" id="L549">		r = r + &quot;**** Cards in Reserve **** \n\n&quot;;</span>
+		
+<span class="nc bnc" id="L551" title="All 2 branches missed.">		for(int i = 1; i&lt;=g.getPlayers().get(p).getReserve().size(); i++){</span>
+<span class="nc" id="L552">			r = r + &quot;Card &quot; + i + &quot;: \n&quot; + g.getPlayers().get(p).getReserve().get(i-1) + &quot;\n&quot;;</span>
+		}
+		
+<span class="nc" id="L555">		out.println(r);</span>
+		
+<span class="nc" id="L557">		String t = sc.nextLine();</span>
+<span class="nc" id="L558">		int choice = 1;</span>
+		
+		try{
+<span class="nc" id="L561">			choice = Integer.parseInt(t);</span>
+<span class="nc" id="L562">		}catch(NumberFormatException e){</span>
+<span class="nc" id="L563">			out.println(&quot;Invalid choice made.&quot;);</span>
+<span class="nc" id="L564">			action5(p, g);</span>
+<span class="nc" id="L565">		}</span>
+		
+<span class="nc bnc" id="L567" title="All 2 branches missed.">		if(choice == 1){</span>
+			try{
+<span class="nc" id="L569">				g.getPlayers().get(p).placeCardFromReserve(g.getPlayers().get(p).getReserve().get(0), g);</span>
+<span class="nc" id="L570">			}catch(PlayerDoesNotHaveEnoughResourcesToBuySelectedCard e){</span>
+<span class="nc" id="L571">				out.println(&quot;Sorry. You do not have enough resources to buy the selected card&quot;);</span>
+<span class="nc" id="L572">				redoChoice(p, g);</span>
+<span class="nc" id="L573">			}</span>
+<span class="nc bnc" id="L574" title="All 2 branches missed.">		}else if(choice == 2){</span>
+			try{
+<span class="nc" id="L576">				g.getPlayers().get(p).placeCardFromReserve(g.getPlayers().get(p).getReserve().get(1), g);</span>
+<span class="nc" id="L577">			}catch(PlayerDoesNotHaveEnoughResourcesToBuySelectedCard e){</span>
+<span class="nc" id="L578">				out.println(&quot;Sorry. You do not have enough resources to buy the selected card&quot;);</span>
+<span class="nc" id="L579">				redoChoice(p, g);</span>
+<span class="nc" id="L580">			}</span>
+<span class="nc bnc" id="L581" title="All 2 branches missed.">		}else if(choice == 3){</span>
+			try{
+<span class="nc" id="L583">				g.getPlayers().get(p).placeCardFromReserve(g.getPlayers().get(p).getReserve().get(2), g);</span>
+<span class="nc" id="L584">			}catch(PlayerDoesNotHaveEnoughResourcesToBuySelectedCard e){</span>
+<span class="nc" id="L585">				out.println(&quot;Sorry. You do not have enough resources to buy the selected card&quot;);</span>
+<span class="nc" id="L586">				redoChoice(p, g);</span>
+<span class="nc" id="L587">			}</span>
+		}
+		
+<span class="nc" id="L590">	}</span>
+	
+	public static void action6(int p, Game g) throws PlayerDoesNotHaveEnoughResourcesToBuySelectedCard, InvalidCardsSelectionOfCardsInReserve //buy a card on the table
+, InterruptedException, NotEnoughTokensOnTable, InvalidCardsSelectionOfCardsOnTable, PlayerAlreadyHoldsThreeReserveCards, SelectedDeckRanOutOfCards, PlayerDoesNotHaveSelectedCardInReserve
+	{
+<span class="nc" id="L595">		Scanner sc = new Scanner(System.in);</span>
+<span class="nc" id="L596">		String t = &quot;&quot;;</span>
+<span class="nc" id="L597">		int choiceColor = 1;</span>
+<span class="nc" id="L598">		int choiceCardNum = 1;</span>
+		
+<span class="nc" id="L600">		out.println(&quot;Which type of card do you wish to reserve?&quot;);</span>
+<span class="nc" id="L601">		out.println(&quot;1. Blue   2. Yellow   3. Green&quot;);</span>
+<span class="nc" id="L602">		t = sc.nextLine();</span>
+		
+		try{
+<span class="nc" id="L605">			choiceColor = Integer.parseInt(t);</span>
+<span class="nc" id="L606">		}catch(NumberFormatException e){</span>
+<span class="nc" id="L607">			out.println(&quot;Invalid choice made.&quot;);</span>
+<span class="nc" id="L608">			action6(p, g);</span>
+<span class="nc" id="L609">		}</span>
+		
+<span class="nc" id="L611">		out.println(&quot;Which card do you wish to reserve?&quot;);</span>
+<span class="nc bnc" id="L612" title="All 2 branches missed.">		if(choiceColor == 1){</span>
+<span class="nc" id="L613">			out.println(&quot;1. Blue Card 1 *** 2. Blue Card 2 *** 3. Blue Card 3 *** 4. Blue Card 4&quot;);</span>
+<span class="nc" id="L614">			t = sc.nextLine();</span>
+			
+			try{
+<span class="nc" id="L617">				choiceCardNum = Integer.parseInt(t);</span>
+<span class="nc" id="L618">			}catch(NumberFormatException e){</span>
+<span class="nc" id="L619">				out.println(&quot;Invalid choice made.&quot;);</span>
+<span class="nc" id="L620">				action6(p, g);</span>
+<span class="nc" id="L621">			}</span>
+<span class="nc bnc" id="L622" title="All 2 branches missed.">		}else if(choiceColor == 2){</span>
+<span class="nc" id="L623">			out.println(&quot;1. Yellow Card 1 *** 2. Yellow Card 2 *** 3. Yellow Card 3 *** 4. Yellow Card 4&quot;);</span>
+<span class="nc" id="L624">			t = sc.nextLine();</span>
+			
+			try{
+<span class="nc" id="L627">				choiceCardNum = Integer.parseInt(t);</span>
+<span class="nc" id="L628">			}catch(NumberFormatException e){</span>
+<span class="nc" id="L629">				out.println(&quot;Invalid choice made.&quot;);</span>
+<span class="nc" id="L630">				action6(p, g);</span>
+<span class="nc" id="L631">			}</span>
+<span class="nc bnc" id="L632" title="All 2 branches missed.">		}if(choiceColor == 3){</span>
+<span class="nc" id="L633">			out.println(&quot;1. Green Card 1 *** 2. Green Card 2 *** 3. Green Card *** 4. Green Card 4&quot;);</span>
+<span class="nc" id="L634">			t = sc.nextLine();</span>
+			
+			try{
+<span class="nc" id="L637">				choiceCardNum = Integer.parseInt(t);</span>
+<span class="nc" id="L638">			}catch(NumberFormatException e){</span>
+<span class="nc" id="L639">				out.println(&quot;Invalid choice made.&quot;);</span>
+<span class="nc" id="L640">				action6(p, g);</span>
+<span class="nc" id="L641">			}</span>
+		}
+		
+		try{	
+<span class="nc" id="L645">			g.getPlayers().get(p).buyCardOnTable(choiceColor, choiceCardNum, g);</span>
+<span class="nc" id="L646">		}catch(InvalidCardsSelectionOfCardsOnTable e){</span>
+<span class="nc" id="L647">			out.println(&quot;Sorry. That is a invalid position.&quot;);</span>
+<span class="nc" id="L648">			action6(p, g);</span>
+<span class="nc" id="L649">			return;</span>
+<span class="nc" id="L650">		}catch(PlayerDoesNotHaveEnoughResourcesToBuySelectedCard e){</span>
+<span class="nc" id="L651">			out.println(&quot;Sorry; you do not have enough resources to buy this card.&quot;);</span>
+<span class="nc" id="L652">			redoChoice(p ,g);</span>
+<span class="nc" id="L653">			return;</span>
+<span class="nc" id="L654">		}</span>
+		
+		
+		
+<span class="nc" id="L658">	}</span>
+	
+	public static Tokens returnTokens(int n)
+	{
+<span class="nc bnc" id="L662" title="All 2 branches missed.">		if(n == 1){</span>
+<span class="nc" id="L663">			return new Tokens(&quot;Onyx&quot;);</span>
+<span class="nc bnc" id="L664" title="All 2 branches missed.">		}else if(n == 2){</span>
+<span class="nc" id="L665">			return new Tokens(&quot;Sapphire&quot;);</span>
+<span class="nc bnc" id="L666" title="All 2 branches missed.">		}else if(n == 3){</span>
+<span class="nc" id="L667">			return new Tokens(&quot;Emerald&quot;);</span>
+<span class="nc bnc" id="L668" title="All 2 branches missed.">		}else if(n == 4){</span>
+<span class="nc" id="L669">			return new Tokens(&quot;Diamond&quot;);</span>
+		}else{
+<span class="nc" id="L671">			return new Tokens(&quot;Rubby&quot;);</span>
+		}
+	}
+
+	public static void redoChoice(int i, Game g) throws InterruptedException, NotEnoughTokensOnTable, InvalidCardsSelectionOfCardsOnTable, PlayerAlreadyHoldsThreeReserveCards, SelectedDeckRanOutOfCards, PlayerDoesNotHaveEnoughResourcesToBuySelectedCard, PlayerDoesNotHaveSelectedCardInReserve, InvalidCardsSelectionOfCardsInReserve
+	{
+<span class="nc" id="L677">		out.println(&quot;1. Take 2 tokens of the same color from the table(may only be performed if there is 4 or more tokens in the color of your chosing)&quot;);</span>
+<span class="nc" id="L678">		out.println(&quot;2. Take 1 token from each of 3 different types of tokens(excluding gold)&quot;);</span>
+<span class="nc" id="L679">		out.println(&quot;3. Reserve a card on the table and receive one gold token(keep in mind you may only have three reserved cards maximum. Also, you will not recieve any gold token if there is non on the table)&quot;);</span>
+<span class="nc" id="L680">		out.println(&quot;4. Reserve an unknown card from the top of a chosen deck&quot;);</span>
+<span class="nc" id="L681">		out.println(&quot;5. Buy a card from your reserved cards&quot;);</span>
+<span class="nc" id="L682">		out.println(&quot;6. Buy a card on the table&quot;);</span>
+		
+<span class="nc" id="L684">		Scanner sc = new Scanner(System.in);</span>
+<span class="nc" id="L685">		String t = sc.nextLine();</span>
+<span class="nc" id="L686">		int choice = 1;</span>
+		
+		try{
+<span class="nc" id="L689">			choice = Integer.parseInt(t);</span>
+<span class="nc" id="L690">		}catch(NumberFormatException e){</span>
+<span class="nc" id="L691">			out.println(&quot;Invalid choice made.&quot;);</span>
+<span class="nc" id="L692">			redoChoice(i, g);</span>
+<span class="nc" id="L693">		}</span>
+		
+<span class="nc" id="L695">		String action = &quot;&quot;;</span>
+		
+<span class="nc bnc" id="L697" title="All 2 branches missed.">		if(choice == 1){</span>
+<span class="nc" id="L698">			action1(i, g);</span>
+<span class="nc" id="L699">			out.println(&quot;\n\n\n\n&quot;);</span>
+<span class="nc" id="L700">			action = &quot;Attention! Player &quot; + (i+1) + &quot; chose to take two tokens!&quot;;</span>
+<span class="nc bnc" id="L701" title="All 2 branches missed.">		}else if(choice == 2){</span>
+<span class="nc" id="L702">			action2(i, g);</span>
+<span class="nc" id="L703">			out.println(&quot;\n\n\n\n&quot;);</span>
+<span class="nc" id="L704">			action = &quot;Attention! Player &quot; + (i+1) + &quot; chose to take three tokens of different color!&quot;;</span>
+<span class="nc bnc" id="L705" title="All 2 branches missed.">		}else if(choice == 3){</span>
+<span class="nc" id="L706">			action3(i, g);</span>
+<span class="nc" id="L707">			out.println(&quot;\n\n\n\n&quot;);</span>
+<span class="nc" id="L708">			action = &quot;Attention! Player &quot; + (i+1) + &quot; chose to reserve a card on the table!&quot;;</span>
+<span class="nc bnc" id="L709" title="All 2 branches missed.">		}else if(choice == 4){</span>
+<span class="nc" id="L710">			action4(i ,g);</span>
+<span class="nc" id="L711">			out.println(&quot;\n\n\n\n&quot;);</span>
+<span class="nc" id="L712">			action = &quot;Attention! Player &quot; + (i+1) + &quot; chose to reserve a card from the deck!&quot;;</span>
+<span class="nc bnc" id="L713" title="All 2 branches missed.">		}else if(choice == 5){</span>
+<span class="nc" id="L714">			action5(i, g);</span>
+<span class="nc" id="L715">			out.println(&quot;\n\n\n\n&quot;);</span>
+<span class="nc" id="L716">			action = &quot;Attention! Player &quot; + (i+1) + &quot; chose to buy a card in his reserve!&quot;;</span>
+<span class="nc bnc" id="L717" title="All 2 branches missed.">		}else if(choice == 6){</span>
+<span class="nc" id="L718">			action6(i, g);</span>
+<span class="nc" id="L719">			out.println(&quot;\n\n\n\n&quot;);</span>
+<span class="nc" id="L720">			action = &quot;Attention! Player &quot; + i + &quot; chose to buy a card on the table!&quot;;</span>
+		}
+		
+<span class="nc" id="L723">		out.println(action);</span>
+<span class="nc" id="L724">	}</span>
+	
+	public static Cards[][] instantiateCOT(ArrayList&lt;Cards&gt; blueDeck, ArrayList&lt;Cards&gt; yellowDeck, ArrayList&lt;Cards&gt; greenDeck)
+	{
+<span class="nc" id="L728">		Cards[][] cot = new Cards[3][4]; //roll 1:blue deck; roll 2: yellow deck; roll 3: green deck;</span>
+<span class="nc bnc" id="L729" title="All 2 branches missed.">		for(int i=0; i&lt;3; i++){</span>
+<span class="nc bnc" id="L730" title="All 2 branches missed.">			for(int j=0; j&lt;4; j++){</span>
+<span class="nc bnc" id="L731" title="All 2 branches missed.">				if(i == 0){</span>
+<span class="nc" id="L732">					int r = (int)(Math.random()*blueDeck.size());</span>
+<span class="nc" id="L733">					cot[i][j] = blueDeck.get(r);</span>
+<span class="nc bnc" id="L734" title="All 2 branches missed.">				}else if(i==1){</span>
+<span class="nc" id="L735">					int r = (int)(Math.random()*yellowDeck.size());</span>
+<span class="nc" id="L736">					cot[i][j] = yellowDeck.get(r);</span>
+<span class="nc" id="L737">				}else{</span>
+<span class="nc" id="L738">					int r = (int)(Math.random()*blueDeck.size());</span>
+<span class="nc" id="L739">					cot[i][j] = greenDeck.get(r);</span>
+				}
+			}
+		}
+		
+<span class="nc" id="L744">		return cot;</span>
+		
+	}
+	
+	public static ArrayList&lt;Tokens&gt; instantiateTokens(int numP)
+	{
+<span class="nc" id="L750">		ArrayList&lt;Tokens&gt; t = new ArrayList&lt;Tokens&gt;();</span>
+<span class="nc bnc" id="L751" title="All 2 branches missed.">		if(numP == 4){</span>
+<span class="nc bnc" id="L752" title="All 2 branches missed.">			for(int i=1; i&lt;=7; i++){</span>
+<span class="nc" id="L753">				t.add(new Tokens(&quot;Rubby&quot;));</span>
+<span class="nc" id="L754">				t.add(new Tokens(&quot;Sapphire&quot;));</span>
+<span class="nc" id="L755">				t.add(new Tokens(&quot;Onyx&quot;));</span>
+<span class="nc" id="L756">				t.add(new Tokens(&quot;Emerald&quot;));</span>
+<span class="nc" id="L757">				t.add(new Tokens(&quot;Diamond&quot;));</span>
+<span class="nc bnc" id="L758" title="All 2 branches missed.">				if(i&lt;5){</span>
+<span class="nc" id="L759">					t.add(new Tokens(&quot;Gold&quot;));</span>
+				}
+				//out.println(t);
+			}
+<span class="nc bnc" id="L763" title="All 2 branches missed.">		}else if(numP == 3){</span>
+<span class="nc bnc" id="L764" title="All 2 branches missed.">			for(int i=1; i&lt;=5; i++){</span>
+<span class="nc" id="L765">				t.add(new Tokens(&quot;Rubby&quot;));</span>
+<span class="nc" id="L766">				t.add(new Tokens(&quot;Sapphire&quot;));</span>
+<span class="nc" id="L767">				t.add(new Tokens(&quot;Onyx&quot;));</span>
+<span class="nc" id="L768">				t.add(new Tokens(&quot;Emerald&quot;));</span>
+<span class="nc" id="L769">				t.add(new Tokens(&quot;Diamond&quot;));</span>
+<span class="nc bnc" id="L770" title="All 2 branches missed.">				if(i&lt;5){</span>
+<span class="nc" id="L771">					t.add(new Tokens(&quot;Gold&quot;));</span>
+				}
+				}
+		}else{
+<span class="nc bnc" id="L775" title="All 2 branches missed.">			for(int i=1; i&lt;=4; i++){</span>
+<span class="nc" id="L776">				t.add(new Tokens(&quot;Rubby&quot;));</span>
+<span class="nc" id="L777">				t.add(new Tokens(&quot;Sapphire&quot;));</span>
+<span class="nc" id="L778">				t.add(new Tokens(&quot;Onyx&quot;));</span>
+<span class="nc" id="L779">				t.add(new Tokens(&quot;Emerald&quot;));</span>
+<span class="nc" id="L780">				t.add(new Tokens(&quot;Diamond&quot;));</span>
+<span class="nc bnc" id="L781" title="All 2 branches missed.">				if(i&lt;5){</span>
+<span class="nc" id="L782">					t.add(new Tokens(&quot;Gold&quot;));</span>
+				}
+			}
+		}
+		
+<span class="nc" id="L787">		return t;</span>
+	
+	
+	}
+	
+	public static ArrayList&lt;Noble&gt; instantiateNobles(int numP) throws FileNotFoundException
+	{
+<span class="nc" id="L794">		ArrayList&lt;Noble&gt; r = new ArrayList&lt;Noble&gt;();</span>
+<span class="nc" id="L795">		Scanner sc = new Scanner(new File(&quot;Nobles.txt&quot;));</span>
+<span class="nc bnc" id="L796" title="All 2 branches missed.">		while(sc.hasNextLine()){</span>
+<span class="nc" id="L797">			String[] info = sc.nextLine().split(&quot; &quot;);</span>
+<span class="nc" id="L798">			String name = &quot;&quot;;</span>
+<span class="nc" id="L799">			ArrayList&lt;Tokens&gt; cost = new ArrayList&lt;Tokens&gt;();</span>
+<span class="nc" id="L800">			int i = 0;</span>
+<span class="nc bnc" id="L801" title="All 4 branches missed.">			while(i&lt;info.length &amp;&amp; info[i].charAt(0) &gt;= 65){</span>
+<span class="nc" id="L802">				name = name + info[i] + &quot; &quot;;</span>
+<span class="nc" id="L803">				i++;</span>
+			}
+			
+<span class="nc bnc" id="L806" title="All 2 branches missed.">			for(int j=i; j&lt;info.length; j++){</span>
+<span class="nc" id="L807">				String t = info[j];</span>
+<span class="nc" id="L808">				String c = t.substring(1);</span>
+				//out.println(j + &quot; &quot; + info.length);
+<span class="nc" id="L810">				int num = Integer.parseInt(t.charAt(0)+&quot;&quot;);</span>
+				//out.println(c);
+				//for(int k=0; k&lt;num; k++){
+<span class="nc bnc" id="L813" title="All 2 branches missed.">					if(c.equalsIgnoreCase(&quot;R&quot;)){</span>
+<span class="nc" id="L814">						addTokens(cost, num, new Tokens(&quot;Rubby&quot;));</span>
+						//out.println(num);
+<span class="nc bnc" id="L816" title="All 2 branches missed.">					}else if(c.equalsIgnoreCase(&quot;G&quot;)){</span>
+<span class="nc" id="L817">						addTokens(cost, num, new Tokens(&quot;Emerald&quot;));</span>
+<span class="nc bnc" id="L818" title="All 2 branches missed.">					}else if(c.equalsIgnoreCase(&quot;BLU&quot;)){</span>
+<span class="nc" id="L819">						addTokens(cost, num, new Tokens(&quot;Sapphire&quot;));</span>
+<span class="nc bnc" id="L820" title="All 2 branches missed.">					}else if(c.equalsIgnoreCase(&quot;BLA&quot;)){</span>
+<span class="nc" id="L821">						addTokens(cost, num, new Tokens(&quot;Onyx&quot;));</span>
+<span class="nc bnc" id="L822" title="All 2 branches missed.">					}else if(c.equalsIgnoreCase(&quot;W&quot;)){</span>
+<span class="nc" id="L823">						addTokens(cost, num, new Tokens(&quot;Diamond&quot;));</span>
+					}
+				//}
+			}
+			
+<span class="nc" id="L828">			Noble noble = new Noble(name, cost);</span>
+			//out.println(noble);
+			//out.println(cost);
+<span class="nc" id="L831">			r.add(noble);</span>
+			
+			
+<span class="nc" id="L834">		}</span>
+		
+<span class="nc" id="L836">		int n = 0;</span>
+		
+<span class="nc bnc" id="L838" title="All 2 branches missed.">		if(numP == 4){</span>
+<span class="nc bnc" id="L839" title="All 2 branches missed.">			for(int i=0; i&lt;5; i++){</span>
+<span class="nc" id="L840">				r.remove((int)(Math.random()*(10-n)));</span>
+<span class="nc" id="L841">				n++;</span>
+			}
+<span class="nc bnc" id="L843" title="All 2 branches missed.">		}else if(numP == 3){</span>
+<span class="nc bnc" id="L844" title="All 2 branches missed.">			for(int i=0; i&lt;6; i++){</span>
+<span class="nc" id="L845">				r.remove((int)(Math.random()*(10-n)));</span>
+<span class="nc" id="L846">				n++;</span>
+			}
+		}else{
+<span class="nc bnc" id="L849" title="All 2 branches missed.">			for(int i=0; i&lt;7; i++){</span>
+<span class="nc" id="L850">				r.remove((int)(Math.random()*(10-n)));</span>
+<span class="nc" id="L851">				n++;</span>
+			}
+		}
+		
+<span class="nc" id="L855">		return r;</span>
+	}
+	
+	public static void addCards(String temp, ArrayList&lt;Cards&gt; bd, ArrayList&lt;Cards&gt; yd, ArrayList&lt;Cards&gt; gd)
+	{
+<span class="nc" id="L860">		String[] info = temp.split(&quot; &quot;);</span>
+		
+<span class="nc" id="L862">		String deck = info[0];</span>
+<span class="nc" id="L863">		String name = instantiateName(info[1]);</span>
+<span class="nc" id="L864">		Tokens resource = instantiateResource(info[2]);</span>
+<span class="nc" id="L865">		int pt = Integer.parseInt(info[3]);</span>
+<span class="nc" id="L866">		ArrayList&lt;Tokens&gt; cost = new ArrayList&lt;Tokens&gt;();</span>
+		
+<span class="nc bnc" id="L868" title="All 2 branches missed.">		for(int i=4; i&lt;info.length; i++){</span>
+<span class="nc" id="L869">			String t = info[i];</span>
+			//out.println(t);
+<span class="nc" id="L871">			String c = info[i].substring(1);</span>
+<span class="nc" id="L872">			int num = Integer.parseInt(t.charAt(0)+&quot;&quot;);</span>
+			//out.println(num);
+			//for(int j=0; j&lt;num; j++){
+<span class="nc bnc" id="L875" title="All 2 branches missed.">				if(c.equalsIgnoreCase(&quot;R&quot;)){</span>
+<span class="nc" id="L876">					addTokens(cost, num, new Tokens(&quot;Rubby&quot;));</span>
+					//out.println(j);
+<span class="nc bnc" id="L878" title="All 2 branches missed.">				}else if(c.equalsIgnoreCase(&quot;G&quot;)){</span>
+<span class="nc" id="L879">					addTokens(cost, num, new Tokens(&quot;Emerald&quot;));</span>
+<span class="nc bnc" id="L880" title="All 2 branches missed.">				}else if(c.equalsIgnoreCase(&quot;BLU&quot;)){</span>
+<span class="nc" id="L881">					addTokens(cost, num, new Tokens(&quot;Sapphire&quot;));</span>
+<span class="nc bnc" id="L882" title="All 2 branches missed.">				}else if(c.equalsIgnoreCase(&quot;BLA&quot;)){</span>
+<span class="nc" id="L883">					addTokens(cost, num, new Tokens(&quot;Onyx&quot;));</span>
+<span class="nc bnc" id="L884" title="All 2 branches missed.">				}else if(c.equalsIgnoreCase(&quot;W&quot;)){</span>
+<span class="nc" id="L885">					addTokens(cost, num, new Tokens(&quot;Diamond&quot;));</span>
+				}
+			//}
+		}
+		
+		//out.println(cost);
+		
+<span class="nc" id="L892">		Cards c = new Cards(pt, cost, name, resource);</span>
+		
+<span class="nc bnc" id="L894" title="All 2 branches missed.">		if(deck.equalsIgnoreCase(&quot;B&quot;)){</span>
+<span class="nc" id="L895">			bd.add(c);</span>
+<span class="nc bnc" id="L896" title="All 2 branches missed.">		}else if(deck.equals(&quot;Y&quot;)){</span>
+<span class="nc" id="L897">			yd.add(c);</span>
+		}else{
+<span class="nc" id="L899">			gd.add(c);</span>
+		}
+<span class="nc" id="L901">	}</span>
+	
+	public static ArrayList&lt;Player&gt; instantiatePlayers(int num) //(int score, ArrayList&lt;Tokens&gt; tokens, ArrayList&lt;Cards&gt; cards, ArrayList&lt;Noble&gt; nobles, ArrayList&lt;Cards&gt; reserve, String name)
+	{
+<span class="nc" id="L905">		ArrayList&lt;Player&gt; p = new ArrayList&lt;Player&gt;();</span>
+<span class="nc bnc" id="L906" title="All 2 branches missed.">		for(int i=0; i&lt;num; i++){</span>
+<span class="nc" id="L907">			ArrayList&lt;Tokens&gt; t = new ArrayList&lt;Tokens&gt;();</span>
+<span class="nc" id="L908">			ArrayList&lt;Cards&gt; c = new ArrayList&lt;Cards&gt;();</span>
+<span class="nc" id="L909">			ArrayList&lt;Noble&gt; nobles = new ArrayList&lt;Noble&gt;();</span>
+<span class="nc" id="L910">			ArrayList&lt;Cards&gt; r = new ArrayList&lt;Cards&gt;();</span>
+			
+			
+<span class="nc" id="L913">			p.add(new Player(0, t, c, nobles, r, &quot;Player &quot; + (i + 1)));</span>
+		}
+		
+<span class="nc" id="L916">		return p;</span>
+	}
+	
+	public static void addTokens(ArrayList&lt;Tokens&gt; r, int num, Tokens t)
+	{
+<span class="nc bnc" id="L921" title="All 2 branches missed.">		for(int i=0; i&lt;num; i++){</span>
+<span class="nc" id="L922">			r.add(t);</span>
+		}
+<span class="nc" id="L924">	}</span>
+	
+	public static Tokens instantiateResource(String c)
+	{
+<span class="nc bnc" id="L928" title="All 2 branches missed.">		if(c.equalsIgnoreCase(&quot;R&quot;)){</span>
+<span class="nc" id="L929">			return new Tokens(&quot;Rubby&quot;);</span>
+<span class="nc bnc" id="L930" title="All 2 branches missed.">		}else if(c.equalsIgnoreCase(&quot;E&quot;)){</span>
+<span class="nc" id="L931">			return new Tokens(&quot;Emerald&quot;);</span>
+<span class="nc bnc" id="L932" title="All 2 branches missed.">		}else if(c.equalsIgnoreCase(&quot;S&quot;)){</span>
+<span class="nc" id="L933">			return new Tokens(&quot;Sapphire&quot;);</span>
+<span class="nc bnc" id="L934" title="All 2 branches missed.">		}else if(c.equalsIgnoreCase(&quot;O&quot;)){</span>
+<span class="nc" id="L935">			return new Tokens(&quot;Onyx&quot;);</span>
+<span class="nc bnc" id="L936" title="All 2 branches missed.">		}else if(c.equalsIgnoreCase(&quot;D&quot;)){</span>
+<span class="nc" id="L937">			return new Tokens(&quot;Diamond&quot;);</span>
+		}else{
+<span class="nc" id="L939">			return null;</span>
+		}
+	}
+	
+	public static String instantiateName(String n)
+	{
+<span class="nc bnc" id="L945" title="All 2 branches missed.">		if(n.equalsIgnoreCase(&quot;M&quot;)){</span>
+<span class="nc" id="L946">			return &quot;Mine&quot;;</span>
+<span class="nc bnc" id="L947" title="All 2 branches missed.">		}else if(n.equalsIgnoreCase(&quot;ME&quot;)){</span>
+<span class="nc" id="L948">			return &quot;Merchant&quot;;</span>
+<span class="nc bnc" id="L949" title="All 2 branches missed.">		}else if(n.equalsIgnoreCase(&quot;T&quot;)){</span>
+<span class="nc" id="L950">			return &quot;Transports&quot;;</span>
+<span class="nc bnc" id="L951" title="All 2 branches missed.">		}else if(n.equalsIgnoreCase(&quot;S&quot;)){</span>
+<span class="nc" id="L952">			return &quot;Shops&quot;;</span>
+		}else{
+<span class="nc" id="L954">			return &quot;Town&quot;;</span>
+		}
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
