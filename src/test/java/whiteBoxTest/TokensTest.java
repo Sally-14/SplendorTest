@@ -54,7 +54,7 @@ public class TokensTest{
     @Test
     public void testTokensSetColor() {
         Tokens emeraldToken = new Tokens("Diamond");
-        validToken.setColor("Emerald");
+        emeraldToken.setColor("Emerald");
         assertEquals("Emerald", emeraldToken.getColor());
     }
 
@@ -68,7 +68,7 @@ public class TokensTest{
     @Test
     public void testTokensReturnColorEmerald() {
         Tokens emeraldToken = new Tokens("Emerald");
-        Color emeraldColor = Color.Green;
+        Color emeraldColor = Color.GREEN;
         assertEquals(emeraldColor, emeraldToken.returnColor());
     }
 
