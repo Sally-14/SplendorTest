@@ -1,7 +1,8 @@
 
 package blackBoxTest;
 
-import Classes.TextBasedInterface;
+import Interface.*; 
+import Classes.*;
 import Exceptions.*;
 import org.junit.jupiter.api.Test;
 
