@@ -30,3 +30,6 @@ As a result, 97% branch coverage, 97% statement coverage
 Noble Class: 
 - Constructor does not check for invalid cost 
 - 100% statement coverage and 100% branch coverage
+
+MyFrame Class: 
+- 100% statement coverage (branch coverage N/A)

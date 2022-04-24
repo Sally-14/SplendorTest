@@ -12,26 +12,26 @@ public class MyFrame extends JFrame
 
 	public MyFrame(String frameName, Game g)
 	{
-<span class="nc" id="L15">		super(frameName);</span>
-<span class="nc" id="L16">		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
-<span class="nc" id="L17">		setResizable(false);</span>
-<span class="nc" id="L18">			pack();</span>
+<span class="fc" id="L15">		super(frameName);</span>
+<span class="fc" id="L16">		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+<span class="fc" id="L17">		setResizable(false);</span>
+<span class="fc" id="L18">			pack();</span>
 	
-<span class="nc" id="L20">		MyPanel p = new MyPanel(g);</span>
-<span class="nc" id="L21">			Insets frameInsets = getInsets();</span>
+<span class="fc" id="L20">		MyPanel p = new MyPanel(g);</span>
+<span class="fc" id="L21">			Insets frameInsets = getInsets();</span>
 
-<span class="nc" id="L23">		int frameWidth = p.getWidth()</span>
+<span class="fc" id="L23">		int frameWidth = p.getWidth()</span>
 			+ (frameInsets.left + frameInsets.right);
-<span class="nc" id="L25">		int frameHeight = p.getHeight()</span>
+<span class="fc" id="L25">		int frameHeight = p.getHeight()</span>
 			+ (frameInsets.top + frameInsets.bottom);
 
-<span class="nc" id="L28">		setPreferredSize(new Dimension(frameWidth, frameHeight));</span>
+<span class="fc" id="L28">		setPreferredSize(new Dimension(frameWidth, frameHeight));</span>
 		
-<span class="nc" id="L30">		setLayout(null);</span>
-<span class="nc" id="L31">		add(p);</span>
-<span class="nc" id="L32">		pack();		</span>
-<span class="nc" id="L33">		setVisible(true);</span>
-<span class="nc" id="L34">	}</span>
+<span class="fc" id="L30">		setLayout(null);</span>
+<span class="fc" id="L31">		add(p);</span>
+<span class="fc" id="L32">		pack();		</span>
+<span class="fc" id="L33">		setVisible(true);</span>
+<span class="fc" id="L34">	}</span>
 	
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

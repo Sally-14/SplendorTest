@@ -18,22 +18,22 @@ public class MyPanel extends JPanel implements MouseListener
 	
 	public MyPanel (Game g)
 	{
-<span class="nc" id="L21">		super();</span>
-<span class="nc" id="L22">		setSize(1600,800);</span>
-<span class="nc" id="L23">		addMouseListener(this);</span>
+<span class="fc" id="L21">		super();</span>
+<span class="fc" id="L22">		setSize(1600,800);</span>
+<span class="fc" id="L23">		addMouseListener(this);</span>
 		
-<span class="nc" id="L25">		game = g;</span>
-<span class="nc" id="L26">		t = new ArrayList&lt;Tokens&gt;();</span>
+<span class="fc" id="L25">		game = g;</span>
+<span class="fc" id="L26">		t = new ArrayList&lt;Tokens&gt;();</span>
 		
-<span class="nc" id="L28">	}</span>
+<span class="fc" id="L28">	}</span>
 	
 	public void paint(Graphics g)
 	{
-<span class="nc" id="L32">		super.paintComponent(g);</span>
+<span class="fc" id="L32">		super.paintComponent(g);</span>
 		
-<span class="nc" id="L34">		Font currentFont = g.getFont();</span>
-<span class="nc" id="L35">		Font newFont = currentFont.deriveFont(currentFont.getSize() * 7F);</span>
-<span class="nc" id="L36">		g.setFont(newFont);</span>
+<span class="fc" id="L34">		Font currentFont = g.getFont();</span>
+<span class="fc" id="L35">		Font newFont = currentFont.deriveFont(currentFont.getSize() * 7F);</span>
+<span class="fc" id="L36">		g.setFont(newFont);</span>
 		
 		//System.out.println(game.win());
 		

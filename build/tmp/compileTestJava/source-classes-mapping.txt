@@ -1,8 +1,8 @@
 whiteBoxTest/TokensTest.java
  whiteBoxTest.TokensTest
-whiteBoxTest/MyFrameTest.java
- whiteBoxTest.MyFrameTest
-whiteBoxTest/CardsTest.java
- whiteBoxTest.CardsTest
 whiteBoxTest/NobleTest.java
  whiteBoxTest.NobleTest
+whiteBoxTest/CardsTest.java
+ whiteBoxTest.CardsTest
+whiteBoxTest/MyFrameTest.java
+ whiteBoxTest.MyFrameTest
