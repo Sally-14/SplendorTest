@@ -33,3 +33,9 @@ Noble Class:
 
 MyFrame Class: 
 - 100% statement coverage (branch coverage N/A)
+
+
+Black Box Test Results:
+- When we are using system.in to read Buffered Input Stream, we wrote one input of scanner array interacting with text-based interface. The No line found error is keep popping out. It is probably because the author initialize multiple scanner which the initial scanner (with all inputs) could not continue to be used. I have to separate the input into multiple scanner.
+
+- If players choose the second option: Take 1 token from each of 3 different types of tokens(excluding gold). If the player chooses the same token repetitively, the error was correctly showing up but it continue to show the conversation even the user input is correct: Choose another different token that you have not selected. 1. Onyx x4 2. Sapphire x4 3. Emerald x4 4. Diamond4 5. Rubby x4 6. Gold x4
