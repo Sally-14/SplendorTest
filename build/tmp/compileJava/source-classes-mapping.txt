@@ -28,7 +28,7 @@ Exceptions/InvalidCardsSelectionOfCardsOnTable.java
  Exceptions.InvalidCardsSelectionOfCardsOnTable
 Classes/MyPanel.java
  Classes.MyPanel
-TextBasedInterface.java
- TextBasedInterface
 Classes/Player.java
  Classes.Player
+TextBasedInterface.java
+ TextBasedInterface

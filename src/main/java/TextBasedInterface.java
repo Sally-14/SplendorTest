@@ -17,7 +17,7 @@ public class TextBasedInterface
 		ArrayList<Cards> yellowDeck = new ArrayList<Cards>();
 		ArrayList<Cards> greenDeck = new ArrayList<Cards>();
 		
-		Scanner cardsFile = new Scanner(new File("Splendor Set.txt"));
+		Scanner cardsFile = new Scanner(new File("src/main/java/SplendorSet.txt"));
 		Scanner sc = new Scanner(System.in);
 		
 		while(cardsFile.hasNextLine()){  //(int pt, ArrayList<Tokens> cost, String name, Tokens resource)
