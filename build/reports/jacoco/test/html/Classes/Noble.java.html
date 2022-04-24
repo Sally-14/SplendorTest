@@ -8,133 +8,133 @@ import java.util.ArrayList;
 public class Noble 
 {
 	private String name;
-<span class="nc" id="L11">	private final int pt = 3;</span>
+<span class="fc" id="L11">	private final int pt = 3;</span>
 	private ArrayList&lt;Tokens&gt; cost;
 	private Player owner;
 	
 	public Noble(String name, ArrayList&lt;Tokens&gt; cost) {
-<span class="nc" id="L16">		super();</span>
-<span class="nc" id="L17">		this.name = name;</span>
-<span class="nc" id="L18">		this.cost = cost;</span>
-<span class="nc" id="L19">	}</span>
+<span class="fc" id="L16">		super();</span>
+<span class="fc" id="L17">		this.name = name;</span>
+<span class="fc" id="L18">		this.cost = cost;</span>
+<span class="fc" id="L19">	}</span>
 
 	public Player getOwner() {
-<span class="nc" id="L22">		return owner;</span>
+<span class="fc" id="L22">		return owner;</span>
 	}
 
 	public void setOwner(Player owner) {
-<span class="nc" id="L26">		this.owner = owner;</span>
-<span class="nc" id="L27">	}</span>
+<span class="fc" id="L26">		this.owner = owner;</span>
+<span class="fc" id="L27">	}</span>
 
 	public String getName() {
-<span class="nc" id="L30">		return name;</span>
+<span class="fc" id="L30">		return name;</span>
 	}
 	public void setName(String name) {
-<span class="nc" id="L33">		this.name = name;</span>
-<span class="nc" id="L34">	}</span>
+<span class="fc" id="L33">		this.name = name;</span>
+<span class="fc" id="L34">	}</span>
 	public int getPt() {
-<span class="nc" id="L36">		return pt;</span>
+<span class="fc" id="L36">		return pt;</span>
 	}
 
 	public ArrayList&lt;Tokens&gt; getCost() {
-<span class="nc" id="L40">		return cost;</span>
+<span class="fc" id="L40">		return cost;</span>
 	}
 
 	public void setCost(ArrayList&lt;Tokens&gt; cost) {
-<span class="nc" id="L44">		this.cost = cost;</span>
-<span class="nc" id="L45">	}</span>
+<span class="fc" id="L44">		this.cost = cost;</span>
+<span class="fc" id="L45">	}</span>
 	
 	public int whiteCost()
 	{
-<span class="nc" id="L49">		int r = 0;</span>
-<span class="nc bnc" id="L50" title="All 2 branches missed.">		for(int i=0; i&lt;cost.size(); i++){</span>
-<span class="nc bnc" id="L51" title="All 2 branches missed.">			if(cost.get(i).toString().equals(&quot;Diamond&quot;))</span>
-<span class="nc" id="L52">				r++;</span>
+<span class="fc" id="L49">		int r = 0;</span>
+<span class="fc bfc" id="L50" title="All 2 branches covered.">		for(int i=0; i&lt;cost.size(); i++){</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">			if(cost.get(i).toString().equals(&quot;Diamond&quot;))</span>
+<span class="fc" id="L52">				r++;</span>
 		}
 		
-<span class="nc" id="L55">		return r;</span>
+<span class="fc" id="L55">		return r;</span>
 	}
 	
 	public int greenCost()
 	{
-<span class="nc" id="L60">		int r = 0;</span>
-<span class="nc bnc" id="L61" title="All 2 branches missed.">		for(int i=0; i&lt;cost.size(); i++){</span>
-<span class="nc bnc" id="L62" title="All 2 branches missed.">			if(cost.get(i).toString().equals(&quot;Emerald&quot;))</span>
-<span class="nc" id="L63">				r++;</span>
+<span class="fc" id="L60">		int r = 0;</span>
+<span class="fc bfc" id="L61" title="All 2 branches covered.">		for(int i=0; i&lt;cost.size(); i++){</span>
+<span class="fc bfc" id="L62" title="All 2 branches covered.">			if(cost.get(i).toString().equals(&quot;Emerald&quot;))</span>
+<span class="fc" id="L63">				r++;</span>
 		}
 		
-<span class="nc" id="L66">		return r;</span>
+<span class="fc" id="L66">		return r;</span>
 	}
 	
 	public int blueCost()
 	{
-<span class="nc" id="L71">		int r = 0;</span>
-<span class="nc bnc" id="L72" title="All 2 branches missed.">		for(int i=0; i&lt;cost.size(); i++){</span>
-<span class="nc bnc" id="L73" title="All 2 branches missed.">			if(cost.get(i).toString().equals(&quot;Sapphire&quot;))</span>
-<span class="nc" id="L74">				r++;</span>
+<span class="fc" id="L71">		int r = 0;</span>
+<span class="fc bfc" id="L72" title="All 2 branches covered.">		for(int i=0; i&lt;cost.size(); i++){</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">			if(cost.get(i).toString().equals(&quot;Sapphire&quot;))</span>
+<span class="fc" id="L74">				r++;</span>
 		}
 		
-<span class="nc" id="L77">		return r;</span>
+<span class="fc" id="L77">		return r;</span>
 	}
 	
 	public int blackCost()
 	{
-<span class="nc" id="L82">		int r = 0;</span>
-<span class="nc bnc" id="L83" title="All 2 branches missed.">		for(int i=0; i&lt;cost.size(); i++){</span>
-<span class="nc bnc" id="L84" title="All 2 branches missed.">			if(cost.get(i).toString().equals(&quot;Onyx&quot;))</span>
-<span class="nc" id="L85">				r++;</span>
+<span class="fc" id="L82">		int r = 0;</span>
+<span class="fc bfc" id="L83" title="All 2 branches covered.">		for(int i=0; i&lt;cost.size(); i++){</span>
+<span class="fc bfc" id="L84" title="All 2 branches covered.">			if(cost.get(i).toString().equals(&quot;Onyx&quot;))</span>
+<span class="fc" id="L85">				r++;</span>
 		}
 		
-<span class="nc" id="L88">		return r;</span>
+<span class="fc" id="L88">		return r;</span>
 	}
 	
 	public int redCost()
 	{
-<span class="nc" id="L93">		int r = 0;</span>
-<span class="nc bnc" id="L94" title="All 2 branches missed.">		for(int i=0; i&lt;cost.size(); i++){</span>
-<span class="nc bnc" id="L95" title="All 2 branches missed.">			if(cost.get(i).toString().equals(&quot;Rubby&quot;))</span>
-<span class="nc" id="L96">				r++;</span>
+<span class="fc" id="L93">		int r = 0;</span>
+<span class="fc bfc" id="L94" title="All 2 branches covered.">		for(int i=0; i&lt;cost.size(); i++){</span>
+<span class="fc bfc" id="L95" title="All 2 branches covered.">			if(cost.get(i).toString().equals(&quot;Rubby&quot;))</span>
+<span class="fc" id="L96">				r++;</span>
 		}
 		
 		
-<span class="nc" id="L100">		return r;</span>
+<span class="fc" id="L100">		return r;</span>
 	}
 	
 	public String toString()
 	{
-<span class="nc" id="L105">		String r = &quot;&quot;;</span>
-<span class="nc" id="L106">		r = r + &quot;******* &quot; + name + &quot;*******&quot; + &quot;\n&quot;; // 5 starss on both side</span>
+<span class="fc" id="L105">		String r = &quot;&quot;;</span>
+<span class="fc" id="L106">		r = r + &quot;******* &quot; + name + &quot;*******&quot; + &quot;\n&quot;; // 5 starss on both side</span>
 		
-<span class="nc" id="L108">		int whiteCost = whiteCost();</span>
-<span class="nc" id="L109">		int redCost = redCost();</span>
-<span class="nc" id="L110">		int greenCost = greenCost();</span>
-<span class="nc" id="L111">		int blackCost = blackCost();</span>
-<span class="nc" id="L112">		int blueCost = blueCost();</span>
+<span class="fc" id="L108">		int whiteCost = whiteCost();</span>
+<span class="fc" id="L109">		int redCost = redCost();</span>
+<span class="fc" id="L110">		int greenCost = greenCost();</span>
+<span class="fc" id="L111">		int blackCost = blackCost();</span>
+<span class="fc" id="L112">		int blueCost = blueCost();</span>
 		
 	
-<span class="nc bnc" id="L115" title="All 2 branches missed.">		if(whiteCost != 0){</span>
-<span class="nc" id="L116">			r += &quot;   Diamond x&quot; + whiteCost + &quot; &quot;;</span>
+<span class="fc bfc" id="L115" title="All 2 branches covered.">		if(whiteCost != 0){</span>
+<span class="fc" id="L116">			r += &quot;   Diamond x&quot; + whiteCost + &quot; &quot;;</span>
 		}
 		
-<span class="nc bnc" id="L119" title="All 2 branches missed.">		if(redCost != 0){</span>
-<span class="nc" id="L120">			r += &quot;   Rubby x&quot; + redCost + &quot; &quot;;</span>
+<span class="fc bfc" id="L119" title="All 2 branches covered.">		if(redCost != 0){</span>
+<span class="fc" id="L120">			r += &quot;   Rubby x&quot; + redCost + &quot; &quot;;</span>
 		}
 		
-<span class="nc bnc" id="L123" title="All 2 branches missed.">		if(greenCost != 0){</span>
-<span class="nc" id="L124">			r += &quot;   Emerald x&quot; + greenCost + &quot; &quot;;</span>
+<span class="fc bfc" id="L123" title="All 2 branches covered.">		if(greenCost != 0){</span>
+<span class="fc" id="L124">			r += &quot;   Emerald x&quot; + greenCost + &quot; &quot;;</span>
 		}
 		
-<span class="nc bnc" id="L127" title="All 2 branches missed.">		if(blackCost != 0){</span>
-<span class="nc" id="L128">			r += &quot;   Onyx x&quot; + blackCost + &quot; &quot;;</span>
+<span class="fc bfc" id="L127" title="All 2 branches covered.">		if(blackCost != 0){</span>
+<span class="fc" id="L128">			r += &quot;   Onyx x&quot; + blackCost + &quot; &quot;;</span>
 		}
 		
-<span class="nc bnc" id="L131" title="All 2 branches missed.">		if(blueCost != 0){</span>
-<span class="nc" id="L132">			r += &quot;   Sapphire x&quot; + blueCost + &quot; &quot;;</span>
+<span class="fc bfc" id="L131" title="All 2 branches covered.">		if(blueCost != 0){</span>
+<span class="fc" id="L132">			r += &quot;   Sapphire x&quot; + blueCost + &quot; &quot;;</span>
 		}
 		
-<span class="nc" id="L135">		r = r + &quot;\n&quot;;</span>
+<span class="fc" id="L135">		r = r + &quot;\n&quot;;</span>
 		
-<span class="nc" id="L137">		return r;</span>
+<span class="fc" id="L137">		return r;</span>
 		
 	}
 
