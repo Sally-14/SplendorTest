@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import static java.lang.System.*;
 import java.util.Arrays;
 
-public class Game 
+public class Game
 {
 <span class="fc" id="L12">	private static final Exception InvalidActionException = null;</span>
 	private ArrayList&lt;Player&gt; players;
@@ -26,44 +26,44 @@ public class Game
 			ArrayList&lt;Cards&gt; yellowDeck, ArrayList&lt;Cards&gt; greenDeck,
 			Cards[][] cardsOnTable, ArrayList&lt;Noble&gt; tiles,
 			ArrayList&lt;Tokens&gt; tokens) {
-<span class="nc" id="L29">		super();</span>
-<span class="nc" id="L30">		this.players = players;</span>
-<span class="nc" id="L31">		this.blueDeck = blueDeck;</span>
-<span class="nc" id="L32">		this.yellowDeck = yellowDeck;</span>
-<span class="nc" id="L33">		this.greenDeck = greenDeck;</span>
-<span class="nc" id="L34">		this.cardsOnTable = cardsOnTable;</span>
-<span class="nc" id="L35">		this.tiles = tiles;</span>
-<span class="nc" id="L36">		this.tokens = tokens;</span>
-<span class="nc" id="L37">		winner = new ArrayList&lt;Player&gt;();</span>
-<span class="nc" id="L38">		StartingPlayer = (int)(Math.random()*players.size());</span>
-<span class="nc" id="L39">		CurrentPlayer = StartingPlayer;</span>
-<span class="nc" id="L40">	}</span>
+<span class="fc" id="L29">		super();</span>
+<span class="fc" id="L30">		this.players = players;</span>
+<span class="fc" id="L31">		this.blueDeck = blueDeck;</span>
+<span class="fc" id="L32">		this.yellowDeck = yellowDeck;</span>
+<span class="fc" id="L33">		this.greenDeck = greenDeck;</span>
+<span class="fc" id="L34">		this.cardsOnTable = cardsOnTable;</span>
+<span class="fc" id="L35">		this.tiles = tiles;</span>
+<span class="fc" id="L36">		this.tokens = tokens;</span>
+<span class="fc" id="L37">		winner = new ArrayList&lt;Player&gt;();</span>
+<span class="fc" id="L38">		StartingPlayer = (int)(Math.random()*players.size());</span>
+<span class="fc" id="L39">		CurrentPlayer = StartingPlayer;</span>
+<span class="fc" id="L40">	}</span>
 	
 	public Game() {
 <span class="fc" id="L43">		super();</span>
 <span class="fc" id="L44">	}</span>
 	
 	public Game(ArrayList&lt;Player&gt; winner, int currentPlayer, int startingPlayer)
-<span class="nc" id="L47">	{</span>
-<span class="nc" id="L48">		this.winner = winner;</span>
-<span class="nc" id="L49">		this.CurrentPlayer = currentPlayer;</span>
-<span class="nc" id="L50">		this.StartingPlayer = startingPlayer;</span>
-<span class="nc" id="L51">	}</span>
+<span class="fc" id="L47">	{</span>
+<span class="fc" id="L48">		this.winner = winner;</span>
+<span class="fc" id="L49">		this.CurrentPlayer = currentPlayer;</span>
+<span class="fc" id="L50">		this.StartingPlayer = startingPlayer;</span>
+<span class="fc" id="L51">	}</span>
 
 	public int getStartingPlayer() {
-<span class="nc" id="L54">		return StartingPlayer;</span>
+<span class="fc" id="L54">		return StartingPlayer;</span>
 	}
 
 
 
 	public void setStartingPlayer(int startingPlayer) {
-<span class="nc" id="L60">		StartingPlayer = startingPlayer;</span>
-<span class="nc" id="L61">	}</span>
+<span class="fc" id="L60">		StartingPlayer = startingPlayer;</span>
+<span class="fc" id="L61">	}</span>
 
 
 	public int getPreviousPlayer()
 	{
-<span class="nc" id="L66">		return CurrentPlayer - 1;</span>
+<span class="fc" id="L66">		return CurrentPlayer - 1;</span>
 	}
 
 	public int getCurrentPlayer() {
@@ -73,19 +73,19 @@ public class Game
 
 
 	public void setCurrentPlayer(int currentPlayer) {
-<span class="nc" id="L76">		CurrentPlayer = currentPlayer;</span>
-<span class="nc" id="L77">	}</span>
+<span class="fc" id="L76">		CurrentPlayer = currentPlayer;</span>
+<span class="fc" id="L77">	}</span>
 
 
 
 	public ArrayList&lt;Player&gt; getWinner() {
-<span class="nc" id="L82">		return winner;</span>
+<span class="fc" id="L82">		return winner;</span>
 	}
 
 
 	public void setWinner(ArrayList&lt;Player&gt; winner) {
-<span class="nc" id="L87">		this.winner = winner;</span>
-<span class="nc" id="L88">	}</span>
+<span class="fc" id="L87">		this.winner = winner;</span>
+<span class="fc" id="L88">	}</span>
 
 
 	public ArrayList&lt;Player&gt; getPlayers() {
@@ -94,216 +94,216 @@ public class Game
 
 
 	public void setPlayers(ArrayList&lt;Player&gt; players) {
-<span class="nc" id="L97">		this.players = players;</span>
-<span class="nc" id="L98">	}</span>
+<span class="fc" id="L97">		this.players = players;</span>
+<span class="fc" id="L98">	}</span>
 
 
 	public ArrayList&lt;Cards&gt; getBlueDeck() {
-<span class="nc" id="L102">		return blueDeck;</span>
+<span class="fc" id="L102">		return blueDeck;</span>
 	}
 
 
 	public void setBlueDeck(ArrayList&lt;Cards&gt; blueDeck) {
-<span class="nc" id="L107">		this.blueDeck = blueDeck;</span>
-<span class="nc" id="L108">	}</span>
+<span class="fc" id="L107">		this.blueDeck = blueDeck;</span>
+<span class="fc" id="L108">	}</span>
 
 
 	public ArrayList&lt;Cards&gt; getYellowDeck() {
-<span class="nc" id="L112">		return yellowDeck;</span>
+<span class="fc" id="L112">		return yellowDeck;</span>
 	}
 
 
 	public void setYellowDeck(ArrayList&lt;Cards&gt; yellowDeck) {
-<span class="nc" id="L117">		this.yellowDeck = yellowDeck;</span>
-<span class="nc" id="L118">	}</span>
+<span class="fc" id="L117">		this.yellowDeck = yellowDeck;</span>
+<span class="fc" id="L118">	}</span>
 
 
 	public ArrayList&lt;Cards&gt; getGreenDeck() {
-<span class="nc" id="L122">		return greenDeck;</span>
+<span class="fc" id="L122">		return greenDeck;</span>
 	}
 
 
 	public void setGreenDeck(ArrayList&lt;Cards&gt; greenDeck) {
-<span class="nc" id="L127">		this.greenDeck = greenDeck;</span>
-<span class="nc" id="L128">	}</span>
+<span class="fc" id="L127">		this.greenDeck = greenDeck;</span>
+<span class="fc" id="L128">	}</span>
 
 
 	public Cards[][] getCardsOnTable() {
-<span class="nc" id="L132">		return cardsOnTable;</span>
+<span class="fc" id="L132">		return cardsOnTable;</span>
 	}
 
 
 	public void setCardsOnTable(Cards[][] cardsOnTable) {
-<span class="nc" id="L137">		this.cardsOnTable = cardsOnTable;</span>
-<span class="nc" id="L138">	}</span>
+<span class="fc" id="L137">		this.cardsOnTable = cardsOnTable;</span>
+<span class="fc" id="L138">	}</span>
 
 
 	public ArrayList&lt;Noble&gt; getTiles() {
-<span class="nc" id="L142">		return tiles;</span>
+<span class="fc" id="L142">		return tiles;</span>
 	}
 
 
 	public void setTiles(ArrayList&lt;Noble&gt; tiles) {
-<span class="nc" id="L147">		this.tiles = tiles;</span>
-<span class="nc" id="L148">	}</span>
+<span class="fc" id="L147">		this.tiles = tiles;</span>
+<span class="fc" id="L148">	}</span>
 
 
 	public ArrayList&lt;Tokens&gt; getTokens() {
-<span class="nc" id="L152">		return tokens;</span>
+<span class="fc" id="L152">		return tokens;</span>
 	}
 
 
 	public void setTokens(ArrayList&lt;Tokens&gt; tokens) {
-<span class="nc" id="L157">		this.tokens = tokens;</span>
-<span class="nc" id="L158">	}</span>
+<span class="fc" id="L157">		this.tokens = tokens;</span>
+<span class="fc" id="L158">	}</span>
 	
 	public ArrayList&lt;Cards&gt; getDeck(String desiredDeck)
 	{
-<span class="nc bnc" id="L162" title="All 2 branches missed.">		if(desiredDeck.contains(&quot;blue&quot;)){</span>
-<span class="nc" id="L163">			return blueDeck;</span>
-<span class="nc bnc" id="L164" title="All 2 branches missed.">		}else if(desiredDeck.contains(&quot;green&quot;)){</span>
-<span class="nc" id="L165">			return greenDeck;</span>
+<span class="fc bfc" id="L162" title="All 2 branches covered.">		if(desiredDeck.contains(&quot;blue&quot;)){</span>
+<span class="fc" id="L163">			return blueDeck;</span>
+<span class="fc bfc" id="L164" title="All 2 branches covered.">		}else if(desiredDeck.contains(&quot;green&quot;)){</span>
+<span class="fc" id="L165">			return greenDeck;</span>
 		}else{
-<span class="nc" id="L167">			return yellowDeck;</span>
+<span class="fc" id="L167">			return yellowDeck;</span>
 		}
 	}
 	
 	public int whiteTokens()
 	{
-<span class="nc" id="L173">		int r = 0;</span>
-<span class="nc bnc" id="L174" title="All 2 branches missed.">		for(int i=0; i&lt;tokens.size(); i++){</span>
-<span class="nc bnc" id="L175" title="All 2 branches missed.">			if(tokens.get(i).toString().equalsIgnoreCase(&quot;Diamond&quot;))</span>
-<span class="nc" id="L176">				r++;</span>
+<span class="fc" id="L173">		int r = 0;</span>
+<span class="fc bfc" id="L174" title="All 2 branches covered.">		for(int i=0; i&lt;tokens.size(); i++){</span>
+<span class="fc bfc" id="L175" title="All 2 branches covered.">			if(tokens.get(i).toString().equalsIgnoreCase(&quot;Diamond&quot;))</span>
+<span class="fc" id="L176">				r++;</span>
 		}
 		
 		//out.println(r);
 		
-<span class="nc" id="L181">		return r;</span>
+<span class="fc" id="L181">		return r;</span>
 	}
 	
 	public int greenTokens()
 	{
-<span class="nc" id="L186">		int r = 0;</span>
-<span class="nc bnc" id="L187" title="All 2 branches missed.">		for(int i=0; i&lt;tokens.size(); i++){</span>
-<span class="nc bnc" id="L188" title="All 2 branches missed.">			if(tokens.get(i).toString().equalsIgnoreCase(&quot;Emerald&quot;))</span>
-<span class="nc" id="L189">				r++;</span>
+<span class="fc" id="L186">		int r = 0;</span>
+<span class="fc bfc" id="L187" title="All 2 branches covered.">		for(int i=0; i&lt;tokens.size(); i++){</span>
+<span class="fc bfc" id="L188" title="All 2 branches covered.">			if(tokens.get(i).toString().equalsIgnoreCase(&quot;Emerald&quot;))</span>
+<span class="fc" id="L189">				r++;</span>
 		}
 		
 		//out.println(r);
 		
-<span class="nc" id="L194">		return r;</span>
+<span class="fc" id="L194">		return r;</span>
 	}
 	
 	public int blueTokens()
 	{
-<span class="nc" id="L199">		int r = 0;</span>
-<span class="nc bnc" id="L200" title="All 2 branches missed.">		for(int i=0; i&lt;tokens.size(); i++){</span>
-<span class="nc bnc" id="L201" title="All 2 branches missed.">			if(tokens.get(i).toString().equalsIgnoreCase(&quot;Sapphire&quot;))</span>
-<span class="nc" id="L202">				r++;</span>
+<span class="fc" id="L199">		int r = 0;</span>
+<span class="fc bfc" id="L200" title="All 2 branches covered.">		for(int i=0; i&lt;tokens.size(); i++){</span>
+<span class="fc bfc" id="L201" title="All 2 branches covered.">			if(tokens.get(i).toString().equalsIgnoreCase(&quot;Sapphire&quot;))</span>
+<span class="fc" id="L202">				r++;</span>
 		}
 		
 		//out.println(r);
 		
-<span class="nc" id="L207">		return r;</span>
+<span class="fc" id="L207">		return r;</span>
 	}
 	
 	public int blackTokens()
 	{
-<span class="nc" id="L212">		int r = 0;</span>
-<span class="nc bnc" id="L213" title="All 2 branches missed.">		for(int i=0; i&lt;tokens.size(); i++){</span>
-<span class="nc bnc" id="L214" title="All 2 branches missed.">			if(tokens.get(i).toString().equalsIgnoreCase(&quot;Onyx&quot;))</span>
-<span class="nc" id="L215">				r++;</span>
+<span class="fc" id="L212">		int r = 0;</span>
+<span class="fc bfc" id="L213" title="All 2 branches covered.">		for(int i=0; i&lt;tokens.size(); i++){</span>
+<span class="fc bfc" id="L214" title="All 2 branches covered.">			if(tokens.get(i).toString().equalsIgnoreCase(&quot;Onyx&quot;))</span>
+<span class="fc" id="L215">				r++;</span>
 		}
 		
 		//out.println(r);
 		
-<span class="nc" id="L220">		return r;</span>
+<span class="fc" id="L220">		return r;</span>
 	}
 	
 	public int redTokens()
 	{
-<span class="nc" id="L225">		int r = 0;</span>
-<span class="nc bnc" id="L226" title="All 2 branches missed.">		for(int i=0; i&lt;tokens.size(); i++){</span>
-<span class="nc bnc" id="L227" title="All 2 branches missed.">			if(tokens.get(i).toString().equalsIgnoreCase(&quot;Rubby&quot;))</span>
-<span class="nc" id="L228">				r++;</span>
+<span class="fc" id="L225">		int r = 0;</span>
+<span class="fc bfc" id="L226" title="All 2 branches covered.">		for(int i=0; i&lt;tokens.size(); i++){</span>
+<span class="fc bfc" id="L227" title="All 2 branches covered.">			if(tokens.get(i).toString().equalsIgnoreCase(&quot;Rubby&quot;))</span>
+<span class="fc" id="L228">				r++;</span>
 		}
 		
 		//out.println(r);
 		
-<span class="nc" id="L233">		return r;</span>
+<span class="fc" id="L233">		return r;</span>
 	}
 	
 	public int yellowTokens()
 	{
-<span class="nc" id="L238">		int r = 0;</span>
-<span class="nc bnc" id="L239" title="All 2 branches missed.">		for(int i=0; i&lt;tokens.size(); i++){</span>
-<span class="nc bnc" id="L240" title="All 2 branches missed.">			if(tokens.get(i).toString().equalsIgnoreCase(&quot;Gold&quot;))</span>
-<span class="nc" id="L241">				r++;</span>
+<span class="fc" id="L238">		int r = 0;</span>
+<span class="fc bfc" id="L239" title="All 2 branches covered.">		for(int i=0; i&lt;tokens.size(); i++){</span>
+<span class="fc bfc" id="L240" title="All 2 branches covered.">			if(tokens.get(i).toString().equalsIgnoreCase(&quot;Gold&quot;))</span>
+<span class="fc" id="L241">				r++;</span>
 		}
 		
 		//out.println(r);
 		
-<span class="nc" id="L246">		return r;</span>
+<span class="fc" id="L246">		return r;</span>
 	}
 	
 	public Cards getRandom(String desiredDeck)   //enter blue, yellow, or green. NOTHING ELSE REMEMBER
 	{
-<span class="nc bnc" id="L251" title="All 2 branches missed.">		if(desiredDeck.equalsIgnoreCase(&quot;blue&quot;)){</span>
-<span class="nc" id="L252">			int r = (int)(Math.random()*blueDeck.size());</span>
-<span class="nc" id="L253">			return blueDeck.get(r);</span>
-<span class="nc bnc" id="L254" title="All 2 branches missed.">		}else if(desiredDeck.equalsIgnoreCase(&quot;green&quot;)){</span>
-<span class="nc" id="L255">			int r = (int)(Math.random()*greenDeck.size());</span>
-<span class="nc" id="L256">			return greenDeck.get(r);</span>
+<span class="fc bfc" id="L251" title="All 2 branches covered.">		if(desiredDeck.equalsIgnoreCase(&quot;blue&quot;)){</span>
+<span class="fc" id="L252">			int r = (int)(Math.random()*blueDeck.size());</span>
+<span class="fc" id="L253">			return blueDeck.get(r);</span>
+<span class="fc bfc" id="L254" title="All 2 branches covered.">		}else if(desiredDeck.equalsIgnoreCase(&quot;green&quot;)){</span>
+<span class="fc" id="L255">			int r = (int)(Math.random()*greenDeck.size());</span>
+<span class="fc" id="L256">			return greenDeck.get(r);</span>
 		}else{
-<span class="nc" id="L258">			int r = (int)(Math.random()*yellowDeck.size());</span>
-<span class="nc" id="L259">			return yellowDeck.get(r);</span>
+<span class="fc" id="L258">			int r = (int)(Math.random()*yellowDeck.size());</span>
+<span class="fc" id="L259">			return yellowDeck.get(r);</span>
 		}
 	}
 	
 	public void updatePlayers(Player p)
 	{
-<span class="nc bnc" id="L265" title="All 2 branches missed.">		for(int i = 0; i&lt;players.size(); i++){</span>
-<span class="nc bnc" id="L266" title="All 2 branches missed.">			if(players.get(i).getName() == p.getName()){</span>
-<span class="nc" id="L267">				players.set(i, p);</span>
+<span class="fc bfc" id="L265" title="All 2 branches covered.">		for(int i = 0; i&lt;players.size(); i++){</span>
+<span class="fc bfc" id="L266" title="All 2 branches covered.">			if(players.get(i).getName() == p.getName()){</span>
+<span class="fc" id="L267">				players.set(i, p);</span>
 			}
 		}
-<span class="nc" id="L270">	}</span>
+<span class="fc" id="L270">	}</span>
 	
 	public boolean differentColors(ArrayList&lt;Tokens&gt; t)
 	{
-<span class="nc" id="L274">		boolean r = true;</span>
+<span class="fc" id="L274">		boolean r = true;</span>
 		
-<span class="nc bnc" id="L276" title="All 2 branches missed.">		for(int i=0; i&lt;t.size()-1; i++){</span>
-<span class="nc bnc" id="L277" title="All 2 branches missed.">			if(t.get(i).equals(t.get(i+1))){</span>
-<span class="nc" id="L278">				r = false;</span>
+<span class="fc bfc" id="L276" title="All 2 branches covered.">		for(int i=0; i&lt;t.size()-1; i++){</span>
+<span class="fc bfc" id="L277" title="All 2 branches covered.">			if(t.get(i).equals(t.get(i+1))){</span>
+<span class="fc" id="L278">				r = false;</span>
 			}
 		}
 		
-<span class="nc" id="L282">		return r;</span>
+<span class="fc" id="L282">		return r;</span>
 	}
 	
 	public ArrayList&lt;Noble&gt; containNoble()
 	{
-<span class="nc" id="L287">		ArrayList&lt;Noble&gt; r = new ArrayList&lt;Noble&gt;();</span>
+<span class="fc" id="L287">		ArrayList&lt;Noble&gt; r = new ArrayList&lt;Noble&gt;();</span>
 		
-<span class="nc bnc" id="L289" title="All 2 branches missed.">		for(int i=0; i&lt;players.size(); i++){</span>
-<span class="nc bnc" id="L290" title="All 2 branches missed.">			if(!players.get(i).getNobles().isEmpty()){</span>
-<span class="nc" id="L291">				r.addAll(players.get(i).getNobles());</span>
+<span class="fc bfc" id="L289" title="All 2 branches covered.">		for(int i=0; i&lt;players.size(); i++){</span>
+<span class="fc bfc" id="L290" title="All 2 branches covered.">			if(!players.get(i).getNobles().isEmpty()){</span>
+<span class="fc" id="L291">				r.addAll(players.get(i).getNobles());</span>
 			}
 		}
 		
-<span class="nc" id="L295">		return r;</span>
+<span class="fc" id="L295">		return r;</span>
 	}
 	
 	public int numOf(Tokens token)
 	{
-<span class="nc" id="L300">		int r = 0;</span>
-<span class="nc bnc" id="L301" title="All 2 branches missed.">		for(int i=0; i&lt;tokens.size(); i++){</span>
-<span class="nc bnc" id="L302" title="All 2 branches missed.">			if(tokens.get(i).getColor() == token.getColor())</span>
-<span class="nc" id="L303">				r++;</span>
+<span class="fc" id="L300">		int r = 0;</span>
+<span class="fc bfc" id="L301" title="All 2 branches covered.">		for(int i=0; i&lt;tokens.size(); i++){</span>
+<span class="fc bfc" id="L302" title="All 2 branches covered.">			if(tokens.get(i).getColor() == token.getColor())</span>
+<span class="fc" id="L303">				r++;</span>
 		}
 		
-<span class="nc" id="L306">		return r;</span>
+<span class="fc" id="L306">		return r;</span>
 	}
 	
 	
@@ -312,33 +312,33 @@ public class Game
 
 	public boolean win()
 	{
-<span class="nc" id="L315">		boolean t = false;</span>
+<span class="fc" id="L315">		boolean t = false;</span>
 		
-<span class="nc bnc" id="L317" title="All 2 branches missed.">		for(int i = 0; i&lt;players.size(); i++){</span>
-<span class="nc bnc" id="L318" title="All 4 branches missed.">			if(players.get(i).getScore() &gt;= 15 &amp;&amp; !winner.contains(players.get(i))){</span>
-<span class="nc" id="L319">				winner.add(players.get(i));</span>
+<span class="fc bfc" id="L317" title="All 2 branches covered.">		for(int i = 0; i&lt;players.size(); i++){</span>
+<span class="pc bpc" id="L318" title="1 of 4 branches missed.">			if(players.get(i).getScore() &gt;= 15 &amp;&amp; !winner.contains(players.get(i))){</span>
+<span class="fc" id="L319">				winner.add(players.get(i));</span>
 			}
 				//System.out.println(winner);
-<span class="nc" id="L322">				t = true;</span>
+<span class="fc" id="L322">				t = true;</span>
 		}
 		
-<span class="nc" id="L325">		return t;</span>
+<span class="fc" id="L325">		return t;</span>
 		
 	}
 	
 	public boolean checkDiscard(Player p, Tokens t1) throws InvalidTokensSelection
 	{
-<span class="nc" id="L331">		boolean tf = false;</span>
-<span class="nc bnc" id="L332" title="All 2 branches missed.">		for(int i=0; i&lt;p.getTokens().size(); i++){</span>
-<span class="nc bnc" id="L333" title="All 2 branches missed.">			if(p.getTokens().get(i).getColor().equals(t1.getColor())){</span>
-<span class="nc" id="L334">				tf = true;</span>
+<span class="fc" id="L331">		boolean tf = false;</span>
+<span class="fc bfc" id="L332" title="All 2 branches covered.">		for(int i=0; i&lt;p.getTokens().size(); i++){</span>
+<span class="pc bpc" id="L333" title="1 of 2 branches missed.">			if(p.getTokens().get(i).getColor().equals(t1.getColor())){</span>
+<span class="fc" id="L334">				tf = true;</span>
 			}
 		}
 		
-<span class="nc bnc" id="L338" title="All 2 branches missed.">		if(tf){</span>
-<span class="nc" id="L339">			return true;</span>
+<span class="fc bfc" id="L338" title="All 2 branches covered.">		if(tf){</span>
+<span class="fc" id="L339">			return true;</span>
 		}else{
-<span class="nc" id="L341">			throw new InvalidTokensSelection();</span>
+<span class="fc" id="L341">			throw new InvalidTokensSelection();</span>
 		}
 		
 		
@@ -347,23 +347,23 @@ public class Game
 	
 	public boolean checkActionOne(Player p, Tokens target) throws NotEnoughTokensOnTable //Action 1 = take two tokens
 	{
-<span class="nc bnc" id="L350" title="All 2 branches missed.">		if(numOf(target) &gt;= 4){</span>
-<span class="nc" id="L351">			return true;</span>
+<span class="fc bfc" id="L350" title="All 2 branches covered.">		if(numOf(target) &gt;= 4){</span>
+<span class="fc" id="L351">			return true;</span>
 		}else{
-<span class="nc" id="L353">			throw new NotEnoughTokensOnTable();</span>
+<span class="fc" id="L353">			throw new NotEnoughTokensOnTable();</span>
 		}
 	}
 	
 	public boolean checkActionTwo(Player p, Tokens t1, Tokens t2, Tokens t3) throws NotEnoughTokensOnTable  //Action 2 = take 1 tokens of 3 colors
 	{
-<span class="nc" id="L359">		ArrayList&lt;Tokens&gt; r = new ArrayList&lt;Tokens&gt;();</span>
-<span class="nc" id="L360">		r.add(t1);</span>
-<span class="nc" id="L361">		r.add(t2);</span>
-<span class="nc" id="L362">		r.add(t3);</span>
+<span class="fc" id="L359">		ArrayList&lt;Tokens&gt; r = new ArrayList&lt;Tokens&gt;();</span>
+<span class="fc" id="L360">		r.add(t1);</span>
+<span class="fc" id="L361">		r.add(t2);</span>
+<span class="fc" id="L362">		r.add(t3);</span>
 		
-<span class="nc" id="L364">		ArrayList&lt;Tokens&gt; rt = new ArrayList&lt;Tokens&gt;(tokens);</span>
+<span class="fc" id="L364">		ArrayList&lt;Tokens&gt; rt = new ArrayList&lt;Tokens&gt;(tokens);</span>
 		
-<span class="nc" id="L366">		boolean tf = true;</span>
+<span class="fc" id="L366">		boolean tf = true;</span>
 		
 		/*
 		for(int i=0; i&lt;p.getTokens().size(); i++){
@@ -371,11 +371,11 @@ public class Game
 				tf = false;
 			}
 		}*/
+
+
 		
-		
-		
-<span class="nc bnc" id="L377" title="All 2 branches missed.">		if(tf){</span>
-<span class="nc" id="L378">			return true;</span>
+<span class="pc bpc" id="L377" title="1 of 2 branches missed.">		if(tf){</span>
+<span class="fc" id="L378">			return true;</span>
 		}else{
 <span class="nc" id="L380">			throw new NotEnoughTokensOnTable();</span>
 		}
@@ -384,67 +384,67 @@ public class Game
 	public boolean checkActionThree(Player p, int rol, int col) throws InvalidCardsSelectionOfCardsOnTable  //Action 3 = take a reserve card and a wild card token(yellow)
 , PlayerAlreadyHoldsThreeReserveCards
 	{
-<span class="nc bnc" id="L387" title="All 8 branches missed.">		if(rol-1 &lt;= 3 &amp;&amp; col-1 &lt;= 3 &amp;&amp; rol-1 &gt;= 0 &amp;&amp; col-1 &gt;= 0){</span>
-<span class="nc bnc" id="L388" title="All 2 branches missed.">			if(p.getReserve().size() &lt; 3){</span>
-<span class="nc" id="L389">				return true;</span>
+<span class="pc bpc" id="L387" title="3 of 8 branches missed.">		if(rol-1 &lt;= 3 &amp;&amp; col-1 &lt;= 3 &amp;&amp; rol-1 &gt;= 0 &amp;&amp; col-1 &gt;= 0){</span>
+<span class="fc bfc" id="L388" title="All 2 branches covered.">			if(p.getReserve().size() &lt; 3){</span>
+<span class="fc" id="L389">				return true;</span>
 			}else{
-<span class="nc" id="L391">				throw new PlayerAlreadyHoldsThreeReserveCards();</span>
+<span class="fc" id="L391">				throw new PlayerAlreadyHoldsThreeReserveCards();</span>
 			}
 		}else{
-<span class="nc" id="L394">			throw new InvalidCardsSelectionOfCardsOnTable();</span>
+<span class="fc" id="L394">			throw new InvalidCardsSelectionOfCardsOnTable();</span>
 		}
 	}
 	
 	public boolean checkActionThree(Player p, String d) throws SelectedDeckRanOutOfCards  //this will handle when player wish to draw a card from the deck and reserve it
 	{
-<span class="nc bnc" id="L400" title="All 6 branches missed.">		if(d.contains(&quot;blue&quot;) || d.contains(&quot;green&quot;) || d.contains(&quot;yellow&quot;)){</span>
-<span class="nc bnc" id="L401" title="All 2 branches missed.">			if(p.getReserve().size() &lt;= 3){</span>
-<span class="nc bnc" id="L402" title="All 4 branches missed.">				if(d.contains(&quot;blue&quot;) &amp;&amp; !blueDeck.isEmpty()){</span>
-<span class="nc" id="L403">					return true;</span>
-<span class="nc bnc" id="L404" title="All 4 branches missed.">				}else if(d.contains(&quot;green&quot;) &amp;&amp; !greenDeck.isEmpty()){</span>
-<span class="nc" id="L405">					return true;</span>
-<span class="nc bnc" id="L406" title="All 4 branches missed.">				}else if(d.contains(&quot;yellow&quot;) &amp;&amp; !yellowDeck.isEmpty()){</span>
-<span class="nc" id="L407">					return true;</span>
+<span class="pc bpc" id="L400" title="1 of 6 branches missed.">		if(d.contains(&quot;blue&quot;) || d.contains(&quot;green&quot;) || d.contains(&quot;yellow&quot;)){</span>
+<span class="pc bpc" id="L401" title="1 of 2 branches missed.">			if(p.getReserve().size() &lt;= 3){</span>
+<span class="fc bfc" id="L402" title="All 4 branches covered.">				if(d.contains(&quot;blue&quot;) &amp;&amp; !blueDeck.isEmpty()){</span>
+<span class="fc" id="L403">					return true;</span>
+<span class="fc bfc" id="L404" title="All 4 branches covered.">				}else if(d.contains(&quot;green&quot;) &amp;&amp; !greenDeck.isEmpty()){</span>
+<span class="fc" id="L405">					return true;</span>
+<span class="fc bfc" id="L406" title="All 4 branches covered.">				}else if(d.contains(&quot;yellow&quot;) &amp;&amp; !yellowDeck.isEmpty()){</span>
+<span class="fc" id="L407">					return true;</span>
 				}
 			}
 		}
 		
-<span class="nc" id="L412">		throw new SelectedDeckRanOutOfCards();</span>
+<span class="fc" id="L412">		throw new SelectedDeckRanOutOfCards();</span>
 	}
 	
 	public boolean checkActionFour(Player p, Cards desired) throws PlayerDoesNotHaveEnoughResourcesToBuySelectedCard  //Action 4 = place(buy) a card from your reserve cards
 , PlayerDoesNotHaveSelectedCardInReserve
 	{
-<span class="nc bnc" id="L418" title="All 2 branches missed.">		if(p.getReserve().contains(desired)){</span>
-<span class="nc bnc" id="L419" title="All 2 branches missed.">			if(p.canBuy(desired)){</span>
-<span class="nc" id="L420">				System.out.println(&quot;WOW&quot;);</span>
-<span class="nc" id="L421">				return true;</span>
-<span class="nc bnc" id="L422" title="All 2 branches missed.">			}else if(p.canBuyWithYellow(desired)){</span>
+<span class="fc bfc" id="L418" title="All 2 branches covered.">		if(p.getReserve().contains(desired)){</span>
+<span class="fc bfc" id="L419" title="All 2 branches covered.">			if(p.canBuy(desired)){</span>
+<span class="fc" id="L420">				System.out.println(&quot;WOW&quot;);</span>
+<span class="fc" id="L421">				return true;</span>
+<span class="pc bpc" id="L422" title="1 of 2 branches missed.">			}else if(p.canBuyWithYellow(desired)){</span>
 <span class="nc" id="L423">				System.out.println(&quot;RAPE&quot;);</span>
 <span class="nc" id="L424">				return true;</span>
 			}else{
-<span class="nc" id="L426">				throw new PlayerDoesNotHaveEnoughResourcesToBuySelectedCard();</span>
+<span class="fc" id="L426">				throw new PlayerDoesNotHaveEnoughResourcesToBuySelectedCard();</span>
 			}
 		}else{
-<span class="nc" id="L429">			throw new PlayerDoesNotHaveSelectedCardInReserve();</span>
+<span class="fc" id="L429">			throw new PlayerDoesNotHaveSelectedCardInReserve();</span>
 		}
 	}
 	
 	public boolean checkActionFive(Player p, int rol, int col) throws PlayerDoesNotHaveEnoughResourcesToBuySelectedCard  //Action 5 = directly purchase a card on the table
 , InvalidCardsSelectionOfCardsInReserve, InvalidCardsSelectionOfCardsOnTable
 	{
-<span class="nc bnc" id="L436" title="All 8 branches missed.">		if(rol-1 &lt;= 2 &amp;&amp; col-1 &lt;= 3 &amp;&amp; rol-1 &gt;= 0 &amp;&amp; col-1 &gt;= 0){</span>
-<span class="nc bnc" id="L437" title="All 2 branches missed.">			if(p.canBuy(cardsOnTable[rol-1][col-1])){</span>
+<span class="pc bpc" id="L436" title="1 of 8 branches missed.">		if(rol-1 &lt;= 2 &amp;&amp; col-1 &lt;= 3 &amp;&amp; rol-1 &gt;= 0 &amp;&amp; col-1 &gt;= 0){</span>
+<span class="pc bpc" id="L437" title="1 of 2 branches missed.">			if(p.canBuy(cardsOnTable[rol-1][col-1])){</span>
 				//System.out.println(&quot;Hi&quot;);
 <span class="nc" id="L439">				return true;</span>
-<span class="nc bnc" id="L440" title="All 2 branches missed.">			}else if(p.canBuyWithYellow(cardsOnTable[rol-1][col-1])){</span>
+<span class="fc bfc" id="L440" title="All 2 branches covered.">			}else if(p.canBuyWithYellow(cardsOnTable[rol-1][col-1])){</span>
 				//System.out.println(&quot;Hello&quot;);
-<span class="nc" id="L442">				return true;</span>
+<span class="fc" id="L442">				return true;</span>
 			}else{
-<span class="nc" id="L444">				throw new PlayerDoesNotHaveEnoughResourcesToBuySelectedCard();</span>
+<span class="fc" id="L444">				throw new PlayerDoesNotHaveEnoughResourcesToBuySelectedCard();</span>
 			}
 		}else{
-<span class="nc" id="L447">			throw new InvalidCardsSelectionOfCardsOnTable();</span>
+<span class="fc" id="L447">			throw new InvalidCardsSelectionOfCardsOnTable();</span>
 		}
 	}
 	
@@ -453,43 +453,43 @@ public class Game
 	public String toString()
 	{
 		
-<span class="nc" id="L456">		String r = &quot;&quot;; </span>
+<span class="fc" id="L456">		String r = &quot;&quot;; </span>
 		
-<span class="nc bnc" id="L458" title="All 2 branches missed.">		for(int i=0; i&lt;players.size(); i++){</span>
-<span class="nc" id="L459">			r = r + players.get(i) ;  //3 spaces</span>
+<span class="fc bfc" id="L458" title="All 2 branches covered.">		for(int i=0; i&lt;players.size(); i++){</span>
+<span class="fc" id="L459">			r = r + players.get(i) ;  //3 spaces</span>
 		}
 		
-<span class="nc" id="L462">		r = r + &quot;/////////////////////////////////////\n&quot;;  //37</span>
+<span class="fc" id="L462">		r = r + &quot;/////////////////////////////////////\n&quot;;  //37</span>
 		
-<span class="nc" id="L464">		String blue = &quot;&quot;;</span>
-<span class="nc bnc" id="L465" title="All 2 branches missed.">		for(int i=1; i&lt;5; i++){</span>
-<span class="nc" id="L466">			blue = blue + &quot;Blue Card &quot; + i + &quot;: \n&quot; + cardsOnTable[0][i-1] + &quot;\n&quot;;</span>
+<span class="fc" id="L464">		String blue = &quot;&quot;;</span>
+<span class="fc bfc" id="L465" title="All 2 branches covered.">		for(int i=1; i&lt;5; i++){</span>
+<span class="fc" id="L466">			blue = blue + &quot;Blue Card &quot; + i + &quot;: \n&quot; + cardsOnTable[0][i-1] + &quot;\n&quot;;</span>
 		}
 		
-<span class="nc" id="L469">		String yellow = &quot;&quot;;</span>
-<span class="nc bnc" id="L470" title="All 2 branches missed.">		for(int i=1; i&lt;5; i++){</span>
-<span class="nc" id="L471">			yellow =  yellow + &quot;Yellow Card &quot; + i + &quot;: \n&quot; + cardsOnTable[1][i-1] + &quot;\n&quot;;</span>
+<span class="fc" id="L469">		String yellow = &quot;&quot;;</span>
+<span class="fc bfc" id="L470" title="All 2 branches covered.">		for(int i=1; i&lt;5; i++){</span>
+<span class="fc" id="L471">			yellow =  yellow + &quot;Yellow Card &quot; + i + &quot;: \n&quot; + cardsOnTable[1][i-1] + &quot;\n&quot;;</span>
 		}
 		
-<span class="nc" id="L474">		String green = &quot;&quot;;</span>
-<span class="nc bnc" id="L475" title="All 2 branches missed.">		for(int i=1; i&lt;5; i++){</span>
-<span class="nc" id="L476">			green =  green + &quot;Green Card &quot; + i + &quot;: \n&quot; + cardsOnTable[2][i-1] + &quot;\n&quot;;</span>
+<span class="fc" id="L474">		String green = &quot;&quot;;</span>
+<span class="fc bfc" id="L475" title="All 2 branches covered.">		for(int i=1; i&lt;5; i++){</span>
+<span class="fc" id="L476">			green =  green + &quot;Green Card &quot; + i + &quot;: \n&quot; + cardsOnTable[2][i-1] + &quot;\n&quot;;</span>
 		}
 		
-<span class="nc" id="L479">		r = r + &quot;     Blue Deck\n&quot; + blue + &quot;/////////////////////////\n&quot;;</span>
-<span class="nc" id="L480">		r = r + &quot;     Yellow Deck\n&quot; + yellow + &quot;/////////////////////////\n&quot;;</span>
-<span class="nc" id="L481">		r = r + &quot;     Green Deck\n&quot; + green + &quot;/////////////////////////////////////\n&quot;;</span>
+<span class="fc" id="L479">		r = r + &quot;     Blue Deck\n&quot; + blue + &quot;/////////////////////////\n&quot;;</span>
+<span class="fc" id="L480">		r = r + &quot;     Yellow Deck\n&quot; + yellow + &quot;/////////////////////////\n&quot;;</span>
+<span class="fc" id="L481">		r = r + &quot;     Green Deck\n&quot; + green + &quot;/////////////////////////////////////\n&quot;;</span>
 		
 		
-<span class="nc" id="L484">		r = r + &quot;Tokens Avalible: &quot; + &quot;Onyx x&quot; + blackTokens() + &quot; ,Sapphire x&quot; + blueTokens() + &quot; ,Emerald x&quot; + greenTokens() + &quot; ,Diamond x&quot; + whiteTokens() + &quot; ,Rubby x&quot; + redTokens() + &quot; ,Gold x&quot; + yellowTokens() + &quot;\n\n&quot;;</span>
-<span class="nc" id="L485">		r = r + &quot;Nobles Avalible: \n\n&quot;;</span>
+<span class="fc" id="L484">		r = r + &quot;Tokens Avalible: &quot; + &quot;Onyx x&quot; + blackTokens() + &quot; ,Sapphire x&quot; + blueTokens() + &quot; ,Emerald x&quot; + greenTokens() + &quot; ,Diamond x&quot; + whiteTokens() + &quot; ,Rubby x&quot; + redTokens() + &quot; ,Gold x&quot; + yellowTokens() + &quot;\n\n&quot;;</span>
+<span class="fc" id="L485">		r = r + &quot;Nobles Avalible: \n\n&quot;;</span>
 		
-<span class="nc bnc" id="L487" title="All 2 branches missed.">		for(int i=0; i&lt;tiles.size(); i++){</span>
-<span class="nc" id="L488">			r = r + tiles.get(i).toString() + &quot;\n\n&quot;;</span>
+<span class="fc bfc" id="L487" title="All 2 branches covered.">		for(int i=0; i&lt;tiles.size(); i++){</span>
+<span class="fc" id="L488">			r = r + tiles.get(i).toString() + &quot;\n\n&quot;;</span>
 		}
 		
 		
-<span class="nc" id="L492">		return r;</span>
+<span class="fc" id="L492">		return r;</span>
 		
 	}
 	

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import static java.lang.System.*;
 import java.util.Arrays;
 
-public class Game 
+public class Game
 {
 	private static final Exception InvalidActionException = null;
 	private ArrayList<Player> players;
@@ -371,8 +371,8 @@ public class Game
 				tf = false;
 			}
 		}*/
-		
-		
+
+
 		
 		if(tf){
 			return true;

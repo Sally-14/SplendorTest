@@ -34,6 +34,28 @@ Noble Class:
 MyFrame Class: 
 - 100% statement coverage (branch coverage N/A)
 
+Game Class: 
+- Constructor takes in an arraylist of winners?
+- GetDeck does not check for validity of arguments (returns yellow deck for invalid strings)
+- GetRandom does not check for validity of argument (returns yellow deck for invalid strings; comment says //enter blue, yellow, or green. NOTHING ELSE REMEMBER, but does not check for validity)
+- updatePlayers does not check for validity of argument (does not check if player exists and does not throw exception)
+- differentColors contains for-loop indexing error (loop does not reach last element)
+- win always returns true regardless of if the game is won 
+- checkActionTwo always returns true 
+- checkActionTwo does not check arguments to make sure the two tokens are of different colors
+- checkActionTwo does not check arguments to make sure the use is not taking a gold token 
+- checkActionThree allow row argument to be 4 
+- checkActionThree String version does not throw Player Already Holds Three Reserve Cards exception
+- checkActionThree String version allows Player to add another card in reverse when the Player have three cards reserved
+- checkActionThree String version does not check for validity of string argument
+- checkActionThree String version does not handle capitalized string
+- checkActionFive does not throw error when column is boundary bad case (4) 
+- toString does not handle uninitialized variables from simple constructor 
+- toString deck loop hard coded does not work with decks with less than or greater than 4 cards on the table
+
+Player Class: 
+- can buy with yellow only takes "gold" not anything else 
+- can buy does not check the counts of each color token
 
 Black Box Test Results:
 - When we are using system.in to read Buffered Input Stream, we wrote one input of scanner array interacting with text-based interface. The No line found error is keep popping out. It is probably because the author initialize multiple scanner which the initial scanner (with all inputs) could not continue to be used. I have to separate the input into multiple scanner.

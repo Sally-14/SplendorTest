@@ -47,7 +47,7 @@ public class Player
 <span class="nc" id="L47">	}</span>
 
 	public ArrayList&lt;Cards&gt; getReserve() {
-<span class="nc" id="L50">		return reserve;</span>
+<span class="fc" id="L50">		return reserve;</span>
 	}
 
 	public void setReserve(ArrayList&lt;Cards&gt; reserve) {
@@ -55,7 +55,7 @@ public class Player
 <span class="nc" id="L55">	}</span>
 
 	public int getScore() {
-<span class="nc" id="L58">		return score;</span>
+<span class="fc" id="L58">		return score;</span>
 	}
 
 	public void setScore(int score) {
@@ -63,7 +63,7 @@ public class Player
 <span class="nc" id="L63">	}</span>
 
 	public ArrayList&lt;Tokens&gt; getTokens() {
-<span class="nc" id="L66">		return tokens;</span>
+<span class="fc" id="L66">		return tokens;</span>
 	}
 
 	public void setTokens(ArrayList&lt;Tokens&gt; tokens) {
@@ -71,7 +71,7 @@ public class Player
 <span class="nc" id="L71">	}</span>
 
 	public String getName() {
-<span class="nc" id="L74">		return name;</span>
+<span class="fc" id="L74">		return name;</span>
 	}
 
 	public void setName(String name) {
@@ -79,7 +79,7 @@ public class Player
 <span class="nc" id="L79">	}</span>
 	
 	public ArrayList&lt;Noble&gt; getNobles() {
-<span class="nc" id="L82">		return nobles;</span>
+<span class="fc" id="L82">		return nobles;</span>
 	}
 
 	public void setNobles(ArrayList&lt;Noble&gt; nobles) {
@@ -88,16 +88,16 @@ public class Player
 	
 	public int getPoints()
 	{
-<span class="nc" id="L91">		int r = 0;</span>
-<span class="nc bnc" id="L92" title="All 2 branches missed.">		for(int i=0; i&lt;cards.size(); i++){</span>
+<span class="fc" id="L91">		int r = 0;</span>
+<span class="pc bpc" id="L92" title="1 of 2 branches missed.">		for(int i=0; i&lt;cards.size(); i++){</span>
 <span class="nc" id="L93">			r += cards.get(i).getPt();</span>
 		}
 		
-<span class="nc bnc" id="L96" title="All 2 branches missed.">		for(int i=0; i&lt;nobles.size(); i++){</span>
+<span class="pc bpc" id="L96" title="1 of 2 branches missed.">		for(int i=0; i&lt;nobles.size(); i++){</span>
 <span class="nc" id="L97">			r += nobles.get(i).getPt();</span>
 		}
 		
-<span class="nc" id="L100">		return r;</span>
+<span class="fc" id="L100">		return r;</span>
 	}
 	
 	public int numOf(Tokens token)
@@ -427,71 +427,71 @@ public class Player
 	
 	public boolean containsAll(ArrayList&lt;Tokens&gt; have, ArrayList&lt;Tokens&gt; cost)
 	{
-<span class="nc" id="L430">		boolean b = true;</span>
-<span class="nc bnc" id="L431" title="All 2 branches missed.">		for(int i=0; i&lt;cost.size(); i++){</span>
-<span class="nc bnc" id="L432" title="All 2 branches missed.">			if(!have.contains(cost.get(i))){</span>
-<span class="nc" id="L433">				b = false;</span>
-<span class="nc" id="L434">				break;</span>
+<span class="fc" id="L430">		boolean b = true;</span>
+<span class="fc bfc" id="L431" title="All 2 branches covered.">		for(int i=0; i&lt;cost.size(); i++){</span>
+<span class="fc bfc" id="L432" title="All 2 branches covered.">			if(!have.contains(cost.get(i))){</span>
+<span class="fc" id="L433">				b = false;</span>
+<span class="fc" id="L434">				break;</span>
 			}
 		}
 		
-<span class="nc" id="L438">		return b;</span>
+<span class="fc" id="L438">		return b;</span>
 	}
 	
 	public boolean removeAll(ArrayList&lt;Tokens&gt; have, ArrayList&lt;Tokens&gt; cost)
 	{
-<span class="nc" id="L443">		boolean b = true;</span>
-<span class="nc bnc" id="L444" title="All 2 branches missed.">		for(int i=0; i&lt;cost.size(); i++){</span>
+<span class="fc" id="L443">		boolean b = true;</span>
+<span class="pc bpc" id="L444" title="1 of 2 branches missed.">		for(int i=0; i&lt;cost.size(); i++){</span>
 <span class="nc bnc" id="L445" title="All 2 branches missed.">			if(have.contains(cost.get(i))){</span>
 <span class="nc" id="L446">				have.remove(cost.get(i));</span>
 			}
 		}
 		
-<span class="nc" id="L450">		return b;</span>
+<span class="fc" id="L450">		return b;</span>
 	}
 	
 	public boolean canBuy(Cards desired)
 	{
-<span class="nc" id="L455">		ArrayList&lt;Tokens&gt; cost = new ArrayList&lt;Tokens&gt;(desired.getCost());</span>
-<span class="nc" id="L456">		ArrayList&lt;Tokens&gt; have = new ArrayList&lt;Tokens&gt;();</span>
+<span class="fc" id="L455">		ArrayList&lt;Tokens&gt; cost = new ArrayList&lt;Tokens&gt;(desired.getCost());</span>
+<span class="fc" id="L456">		ArrayList&lt;Tokens&gt; have = new ArrayList&lt;Tokens&gt;();</span>
 		
-<span class="nc bnc" id="L458" title="All 2 branches missed.">		for(int i=0; i&lt;cards.size(); i++){</span>
+<span class="pc bpc" id="L458" title="1 of 2 branches missed.">		for(int i=0; i&lt;cards.size(); i++){</span>
 <span class="nc" id="L459">			have.add(cards.get(i).getResource());</span>
 		}
 		
 		//System.out.println(have);
 		//System.out.println(cost);
 		
-<span class="nc" id="L465">		have.addAll(tokens);</span>
+<span class="fc" id="L465">		have.addAll(tokens);</span>
 		
 		//System.out.println(have);
 		
 		//System.out.println(cost);
 		//System.out.println(have);
 		
-<span class="nc" id="L472">		boolean bs = true;</span>
+<span class="fc" id="L472">		boolean bs = true;</span>
 		
-<span class="nc" id="L474">		bs = containsAll(have, cost);</span>
+<span class="fc" id="L474">		bs = containsAll(have, cost);</span>
 		
 		//System.out.println(have.containsAll(cost));
 		
 		//System.out.println(bs);
 		
-<span class="nc" id="L480">		have.removeAll(cost);</span>
+<span class="fc" id="L480">		have.removeAll(cost);</span>
 		
 		//System.out.println(have);
 		
 		//System.out.println(have.isEmpty());
 		//System.out.println(have);
 		
-<span class="nc bnc" id="L487" title="All 4 branches missed.">		if(have.size() == 0 &amp;&amp; bs){</span>
+<span class="fc bfc" id="L487" title="All 4 branches covered.">		if(have.size() == 0 &amp;&amp; bs){</span>
 			//System.out.println(&quot;SDFSDFSDF&quot;);
-<span class="nc" id="L489">			return true;</span>
+<span class="fc" id="L489">			return true;</span>
 		}
 		
-<span class="nc bnc" id="L492" title="All 2 branches missed.">		for(int i=0; i&lt;have.size(); i++){</span>
-<span class="nc bnc" id="L493" title="All 2 branches missed.">			if(have.get(i).equals(new Tokens(&quot;Gold&quot;))){</span>
-<span class="nc" id="L494">				have.remove(new Tokens(&quot;Gold&quot;));</span>
+<span class="fc bfc" id="L492" title="All 2 branches covered.">		for(int i=0; i&lt;have.size(); i++){</span>
+<span class="fc bfc" id="L493" title="All 2 branches covered.">			if(have.get(i).equals(new Tokens(&quot;Gold&quot;))){</span>
+<span class="fc" id="L494">				have.remove(new Tokens(&quot;Gold&quot;));</span>
 			}
 		}
 		
@@ -502,62 +502,62 @@ public class Player
 		
 		
 		
-<span class="nc bnc" id="L505" title="All 4 branches missed.">		return ((have.size() == 0) &amp;&amp; bs);</span>
+<span class="fc bfc" id="L505" title="All 4 branches covered.">		return ((have.size() == 0) &amp;&amp; bs);</span>
 		
 	}
 	
 	public boolean canBuyWithYellow(Cards desired)
 	{
-<span class="nc" id="L511">		ArrayList&lt;Tokens&gt; cost = new ArrayList&lt;Tokens&gt;(desired.getCost());</span>
-<span class="nc" id="L512">		ArrayList&lt;Tokens&gt; have = new ArrayList&lt;Tokens&gt;();</span>
-<span class="nc" id="L513">		ArrayList&lt;Tokens&gt; gold = new ArrayList&lt;Tokens&gt;();</span>
-<span class="nc" id="L514">		ArrayList&lt;Tokens&gt; resource = new ArrayList&lt;Tokens&gt;();</span>
-<span class="nc" id="L515">		ArrayList&lt;Tokens&gt; temp = new ArrayList&lt;Tokens&gt;();</span>
+<span class="fc" id="L511">		ArrayList&lt;Tokens&gt; cost = new ArrayList&lt;Tokens&gt;(desired.getCost());</span>
+<span class="fc" id="L512">		ArrayList&lt;Tokens&gt; have = new ArrayList&lt;Tokens&gt;();</span>
+<span class="fc" id="L513">		ArrayList&lt;Tokens&gt; gold = new ArrayList&lt;Tokens&gt;();</span>
+<span class="fc" id="L514">		ArrayList&lt;Tokens&gt; resource = new ArrayList&lt;Tokens&gt;();</span>
+<span class="fc" id="L515">		ArrayList&lt;Tokens&gt; temp = new ArrayList&lt;Tokens&gt;();</span>
 		
-<span class="nc bnc" id="L517" title="All 2 branches missed.">		for(int i=0; i&lt;cards.size(); i++){</span>
+<span class="pc bpc" id="L517" title="1 of 2 branches missed.">		for(int i=0; i&lt;cards.size(); i++){</span>
 <span class="nc" id="L518">			resource.add(cards.get(i).getResource());</span>
 		}
 		
-<span class="nc" id="L521">		have.addAll(tokens);</span>
+<span class="fc" id="L521">		have.addAll(tokens);</span>
 		
-<span class="nc bnc" id="L523" title="All 2 branches missed.">		for(int i=0; i&lt;have.size(); i++){</span>
-<span class="nc bnc" id="L524" title="All 2 branches missed.">			if(have.get(i).equals(new Tokens(&quot;Gold&quot;))){</span>
-<span class="nc" id="L525">				have.remove(new Tokens(&quot;Gold&quot;));</span>
-<span class="nc" id="L526">				gold.add(new Tokens(&quot;Gold&quot;));</span>
+<span class="fc bfc" id="L523" title="All 2 branches covered.">		for(int i=0; i&lt;have.size(); i++){</span>
+<span class="fc bfc" id="L524" title="All 2 branches covered.">			if(have.get(i).equals(new Tokens(&quot;Gold&quot;))){</span>
+<span class="fc" id="L525">				have.remove(new Tokens(&quot;Gold&quot;));</span>
+<span class="fc" id="L526">				gold.add(new Tokens(&quot;Gold&quot;));</span>
 			}
 		}
 		
 		
-<span class="nc" id="L531">		ArrayList&lt;Tokens&gt; costAfter = new ArrayList&lt;Tokens&gt;(desired.getCost());</span>
+<span class="fc" id="L531">		ArrayList&lt;Tokens&gt; costAfter = new ArrayList&lt;Tokens&gt;(desired.getCost());</span>
 		
-<span class="nc" id="L533">		System.out.println(costAfter);</span>
-<span class="nc" id="L534">		System.out.println(have);</span>
-<span class="nc" id="L535">		Collections.sort(resource);</span>
-<span class="nc" id="L536">		System.out.println(resource);</span>
+<span class="fc" id="L533">		System.out.println(costAfter);</span>
+<span class="fc" id="L534">		System.out.println(have);</span>
+<span class="fc" id="L535">		Collections.sort(resource);</span>
+<span class="fc" id="L536">		System.out.println(resource);</span>
 		
-<span class="nc" id="L538">		removeAll(costAfter, resource);</span>
+<span class="fc" id="L538">		removeAll(costAfter, resource);</span>
 		
-<span class="nc" id="L540">		System.out.println(costAfter);</span>
+<span class="fc" id="L540">		System.out.println(costAfter);</span>
 		//System.out.println(have);
 		
-<span class="nc bnc" id="L543" title="All 2 branches missed.">		for(int i=have.size()-1; i&gt;=0; i--){</span>
-<span class="nc bnc" id="L544" title="All 2 branches missed.">			if(costAfter.contains(have.get(i))){</span>
-<span class="nc" id="L545">				costAfter.remove(have.get(i));</span>
-<span class="nc" id="L546">				temp.add(have.get(i));</span>
-<span class="nc" id="L547">				have.remove(i);</span>
+<span class="fc bfc" id="L543" title="All 2 branches covered.">		for(int i=have.size()-1; i&gt;=0; i--){</span>
+<span class="fc bfc" id="L544" title="All 2 branches covered.">			if(costAfter.contains(have.get(i))){</span>
+<span class="fc" id="L545">				costAfter.remove(have.get(i));</span>
+<span class="fc" id="L546">				temp.add(have.get(i));</span>
+<span class="fc" id="L547">				have.remove(i);</span>
 			}
 		}
 		
 		//System.out.println(have);
 		//System.out.println(costAfter);
 		
-<span class="nc bnc" id="L554" title="All 2 branches missed.">		if(costAfter.size() != 0){</span>
+<span class="fc bfc" id="L554" title="All 2 branches covered.">		if(costAfter.size() != 0){</span>
 			//System.out.println(costAfter);
 			//System.out.println(gold);
-<span class="nc bnc" id="L557" title="All 2 branches missed.">			return costAfter.size() &lt;= gold.size();   //*** FOR TEST PURPOSES ***\\</span>
+<span class="fc bfc" id="L557" title="All 2 branches covered.">			return costAfter.size() &lt;= gold.size();   //*** FOR TEST PURPOSES ***\\</span>
 		}
 		
-<span class="nc" id="L560">		return true;</span>
+<span class="fc" id="L560">		return true;</span>
 		
 		/*
 		removeAll(costAfter, have);
@@ -761,74 +761,74 @@ public class Player
 	
 	public int whiteTokens()
 	{
-<span class="nc" id="L764">		int r = 0;</span>
-<span class="nc bnc" id="L765" title="All 2 branches missed.">		for(int i=0; i&lt;tokens.size(); i++){</span>
+<span class="fc" id="L764">		int r = 0;</span>
+<span class="pc bpc" id="L765" title="1 of 2 branches missed.">		for(int i=0; i&lt;tokens.size(); i++){</span>
 <span class="nc bnc" id="L766" title="All 2 branches missed.">			if(tokens.get(i).toString().equalsIgnoreCase(&quot;Diamond&quot;)){</span>
 <span class="nc" id="L767">				r++;</span>
 			}
 		}
 		
-<span class="nc" id="L771">		return r;</span>
+<span class="fc" id="L771">		return r;</span>
 	}
 	
 	public int greenTokens()
 	{
-<span class="nc" id="L776">		int r = 0;</span>
-<span class="nc bnc" id="L777" title="All 2 branches missed.">		for(int i=0; i&lt;tokens.size(); i++){</span>
+<span class="fc" id="L776">		int r = 0;</span>
+<span class="pc bpc" id="L777" title="1 of 2 branches missed.">		for(int i=0; i&lt;tokens.size(); i++){</span>
 <span class="nc bnc" id="L778" title="All 2 branches missed.">			if(tokens.get(i).toString().equalsIgnoreCase(&quot;Emerald&quot;)){</span>
 <span class="nc" id="L779">				r++;</span>
 			}
 		}
 		
-<span class="nc" id="L783">		return r;</span>
+<span class="fc" id="L783">		return r;</span>
 	}
 	
 	public int blueTokens()
 	{
-<span class="nc" id="L788">		int r = 0;</span>
-<span class="nc bnc" id="L789" title="All 2 branches missed.">		for(int i=0; i&lt;tokens.size(); i++){</span>
+<span class="fc" id="L788">		int r = 0;</span>
+<span class="pc bpc" id="L789" title="1 of 2 branches missed.">		for(int i=0; i&lt;tokens.size(); i++){</span>
 <span class="nc bnc" id="L790" title="All 2 branches missed.">			if(tokens.get(i).toString().equalsIgnoreCase(&quot;Sapphire&quot;)){</span>
 <span class="nc" id="L791">				r++;</span>
 			}
 		}
 		
-<span class="nc" id="L795">		return r;</span>
+<span class="fc" id="L795">		return r;</span>
 	}
 	
 	public int blackTokens()
 	{
-<span class="nc" id="L800">		int r = 0;</span>
-<span class="nc bnc" id="L801" title="All 2 branches missed.">		for(int i=0; i&lt;tokens.size(); i++){</span>
+<span class="fc" id="L800">		int r = 0;</span>
+<span class="pc bpc" id="L801" title="1 of 2 branches missed.">		for(int i=0; i&lt;tokens.size(); i++){</span>
 <span class="nc bnc" id="L802" title="All 2 branches missed.">			if(tokens.get(i).toString().equalsIgnoreCase(&quot;Onyx&quot;)){</span>
 <span class="nc" id="L803">				r++;</span>
 			}
 		}
 		
-<span class="nc" id="L807">		return r;</span>
+<span class="fc" id="L807">		return r;</span>
 	}
 	
 	public int redTokens()
 	{
-<span class="nc" id="L812">		int r = 0;</span>
-<span class="nc bnc" id="L813" title="All 2 branches missed.">		for(int i=0; i&lt;tokens.size(); i++){</span>
+<span class="fc" id="L812">		int r = 0;</span>
+<span class="pc bpc" id="L813" title="1 of 2 branches missed.">		for(int i=0; i&lt;tokens.size(); i++){</span>
 <span class="nc bnc" id="L814" title="All 2 branches missed.">			if(tokens.get(i).toString().equalsIgnoreCase(&quot;Rubby&quot;)){</span>
 <span class="nc" id="L815">				r++;</span>
 			}
 		}
 		
-<span class="nc" id="L819">		return r;</span>
+<span class="fc" id="L819">		return r;</span>
 	}
 	
 	public int yellowTokens()
 	{
-<span class="nc" id="L824">		int r = 0;</span>
-<span class="nc bnc" id="L825" title="All 2 branches missed.">		for(int i=0; i&lt;tokens.size(); i++){</span>
+<span class="fc" id="L824">		int r = 0;</span>
+<span class="pc bpc" id="L825" title="1 of 2 branches missed.">		for(int i=0; i&lt;tokens.size(); i++){</span>
 <span class="nc bnc" id="L826" title="All 2 branches missed.">			if(tokens.get(i).toString().equalsIgnoreCase(&quot;Gold&quot;)){</span>
 <span class="nc" id="L827">				r++;</span>
 			}
 		}
 		
-<span class="nc" id="L831">		return r;</span>
+<span class="fc" id="L831">		return r;</span>
 	}
 	
 	public ArrayList&lt;Cards&gt; blackCards()
@@ -899,35 +899,35 @@ public class Player
 	@SuppressWarnings(&quot;unchecked&quot;)
 	public String toString()
 	{
-<span class="nc" id="L902">		Collections.sort(cards);</span>
-<span class="nc" id="L903">		String r = &quot;&quot;;</span>
+<span class="fc" id="L902">		Collections.sort(cards);</span>
+<span class="fc" id="L903">		String r = &quot;&quot;;</span>
 		
-<span class="nc" id="L905">		r = r + &quot;***** &quot; + name + &quot; &quot; + getPoints() + &quot; Point(s) *****\n&quot;; //10 space on left side and 7 on the right</span>
-<span class="nc" id="L906">		r = r + &quot;Tokens: &quot; + &quot;Onyx x&quot; + blackTokens() + &quot; ,Sapphire x&quot; + blueTokens() + &quot; ,Emerlad x&quot; + greenTokens() + &quot; ,Diamond x&quot; + whiteTokens() + &quot; ,Rubby x&quot; + redTokens() + &quot; ,Gold x&quot; + yellowTokens() + &quot;\n\n&quot;;</span>
+<span class="fc" id="L905">		r = r + &quot;***** &quot; + name + &quot; &quot; + getPoints() + &quot; Point(s) *****\n&quot;; //10 space on left side and 7 on the right</span>
+<span class="fc" id="L906">		r = r + &quot;Tokens: &quot; + &quot;Onyx x&quot; + blackTokens() + &quot; ,Sapphire x&quot; + blueTokens() + &quot; ,Emerlad x&quot; + greenTokens() + &quot; ,Diamond x&quot; + whiteTokens() + &quot; ,Rubby x&quot; + redTokens() + &quot; ,Gold x&quot; + yellowTokens() + &quot;\n\n&quot;;</span>
 		//r = r + tokens.toString();
 		
-<span class="nc" id="L909">		r = r + &quot;Cards:\n&quot;; </span>
-<span class="nc bnc" id="L910" title="All 2 branches missed.">		for(int i=0; i&lt;cards.size(); i++){</span>
+<span class="fc" id="L909">		r = r + &quot;Cards:\n&quot;; </span>
+<span class="pc bpc" id="L910" title="1 of 2 branches missed.">		for(int i=0; i&lt;cards.size(); i++){</span>
 <span class="nc" id="L911">			r = r + cards.get(i); //3 spaces;</span>
 <span class="nc bnc" id="L912" title="All 4 branches missed.">			if(i+1 != cards.size() &amp;&amp; cards.get(i+1).getResource() != cards.get(i).getResource()){</span>
 <span class="nc" id="L913">				r = r + &quot;\n&quot;;</span>
 			}
 		}
 		
-<span class="nc" id="L917">		r = r + &quot;\n&quot;;</span>
+<span class="fc" id="L917">		r = r + &quot;\n&quot;;</span>
 		
-<span class="nc" id="L919">		r = r + &quot;Nobles: \n&quot;;</span>
-<span class="nc bnc" id="L920" title="All 2 branches missed.">		for(int i = 0; i&lt;nobles.size(); i++){</span>
+<span class="fc" id="L919">		r = r + &quot;Nobles: \n&quot;;</span>
+<span class="pc bpc" id="L920" title="1 of 2 branches missed.">		for(int i = 0; i&lt;nobles.size(); i++){</span>
 <span class="nc" id="L921">			r = r + nobles.get(i) + &quot;   &quot;;</span>
 		}
 		
-<span class="nc" id="L924">		r = r + &quot;\n\n&quot;;</span>
+<span class="fc" id="L924">		r = r + &quot;\n\n&quot;;</span>
 		
-<span class="nc" id="L926">		r = r + &quot;Cards in Reserve x&quot; + reserve.size() + &quot;\n&quot;;</span>
+<span class="fc" id="L926">		r = r + &quot;Cards in Reserve x&quot; + reserve.size() + &quot;\n&quot;;</span>
 		
-<span class="nc" id="L928">		r = r + &quot;*******************************\n\n&quot;;  //31 *</span>
+<span class="fc" id="L928">		r = r + &quot;*******************************\n\n&quot;;  //31 *</span>
 		
-<span class="nc" id="L930">		return r;</span>
+<span class="fc" id="L930">		return r;</span>
 	}
 
 	public String toStringWithCardsInReserve()

@@ -1,15 +1,13 @@
-Classes/Noble.java
- Classes.Noble
-Classes/Game.java
- Classes.Game
+Exceptions/PlayerAlreadyHoldsThreeReserveCards.java
+ Exceptions.PlayerAlreadyHoldsThreeReserveCards
+Exceptions/InvalidCardsSelectionOfCardsOnTable.java
+ Exceptions.InvalidCardsSelectionOfCardsOnTable
 Exceptions/SelectedDeckRanOutOfCards.java
  Exceptions.SelectedDeckRanOutOfCards
-Classes/MyFrame.java
- Classes.MyFrame
+Exceptions/InvalidCardsSelectionOfCardsInReserve.java
+ Exceptions.InvalidCardsSelectionOfCardsInReserve
 Classes/Tokens.java
  Classes.Tokens
-GraphicInterface.java
- GraphicInterface
 Exceptions/PlayerDoesNotHaveEnoughResourcesToBuySelectedCard.java
  Exceptions.PlayerDoesNotHaveEnoughResourcesToBuySelectedCard
 Exceptions/InvalidTokensSelection.java
@@ -20,15 +18,17 @@ Exceptions/NotEnoughTokensOnTable.java
  Exceptions.NotEnoughTokensOnTable
 Exceptions/PlayerDoesNotHaveSelectedCardInReserve.java
  Exceptions.PlayerDoesNotHaveSelectedCardInReserve
-Exceptions/PlayerAlreadyHoldsThreeReserveCards.java
- Exceptions.PlayerAlreadyHoldsThreeReserveCards
-Exceptions/InvalidCardsSelectionOfCardsInReserve.java
- Exceptions.InvalidCardsSelectionOfCardsInReserve
-Exceptions/InvalidCardsSelectionOfCardsOnTable.java
- Exceptions.InvalidCardsSelectionOfCardsOnTable
+Classes/Game.java
+ Classes.Game
+Classes/Noble.java
+ Classes.Noble
+Classes/MyFrame.java
+ Classes.MyFrame
+Interface/TextBasedInterface.java
+ Interface.TextBasedInterface
+Interface/GraphicInterface.java
+ Interface.GraphicInterface
 Classes/MyPanel.java
  Classes.MyPanel
 Classes/Player.java
  Classes.Player
-TextBasedInterface.java
- TextBasedInterface
