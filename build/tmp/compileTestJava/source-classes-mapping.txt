@@ -1,14 +1,14 @@
 whiteBoxTest/PlayerTest.java
  whiteBoxTest.PlayerTest
-blackBoxTest/testTextBasedInterface.java
- blackBoxTest.testTextBasedInterface
+whiteBoxTest/CardsTest.java
+ whiteBoxTest.CardsTest
 whiteBoxTest/TokensTest.java
  whiteBoxTest.TokensTest
 whiteBoxTest/MyFrameTest.java
  whiteBoxTest.MyFrameTest
 whiteBoxTest/NobleTest.java
  whiteBoxTest.NobleTest
-whiteBoxTest/CardsTest.java
- whiteBoxTest.CardsTest
+blackBoxTest/testTextBasedInterface.java
+ blackBoxTest.testTextBasedInterface
 whiteBoxTest/GameTest.java
  whiteBoxTest.GameTest

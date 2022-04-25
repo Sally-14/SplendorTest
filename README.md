@@ -47,11 +47,14 @@ Game Class:
 - checkActionThree allow row argument to be 4 
 - checkActionThree String version does not throw Player Already Holds Three Reserve Cards exception
 - checkActionThree String version allows Player to add another card in reverse when the Player have three cards reserved
-- checkActionThree String version does not check for validity of string argument
+- checkActionThree String version does not check for validity of string argument (i.e. purple, greenyellow)
 - checkActionThree String version does not handle capitalized string
 - checkActionFive does not throw error when column is boundary bad case (4) 
 - toString does not handle uninitialized variables from simple constructor 
 - toString deck loop hard coded does not work with decks with less than or greater than 4 cards on the table
+
+checkActionTwo: 50% branch coverage due to unreachable code 
+checkActionThree: 90% branch coverage because some failing tests excluded from jacoco report
 
 Player Class: 
 - can buy with yellow only takes "gold" not anything else 

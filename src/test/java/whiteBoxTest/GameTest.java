@@ -606,6 +606,26 @@ public class GameTest {
         Player player1 = new Player(15, noTokens, noCards, noNobles, noReserves, "player1");
         startGame.updatePlayers(player1);
         assertTrue(startGame.win());
+        assertEquals(1, startGame.getWinner().size());
+    }
+
+    @Test
+    public void testGameWinTrueWithWinner(){
+        Game startGame = new Game(players, blueDeck, yellowDeck, greenDeck, cardsOnTable, tiles, allTokens);
+
+        Player player1 = new Player(5, noTokens, noCards, noNobles, noReserves, "player1");
+        Player player2 = new Player(15, noTokens, noCards, noNobles, noReserves, "player2");
+        Player player3 = new Player(15, noTokens, noCards, noNobles, noReserves, "player3");
+
+        ArrayList<Player> winner = new ArrayList<>();
+        winner.add(player2);
+
+        startGame.setWinner(winner);
+        startGame.updatePlayers(player2);
+        startGame.updatePlayers(player3);
+
+        assertTrue(startGame.win());
+        assertEquals(2, startGame.getWinner().size());
     }
 
     // Test Failed: always return true
@@ -618,6 +638,20 @@ public class GameTest {
     @Test
     public void testGameCheckDiscardTrue() throws InvalidTokensSelection {
         ArrayList<Tokens> haveDiamondToken = new ArrayList<>();
+        haveDiamondToken.add(diamondToken);
+
+        Game startGame = new Game(players, blueDeck, yellowDeck, greenDeck, cardsOnTable, tiles, allTokens);
+
+        Player player1 = new Player(1, haveDiamondToken, noCards, noNobles, noReserves, "player1");
+        startGame.updatePlayers(player1);
+        assertTrue(startGame.checkDiscard(player1, diamondToken));
+    }
+
+    @Test
+    public void testGameCheckDiscardTrueMultipleTokens() throws InvalidTokensSelection {
+        ArrayList<Tokens> haveDiamondToken = new ArrayList<>();
+        haveDiamondToken.add(onyxToken);
+        haveDiamondToken.add(rubyToken);
         haveDiamondToken.add(diamondToken);
 
         Game startGame = new Game(players, blueDeck, yellowDeck, greenDeck, cardsOnTable, tiles, allTokens);
@@ -774,6 +808,36 @@ public class GameTest {
 //    }
 
     @Test
+    public void testGameCheckActionThreeNegRowSelection() throws PlayerAlreadyHoldsThreeReserveCards, InvalidCardsSelectionOfCardsOnTable {
+        Game startGame = new Game(players, blueDeck, yellowDeck, greenDeck, cardsOnTable, tiles, allTokens);
+
+        Player player1 = new Player(0, noTokens, noCards, noNobles, noReserves, "player1");
+        assertThrows(InvalidCardsSelectionOfCardsOnTable.class, ()->{
+            startGame.checkActionThree(player1, -2, 1);
+        });
+    }
+
+    @Test
+    public void testGameCheckActionThreeNegColSelection() throws PlayerAlreadyHoldsThreeReserveCards, InvalidCardsSelectionOfCardsOnTable {
+        Game startGame = new Game(players, blueDeck, yellowDeck, greenDeck, cardsOnTable, tiles, allTokens);
+
+        Player player1 = new Player(0, noTokens, noCards, noNobles, noReserves, "player1");
+        assertThrows(InvalidCardsSelectionOfCardsOnTable.class, ()->{
+            startGame.checkActionThree(player1, 2, -2);
+        });
+    }
+
+    @Test
+    public void testGameCheckActionThreeInvalidRowSelection() throws PlayerAlreadyHoldsThreeReserveCards, InvalidCardsSelectionOfCardsOnTable {
+        Game startGame = new Game(players, blueDeck, yellowDeck, greenDeck, cardsOnTable, tiles, allTokens);
+
+        Player player1 = new Player(0, noTokens, noCards, noNobles, noReserves, "player1");
+        assertThrows(InvalidCardsSelectionOfCardsOnTable.class, ()->{
+            startGame.checkActionThree(player1, 5, 1);
+        });
+    }
+
+    @Test
     public void testGameCheckActionThreeInvalidColSelection() throws PlayerAlreadyHoldsThreeReserveCards, InvalidCardsSelectionOfCardsOnTable {
         Game startGame = new Game(players, blueDeck, yellowDeck, greenDeck, cardsOnTable, tiles, allTokens);
 
@@ -794,6 +858,24 @@ public class GameTest {
         threeReserves.add(diamondCard);
 
         Player player1 = new Player(0, noTokens, noCards, noNobles, threeReserves, "player1");
+        startGame.updatePlayers(player1);
+        assertThrows(PlayerAlreadyHoldsThreeReserveCards.class, ()->{
+            startGame.checkActionThree(player1, 1, 1);
+        });
+    }
+
+    @Test
+    public void testGameCheckActionThreePlayerAlreadyHoldFourReserveCards() throws PlayerAlreadyHoldsThreeReserveCards, InvalidCardsSelectionOfCardsOnTable {
+        Game startGame = new Game(players, blueDeck, yellowDeck, greenDeck, cardsOnTable, tiles, allTokens);
+
+        ArrayList<Cards> fourReserves = new ArrayList<>();
+        Cards diamondCard = new Cards("Diamond");
+        fourReserves.add(diamondCard);
+        fourReserves.add(diamondCard);
+        fourReserves.add(diamondCard);
+        fourReserves.add(diamondCard);
+
+        Player player1 = new Player(0, noTokens, noCards, noNobles, fourReserves, "player1");
         startGame.updatePlayers(player1);
         assertThrows(PlayerAlreadyHoldsThreeReserveCards.class, ()->{
             startGame.checkActionThree(player1, 1, 1);
@@ -894,6 +976,18 @@ public class GameTest {
         assertTrue(startGame.checkActionThree(player1, "green"));
     }
 
+    // Failed Test: does not check for validity of string argument
+//    @Test
+//    public void testGameCheckActionThreeStringBothGreenAndYellow() throws SelectedDeckRanOutOfCards {
+//        ArrayList<Cards> emptyDeck = new ArrayList<>();
+//        Game startGame = new Game(players, blueDeck, yellowDeck, greenDeck, cardsOnTable, tiles, allTokens);
+//
+//        Player player1 = new Player(0, noTokens, noCards, noNobles, noReserves, "player1");
+//        assertThrows(IllegalArgumentException.class, ()->{
+//            startGame.checkActionThree(player1, "greenyellow");
+//        });
+//    }
+
     // Test failed: does not handle capitalized string
 //    @Test
 //    public void testGameCheckActionThreeStringGreenDeckCapitalized() throws SelectedDeckRanOutOfCards {
@@ -950,7 +1044,7 @@ public class GameTest {
     }
 
     @Test
-    public void testGameCheckActionFourCanBuyWithYellow() throws SelectedDeckRanOutOfCards, PlayerDoesNotHaveEnoughResourcesToBuySelectedCard, PlayerDoesNotHaveSelectedCardInReserve {
+    public void testGameCheckActionFourCanBuyWithYellowSameCost() throws SelectedDeckRanOutOfCards, PlayerDoesNotHaveEnoughResourcesToBuySelectedCard, PlayerDoesNotHaveSelectedCardInReserve {
         Game startGame = new Game(players, blueDeck, yellowDeck, greenDeck, cardsOnTable, tiles, allTokens);
 
         ArrayList<Cards> reserved = new ArrayList<>();
@@ -958,6 +1052,30 @@ public class GameTest {
         ArrayList<Tokens> cost = new ArrayList<>();
         cost.add(diamondToken);
         cost.add(diamondToken);
+
+        String  name = "mine";
+
+        Cards diamondCard = new Cards(1, cost, name, diamondToken);
+        reserved.add(diamondCard);
+
+        ArrayList<Tokens> playerToken = new ArrayList<>();
+        playerToken.add(diamondToken);
+        playerToken.add(goldToken);
+
+        Player player1 = new Player(1, playerToken, noCards, noNobles, reserved, "player1");
+        startGame.updatePlayers(player1);
+        assertTrue(startGame.checkActionFour(player1, diamondCard));
+    }
+
+    @Test
+    public void testGameCheckActionFourCanBuyWithYellowDifferentCost() throws SelectedDeckRanOutOfCards, PlayerDoesNotHaveEnoughResourcesToBuySelectedCard, PlayerDoesNotHaveSelectedCardInReserve {
+        Game startGame = new Game(players, blueDeck, yellowDeck, greenDeck, cardsOnTable, tiles, allTokens);
+
+        ArrayList<Cards> reserved = new ArrayList<>();
+
+        ArrayList<Tokens> cost = new ArrayList<>();
+        cost.add(diamondToken);
+        cost.add(rubyToken);
 
         String  name = "mine";
 
@@ -1003,6 +1121,30 @@ public class GameTest {
         Player player1 = new Player(0, allTokens, noCards, noNobles, noReserves, "player1");
         startGame.updatePlayers(player1);
         assertTrue(startGame.checkActionFive(player1, 1, 1));
+    }
+
+    @Test
+    public void testGameCheckActionFiveDoesHaveEnoughTokens() throws SelectedDeckRanOutOfCards, PlayerDoesNotHaveEnoughResourcesToBuySelectedCard, PlayerDoesNotHaveSelectedCardInReserve, InvalidCardsSelectionOfCardsInReserve, InvalidCardsSelectionOfCardsOnTable {
+        Game startGame = new Game(players, blueDeck, yellowDeck, greenDeck, cardsOnTable, tiles, allTokens);
+
+        ArrayList<Tokens> cost = new ArrayList<>();
+        cost.add(diamondToken);
+        cost.add(onyxToken);
+
+        String  name = "mine";
+
+        Cards diamondCard = new Cards(1, cost, name, diamondToken);
+
+        cardsOnTable[1][1] = diamondCard;
+        startGame.setCardsOnTable(cardsOnTable);
+
+        ArrayList<Tokens> playerToken = new ArrayList<>();
+        playerToken.add(diamondToken);
+        playerToken.add(onyxToken);
+
+        Player player1 = new Player(1, playerToken, noCards, noNobles, noReserves, "player1");
+        startGame.updatePlayers(player1);
+        assertTrue(startGame.checkActionFive(player1, 2, 2));
     }
 
     @Test
@@ -1093,6 +1235,28 @@ public class GameTest {
         startGame.updatePlayers(player1);
         assertThrows(InvalidCardsSelectionOfCardsOnTable.class, ()->{
             startGame.checkActionFive(player1, 4, 2);
+        });
+    }
+
+    @Test
+    public void testGameCheckActionFiveOutOfRangeCol() throws SelectedDeckRanOutOfCards, PlayerDoesNotHaveEnoughResourcesToBuySelectedCard, PlayerDoesNotHaveSelectedCardInReserve {
+        Game startGame = new Game(players, blueDeck, yellowDeck, greenDeck, cardsOnTable, tiles, allTokens);
+
+        ArrayList<Tokens> cost = new ArrayList<>();
+        cost.add(diamondToken);
+        cost.add(onyxToken);
+
+        String  name = "mine";
+
+        Cards diamondCard = new Cards(1, cost, name, diamondToken);
+
+        cardsOnTable[1][1] = diamondCard;
+        startGame.setCardsOnTable(cardsOnTable);
+
+        Player player1 = new Player(1, noTokens, noCards, noNobles, noReserves, "player1");
+        startGame.updatePlayers(player1);
+        assertThrows(InvalidCardsSelectionOfCardsOnTable.class, ()->{
+            startGame.checkActionFive(player1, 2, 5);
         });
     }
 
@@ -1199,20 +1363,35 @@ public class GameTest {
 
         Game startGame = new Game(players, blueDeck, yellowDeck, greenDeck, cardsOnTable4, tiles, allTokens);
 
-        String expected = players.get(0).toString() + players.get(1).toString() + players.get(3).toString() +
+        String expected = players.get(0).toString() + players.get(1).toString() + players.get(2).toString() + players.get(3).toString() +
                 "/////////////////////////////////////\n" +
                 "     Blue Deck\n"  +
+                "Blue Card " + '1' + ": \n" + cardsOnTable4[0][0].toString() + "\n" +
+                "Blue Card " + '2' + ": \n" + cardsOnTable4[0][1].toString() + "\n" +
+                "Blue Card " + '3' + ": \n" + cardsOnTable4[0][2].toString() + "\n" +
+                "Blue Card " + '4' + ": \n" + cardsOnTable4[0][3].toString() + "\n" +
                 "/////////////////////////\n" +
                 "     Yellow Deck\n" +
-                "/////////////////////////\n" +
+                "Yellow Card " + '1' + ": \n" + cardsOnTable4[1][0].toString() + "\n" +
+                "Yellow Card " + '2' + ": \n" + cardsOnTable4[1][1].toString() + "\n" +
+                "Yellow Card " + '3' + ": \n" + cardsOnTable4[1][2].toString() + "\n" +
+                "Yellow Card " + '4' + ": \n" + cardsOnTable4[1][3].toString() + "\n" +
+        "/////////////////////////\n" +
                 "     Green Deck\n" +
+                "Green Card " + '1' + ": \n" + cardsOnTable4[2][0].toString() +  "\n" +
+                "Green Card " + '2' + ": \n" + cardsOnTable4[2][1].toString() +  "\n" +
+                "Green Card " + '3' + ": \n" + cardsOnTable4[2][2].toString() +  "\n" +
+                "Green Card " + '4' + ": \n" + cardsOnTable4[2][3].toString() +  "\n" +
                 "/////////////////////////////////////\n" +
-                "Tokens Avalible: " + "Onyx x" + '0' +
-                " ,Sapphire x" + "0" + " ,Emerald x" + "0" +
-                " ,Diamond x" + "0" +" ,Rubby x" + "0" + " ,Gold x" +
-                "0" + "\n\n" + "Nobles Avalible: \n\n";
+                "Tokens Avalible: " + "Onyx x" + '7' +
+                " ,Sapphire x" + "7" + " ,Emerald x" + "7" +
+                " ,Diamond x" + "7" +" ,Rubby x" + "7" + " ,Gold x" +
+                "7" + "\n\n" + "Nobles Avalible: \n\n" +
+                tiles.get(0).toString() + "\n\n" +
+                tiles.get(1).toString() + "\n\n" +
+                tiles.get(2).toString() + "\n\n";
 
-        System.out.println(startGame.toString());
+        assertEquals(expected, startGame.toString());
     }
 
 }

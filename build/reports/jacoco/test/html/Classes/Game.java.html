@@ -315,7 +315,7 @@ public class Game
 <span class="fc" id="L315">		boolean t = false;</span>
 		
 <span class="fc bfc" id="L317" title="All 2 branches covered.">		for(int i = 0; i&lt;players.size(); i++){</span>
-<span class="pc bpc" id="L318" title="1 of 4 branches missed.">			if(players.get(i).getScore() &gt;= 15 &amp;&amp; !winner.contains(players.get(i))){</span>
+<span class="fc bfc" id="L318" title="All 4 branches covered.">			if(players.get(i).getScore() &gt;= 15 &amp;&amp; !winner.contains(players.get(i))){</span>
 <span class="fc" id="L319">				winner.add(players.get(i));</span>
 			}
 				//System.out.println(winner);
@@ -330,7 +330,7 @@ public class Game
 	{
 <span class="fc" id="L331">		boolean tf = false;</span>
 <span class="fc bfc" id="L332" title="All 2 branches covered.">		for(int i=0; i&lt;p.getTokens().size(); i++){</span>
-<span class="pc bpc" id="L333" title="1 of 2 branches missed.">			if(p.getTokens().get(i).getColor().equals(t1.getColor())){</span>
+<span class="fc bfc" id="L333" title="All 2 branches covered.">			if(p.getTokens().get(i).getColor().equals(t1.getColor())){</span>
 <span class="fc" id="L334">				tf = true;</span>
 			}
 		}
@@ -384,7 +384,7 @@ public class Game
 	public boolean checkActionThree(Player p, int rol, int col) throws InvalidCardsSelectionOfCardsOnTable  //Action 3 = take a reserve card and a wild card token(yellow)
 , PlayerAlreadyHoldsThreeReserveCards
 	{
-<span class="pc bpc" id="L387" title="3 of 8 branches missed.">		if(rol-1 &lt;= 3 &amp;&amp; col-1 &lt;= 3 &amp;&amp; rol-1 &gt;= 0 &amp;&amp; col-1 &gt;= 0){</span>
+<span class="fc bfc" id="L387" title="All 8 branches covered.">		if(rol-1 &lt;= 3 &amp;&amp; col-1 &lt;= 3 &amp;&amp; rol-1 &gt;= 0 &amp;&amp; col-1 &gt;= 0){</span>
 <span class="fc bfc" id="L388" title="All 2 branches covered.">			if(p.getReserve().size() &lt; 3){</span>
 <span class="fc" id="L389">				return true;</span>
 			}else{
@@ -419,9 +419,9 @@ public class Game
 <span class="fc bfc" id="L419" title="All 2 branches covered.">			if(p.canBuy(desired)){</span>
 <span class="fc" id="L420">				System.out.println(&quot;WOW&quot;);</span>
 <span class="fc" id="L421">				return true;</span>
-<span class="pc bpc" id="L422" title="1 of 2 branches missed.">			}else if(p.canBuyWithYellow(desired)){</span>
-<span class="nc" id="L423">				System.out.println(&quot;RAPE&quot;);</span>
-<span class="nc" id="L424">				return true;</span>
+<span class="fc bfc" id="L422" title="All 2 branches covered.">			}else if(p.canBuyWithYellow(desired)){</span>
+<span class="fc" id="L423">				System.out.println(&quot;RAPE&quot;);</span>
+<span class="fc" id="L424">				return true;</span>
 			}else{
 <span class="fc" id="L426">				throw new PlayerDoesNotHaveEnoughResourcesToBuySelectedCard();</span>
 			}
@@ -433,10 +433,10 @@ public class Game
 	public boolean checkActionFive(Player p, int rol, int col) throws PlayerDoesNotHaveEnoughResourcesToBuySelectedCard  //Action 5 = directly purchase a card on the table
 , InvalidCardsSelectionOfCardsInReserve, InvalidCardsSelectionOfCardsOnTable
 	{
-<span class="pc bpc" id="L436" title="1 of 8 branches missed.">		if(rol-1 &lt;= 2 &amp;&amp; col-1 &lt;= 3 &amp;&amp; rol-1 &gt;= 0 &amp;&amp; col-1 &gt;= 0){</span>
-<span class="pc bpc" id="L437" title="1 of 2 branches missed.">			if(p.canBuy(cardsOnTable[rol-1][col-1])){</span>
+<span class="fc bfc" id="L436" title="All 8 branches covered.">		if(rol-1 &lt;= 2 &amp;&amp; col-1 &lt;= 3 &amp;&amp; rol-1 &gt;= 0 &amp;&amp; col-1 &gt;= 0){</span>
+<span class="fc bfc" id="L437" title="All 2 branches covered.">			if(p.canBuy(cardsOnTable[rol-1][col-1])){</span>
 				//System.out.println(&quot;Hi&quot;);
-<span class="nc" id="L439">				return true;</span>
+<span class="fc" id="L439">				return true;</span>
 <span class="fc bfc" id="L440" title="All 2 branches covered.">			}else if(p.canBuyWithYellow(cardsOnTable[rol-1][col-1])){</span>
 				//System.out.println(&quot;Hello&quot;);
 <span class="fc" id="L442">				return true;</span>
