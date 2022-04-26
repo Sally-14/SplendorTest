@@ -56,9 +56,31 @@ Game Class:
 checkActionTwo: 50% branch coverage due to unreachable code 
 checkActionThree: 90% branch coverage because some failing tests excluded from jacoco report
 
-Player Class: 
+Player Class: Partially tested!!! Incomplete
+- nobleVisit does not consider number of card (only considers if they have the card)
+- visit does not check for invalid int argument
+- visit does not check for no possible visiting nobles
+- getTwoTokens have random print statements
+- getOneOfEachTokens does not check if the token is available 
+- containsAll does not consider duplicates
+- removeAll always returns true 
 - can buy with yellow only takes "gold" not anything else 
 - can buy does not check the counts of each color token
+
+MyPanel Class: 
+- Did not unit test draw 
+- Did not unit test mouse clicked
+100% branch and statment coverage for rest of methods 
+
+Invalid Cards Selection Of Cards In Reserve not tested !!!
+
+Invalid Tokens Selection Exception covered
+Player Does Not Have Selected Card In Reserve Exception covered
+Player Does Not Have Enough Resources To Buy Selected Card Exception covered
+Selected Deck Ran Out Of CARDS Exception covered 
+Not Enough Tokens On Table Exception covered 
+Player Already Holds Three Reserve Cards covered 
+Invalid Cards Selection Of Cards On Table covered 
 
 Black Box Test Results:
 - When we are using system.in to read Buffered Input Stream, we wrote one input of scanner array interacting with text-based interface. The No line found error is keep popping out. It is probably because the author initialize multiple scanner which the initial scanner (with all inputs) could not continue to be used. I have to separate the input into multiple scanner.

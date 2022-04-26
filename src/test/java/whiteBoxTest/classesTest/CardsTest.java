@@ -1,4 +1,4 @@
-package whiteBoxTest;
+package whiteBoxTest.classesTest;
 
 import Classes.*;
 

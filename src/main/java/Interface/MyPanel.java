@@ -1,4 +1,4 @@
-package Classes;
+package Interface;
 
 import Exceptions.*;
 import Classes.*;

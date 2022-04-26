@@ -8,11 +8,11 @@ Final Project,Exceptions,NotEnoughTokensOnTable,0,3,0,0,0,1,0,1,0,1
 Final Project,Exceptions,PlayerAlreadyHoldsThreeReserveCards,0,3,0,0,0,1,0,1,0,1
 Final Project,Exceptions,InvalidCardsSelectionOfCardsOnTable,0,3,0,0,0,1,0,1,0,1
 Final Project,Interface,TextBasedInterface,2503,0,206,0,624,0,123,0,20,0
+Final Project,Interface,MyFrame,0,57,0,0,0,14,0,1,0,1
 Final Project,Interface,GraphicInterface,848,0,100,0,170,0,61,0,11,0
-Final Project,Classes,Player,1577,447,177,41,308,97,124,32,29,18
-Final Project,Classes,MyPanel,4725,35,510,0,898,10,262,2,7,2
+Final Project,Interface,MyPanel,4324,436,416,94,829,79,227,37,2,7
+Final Project,Classes,Player,863,1161,116,102,155,250,78,78,9,38
 Final Project,Classes,Game,4,861,3,119,1,188,3,104,0,46
 Final Project,Classes,Noble,0,207,0,30,0,59,0,29,0,14
 Final Project,Classes,Tokens,2,71,1,9,1,21,1,11,0,7
 Final Project,Classes,Cards,6,264,1,33,1,73,1,33,0,17
-Final Project,Classes,MyFrame,0,57,0,0,0,14,0,1,0,1

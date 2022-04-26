@@ -1,11 +1,9 @@
-package whiteBoxTest;
+package whiteBoxTest.interfaceTest;
 
 import Classes.*;
-
+import Interface.*;
 
 import org.junit.jupiter.api.Test;
-
-import Classes.MyFrame;
 
 public class MyFrameTest {
 
