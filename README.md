@@ -56,7 +56,7 @@ Game Class:
 checkActionTwo: 50% branch coverage due to unreachable code 
 checkActionThree: 90% branch coverage because some failing tests excluded from jacoco report
 
-Player Class: Partially tested!!! Incomplete
+Player Class: 
 - nobleVisit does not consider number of card (only considers if they have the card)
 - visit does not check for invalid int argument
 - visit does not check for no possible visiting nobles
