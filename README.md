@@ -21,7 +21,6 @@ Cards Class:
 - Set resource doe snot check for invalid arguments 
 - ToString miss-spelled Ruby
 - CompareTo make sure that the two objects have at least one common out of resource, name, and point (might not be a good comparison; also care about cost) 
-- SetCost does not function properly 
 
 1 branch and 1 statement unreached in CompareTo on Jacoco report due to fault in code 
   - the branch and statement was covered in two failing test cases (compareTo with not matching resource, matching name, returns true) 
