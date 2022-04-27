@@ -848,6 +848,36 @@ public class GameTest {
     }
 
     @Test
+    public void testGameCheckActionThreeInvalidColSelection0() throws PlayerAlreadyHoldsThreeReserveCards, InvalidCardsSelectionOfCardsOnTable {
+        Game startGame = new Game(players, blueDeck, yellowDeck, greenDeck, cardsOnTable, tiles, allTokens);
+
+        Player player1 = new Player(0, noTokens, noCards, noNobles, noReserves, "player1");
+        assertThrows(InvalidCardsSelectionOfCardsOnTable.class, ()->{
+            startGame.checkActionThree(player1, 1, 0);
+        });
+    }
+
+    @Test
+    public void testGameCheckActionThreeInvalidRowSelection0() throws PlayerAlreadyHoldsThreeReserveCards, InvalidCardsSelectionOfCardsOnTable {
+        Game startGame = new Game(players, blueDeck, yellowDeck, greenDeck, cardsOnTable, tiles, allTokens);
+
+        Player player1 = new Player(0, noTokens, noCards, noNobles, noReserves, "player1");
+        assertThrows(InvalidCardsSelectionOfCardsOnTable.class, ()->{
+            startGame.checkActionThree(player1, 0, 1);
+        });
+    }
+
+    @Test
+    public void testGameCheckActionThreeInvalidRowSelection4() throws PlayerAlreadyHoldsThreeReserveCards, InvalidCardsSelectionOfCardsOnTable {
+        Game startGame = new Game(players, blueDeck, yellowDeck, greenDeck, cardsOnTable, tiles, allTokens);
+
+        Player player1 = new Player(0, noTokens, noCards, noNobles, noReserves, "player1");
+        assertThrows(InvalidCardsSelectionOfCardsOnTable.class, ()->{
+            startGame.checkActionThree(player1, 4, 5);
+        });
+    }
+
+    @Test
     public void testGameCheckActionThreePlayerAlreadyHoldThreeReserveCards() throws PlayerAlreadyHoldsThreeReserveCards, InvalidCardsSelectionOfCardsOnTable {
         Game startGame = new Game(players, blueDeck, yellowDeck, greenDeck, cardsOnTable, tiles, allTokens);
 
