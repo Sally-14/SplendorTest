@@ -96,4 +96,8 @@ Invalid Cards Selection Of Cards On Table covered
 
 - When choosing option 2: Take 1 token from each of 3 different types of tokens. The test input is Diamond and Rubby. It is not repeated but it shows "Choose another different token that you have not selected".
 
-- Based on the blackbox testing, only one card for each card deck Blue Deck, Yellow Deck, Green Deck. If the player 2 reserve one Blue Deck, one Yellow Deck, one Green Deck. It will show "The deck you chose ran out of cards. Please choose another one."
+- Based on the game rule: 90 development cards: 40 level 1, 30 level 2, and 20 level 3. Based on the blackbox testing, only one card for each card deck Blue Deck, Yellow Deck, Green Deck. If the player 2 reserve one Blue Deck, one Yellow Deck, one Green Deck. It will show "The deck you chose ran out of cards. Please choose another one."
+
+- There is no way to end or quit the game. The graphical interface is not able to interact with.
+
+- End game test case could never be reached because the limitation of tokens and development cards limitation.
