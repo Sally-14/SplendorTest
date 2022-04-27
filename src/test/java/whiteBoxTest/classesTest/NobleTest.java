@@ -2,6 +2,7 @@ package whiteBoxTest.classesTest;
 
 import Classes.*;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
@@ -26,19 +27,20 @@ public class NobleTest{
     }
 
     // Test Failed: constructor does not check for invalid cost
-//    @Test
-//    public void testNobleConstructorInvalidCost() {
-//        String validName = "Charles V";
-//
-//        Tokens bronzeToken = new Tokens("Bronze");
-//
-//        ArrayList<Tokens> invalidCost = new ArrayList<>();
-//        invalidCost.add(bronzeToken );
-//
-//        assertThrows(IllegalArgumentException.class, ()->{
-//            Noble invalidNoble = new Noble(validName, invalidCost);
-//        });
-//    }
+    @Disabled
+    @Test
+    public void testNobleConstructorInvalidCost() {
+        String validName = "Charles V";
+
+        Tokens bronzeToken = new Tokens("Bronze");
+
+        ArrayList<Tokens> invalidCost = new ArrayList<>();
+        invalidCost.add(bronzeToken );
+
+        assertThrows(IllegalArgumentException.class, ()->{
+            Noble invalidNoble = new Noble(validName, invalidCost);
+        });
+    }
 
     @Test
     public void testNobleSetOwner() {

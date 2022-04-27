@@ -1,6 +1,7 @@
 package whiteBoxTest.classesTest;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import Classes.*;
@@ -1358,22 +1359,23 @@ public class GameTest {
     }
 
     // Test Failed: NullPointerException
-//    @Test
-//    public void testGameToStringEmpty(){
-//        Game startGame = new Game();
-//        String expected = "/////////////////////////////////////\n" +
-//                "     Blue Deck\n"  +
-//                "/////////////////////////\n" +
-//                "     Yellow Deck\n" +
-//                "/////////////////////////\n" +
-//                "     Green Deck\n" +
-//                "/////////////////////////////////////\n" +
-//                "Tokens Avalible: " + "Onyx x" + '0' +
-//                " ,Sapphire x" + "0" + " ,Emerald x" + "0" +
-//                " ,Diamond x" + "0" +" ,Rubby x" + "0" + " ,Gold x" +
-//                "0" + "\n\n" + "Nobles Avalible: \n\n";
-//        assertEquals(expected, startGame.toString());
-//    }
+    @Disabled
+    @Test
+    public void testGameToStringEmpty(){
+        Game startGame = new Game();
+        String expected = "/////////////////////////////////////\n" +
+                "     Blue Deck\n"  +
+                "/////////////////////////\n" +
+                "     Yellow Deck\n" +
+                "/////////////////////////\n" +
+                "     Green Deck\n" +
+                "/////////////////////////////////////\n" +
+                "Tokens Avalible: " + "Onyx x" + '0' +
+                " ,Sapphire x" + "0" + " ,Emerald x" + "0" +
+                " ,Diamond x" + "0" +" ,Rubby x" + "0" + " ,Gold x" +
+                "0" + "\n\n" + "Nobles Avalible: \n\n";
+        assertEquals(expected, startGame.toString());
+    }
 
     @Test
     public void testGameToStringWithPlayer(){

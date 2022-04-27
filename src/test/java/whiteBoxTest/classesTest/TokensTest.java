@@ -1,5 +1,6 @@
 package whiteBoxTest.classesTest;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -11,12 +12,13 @@ import Classes.Tokens;
 public class TokensTest{
 
     // Test Failed: constructor does not check for validity of color
-//    @Test
-//    public void testTokensConstructWithEmptyString() {
-//        assertThrows(IllegalArgumentException.class, ()->{
-//            Tokens emptyToken = new Tokens("");
-//        });
-//    }
+    @Disabled
+    @Test
+    public void testTokensConstructWithEmptyString() {
+        assertThrows(IllegalArgumentException.class, ()->{
+            Tokens emptyToken = new Tokens("");
+        });
+    }
 
     @Test
     public void testTokensConstructorWithValidColorName() {
@@ -26,13 +28,14 @@ public class TokensTest{
 
 
     // Test failed: constructor does not check for validity of color
-//    @Test
-//    public void testTokensConstructorWithInvalidColorName() {
-//        // Valid colors names: Emerald, Diamond, Sapphire, Onyx, Ruby, Gold Joker
-//        assertThrows(IllegalArgumentException.class, ()->{
-//            Tokens invalidToken = new Tokens("Bronze");
-//        });
-//    }
+    @Disabled
+    @Test
+    public void testTokensConstructorWithInvalidColorName() {
+        // Valid colors names: Emerald, Diamond, Sapphire, Onyx, Ruby, Gold Joker
+        assertThrows(IllegalArgumentException.class, ()->{
+            Tokens invalidToken = new Tokens("Bronze");
+        });
+    }
 
     @Test
     public void testTokensConstructorWithValidColor() {
@@ -41,13 +44,14 @@ public class TokensTest{
     }
 
     // Test Failed: constructor does not check for validity of color
-//    @Test
-//    public void testTokensConstructorWithInvalidColor() {
-//        // Valid colors: green, white, blue, black, red, yellow
-//        assertThrows(IllegalArgumentException.class, ()->{
-//            Tokens invalidToken = new Tokens("Gray");
-//        });
-//    }
+    @Disabled
+    @Test
+    public void testTokensConstructorWithInvalidColor() {
+        // Valid colors: green, white, blue, black, red, yellow
+        assertThrows(IllegalArgumentException.class, ()->{
+            Tokens invalidToken = new Tokens("Gray");
+        });
+    }
 
     @Test
     public void testTokensGetColor() {
@@ -85,20 +89,22 @@ public class TokensTest{
 
     // Test Failed: program only takes incorrect spelling of Ruby (program spells rubby)
     // Test Failed: always returns invalid color as yellow
-//    @Test
-//    public void testTokensReturnColorRuby() {
-//        Tokens rubyToken = new Tokens("Ruby");
-//        Color rubyColor = Color.RED;
-//        assertEquals(rubyColor, rubyToken.returnColor());
-//    }
+    @Disabled
+    @Test
+    public void testTokensReturnColorRuby() {
+        Tokens rubyToken = new Tokens("Ruby");
+        Color rubyColor = Color.RED;
+        assertEquals(rubyColor, rubyToken.returnColor());
+    }
 
     // Test Failed: program only takes incorrect spelling of Ruby (program spells rubby)
-//    @Test
-//    public void testTokensReturnColorRuby() {
-//        Tokens rubyToken = new Tokens("Rubby");
-//        Color rubyColor = Color.RED;
-//        assertFalse(rubyToken.returnColor() == rubyColor);
-//    }
+    @Disabled
+    @Test
+    public void testTokensReturnColorRubyFailed() {
+        Tokens rubyToken = new Tokens("Rubby");
+        Color rubyColor = Color.RED;
+        assertFalse(rubyToken.returnColor() == rubyColor);
+    }
 
     @Test
     public void testTokensReturnColorSapphire() {
@@ -115,16 +121,17 @@ public class TokensTest{
     }
 
     // Test Failed: always returns invalid color as yellow
-//    @Test
-//    public void testTokensReturnColorInvalidColor() {
-//        Tokens invalidToken = new Tokens("Bronze");
-//        assertTrue(invalidToken.returnColor() != Color.BLACK);
-//        assertTrue(invalidToken.returnColor() != Color.GREEN);
-//        assertTrue(invalidToken.returnColor() != Color.WHITE);
-//        assertTrue(invalidToken.returnColor() != Color.RED);
-//        assertTrue(invalidToken.returnColor() != Color.BLUE);
-//        assertTrue(invalidToken.returnColor() != Color.YELLOW);
-//    }
+    @Disabled
+    @Test
+    public void testTokensReturnColorInvalidColor() {
+        Tokens invalidToken = new Tokens("Bronze");
+        assertTrue(invalidToken.returnColor() != Color.BLACK);
+        assertTrue(invalidToken.returnColor() != Color.GREEN);
+        assertTrue(invalidToken.returnColor() != Color.WHITE);
+        assertTrue(invalidToken.returnColor() != Color.RED);
+        assertTrue(invalidToken.returnColor() != Color.BLUE);
+        assertTrue(invalidToken.returnColor() != Color.YELLOW);
+    }
 
     @Test
     public void testToStringColor() {
@@ -165,13 +172,14 @@ public class TokensTest{
     }
 
     // Test Failed: compareTo is color case sensitive (Sapphire vs. sapphire)
-//    @Test
-//    public void testCompareToTwoSameColorTokensLowerUpperCase(){
-//        Tokens sapphireToken1 = new Tokens("Sapphire");
-//        Tokens sapphireToken2 = new Tokens("sapphire");
-//
-//        assertTrue(sapphireToken1.compareTo(sapphireToken2) == 0);
-//    }
+    @Disabled
+    @Test
+    public void testCompareToTwoSameColorTokensLowerUpperCase(){
+        Tokens sapphireToken1 = new Tokens("Sapphire");
+        Tokens sapphireToken2 = new Tokens("sapphire");
+
+        assertTrue(sapphireToken1.compareTo(sapphireToken2) == 0);
+    }
 
     @Test
     public void testCompareToTwoDiffColorTokens(){
