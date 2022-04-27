@@ -1530,4 +1530,423 @@ public class testTextBasedInterface {
 //        System.setIn(in); System.setOut(output);
         assertEquals(expected,result);
     }
+    @Test
+    public void testGettingToken() throws PlayerDoesNotHaveEnoughResourcesToBuySelectedCard, SelectedDeckRanOutOfCards, NotEnoughTokensOnTable, InvalidCardsSelectionOfCardsInReserve, FileNotFoundException, InvalidCardsSelectionOfCardsOnTable, PlayerAlreadyHoldsThreeReserveCards, PlayerDoesNotHaveSelectedCardInReserve, InterruptedException {
+        TextBasedInterface textInterfaceText = new TextBasedInterface();
+        // set up testable input and output channels
+        byte[] data = "2 2 1 2 3 4 2 2 1 4".getBytes(StandardCharsets.UTF_8);
+        BufferedInputStream in = new BufferedInputStream(new ByteArrayInputStream(data));
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        PrintStream output = new PrintStream(out);
+        // redirect the standard channels
+
+        String[] args = null;System.setIn(in);
+        textInterfaceText.main(args);
+        System.setOut(output);
+        String expected = "Welcome to Splendor! How many player(s) do you wish to have(including yourself)?\n" +
+                "2. 2    3. 3.    4. 4\n" +
+                "2\n" +
+                "Check0 completed\n" +
+                "Check1 completed\n" +
+                "Check2 completed\n" +
+                "Check3 completed\n" +
+                "check4 completed\n" +
+                "Awesome! lets start the game!\n" +
+                "\n" +
+                "\n" +
+                "***** Player 1 0 Point(s) *****\n" +
+                "Tokens: Onyx x0 ,Sapphire x0 ,Emerlad x0 ,Diamond x0 ,Rubby x0 ,Gold x0\n" +
+                "\n" +
+                "Cards:\n" +
+                "\n" +
+                "Nobles:\n" +
+                "\n" +
+                "\n" +
+                "Cards in Reserve x0\n" +
+                "*******************************\n" +
+                "\n" +
+                "***** Player 2 0 Point(s) *****\n" +
+                "Tokens: Onyx x0 ,Sapphire x0 ,Emerlad x0 ,Diamond x0 ,Rubby x0 ,Gold x0\n" +
+                "\n" +
+                "Cards:\n" +
+                "\n" +
+                "Nobles:\n" +
+                "\n" +
+                "\n" +
+                "Cards in Reserve x0\n" +
+                "*******************************\n" +
+                "\n" +
+                "/////////////////////////////////////\n" +
+                "Blue Deck\n" +
+                "Blue Card 1:\n" +
+                "3     Onyx  Town\n" +
+                "Diamond x3 Rubby x3 Emerald x5 Sapphire x3\n" +
+                "\n" +
+                "Blue Card 2:\n" +
+                "5     Emerald  Town\n" +
+                "Emerald x3 Sapphire x7\n" +
+                "\n" +
+                "Blue Card 3:\n" +
+                "3     Rubby  Town\n" +
+                "Diamond x3 Emerald x3 Sapphire x5\n" +
+                "\n" +
+                "Blue Card 4:\n" +
+                "5     Sapphire  Town\n" +
+                "Diamond x7 Sapphire x3\n" +
+                "\n" +
+                "/////////////////////////\n" +
+                "Yellow Deck\n" +
+                "Yellow Card 1:\n" +
+                "1     Sapphire  Town\n" +
+                "Emerald x3 Onyx x3 Sapphire x2\n" +
+                "\n" +
+                "Yellow Card 2:\n" +
+                "1     Onyx  Town\n" +
+                "Diamond x3 Emerald x2 Sapphire x3\n" +
+                "\n" +
+                "Yellow Card 3:\n" +
+                "1     Diamond  Town\n" +
+                "Diamond x2 Rubby x3 Sapphire x3\n" +
+                "\n" +
+                "Yellow Card 4:\n" +
+                "1     Rubby  Town\n" +
+                "Diamond x2 Rubby x2 Onyx x3\n" +
+                "\n" +
+                "/////////////////////////\n" +
+                "Green Deck\n" +
+                "Green Card 1:\n" +
+                "0     Rubby  Town\n" +
+                "Diamond x1 Emerald x1 Onyx x1 Sapphire x1\n" +
+                "\n" +
+                "Green Card 2:\n" +
+                "0     Sapphire  Town\n" +
+                "Rubby x1 Emerald x3 Sapphire x1\n" +
+                "\n" +
+                "Green Card 3:\n" +
+                "1     Emerald  Town\n" +
+                "Onyx x4\n" +
+                "\n" +
+                "Green Card 4:\n" +
+                "0     Emerald  Town\n" +
+                "Rubby x2 Onyx x2 Sapphire x1\n" +
+                "\n" +
+                "/////////////////////////////////////\n" +
+                "Tokens Avalible: Onyx x4 ,Sapphire x4 ,Emerald x4 ,Diamond x4 ,Rubby x4 ,Gold x4\n" +
+                "\n" +
+                "Nobles Avalible:\n" +
+                "\n" +
+                "******* Geralt of Rivia *******\n" +
+                "Rubby x4    Emerald x4\n" +
+                "\n" +
+                "\n" +
+                "******* Cirilla Fiona Elen Riannon *******\n" +
+                "Emerald x4    Sapphire x4\n" +
+                "\n" +
+                "\n" +
+                "******* Sigismund Dijkstra *******\n" +
+                "Diamond x3    Emerald x3    Sapphire x3\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "It is Player 1's turn!\n" +
+                "Player 1, here is what you currently have:\n" +
+                "\n" +
+                "\n" +
+                "***** Player 1 0 Point(s) *****\n" +
+                "Tokens: Onyx x0 ,Sapphire x0 ,Emerlad x0 ,Diamond x0 ,Rubby x0 ,Gold x0\n" +
+                "\n" +
+                "**** Cards ****\n" +
+                "\n" +
+                "**** Nobles ****\n" +
+                "\n" +
+                "\n" +
+                "**** Cards in Reserve ****\n" +
+                "\n" +
+                "\n" +
+                "Player 1, what do you wish to do this round?\n" +
+                "\n" +
+                "1. Take 2 tokens of the same color from the table(may only be performed if there is 4 or more tokens in the color of your chosing)\n" +
+                "2. Take 1 token from each of 3 different types of tokens(excluding gold)\n" +
+                "3. Reserve a card on the table and receive one gold token(keep in mind you may only have three reserved cards maximum. Also, you will not recieve any gold token if there is non on the table)\n" +
+                "4. Reserve an unknown card from the top of a chosen deck\n" +
+                "5. Buy a card from your reserved cards\n" +
+                "6. Buy a card on the table\n" +
+                "2\n" +
+                "Choose a token to take.\n" +
+                "1. Onyx x4 2. Sapphire x4 3. Emerald x4 4. Diamond x4 5. Rubby x4\n" +
+                "1\n" +
+                "Choose a different token that you have not selected.\n" +
+                "1. Onyx x4 2. Sapphire x4 3. Emerald x4 4. Diamond x4 5. Rubby x4\n" +
+                "2\n" +
+                "Choose another different token that you have not selected.\n" +
+                "1. Onyx x4 2. Sapphire x4 3. Emerald x4 4. Diamond4 5. Rubby x4 6. Gold x4\n" +
+                "3\n" +
+                "3YOLOSWAG2\n" +
+                "Possibly not Working\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "***** Player 1 0 Point(s) *****\n" +
+                "Tokens: Onyx x1 ,Sapphire x1 ,Emerlad x1 ,Diamond x0 ,Rubby x0 ,Gold x0\n" +
+                "\n" +
+                "Cards:\n" +
+                "\n" +
+                "Nobles:\n" +
+                "\n" +
+                "\n" +
+                "Cards in Reserve x0\n" +
+                "*******************************\n" +
+                "\n" +
+                "***** Player 2 0 Point(s) *****\n" +
+                "Tokens: Onyx x0 ,Sapphire x0 ,Emerlad x0 ,Diamond x0 ,Rubby x0 ,Gold x0\n" +
+                "\n" +
+                "Cards:\n" +
+                "\n" +
+                "Nobles:\n" +
+                "\n" +
+                "\n" +
+                "Cards in Reserve x0\n" +
+                "*******************************\n" +
+                "\n" +
+                "/////////////////////////////////////\n" +
+                "Blue Deck\n" +
+                "Blue Card 1:\n" +
+                "3     Onyx  Town\n" +
+                "Diamond x3 Rubby x3 Emerald x5 Sapphire x3\n" +
+                "\n" +
+                "Blue Card 2:\n" +
+                "5     Emerald  Town\n" +
+                "Emerald x3 Sapphire x7\n" +
+                "\n" +
+                "Blue Card 3:\n" +
+                "3     Rubby  Town\n" +
+                "Diamond x3 Emerald x3 Sapphire x5\n" +
+                "\n" +
+                "Blue Card 4:\n" +
+                "5     Sapphire  Town\n" +
+                "Diamond x7 Sapphire x3\n" +
+                "\n" +
+                "/////////////////////////\n" +
+                "Yellow Deck\n" +
+                "Yellow Card 1:\n" +
+                "1     Sapphire  Town\n" +
+                "Emerald x3 Onyx x3 Sapphire x2\n" +
+                "\n" +
+                "Yellow Card 2:\n" +
+                "1     Onyx  Town\n" +
+                "Diamond x3 Emerald x2 Sapphire x3\n" +
+                "\n" +
+                "Yellow Card 3:\n" +
+                "1     Diamond  Town\n" +
+                "Diamond x2 Rubby x3 Sapphire x3\n" +
+                "\n" +
+                "Yellow Card 4:\n" +
+                "1     Rubby  Town\n" +
+                "Diamond x2 Rubby x2 Onyx x3\n" +
+                "\n" +
+                "/////////////////////////\n" +
+                "Green Deck\n" +
+                "Green Card 1:\n" +
+                "0     Rubby  Town\n" +
+                "Diamond x1 Emerald x1 Onyx x1 Sapphire x1\n" +
+                "\n" +
+                "Green Card 2:\n" +
+                "0     Sapphire  Town\n" +
+                "Rubby x1 Emerald x3 Sapphire x1\n" +
+                "\n" +
+                "Green Card 3:\n" +
+                "1     Emerald  Town\n" +
+                "Onyx x4\n" +
+                "\n" +
+                "Green Card 4:\n" +
+                "0     Emerald  Town\n" +
+                "Rubby x2 Onyx x2 Sapphire x1\n" +
+                "\n" +
+                "/////////////////////////////////////\n" +
+                "Tokens Avalible: Onyx x3 ,Sapphire x3 ,Emerald x3 ,Diamond x4 ,Rubby x4 ,Gold x4\n" +
+                "\n" +
+                "Nobles Avalible:\n" +
+                "\n" +
+                "******* Geralt of Rivia *******\n" +
+                "Rubby x4    Emerald x4\n" +
+                "\n" +
+                "\n" +
+                "******* Cirilla Fiona Elen Riannon *******\n" +
+                "Emerald x4    Sapphire x4\n" +
+                "\n" +
+                "\n" +
+                "******* Sigismund Dijkstra *******\n" +
+                "Diamond x3    Emerald x3    Sapphire x3\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Attention! Player 1 chose to take three tokens of different color!\n" +
+                "It is Player 2's turn!\n" +
+                "Player 2, here is what you currently have:\n" +
+                "\n" +
+                "\n" +
+                "***** Player 2 0 Point(s) *****\n" +
+                "Tokens: Onyx x0 ,Sapphire x0 ,Emerlad x0 ,Diamond x0 ,Rubby x0 ,Gold x0\n" +
+                "\n" +
+                "**** Cards ****\n" +
+                "\n" +
+                "**** Nobles ****\n" +
+                "\n" +
+                "\n" +
+                "**** Cards in Reserve ****\n" +
+                "\n" +
+                "\n" +
+                "Player 2, what do you wish to do this round?\n" +
+                "\n" +
+                "1. Take 2 tokens of the same color from the table(may only be performed if there is 4 or more tokens in the color of your chosing)\n" +
+                "2. Take 1 token from each of 3 different types of tokens(excluding gold)\n" +
+                "3. Reserve a card on the table and receive one gold token(keep in mind you may only have three reserved cards maximum. Also, you will not recieve any gold token if there is non on the table)\n" +
+                "4. Reserve an unknown card from the top of a chosen deck\n" +
+                "5. Buy a card from your reserved cards\n" +
+                "6. Buy a card on the table\n" +
+                "4\n" +
+                "Which deck do you wish to reserve card from?\n" +
+                "1. Blue Deck   2. Yellow Deck   3. Green Deck\n" +
+                "2\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "***** Player 1 0 Point(s) *****\n" +
+                "Tokens: Onyx x1 ,Sapphire x1 ,Emerlad x1 ,Diamond x0 ,Rubby x0 ,Gold x0\n" +
+                "\n" +
+                "Cards:\n" +
+                "\n" +
+                "Nobles:\n" +
+                "\n" +
+                "\n" +
+                "Cards in Reserve x0\n" +
+                "*******************************\n" +
+                "\n" +
+                "***** Player 2 0 Point(s) *****\n" +
+                "Tokens: Onyx x0 ,Sapphire x0 ,Emerlad x0 ,Diamond x0 ,Rubby x0 ,Gold x1\n" +
+                "\n" +
+                "Cards:\n" +
+                "\n" +
+                "Nobles:\n" +
+                "\n" +
+                "\n" +
+                "Cards in Reserve x1\n" +
+                "*******************************\n" +
+                "\n" +
+                "/////////////////////////////////////\n" +
+                "Blue Deck\n" +
+                "Blue Card 1:\n" +
+                "3     Onyx  Town\n" +
+                "Diamond x3 Rubby x3 Emerald x5 Sapphire x3\n" +
+                "\n" +
+                "Blue Card 2:\n" +
+                "5     Emerald  Town\n" +
+                "Emerald x3 Sapphire x7\n" +
+                "\n" +
+                "Blue Card 3:\n" +
+                "3     Rubby  Town\n" +
+                "Diamond x3 Emerald x3 Sapphire x5\n" +
+                "\n" +
+                "Blue Card 4:\n" +
+                "5     Sapphire  Town\n" +
+                "Diamond x7 Sapphire x3\n" +
+                "\n" +
+                "/////////////////////////\n" +
+                "Yellow Deck\n" +
+                "Yellow Card 1:\n" +
+                "1     Sapphire  Town\n" +
+                "Emerald x3 Onyx x3 Sapphire x2\n" +
+                "\n" +
+                "Yellow Card 2:\n" +
+                "1     Onyx  Town\n" +
+                "Diamond x3 Emerald x2 Sapphire x3\n" +
+                "\n" +
+                "Yellow Card 3:\n" +
+                "1     Diamond  Town\n" +
+                "Diamond x2 Rubby x3 Sapphire x3\n" +
+                "\n" +
+                "Yellow Card 4:\n" +
+                "1     Rubby  Town\n" +
+                "Diamond x2 Rubby x2 Onyx x3\n" +
+                "\n" +
+                "/////////////////////////\n" +
+                "Green Deck\n" +
+                "Green Card 1:\n" +
+                "0     Rubby  Town\n" +
+                "Diamond x1 Emerald x1 Onyx x1 Sapphire x1\n" +
+                "\n" +
+                "Green Card 2:\n" +
+                "0     Sapphire  Town\n" +
+                "Rubby x1 Emerald x3 Sapphire x1\n" +
+                "\n" +
+                "Green Card 3:\n" +
+                "1     Emerald  Town\n" +
+                "Onyx x4\n" +
+                "\n" +
+                "Green Card 4:\n" +
+                "0     Emerald  Town\n" +
+                "Rubby x2 Onyx x2 Sapphire x1\n" +
+                "\n" +
+                "/////////////////////////////////////\n" +
+                "Tokens Avalible: Onyx x3 ,Sapphire x3 ,Emerald x3 ,Diamond x4 ,Rubby x4 ,Gold x3\n" +
+                "\n" +
+                "Nobles Avalible:\n" +
+                "\n" +
+                "******* Geralt of Rivia *******\n" +
+                "Rubby x4    Emerald x4\n" +
+                "\n" +
+                "\n" +
+                "******* Cirilla Fiona Elen Riannon *******\n" +
+                "Emerald x4    Sapphire x4\n" +
+                "\n" +
+                "\n" +
+                "******* Sigismund Dijkstra *******\n" +
+                "Diamond x3    Emerald x3    Sapphire x3\n" +
+                "\n" +
+                "\n" +
+                "\n" +
+                "Attention! Player 2 chose to reserve a card from the deck!\n" +
+                "It is Player 1's turn!\n" +
+                "Player 1, here is what you currently have:\n" +
+                "\n" +
+                "\n" +
+                "***** Player 1 0 Point(s) *****\n" +
+                "Tokens: Onyx x1 ,Sapphire x1 ,Emerlad x1 ,Diamond x0 ,Rubby x0 ,Gold x0\n" +
+                "\n" +
+                "**** Cards ****\n" +
+                "\n" +
+                "**** Nobles ****\n" +
+                "\n" +
+                "\n" +
+                "**** Cards in Reserve ****\n" +
+                "\n" +
+                "\n" +
+                "Player 1, what do you wish to do this round?\n" +
+                "\n" +
+                "1. Take 2 tokens of the same color from the table(may only be performed if there is 4 or more tokens in the color of your chosing)\n" +
+                "2. Take 1 token from each of 3 different types of tokens(excluding gold)\n" +
+                "3. Reserve a card on the table and receive one gold token(keep in mind you may only have three reserved cards maximum. Also, you will not recieve any gold token if there is non on the table)\n" +
+                "4. Reserve an unknown card from the top of a chosen deck\n" +
+                "5. Buy a card from your reserved cards\n" +
+                "6. Buy a card on the table\n" +
+                "2\n" +
+                "Choose a token to take.\n" +
+                "1. Onyx x3 2. Sapphire x3 3. Emerald x3 4. Diamond x4 5. Rubby x4\n" +
+                "1\n" +
+                "Choose a different token that you have not selected.\n" +
+                "1. Onyx x3 2. Sapphire x3 3. Emerald x3 4. Diamond x4 5. Rubby x4\n" +
+                "4\n" +
+                "Choose another different token that you have not selected.\n" +
+                "1. Onyx x3 2. Sapphire x3 3. Emerald x3 4. Diamond x4 5. Rubby x4\n";
+        // call to method that does standard I/O
+        String result = out.toString().replaceAll("\r","");
+        System.setOut(output);
+
+//        System.setIn(in); System.setOut(output);
+        assertEquals(expected,result);
+    }
 }

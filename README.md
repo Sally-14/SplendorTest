@@ -90,6 +90,7 @@ Invalid Cards Selection Of Cards On Table covered
 
 - If players choose the second option: Take 1 token from each of 3 different types of tokens(excluding gold). If the player chooses the same token repetitively, the error was correctly showing up but it continue to show the conversation even the user input is correct: Choose another different token that you have not selected. 1. Onyx x4 2. Sapphire x4 3. Emerald x4 4. Diamond4 5. Rubby x4 6. Gold x4
 
-- According to the rule 2, To reserve a card, a player simply needs to take a face-up development from the middle of the table or (if you’re feeling lucky) draw the first card from one of the three decks without showing it to the other players. If user choose to reserve a development car a card on the table and receive one gold token, "Which card do you wish to reserve? 1. Blue Card 1 *** 2. Blue Card 2 *** 3. Blue Card 3" You cannot know which Jeweries required for each card
+- According to the rule 2, To reserve a card, a player simply needs to take a face-up development from the middle of the table or (if you’re feeling lucky) draw the first card from one of the three decks without showing it to the other players. If user choose to reserve a development car a card on the table and receive one gold token, "Which card do you wish to reserve? 1. Blue Card 1 *** 2. Blue Card 2 *** 3. Blue Card 3" You cannot know which Jeweries required for each card. The possible issue here is the incompleteness of the rules.
 
-- According to the 
+- According to the rule 3, Reserving a card is also the only way to get a gold token (joker). If there is no gold left, you can still reserve a card, but you won't get any gold. but in the second round for player to choose token, Choose another different token that you have not selected. 1. Onyx x3 2. Sapphire x3 3. Emerald x3 4. Diamond4 5. Rubby x4 6. Gold x3
+
