@@ -94,3 +94,4 @@ Invalid Cards Selection Of Cards On Table covered
 
 - According to the rule 3, Reserving a card is also the only way to get a gold token (joker). If there is no gold left, you can still reserve a card, but you won't get any gold. but in the second round for player to choose token, Choose another different token that you have not selected. 1. Onyx x3 2. Sapphire x3 3. Emerald x3 4. Diamond4 5. Rubby x4 6. Gold x3
 
+- When choosing option 2: Take 1 token from each of 3 different types of tokens. The test input is Diamond and Rubby. It is not repeated but it shows "Choose another different token that you have not selected".
