@@ -1,7 +1,7 @@
 # SplendorTest
 Write test cases for implementation of the splendor card game
 
-White Box Test Results: 
+# White Box Test Results: 
 
 Tokens Class:
 - Bad name since tokens only contains 1 token  
@@ -82,7 +82,12 @@ Not Enough Tokens On Table Exception covered
 Player Already Holds Three Reserve Cards covered 
 Invalid Cards Selection Of Cards On Table covered 
 
-Black Box Test Results:
+# Black Box Test Results:
+
+- 100% coverage of the rules from the Splendor rule book
+
 - When we are using system.in to read Buffered Input Stream, we wrote one input of scanner array interacting with text-based interface. The No line found error is keep popping out. It is probably because the author initialize multiple scanner which the initial scanner (with all inputs) could not continue to be used. I have to separate the input into multiple scanner.
 
 - If players choose the second option: Take 1 token from each of 3 different types of tokens(excluding gold). If the player chooses the same token repetitively, the error was correctly showing up but it continue to show the conversation even the user input is correct: Choose another different token that you have not selected. 1. Onyx x4 2. Sapphire x4 3. Emerald x4 4. Diamond4 5. Rubby x4 6. Gold x4
+
+- According to the rule 2, To reserve a card, a player simply needs to take a face-up development from the middle of the table or (if you’re feeling lucky) draw the first card from one of the three decks without showing it to the other players. If user choose to reserve a development car a card on the table and receive one gold token, "Which card do you wish to reserve? 1. Blue Card 1 *** 2. Blue Card 2 *** 3. Blue Card 3"

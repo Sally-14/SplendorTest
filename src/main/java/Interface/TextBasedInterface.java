@@ -794,7 +794,7 @@ public class TextBasedInterface
 	public static ArrayList<Noble> instantiateNobles(int numP) throws FileNotFoundException
 	{
 		ArrayList<Noble> r = new ArrayList<Noble>();
-		Scanner sc = new Scanner(new File("Nobles.txt"));
+		Scanner sc = new Scanner(new File("src/main/java/Nobles.txt"));
 		while(sc.hasNextLine()){
 			String[] info = sc.nextLine().split(" ");
 			String name = "";

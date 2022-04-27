@@ -19,7 +19,7 @@ public class GraphicInterface
 		ArrayList<Cards> yellowDeck = new ArrayList<Cards>();
 		ArrayList<Cards> greenDeck = new ArrayList<Cards>();
 		
-		Scanner cardsFile = new Scanner(new File("Splendor Set.txt"));
+		Scanner cardsFile = new Scanner(new File("src/main/java/SplendorSet.txt"));
 		Scanner sc = new Scanner(System.in);
 		
 		while(cardsFile.hasNextLine()){  //(int pt, ArrayList<Tokens> cost, String name, Tokens resource)
@@ -145,7 +145,7 @@ public class GraphicInterface
 	public static ArrayList<Noble> instantiateNobles(int numP) throws FileNotFoundException
 	{
 		ArrayList<Noble> r = new ArrayList<Noble>();
-		Scanner sc = new Scanner(new File("Nobles.txt"));
+		Scanner sc = new Scanner(new File("src/main/java/Nobles.txt"));
 		while(sc.hasNextLine()){
 			String[] info = sc.nextLine().split(" ");
 			String name = "";
