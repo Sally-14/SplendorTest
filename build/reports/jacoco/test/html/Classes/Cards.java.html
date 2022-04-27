@@ -153,10 +153,10 @@ public class Cards implements Comparable
 	{
 <span class="fc" id="L154">		Cards c = (Cards)o;</span>
 <span class="fc bfc" id="L155" title="All 2 branches covered.">		if(c.getResource() != resource){</span>
-<span class="pc bpc" id="L156" title="1 of 2 branches missed.">			if(c.getName() != name){</span>
+<span class="fc bfc" id="L156" title="All 2 branches covered.">			if(c.getName() != name){</span>
 <span class="fc" id="L157">				return pt - c.getPt();</span>
 			}else{
-<span class="nc" id="L159">				return name.compareTo(c.getName());</span>
+<span class="fc" id="L159">				return name.compareTo(c.getName());</span>
 			}
 		}else{
 <span class="fc" id="L162">			return resource.compareTo(c.getResource());</span>

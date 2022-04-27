@@ -29,3 +29,12 @@ repositories {
 test {
     useJUnitPlatform()
 }
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.enabled true
+        csv.enabled true
+        html.enabled true
+    }
+}

@@ -64,8 +64,12 @@ Player Class: Partially tested!!! Incomplete
 - getOneOfEachTokens does not check if the token is available 
 - containsAll does not consider duplicates
 - removeAll always returns true 
-- can buy with yellow only takes "gold" not anything else 
+- can buy with yellow only takes "gold" not anything else
 - can buy does not check the counts of each color token
+- can buy does not consider gold token to be able to replace any other token that the player does not have
+- unclear what the difference between CanBuyWithYellow and CanBuyWithYellow2 is
+- placeCardFromReserve have random print
+- Collections.sort does not do anything in toString
 
 MyPanel Class: 
 - Did not unit test draw 

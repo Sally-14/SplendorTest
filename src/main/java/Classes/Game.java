@@ -417,10 +417,10 @@ public class Game
 	{
 		if(p.getReserve().contains(desired)){
 			if(p.canBuy(desired)){
-				System.out.println("WOW");
+				//System.out.println("WOW");
 				return true;
 			}else if(p.canBuyWithYellow(desired)){
-				System.out.println("RAPE");
+				//System.out.println("RAPE");
 				return true;
 			}else{
 				throw new PlayerDoesNotHaveEnoughResourcesToBuySelectedCard();

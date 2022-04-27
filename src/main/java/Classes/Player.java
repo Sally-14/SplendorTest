@@ -206,12 +206,12 @@ public class Player
 	public Tokens discardToken(Tokens t1, Game game) throws InvalidTokensSelection
 	{
 		if(game.checkDiscard(this, t1)){
-			for(int i=0; i<tokens.size(); i++){
-				if(tokens.get(i).getColor().equals(t1.getColor())){
-					tokens.remove(i);
-					break;
-				}
+		for(int i=0; i<tokens.size(); i++){
+			if(tokens.get(i).getColor().equals(t1.getColor())){
+				tokens.remove(i);
+				break;
 			}
+		}
 		}
 		
 		
@@ -256,7 +256,7 @@ public class Player
 			}
 			
 			
-			Collections.sort(nt);
+//			Collections.sort(nt);
 			//System.out.println(nt);
 			game.setTokens(nt);
 			game.updatePlayers(this);
@@ -269,13 +269,13 @@ public class Player
 				currentPlayer++;
 			}
 			
-			System.out.println(tokens.size() + "YOLOSWAG");
+			//System.out.println(tokens.size() + "YOLOSWAG");
 			
 			if(game.getPlayers().get(game.getCurrentPlayer()).tooMuchTokens()){
-				System.out.println("Working");
+				//System.out.println("Working");
 				return;
 			}else{
-				System.out.println("Possibly not working");
+				//System.out.println("Possibly not working");
 				game.setCurrentPlayer(currentPlayer);
 			}
 				
@@ -314,7 +314,7 @@ public class Player
 			System.out.println(nt.get(2).equals(d1));
 			System.out.println(nt);*/
 			
-			Collections.sort(nt);
+//			Collections.sort(nt);
 			
 			nt.remove(d1);
 			nt.remove(d2);
@@ -326,7 +326,7 @@ public class Player
 			game.setTokens(nt);
 			game.updatePlayers(this);
 			
-			System.out.println(tokens.size() + "YOLOSWAG2");
+			//System.out.println(tokens.size() + "YOLOSWAG2");
 
 			
 			int currentPlayer = new Integer(game.getCurrentPlayer());
@@ -338,10 +338,10 @@ public class Player
 			
 			
 			if(game.getPlayers().get(game.getCurrentPlayer()).tooMuchTokens()){
-				System.out.println("Working");
+				//System.out.println("Working");
 				return;
 			}else{
-				System.out.println("Possibly not Working");
+				//System.println("Possibly not Working");
 				game.setCurrentPlayer(currentPlayer);
 			}
 			
@@ -530,14 +530,14 @@ public class Player
 		
 		ArrayList<Tokens> costAfter = new ArrayList<Tokens>(desired.getCost());
 		
-		System.out.println(costAfter);
-		System.out.println(have);
-		Collections.sort(resource);
-		System.out.println(resource);
+//		System.out.println(costAfter);
+//		System.out.println(have);
+//		Collections.sort(resource);
+//		System.out.println(resource);
 		
 		removeAll(costAfter, resource);
 		
-		System.out.println(costAfter);
+//		System.out.println(costAfter);
 		//System.out.println(have);
 		
 		for(int i=have.size()-1; i>=0; i--){
@@ -606,7 +606,7 @@ public class Player
 			}
 		}
 		
-		System.out.println(costAfter);
+//		System.out.println(costAfter);
 		
 		if(costAfter.size() != 0 && gold.size() >= costAfter.size()){
 			for(int i=0; i<costAfter.size(); i++){
@@ -643,7 +643,7 @@ public class Player
 			}else if(canBuyWithYellow(desired)){
 				//System.out.println("LOLOLOLOLOLOLOOLOLOLOL");
 				cby = canBuyWithYellow2(desired);
-				System.out.println(cby);
+//				System.out.println(cby);
 				//System.out.println();
 				removeAll(tokens, cby);
 				//System.out.println(cby);
@@ -698,7 +698,7 @@ public class Player
 			cards.add(cd);
 			int s = getPoints();
 			setScore(s);
-			System.out.println(s);
+			//System.out.println(s);
 			game.updatePlayers(this);
 			
 			if(canBuy(cd)){
