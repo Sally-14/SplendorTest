@@ -7399,5 +7399,180 @@ public class testTextBasedInterface {
             assertFalse(result.contains(to_contains));
         }
     }
+    @Test
+    public void testFourPlayerPlayer1ChooseOptionTwoOnyxSapphireEmerlad() throws PlayerDoesNotHaveEnoughResourcesToBuySelectedCard, SelectedDeckRanOutOfCards, NotEnoughTokensOnTable, InvalidCardsSelectionOfCardsInReserve, FileNotFoundException, InvalidCardsSelectionOfCardsOnTable, PlayerAlreadyHoldsThreeReserveCards, PlayerDoesNotHaveSelectedCardInReserve, InterruptedException {
+
+        try {
+            // set up testable input and output channels
+            byte[] data = "4\n 2\n 1\n 2\n 3\n".getBytes(StandardCharsets.UTF_8);
+            BufferedInputStream in = new BufferedInputStream(new ByteArrayInputStream(data));
+            ByteArrayOutputStream out = new ByteArrayOutputStream();
+            PrintStream output = new PrintStream(out);
+            // redirect the standard channels
+
+            String[] args = null;
+            System.setIn(in);
+            TextBasedInterface.main(null);
+            System.setOut(output);
+
+            // call to method that does standard I/O
+            String result = out.toString().replaceAll("\r","");
+//        System.setOut(output);
+
+//        System.setIn(in); System.setOut(output);
+            String to_contain = "***** Player 1 0 Point(s) *****\n" +
+                    "Tokens: Onyx x1 ,Sapphire x1 ,Emerlad x1 ,Diamond x0 ,Rubby x0 ,Gold x0\n" +
+                    "\n" +
+                    "Cards:\n" +
+                    "\n" +
+                    "Nobles:\n" +
+                    "\n" +
+                    "\n" +
+                    "Cards in Reserve x0\n";
+                    assertFalse(result.contains(to_contain));
+        } catch (Exception e) {
+
+        }
+    }
+    @Test
+    public void testFourPlayerPlayer1ChooseOptionTwoEmerladDiamondRubby() throws PlayerDoesNotHaveEnoughResourcesToBuySelectedCard, SelectedDeckRanOutOfCards, NotEnoughTokensOnTable, InvalidCardsSelectionOfCardsInReserve, FileNotFoundException, InvalidCardsSelectionOfCardsOnTable, PlayerAlreadyHoldsThreeReserveCards, PlayerDoesNotHaveSelectedCardInReserve, InterruptedException {
+
+        try {
+            // set up testable input and output channels
+            byte[] data = "4\n 2\n 3\n 4\n 5\n".getBytes(StandardCharsets.UTF_8);
+            BufferedInputStream in = new BufferedInputStream(new ByteArrayInputStream(data));
+            ByteArrayOutputStream out = new ByteArrayOutputStream();
+            PrintStream output = new PrintStream(out);
+            // redirect the standard channels
+
+            String[] args = null;
+            System.setIn(in);
+            TextBasedInterface.main(null);
+            System.setOut(output);
+
+            // call to method that does standard I/O
+            String result = out.toString().replaceAll("\r","");
+//        System.setOut(output);
+
+//        System.setIn(in); System.setOut(output);
+            String to_contain = "***** Player 1 0 Point(s) *****\n" +
+                    "Tokens: Onyx x0 ,Sapphire x0 ,Emerlad x1 ,Diamond x1 ,Rubby x1 ,Gold x0\n" +
+                    "\n" +
+                    "Cards:\n" +
+                    "\n" +
+                    "Nobles:\n" +
+                    "\n" +
+                    "\n" +
+                    "Cards in Reserve x0\n";
+            assertFalse(result.contains(to_contain));
+        } catch (Exception e) {
+
+        }
+    }
+    @Test
+    public void testFourPlayerPlayer1ChooseOptionFourUnknownCardFromDeckBlue() throws PlayerDoesNotHaveEnoughResourcesToBuySelectedCard, SelectedDeckRanOutOfCards, NotEnoughTokensOnTable, InvalidCardsSelectionOfCardsInReserve, FileNotFoundException, InvalidCardsSelectionOfCardsOnTable, PlayerAlreadyHoldsThreeReserveCards, PlayerDoesNotHaveSelectedCardInReserve, InterruptedException {
+
+        try {
+            // set up testable input and output channels
+            byte[] data = "4\n 4\n 1\n".getBytes(StandardCharsets.UTF_8);
+            BufferedInputStream in = new BufferedInputStream(new ByteArrayInputStream(data));
+            ByteArrayOutputStream out = new ByteArrayOutputStream();
+            PrintStream output = new PrintStream(out);
+            // redirect the standard channels
+
+            String[] args = null;
+            System.setIn(in);
+            TextBasedInterface.main(null);
+            System.setOut(output);
+
+            // call to method that does standard I/O
+            String result = out.toString().replaceAll("\r","");
+//        System.setOut(output);
+
+//        System.setIn(in); System.setOut(output);
+            String to_contain = "***** Player 1 0 Point(s) *****\n" +
+                    "Tokens: Onyx x0 ,Sapphire x0 ,Emerlad x1 ,Diamond x1 ,Rubby x1 ,Gold x0\n" +
+                    "\n" +
+                    "Cards:\n" +
+                    "\n" +
+                    "Nobles:\n" +
+                    "\n" +
+                    "\n" +
+                    "Cards in Reserve x0\n";
+            assertFalse(result.contains(to_contain));
+        } catch (Exception e) {
+
+        }
+    }
+    @Test
+    public void testFourPlayerPlayer1ChooseOptionFourUnknownCardFromDeckYellow() throws PlayerDoesNotHaveEnoughResourcesToBuySelectedCard, SelectedDeckRanOutOfCards, NotEnoughTokensOnTable, InvalidCardsSelectionOfCardsInReserve, FileNotFoundException, InvalidCardsSelectionOfCardsOnTable, PlayerAlreadyHoldsThreeReserveCards, PlayerDoesNotHaveSelectedCardInReserve, InterruptedException {
+
+        try {
+            // set up testable input and output channels
+            byte[] data = "4\n 4\n 2\n".getBytes(StandardCharsets.UTF_8);
+            BufferedInputStream in = new BufferedInputStream(new ByteArrayInputStream(data));
+            ByteArrayOutputStream out = new ByteArrayOutputStream();
+            PrintStream output = new PrintStream(out);
+            // redirect the standard channels
+
+            String[] args = null;
+            System.setIn(in);
+            TextBasedInterface.main(null);
+            System.setOut(output);
+
+            // call to method that does standard I/O
+            String result = out.toString().replaceAll("\r","");
+//        System.setOut(output);
+
+//        System.setIn(in); System.setOut(output);
+            String to_contain = "***** Player 1 0 Point(s) *****\n" +
+                    "Tokens: Onyx x0 ,Sapphire x0 ,Emerlad x0 ,Diamond x0 ,Rubby x0 ,Gold x1\n" +
+                    "\n" +
+                    "Cards:\n" +
+                    "\n" +
+                    "Nobles:\n" +
+                    "\n" +
+                    "\n" +
+                    "Cards in Reserve x1\n" ;
+            assertFalse(result.contains(to_contain));
+        } catch (Exception e) {
+
+        }
+    }
+    @Test
+    public void testFourPlayerPlayer1ChooseOptionFourUnknownCardFromDeckGreen() throws PlayerDoesNotHaveEnoughResourcesToBuySelectedCard, SelectedDeckRanOutOfCards, NotEnoughTokensOnTable, InvalidCardsSelectionOfCardsInReserve, FileNotFoundException, InvalidCardsSelectionOfCardsOnTable, PlayerAlreadyHoldsThreeReserveCards, PlayerDoesNotHaveSelectedCardInReserve, InterruptedException {
+
+        try {
+            // set up testable input and output channels
+            byte[] data = "4\n 4\n 3\n".getBytes(StandardCharsets.UTF_8);
+            BufferedInputStream in = new BufferedInputStream(new ByteArrayInputStream(data));
+            ByteArrayOutputStream out = new ByteArrayOutputStream();
+            PrintStream output = new PrintStream(out);
+            // redirect the standard channels
+
+            String[] args = null;
+            System.setIn(in);
+            TextBasedInterface.main(null);
+            System.setOut(output);
+
+            // call to method that does standard I/O
+            String result = out.toString().replaceAll("\r","");
+//        System.setOut(output);
+
+//        System.setIn(in); System.setOut(output);
+            String to_contain = "***** Player 1 0 Point(s) *****\n" +
+                    "Tokens: Onyx x0 ,Sapphire x0 ,Emerlad x0 ,Diamond x0 ,Rubby x0 ,Gold x1\n" +
+                    "\n" +
+                    "Cards:\n" +
+                    "\n" +
+                    "Nobles:\n" +
+                    "\n" +
+                    "\n" +
+                    "Cards in Reserve x1\n" ;
+            assertFalse(result.contains(to_contain));
+        } catch (Exception e) {
+
+        }
+    }
 
     }

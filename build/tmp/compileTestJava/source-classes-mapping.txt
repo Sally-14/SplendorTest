@@ -2,8 +2,8 @@ whiteBoxTest/classesTest/NobleTest.java
  whiteBoxTest.classesTest.NobleTest
 whiteBoxTest/classesTest/CardsTest.java
  whiteBoxTest.classesTest.CardsTest
-blackBoxTest/testTextBasedInterface.java
- blackBoxTest.testTextBasedInterface
+whiteBoxTest/interfaceTest/MyPanelTest.java
+ whiteBoxTest.interfaceTest.MyPanelTest
 whiteBoxTest/classesTest/TokensTest.java
  whiteBoxTest.classesTest.TokensTest
 whiteBoxTest/classesTest/GameTest.java
@@ -12,5 +12,5 @@ whiteBoxTest/classesTest/PlayerTest.java
  whiteBoxTest.classesTest.PlayerTest
 whiteBoxTest/interfaceTest/MyFrameTest.java
  whiteBoxTest.interfaceTest.MyFrameTest
-whiteBoxTest/interfaceTest/MyPanelTest.java
- whiteBoxTest.interfaceTest.MyPanelTest
+blackBoxTest/testTextBasedInterface.java
+ blackBoxTest.testTextBasedInterface
