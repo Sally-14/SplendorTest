@@ -2,6 +2,8 @@ whiteBoxTest/classesTest/NobleTest.java
  whiteBoxTest.classesTest.NobleTest
 whiteBoxTest/classesTest/CardsTest.java
  whiteBoxTest.classesTest.CardsTest
+blackBoxTest/testTextBasedInterface.java
+ blackBoxTest.testTextBasedInterface
 whiteBoxTest/classesTest/TokensTest.java
  whiteBoxTest.classesTest.TokensTest
 whiteBoxTest/classesTest/GameTest.java

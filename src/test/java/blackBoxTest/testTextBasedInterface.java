@@ -7148,4 +7148,256 @@ public class testTextBasedInterface {
 
         }
     }
+    @Test
+    public void testTwoPlayerChooseToSelectTokenWhenTokenIsNotEnoughTheGameNeverEnds() throws PlayerDoesNotHaveEnoughResourcesToBuySelectedCard, SelectedDeckRanOutOfCards, NotEnoughTokensOnTable, InvalidCardsSelectionOfCardsInReserve, FileNotFoundException, InvalidCardsSelectionOfCardsOnTable, PlayerAlreadyHoldsThreeReserveCards, PlayerDoesNotHaveSelectedCardInReserve, InterruptedException {
+
+        try {
+            // set up testable input and output channels
+            byte[] data = "2\n 1\n 5\n".getBytes(StandardCharsets.UTF_8);
+            BufferedInputStream in = new BufferedInputStream(new ByteArrayInputStream(data));
+            ByteArrayOutputStream out = new ByteArrayOutputStream();
+            PrintStream output = new PrintStream(out);
+            // redirect the standard channels
+
+            String[] args = null;
+            System.setIn(in);
+            TextBasedInterface.main(null);
+            System.setOut(output);
+
+            // call to method that does standard I/O
+            String result = out.toString().replaceAll("\r","");
+//        System.setOut(output);
+
+//        System.setIn(in); System.setOut(output);
+            String to_contain = "***** Player 1 0 Point(s) *****\n" +
+                    "Tokens: Onyx x0 ,Sapphire x0 ,Emerlad x0 ,Diamond x0 ,Rubby x2 ,Gold x0\n" +
+                    "\n" +
+                    "Cards:\n" +
+                    "\n" +
+                    "Nobles:\n" +
+                    "\n" +
+                    "\n" +
+                    "Cards in Reserve x0\n";
+            assertFalse(result.contains(to_contain));
+        } catch (Exception e) {
+            String result = "***** Player 1 0 Point(s) *****\n" +
+                    "Tokens: Onyx x1 ,Sapphire x3 ,Emerlad x4 ,Diamond x3 ,Rubby x3 ,Gold x1\n" +
+                    "\n" +
+                    "Cards:\n" +
+                    "\n" +
+                    "Nobles:\n" +
+                    "\n" +
+                    "\n" +
+                    "Cards in Reserve x2\n" +
+                    "*******************************\n" +
+                    "\n" +
+                    "***** Player 2 0 Point(s) *****\n" +
+                    "Tokens: Onyx x2 ,Sapphire x0 ,Emerlad x0 ,Diamond x0 ,Rubby x0 ,Gold x3\n" +
+                    "\n" +
+                    "Cards:\n" +
+                    "\n" +
+                    "Nobles:\n" +
+                    "\n" +
+                    "\n" +
+                    "Cards in Reserve x4\n" +
+                    "*******************************\n" +
+                    "\n" +
+                    "/////////////////////////////////////\n" +
+                    "Blue Deck\n" +
+                    "Blue Card 1:\n" +
+                    "4     Onyx  Town\n" +
+                    "Rubby x7\n" +
+                    "\n" +
+                    "Blue Card 2:\n" +
+                    "4     Onyx  Town\n" +
+                    "Rubby x6 Emerald x3 Onyx x3\n" +
+                    "\n" +
+                    "Blue Card 3:\n" +
+                    "5     Sapphire  Town\n" +
+                    "Diamond x7 Sapphire x3\n" +
+                    "\n" +
+                    "Blue Card 4:\n" +
+                    "5     Diamond  Town\n" +
+                    "Diamond x3 Onyx x7\n" +
+                    "\n" +
+                    "/////////////////////////\n" +
+                    "Yellow Deck\n" +
+                    "Yellow Card 1:\n" +
+                    "2     Diamond  Town\n" +
+                    "Rubby x5 Onyx x3\n" +
+                    "\n" +
+                    "Yellow Card 2:\n" +
+                    "1     Diamond  Town\n" +
+                    "Rubby x2 Emerald x3 Onyx x2\n" +
+                    "\n" +
+                    "Yellow Card 3:\n" +
+                    "1     Emerald  Town\n" +
+                    "Diamond x2 Onyx x2 Sapphire x3\n" +
+                    "\n" +
+                    "Yellow Card 4:\n" +
+                    "2     Emerald  Town\n" +
+                    "Emerald x3 Sapphire x3\n" +
+                    "\n" +
+                    "/////////////////////////\n" +
+                    "Green Deck\n" +
+                    "Green Card 1:\n" +
+                    "0     Onyx  Town\n" +
+                    "Diamond x1 Rubby x1 Emerald x1 Sapphire x1\n" +
+                    "\n" +
+                    "Green Card 2:\n" +
+                    "0     Emerald  Town\n" +
+                    "Diamond x2 Sapphire x1\n" +
+                    "\n" +
+                    "Green Card 3:\n" +
+                    "0     Emerald  Town\n" +
+                    "Diamond x1 Rubby x1 Onyx x2 Sapphire x1\n" +
+                    "\n" +
+                    "Green Card 4:\n" +
+                    "0     Sapphire  Town\n" +
+                    "Diamond x1 Onyx x2\n" +
+                    "\n" +
+                    "/////////////////////////////////////\n" +
+                    "Tokens Avalible: Onyx x1 ,Sapphire x1 ,Emerald x0 ,Diamond x1 ,Rubby x1 ,Gold x0\n" +
+                    "\n" +
+                    "Nobles Avalible:\n" +
+                    "\n" +
+                    "******* Cirilla Fiona Elen Riannon *******\n" +
+                    "Emerald x4    Sapphire x4\n" +
+                    "\n" +
+                    "\n" +
+                    "******* Triss Merigold *******\n" +
+                    "Diamond x4    Onyx x4\n" +
+                    "\n" +
+                    "\n" +
+                    "******* Morvran Voorhis *******\n" +
+                    "Rubby x3    Emerald x3    Onyx x3\n" +
+                    "\n" +
+                    "\n" +
+                    "\n" +
+                    "Attention! Player 1 chose to reserve a card on the table!\n" +
+                    "It is Player 2's turn!\n" +
+                    "Player 2, here is what you currently have:\n" +
+                    "\n" +
+                    "\n" +
+                    "***** Player 2 0 Point(s) *****\n" +
+                    "Tokens: Onyx x2 ,Sapphire x0 ,Emerlad x0 ,Diamond x0 ,Rubby x0 ,Gold x3\n" +
+                    "\n" +
+                    "**** Cards ****\n" +
+                    "\n" +
+                    "**** Nobles ****\n" +
+                    "\n" +
+                    "\n" +
+                    "**** Cards in Reserve ****\n" +
+                    "\n" +
+                    "4     Onyx  Town\n" +
+                    "Rubby x7\n" +
+                    "\n" +
+                    "0     Sapphire  Town\n" +
+                    "Diamond x1 Rubby x2 Emerald x1 Onyx x1\n" +
+                    "\n" +
+                    "1     Rubby  Town\n" +
+                    "Rubby x2 Onyx x3 Sapphire x3\n" +
+                    "\n" +
+                    "0     Sapphire  Town\n" +
+                    "Diamond x1 Onyx x2\n" +
+                    "\n" +
+                    "\n" +
+                    "Player 2, what do you wish to do this round?\n" +
+                    "\n" +
+                    "1. Take 2 tokens of the same color from the table(may only be performed if there is 4 or more tokens in the color of your chosing)\n" +
+                    "2. Take 1 token from each of 3 different types of tokens(excluding gold)\n" +
+                    "3. Reserve a card on the table and receive one gold token(keep in mind you may only have three reserved cards maximum. Also, you will not recieve any gold token if there is non on the table)\n" +
+                    "4. Reserve an unknown card from the top of a chosen deck\n" +
+                    "5. Buy a card from your reserved cards\n" +
+                    "6. Buy a card on the table\n" +
+                    "\n" +
+                    "4Invalid choice made.\n" +
+                    "1. Take 2 tokens of the same color from the table(may only be performed if there is 4 or more tokens in the color of your chosing)\n" +
+                    "2. Take 1 token from each of 3 different types of tokens(excluding gold)\n" +
+                    "3. Reserve a card on the table and receive one gold token(keep in mind you may only have three reserved cards maximum. Also, you will not recieve any gold token if there is non on the table)\n" +
+                    "4. Reserve an unknown card from the top of a chosen deck\n" +
+                    "5. Buy a card from your reserved cards\n" +
+                    "6. Buy a card on the table\n" +
+                    "4\n" +
+                    "Which deck do you wish to reserve card from?\n" +
+                    "1. Blue Deck   2. Yellow Deck   3. Green Deck\n" +
+                    "2\n" +
+                    "The deck you chose ran out of cards. Please choose another one.\n" +
+                    "Which deck do you wish to reserve card from?\n" +
+                    "1. Blue Deck   2. Yellow Deck   3. Green Deck\n" +
+                    "1\n" +
+                    "The deck you chose ran out of cards. Please choose another one.\n" +
+                    "Which deck do you wish to reserve card from?\n" +
+                    "1. Blue Deck   2. Yellow Deck   3. Green Deck\n" +
+                    "3\n" +
+                    "The deck you chose ran out of cards. Please choose another one.\n" +
+                    "Which deck do you wish to reserve card from?\n" +
+                    "1. Blue Deck   2. Yellow Deck   3. Green Deck\n" +
+                    "3q\n" +
+                    "The deck you chose ran out of cards. Please choose another one.\n" +
+                    "Which deck do you wish to reserve card from?\n" +
+                    "1. Blue Deck   2. Yellow Deck   3. Green Deck\n" +
+                    "1\n" +
+                    "The deck you chose ran out of cards. Please choose another one.\n" +
+                    "Which deck do you wish to reserve card from?\n" +
+                    "1. Blue Deck   2. Yellow Deck   3. Green Deck\n" +
+                    "2\n" +
+                    "The deck you chose ran out of cards. Please choose another one.\n" +
+                    "Which deck do you wish to reserve card from?\n" +
+                    "1. Blue Deck   2. Yellow Deck   3. Green Deck\n" +
+                    "3\n" +
+                    "4\n" +
+                    "The deck you chose ran out of cards. Please choose another one.\n" +
+                    "Which deck do you wish to reserve card from?\n" +
+                    "1. Blue Deck   2. Yellow Deck   3. Green Deck\n" +
+                    "\n" +
+                    "\n" +
+                    "3\n" +
+                    "\n" +
+                    "\n" +
+                    "\n" +
+                    "\n" +
+                    "Attention! Player 2 chose to reserve a card from the deck!\n" +
+                    "Please choose the tokens you want to take.\n" +
+                    "1. Onyx x2 2. Sapphire x0 3. Emerald x0 4. Diamond x0 5. Rubby x0\n" +
+                    "\n" +
+                    "2Invalid choice made.\n" +
+                    "\n" +
+                    "Please choose the tokens you want to take.\n" +
+                    "1. Onyx x2 2. Sapphire x0 3. Emerald x0 4. Diamond x0 5. Rubby x0\n" +
+                    "1\n" +
+                    "Sorry. There is not enough tokens on the table. Please re-enter what you want.\n" +
+                    "Please choose the tokens you want to take.\n" +
+                    "1. Onyx x2 2. Sapphire x0 3. Emerald x0 4. Diamond x0 5. Rubby x0\n" +
+                    "1\n" +
+                    "Sorry. There is not enough tokens on the table. Please re-enter what you want.\n" +
+                    "Please choose the tokens you want to take.\n" +
+                    "1. Onyx x2 2. Sapphire x0 3. Emerald x0 4. Diamond x0 5. Rubby x0\n" +
+                    "2\n" +
+                    "Sorry. There is not enough tokens on the table. Please re-enter what you want.\n" +
+                    "Please choose the tokens you want to take.\n" +
+                    "1. Onyx x2 2. Sapphire x0 3. Emerald x0 4. Diamond x0 5. Rubby x0\n" +
+                    "3\n" +
+                    "Sorry. There is not enough tokens on the table. Please re-enter what you want.\n" +
+                    "Please choose the tokens you want to take.\n" +
+                    "1. Onyx x2 2. Sapphire x0 3. Emerald x0 4. Diamond x0 5. Rubby x0\n" +
+                    "4\n" +
+                    "Sorry. There is not enough tokens on the table. Please re-enter what you want.\n" +
+                    "Please choose the tokens you want to take.\n" +
+                    "1. Onyx x2 2. Sapphire x0 3. Emerald x0 4. Diamond x0 5. Rubby x0\n" +
+                    "5\n" +
+                    "Sorry. There is not enough tokens on the table. Please re-enter what you want.\n" +
+                    "Please choose the tokens you want to take.\n" +
+                    "1. Onyx x2 2. Sapphire x0 3. Emerald x0 4. Diamond x0 5. Rubby x0\n" ;
+            String to_contains = "Invalid choice made.\n" +
+                    "1. Take 2 tokens of the same color from the table(may only be performed if there is 4 or more tokens in the color of your chosing)\n" +
+                    "2. Take 1 token from each of 3 different types of tokens(excluding gold)\n" +
+                    "3. Reserve a card on the table and receive one gold token(keep in mind you may only have three reserved cards maximum. Also, you will not recieve any gold token if there is non on the table)\n" +
+                    "4. Reserve an unknown card from the top of a chosen deck\n" +
+                    "5. Buy a card from your reserved cards\n" +
+                    "6. Buy a card on the table\n";
+            assertFalse(result.contains(to_contains));
+        }
+    }
+
     }
