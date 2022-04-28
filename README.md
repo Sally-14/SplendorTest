@@ -101,3 +101,5 @@ Invalid Cards Selection Of Cards On Table covered
 - There is no way to end or quit the game. The graphical interface is not able to interact with.
 
 - End game test case could never be reached because the limitation of tokens and development cards limitation.
+
+- When selecting tokens, the number of token never drops until the next round. For example, player choose option 2, selecting Onyx x1 ,Sapphire x1 and the number of Onyx and Sapphire should drop but it never did.
