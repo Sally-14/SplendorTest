@@ -5,6 +5,7 @@ import Classes.*;
 import Exceptions.*;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -380,33 +381,35 @@ public class PlayerTest {
     }
 
     // Failed does not consider number
-//    @Test
-//    public void testPlayerNobleVisitDoesNotEnoughCards(){
-//        ArrayList<Tokens> cost1 = new ArrayList<>();
-//        cost1.add(diamondToken);
-//        cost1.add(diamondToken);
-//        Noble noble1 = new Noble("noble1", cost1);
-//        ArrayList<Noble> nobleList = new ArrayList<>();
-//        nobleList.add(noble1);
-//
-//        ArrayList<Cards> cards = new ArrayList<>();
-//
-//        ArrayList<Tokens> diamondCost = new ArrayList<>();
-//        cost1.add(diamondToken);
-//        Cards diamondCard = new Cards(1, diamondCost, "dCard", diamondToken);
-//        cards.add(diamondCard);
-//
-//        ArrayList<Tokens> onyxCost = new ArrayList<>();
-//        cost1.add(onyxToken);
-//        Cards onyxCard = new Cards(1, onyxCost, "oCard", onyxToken);
-//        cards.add(onyxCard);
-//
-//        Player newPlayer = new Player(1, allTokens, cards, noNobles, noReserves, "player1");
-//        Game newGame = new Game();
-//        newGame.setTiles(nobleList);
-//
-//        assertEquals(0, newPlayer.nobleVisit(newGame).size());
-//    }
+    @Disabled
+    @Test
+    public void testPlayerNobleVisitDoesNotEnoughCardsFailed(){
+        ArrayList<Tokens> cost1 = new ArrayList<>();
+        cost1.add(diamondToken);
+        cost1.add(diamondToken);
+        Noble noble1 = new Noble("noble1", cost1);
+        ArrayList<Noble> nobleList = new ArrayList<>();
+        nobleList.add(noble1);
+
+        ArrayList<Cards> cards = new ArrayList<>();
+
+        ArrayList<Tokens> diamondCost = new ArrayList<>();
+        cost1.add(diamondToken);
+        Cards diamondCard = new Cards(1, diamondCost, "dCard", diamondToken);
+        cards.add(diamondCard);
+
+        ArrayList<Tokens> onyxCost = new ArrayList<>();
+        cost1.add(onyxToken);
+        Cards onyxCard = new Cards(1, onyxCost, "oCard", onyxToken);
+        cards.add(onyxCard);
+
+        Player newPlayer = new Player(1, allTokens, cards, noNobles, noReserves, "player1");
+        Game newGame = new Game();
+        newGame.setTiles(nobleList);
+
+        assertEquals(0, newPlayer.nobleVisit(newGame).size());
+    }
+
 
     @Test
     public void testPlayerNobleVisitDoesNotEnoughCards(){
@@ -669,68 +672,70 @@ public class PlayerTest {
     }
 
     // Failed Test: Does not check for invalid int argument
-//    @Test
-//    public void testPlayerVisitEnoughCardsForTwoInvalidArgument(){
-//        ArrayList<Tokens> cost1 = new ArrayList<>();
-//        cost1.add(diamondToken);
-//        cost1.add(diamondToken);
-//        Noble noble1 = new Noble("noble1", cost1);
-//        ArrayList<Noble> nobleList = new ArrayList<>();
-//        nobleList.add(noble1);
-//
-//        ArrayList<Tokens> cost2 = new ArrayList<>();
-//        cost1.add(onyxToken);
-//        Noble noble2 = new Noble("noble2", cost2);
-//        nobleList.add(noble2);
-//
-//        ArrayList<Cards> cards = new ArrayList<>();
-//
-//        ArrayList<Tokens> diamondCost = new ArrayList<>();
-//        cost1.add(diamondToken);
-//        Cards diamondCard = new Cards(1, diamondCost, "dCard", diamondToken);
-//        cards.add(diamondCard);
-//        cards.add(diamondCard);
-//
-//        ArrayList<Tokens> onyxCost = new ArrayList<>();
-//        cost1.add(onyxToken);
-//        Cards onyxCard = new Cards(1, onyxCost, "oCard", onyxToken);
-//        cards.add(onyxCard);
-//
-//        Player newPlayer = new Player(1, allTokens, cards, noNobles, noReserves, "player1");
-//        Game  newGame = new Game(players, blueDeck, yellowDeck, greenDeck, cardsOnTable, tiles, allTokens);
-//        newGame.updatePlayers(newPlayer);
-//        newGame.setTiles(nobleList);
-//
-//        assertThrows(IllegalArgumentException.class, ()->{
-//            newPlayer.visit(3, newGame);
-//        });
-//    }
+    @Disabled
+    @Test
+    public void testPlayerVisitEnoughCardsForTwoInvalidArgument(){
+        ArrayList<Tokens> cost1 = new ArrayList<>();
+        cost1.add(diamondToken);
+        cost1.add(diamondToken);
+        Noble noble1 = new Noble("noble1", cost1);
+        ArrayList<Noble> nobleList = new ArrayList<>();
+        nobleList.add(noble1);
+
+        ArrayList<Tokens> cost2 = new ArrayList<>();
+        cost1.add(onyxToken);
+        Noble noble2 = new Noble("noble2", cost2);
+        nobleList.add(noble2);
+
+        ArrayList<Cards> cards = new ArrayList<>();
+
+        ArrayList<Tokens> diamondCost = new ArrayList<>();
+        cost1.add(diamondToken);
+        Cards diamondCard = new Cards(1, diamondCost, "dCard", diamondToken);
+        cards.add(diamondCard);
+        cards.add(diamondCard);
+
+        ArrayList<Tokens> onyxCost = new ArrayList<>();
+        cost1.add(onyxToken);
+        Cards onyxCard = new Cards(1, onyxCost, "oCard", onyxToken);
+        cards.add(onyxCard);
+
+        Player newPlayer = new Player(1, allTokens, cards, noNobles, noReserves, "player1");
+        Game  newGame = new Game(players, blueDeck, yellowDeck, greenDeck, cardsOnTable, tiles, allTokens);
+        newGame.updatePlayers(newPlayer);
+        newGame.setTiles(nobleList);
+
+        assertThrows(IllegalArgumentException.class, ()->{
+            newPlayer.visit(3, newGame);
+        });
+    }
 
     // Failed Test: Does not handle case of no possible visiting nobles
-//    @Test
-//    public void testPlayerVisitDoesNotEnoughCards(){
-//        ArrayList<Tokens> cost1 = new ArrayList<>();
-//        cost1.add(diamondToken);
-//        Noble noble1 = new Noble("noble1", cost1);
-//        ArrayList<Noble> nobleList = new ArrayList<>();
-//        nobleList.add(noble1);
-//
-//        ArrayList<Cards> cards = new ArrayList<>();
-//
-//        ArrayList<Tokens> onyxCost = new ArrayList<>();
-//        cost1.add(onyxToken);
-//        Cards onyxCard = new Cards(1, onyxCost, "oCard", onyxToken);
-//        cards.add(onyxCard);
-//
-//        Player newPlayer = new Player(1, allTokens, cards, noNobles, noReserves, "player1");
-//        Game  newGame = new Game(players, blueDeck, yellowDeck, greenDeck, cardsOnTable, tiles, allTokens);
-//        newGame.updatePlayers(newPlayer);
-//        newGame.setTiles(nobleList);
-//
-//        newPlayer.visit(1, newGame);
-//
-//        assertEquals(1, newPlayer.getScore());
-//    }
+    @Disabled
+    @Test
+    public void testPlayerVisitDoesNotEnoughCards(){
+        ArrayList<Tokens> cost1 = new ArrayList<>();
+        cost1.add(diamondToken);
+        Noble noble1 = new Noble("noble1", cost1);
+        ArrayList<Noble> nobleList = new ArrayList<>();
+        nobleList.add(noble1);
+
+        ArrayList<Cards> cards = new ArrayList<>();
+
+        ArrayList<Tokens> onyxCost = new ArrayList<>();
+        cost1.add(onyxToken);
+        Cards onyxCard = new Cards(1, onyxCost, "oCard", onyxToken);
+        cards.add(onyxCard);
+
+        Player newPlayer = new Player(1, allTokens, cards, noNobles, noReserves, "player1");
+        Game  newGame = new Game(players, blueDeck, yellowDeck, greenDeck, cardsOnTable, tiles, allTokens);
+        newGame.updatePlayers(newPlayer);
+        newGame.setTiles(nobleList);
+
+        newPlayer.visit(1, newGame);
+
+        assertEquals(1, newPlayer.getScore());
+    }
 
 
     @Test
@@ -889,16 +894,17 @@ public class PlayerTest {
     }
 
     //Failed test: does not throw not enough tokens on table error
-//    @Test
-//    public void testPlayerGetOneOfEachTokensFailed() throws NotEnoughTokensOnTable {
-//        Player newPlayer = new Player(1, noTokens, noCards, noNobles, noReserves, "player3");
-//        Game  newGame = new Game(players, blueDeck, yellowDeck, greenDeck, cardsOnTable, tiles, noTokens);
-//        newGame.updatePlayers(newPlayer);
-//        newGame.setCurrentPlayer(3);
-//        assertThrows(NotEnoughTokensOnTable.class, ()->{
-//            newPlayer.getOneOfEachTokens(onyxToken, diamondToken, rubyToken, newGame);
-//        });
-//    }
+    @Disabled
+    @Test
+    public void testPlayerGetOneOfEachTokensFailed() throws NotEnoughTokensOnTable {
+        Player newPlayer = new Player(1, noTokens, noCards, noNobles, noReserves, "player3");
+        Game  newGame = new Game(players, blueDeck, yellowDeck, greenDeck, cardsOnTable, tiles, noTokens);
+        newGame.updatePlayers(newPlayer);
+        newGame.setCurrentPlayer(3);
+        assertThrows(NotEnoughTokensOnTable.class, ()->{
+            newPlayer.getOneOfEachTokens(onyxToken, diamondToken, rubyToken, newGame);
+        });
+    }
 
     @Test
     public void testPlayerGetOneOfEachTokensLastPlayer() throws NotEnoughTokensOnTable {
@@ -1110,18 +1116,19 @@ public class PlayerTest {
     }
 
     // Test Failed: contains all does not consider duplciates
-//    @Test
-//    public void testPlayerContainsAllFalseDuplicate(){
-//        ArrayList<Tokens> cost1 = new ArrayList<>();
-//        cost1.add(diamondToken);
-//        cost1.add(diamondToken);
-//
-//        ArrayList<Tokens> cost2 = new ArrayList<>();
-//        cost2.add(diamondToken);
-//
-//        Player player1 = new Player(0, cost2, noCards, noNobles, noReserves, "player1");
-//        assertFalse(player1.containsAll(cost2, cost1));
-//    }
+    @Disabled
+    @Test
+    public void testPlayerContainsAllFalseDuplicate(){
+        ArrayList<Tokens> cost1 = new ArrayList<>();
+        cost1.add(diamondToken);
+        cost1.add(diamondToken);
+
+        ArrayList<Tokens> cost2 = new ArrayList<>();
+        cost2.add(diamondToken);
+
+        Player player1 = new Player(0, cost2, noCards, noNobles, noReserves, "player1");
+        assertFalse(player1.containsAll(cost2, cost1));
+    }
 
     @Test
     public void testPlayerRemoveAllEverythingRemoved(){
@@ -1136,18 +1143,19 @@ public class PlayerTest {
     }
 
     // removeAll always returns true
-//    @Test
-//    public void testPlayerRemoveAllFalse(){
-//        ArrayList<Tokens> cost1 = new ArrayList<>();
-//        cost1.add(diamondToken);
-//        cost1.add(onyxToken);
-//
-//        ArrayList<Tokens> cost2 = new ArrayList<>();
-//        cost2.add(diamondToken);
-//
-//        Player player1 = new Player(0, cost2, noCards, noNobles, noReserves, "player1");
-//        assertFalse(player1.removeAll(cost2, cost1));
-//    }
+    @Disabled
+    @Test
+    public void testPlayerRemoveAllFalse(){
+        ArrayList<Tokens> cost1 = new ArrayList<>();
+        cost1.add(diamondToken);
+        cost1.add(onyxToken);
+
+        ArrayList<Tokens> cost2 = new ArrayList<>();
+        cost2.add(diamondToken);
+
+        Player player1 = new Player(0, cost2, noCards, noNobles, noReserves, "player1");
+        assertFalse(player1.removeAll(cost2, cost1));
+    }
 
 
     @Test
@@ -1166,21 +1174,22 @@ public class PlayerTest {
     }
 
     // Failed Test: does not consider case of buying with gold token
-//    @Test
-//    public void testPlayerCanBuyWithGoldTokens(){
-//        ArrayList<Tokens> cost1 = new ArrayList<>();
-//        cost1.add(diamondToken);
-//        cost1.add(onyxToken);
-//
-//        Cards diamondCard = new Cards(1, cost1, "diamond card", diamondToken);
-//
-//        ArrayList<Tokens> have = new ArrayList<>();
-//        have.add(diamondToken);
-//        have.add(goldToken);
-//
-//        Player player1 = new Player(0, have, noCards, noNobles, noReserves, "player1");
-//        assertTrue(player1.canBuy(diamondCard));
-//    }
+    @Disabled
+    @Test
+    public void testPlayerCanBuyWithGoldTokens(){
+        ArrayList<Tokens> cost1 = new ArrayList<>();
+        cost1.add(diamondToken);
+        cost1.add(onyxToken);
+
+        Cards diamondCard = new Cards(1, cost1, "diamond card", diamondToken);
+
+        ArrayList<Tokens> have = new ArrayList<>();
+        have.add(diamondToken);
+        have.add(goldToken);
+
+        Player player1 = new Player(0, have, noCards, noNobles, noReserves, "player1");
+        assertTrue(player1.canBuy(diamondCard));
+    }
 
     @Test
     public void testPlayerCanBuyWithCards(){

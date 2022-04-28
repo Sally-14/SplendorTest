@@ -2,6 +2,7 @@ package whiteBoxTest.classesTest;
 
 import Classes.*;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -28,89 +29,93 @@ public class CardsTest{
     }
 
     // Test Failed: constructor does not check for invalid point
-//    @Test
-//    public void testCardsConstructWithInvalidPt() {
-//        int invalidPt = -1;
-//        Tokens onyxToken = new Tokens("Onyx");
-//
-//        ArrayList<Tokens> validCost = new ArrayList<>();
-//        validCost.add(onyxToken);
-//        validCost.add(onyxToken);
-//        validCost.add(onyxToken);
-//
-//        String validName = "mine";
-//
-//        Tokens validResource = new Tokens("Onyx");
-//
-//        assertThrows(IllegalArgumentException.class, ()->{
-//            Cards invalidCard = new Cards(invalidPt, validCost, validName, validResource);
-//        });
-//    }
+    @Disabled
+    @Test
+    public void testCardsConstructWithInvalidPt() {
+        int invalidPt = -1;
+        Tokens onyxToken = new Tokens("Onyx");
+
+        ArrayList<Tokens> validCost = new ArrayList<>();
+        validCost.add(onyxToken);
+        validCost.add(onyxToken);
+        validCost.add(onyxToken);
+
+        String validName = "mine";
+
+        Tokens validResource = new Tokens("Onyx");
+
+        assertThrows(IllegalArgumentException.class, ()->{
+            Cards invalidCard = new Cards(invalidPt, validCost, validName, validResource);
+        });
+    }
 
 
     // Test Failed: constructor does not check for invalid cost
-//    @Test
-//    public void testCardsConstructWithInvalidCost() {
-//        int validPt = 1;
-//        Tokens bronzeToken = new Tokens("Bronze");
-//
-//        ArrayList<Tokens> invalidCost = new ArrayList<>();
-//        invalidCost.add(bronzeToken);
-//        invalidCost.add(bronzeToken);
-//        invalidCost.add(bronzeToken);
-//
-//        String validName = "artisan";
-//
-//        Tokens validResource = new Tokens("Onyx");
-//
-//        assertThrows(IllegalArgumentException.class, ()->{
-//            Cards invalidCard = new Cards(validPt, invalidCost, validName, validResource);
-//        });
-//    }
+    @Disabled
+    @Test
+    public void testCardsConstructWithInvalidCost() {
+        int validPt = 1;
+        Tokens bronzeToken = new Tokens("Bronze");
+
+        ArrayList<Tokens> invalidCost = new ArrayList<>();
+        invalidCost.add(bronzeToken);
+        invalidCost.add(bronzeToken);
+        invalidCost.add(bronzeToken);
+
+        String validName = "artisan";
+
+        Tokens validResource = new Tokens("Onyx");
+
+        assertThrows(IllegalArgumentException.class, ()->{
+            Cards invalidCard = new Cards(validPt, invalidCost, validName, validResource);
+        });
+    }
 
     // Test Failed: constructor does not check for invalid name
-//    @Test
-//    public void testCardsConstructWithInvalidName() {
-//        int validPt = 1;
-//
-//        Tokens onyxToken = new Tokens("Onyx");
-//
-//        ArrayList<Tokens> validCost = new ArrayList<>();
-//        validCost.add(onyxToken);
-//        validCost.add(onyxToken);
-//        validCost.add(onyxToken);
-//
-//
-//        String invalidName = "jewel";
-//
-//        Tokens validResource = new Tokens("Onyx");
-//
-//        assertThrows(IllegalArgumentException.class, ()->{
-//            Cards invalidCard = new Cards(validPt, validCost, invalidName, validResource);
-//        });
-//    }
+    @Disabled
+    @Test
+    public void testCardsConstructWithInvalidName() {
+        int validPt = 1;
+
+        Tokens onyxToken = new Tokens("Onyx");
+
+        ArrayList<Tokens> validCost = new ArrayList<>();
+        validCost.add(onyxToken);
+        validCost.add(onyxToken);
+        validCost.add(onyxToken);
+
+
+        String invalidName = "jewel";
+
+        Tokens validResource = new Tokens("Onyx");
+
+        assertThrows(IllegalArgumentException.class, ()->{
+            Cards invalidCard = new Cards(validPt, validCost, invalidName, validResource);
+        });
+    }
 
     // Test Failed: constructor does not check for invalid resource
-//    @Test
-//    public void testCardsConstructWithInvalidResource() {
-//        int validPt = 1;
-//
-//        Tokens onyxToken = new Tokens("Onyx");
-//
-//        ArrayList<Tokens> validCost = new ArrayList<>();
-//        validCost.add(onyxToken);
-//        validCost.add(onyxToken);
-//        validCost.add(onyxToken);
-//
-//
-//        String validName = "transportation";
-//
-//        Tokens invalidResource = new Tokens("Bronze");
-//
-//        assertThrows(IllegalArgumentException.class, ()->{
-//            Cards invalidCard = new Cards(validPt, validCost, validName, invalidResource);
-//        });
-//    }
+    @Disabled
+    @Test
+    public void testCardsConstructWithInvalidResource() {
+        int validPt = 1;
+
+        Tokens onyxToken = new Tokens("Onyx");
+
+        ArrayList<Tokens> validCost = new ArrayList<>();
+        validCost.add(onyxToken);
+        validCost.add(onyxToken);
+        validCost.add(onyxToken);
+
+
+        String validName = "transportation";
+
+        Tokens invalidResource = new Tokens("Bronze");
+
+        assertThrows(IllegalArgumentException.class, ()->{
+            Cards invalidCard = new Cards(validPt, validCost, validName, invalidResource);
+        });
+    }
 
 
     @Test
@@ -120,13 +125,14 @@ public class CardsTest{
     }
 
     // Test Failed: constructor does not check for invalid resource
-//    @Test
-//    public void testCardsConstructWithOnlyInvalidResource() {
-//        String invalidResource = "Bronze";
-//        assertThrows(IllegalArgumentException.class, ()->{
-//            Cards validCard = new Cards(invalidResource);
-//        });
-//    }
+    @Disabled
+    @Test
+    public void testCardsConstructWithOnlyInvalidResource() {
+        String invalidResource = "Bronze";
+        assertThrows(IllegalArgumentException.class, ()->{
+            Cards validCard = new Cards(invalidResource);
+        });
+    }
 
     @Test
     public void testCardsGetResource() {
@@ -553,83 +559,87 @@ public class CardsTest{
     }
 
     // Test Failed: compareTo returns true is resource is different
-//    @Test
-//    public void testCardsCompareToDiffResource() {
-//        int validPt = 1;
-//        Tokens onyxToken = new Tokens("Onyx");
-//        Tokens diamondToken = new Tokens("Diamond");
-//
-//        ArrayList<Tokens> validCost = new ArrayList<>();
-//        validCost.add(onyxToken);
-//        validCost.add(onyxToken);
-//        validCost.add(onyxToken);
-//
-//        String validName = "mine";
-//
-//        Cards validCard1 = new Cards(validPt, validCost, validName, onyxToken);
-//        Cards validCard2 = new Cards(validPt, validCost, validName, diamondToken);
-//
-//        assertFalse(validCard1.compareTo(validCard2) == 0);
-//    }
+    @Disabled
+    @Test
+    public void testCardsCompareToDiffResource() {
+        int validPt = 1;
+        Tokens onyxToken = new Tokens("Onyx");
+        Tokens diamondToken = new Tokens("Diamond");
+
+        ArrayList<Tokens> validCost = new ArrayList<>();
+        validCost.add(onyxToken);
+        validCost.add(onyxToken);
+        validCost.add(onyxToken);
+
+        String validName = "mine";
+
+        Cards validCard1 = new Cards(validPt, validCost, validName, onyxToken);
+        Cards validCard2 = new Cards(validPt, validCost, validName, diamondToken);
+
+        assertFalse(validCard1.compareTo(validCard2) == 0);
+    }
 
     // Test Failed: compareTo returns true when name is different
-//    @Test
-//    public void testCardsCompareToDiffName() {
-//        int validPt = 1;
-//        Tokens onyxToken = new Tokens("Onyx");
-//
-//        ArrayList<Tokens> validCost = new ArrayList<>();
-//        validCost.add(onyxToken);
-//        validCost.add(onyxToken);
-//        validCost.add(onyxToken);
-//
-//        String validName1 = "mine";
-//        String validName2 = "artisan";
-//
-//        Cards validCard1 = new Cards(validPt, validCost, validName1, onyxToken);
-//        Cards validCard2 = new Cards(validPt, validCost, validName2, onyxToken);
-//
-//        assertFalse(validCard1.compareTo(validCard2) == 0);
-//    }
+    @Disabled
+    @Test
+    public void testCardsCompareToDiffName() {
+        int validPt = 1;
+        Tokens onyxToken = new Tokens("Onyx");
+
+        ArrayList<Tokens> validCost = new ArrayList<>();
+        validCost.add(onyxToken);
+        validCost.add(onyxToken);
+        validCost.add(onyxToken);
+
+        String validName1 = "mine";
+        String validName2 = "artisan";
+
+        Cards validCard1 = new Cards(validPt, validCost, validName1, onyxToken);
+        Cards validCard2 = new Cards(validPt, validCost, validName2, onyxToken);
+
+        assertFalse(validCard1.compareTo(validCard2) == 0);
+    }
 
     // Test Failed: compareTo returns true when point is different
-//    @Test
-//    public void testCardsCompareToDiffPt() {
-//        Tokens onyxToken = new Tokens("Onyx");
-//
-//        ArrayList<Tokens> validCost = new ArrayList<>();
-//        validCost.add(onyxToken);
-//        validCost.add(onyxToken);
-//        validCost.add(onyxToken);
-//
-//        String validName = "mine";
-//
-//        Cards validCard1 = new Cards(1, validCost, validName, onyxToken);
-//        Cards validCard2 = new Cards(2, validCost, validName, onyxToken);
-//
-//        assertFalse(validCard1.compareTo(validCard2) == 0);
-//    }
+    @Disabled
+    @Test
+    public void testCardsCompareToDiffPt() {
+        Tokens onyxToken = new Tokens("Onyx");
+
+        ArrayList<Tokens> validCost = new ArrayList<>();
+        validCost.add(onyxToken);
+        validCost.add(onyxToken);
+        validCost.add(onyxToken);
+
+        String validName = "mine";
+
+        Cards validCard1 = new Cards(1, validCost, validName, onyxToken);
+        Cards validCard2 = new Cards(2, validCost, validName, onyxToken);
+
+        assertFalse(validCard1.compareTo(validCard2) == 0);
+    }
 
      //Test Failed: compareTo returns true when cost is different
-//    @Test
-//    public void testCardsCompareToDiffCost() {
-//        int validPt = 1;
-//        Tokens onyxToken = new Tokens("Onyx");
-//
-//        ArrayList<Tokens> validCost = new ArrayList<>();
-//        validCost.add(onyxToken);
-//        validCost.add(onyxToken);
-//        validCost.add(onyxToken);
-//
-//        String validName = "mine";
-//
-//        Cards validCard1 = new Cards(validPt, validCost, validName, onyxToken);
-//
-//        validCost.add(onyxToken);
-//        Cards validCard2 = new Cards(validPt, validCost, validName, onyxToken);
-//
-//        assertFalse(validCard1.compareTo(validCard2) == 0);
-//    }
+    @Disabled
+    @Test
+    public void testCardsCompareToDiffCost() {
+        int validPt = 1;
+        Tokens onyxToken = new Tokens("Onyx");
+
+        ArrayList<Tokens> validCost = new ArrayList<>();
+        validCost.add(onyxToken);
+        validCost.add(onyxToken);
+        validCost.add(onyxToken);
+
+        String validName = "mine";
+
+        Cards validCard1 = new Cards(validPt, validCost, validName, onyxToken);
+
+        validCost.add(onyxToken);
+        Cards validCard2 = new Cards(validPt, validCost, validName, onyxToken);
+
+        assertFalse(validCard1.compareTo(validCard2) == 0);
+    }
 
     @Test
     public void testCardsCompareToAllDifferent() {
