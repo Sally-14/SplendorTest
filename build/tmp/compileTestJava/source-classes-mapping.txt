@@ -1,16 +1,16 @@
-whiteBoxTest/classesTest/TokensTest.java
- whiteBoxTest.classesTest.TokensTest
-whiteBoxTest/classesTest/CardsTest.java
- whiteBoxTest.classesTest.CardsTest
-blackBoxTest/testTextBasedInterface.java
- blackBoxTest.testTextBasedInterface
 whiteBoxTest/classesTest/NobleTest.java
  whiteBoxTest.classesTest.NobleTest
-whiteBoxTest/classesTest/GameTest.java
- whiteBoxTest.classesTest.GameTest
+whiteBoxTest/classesTest/CardsTest.java
+ whiteBoxTest.classesTest.CardsTest
 whiteBoxTest/interfaceTest/MyPanelTest.java
  whiteBoxTest.interfaceTest.MyPanelTest
-whiteBoxTest/interfaceTest/MyFrameTest.java
- whiteBoxTest.interfaceTest.MyFrameTest
+whiteBoxTest/classesTest/TokensTest.java
+ whiteBoxTest.classesTest.TokensTest
+whiteBoxTest/classesTest/GameTest.java
+ whiteBoxTest.classesTest.GameTest
 whiteBoxTest/classesTest/PlayerTest.java
  whiteBoxTest.classesTest.PlayerTest
+whiteBoxTest/interfaceTest/MyFrameTest.java
+ whiteBoxTest.interfaceTest.MyFrameTest
+blackBoxTest/testTextBasedInterface.java
+ blackBoxTest.testTextBasedInterface

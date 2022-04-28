@@ -3,7 +3,7 @@ plugins {
     id 'jacoco'
     id 'info.solidsoft.pitest' version '1.5.2'
 }
-
+//testCompile("org.assertj:assertj-core:3.11.1")
 pitest {
     junit5PluginVersion = '0.15'
     targetClasses = ['Classes.*']  //by default "${project.group}.*"
