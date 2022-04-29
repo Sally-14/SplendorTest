@@ -21,10 +21,11 @@ Write test cases for implementation of the splendor card game
 | Black box Testing  |   100% rule coverage    |
 | Mutation Testing  |   80% mutation coverage    |
 
-
 ##step-by-step instruction how to run the tests againsts the SUT
+- all failing test cases are disabled to allow pit test and jacoco test report to be able to be generated. 
+- open build.gradle and run test { useJUnitPlatform()}, pit test, and jacocoTestReport.
 
-- open build.gradle and run test { useJUnitPlatform()} and jacocoTestReport.
+---------------------------------------------------------------------------------------
 
 # White Box Test Results: 
 
