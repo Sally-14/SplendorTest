@@ -6577,7 +6577,7 @@ public class testTextBasedInterface {
                     "Which deck do you wish to reserve card from?\n" +
                     "1. Blue Deck   2. Yellow Deck   3. Green Deck\n" +
                     "2\n";
-            assertEquals(expected,result);
+            assertEquals(result,expected);
         }
     }
     @Test
@@ -7632,6 +7632,39 @@ public class testTextBasedInterface {
                     "Choose another different token that you have not selected.\n" +
                     "1. Onyx x7 2. Sapphire x6 3. Emerald x7 4. Diamond7 5. Rubby x7 6. Gold x4\n";
                     assertFalse(result.contains(to_contain));
+        }
+    }
+    @Test
+    public void testTwoPlayerPlayer1ChooseToBuyThreeTimes() throws PlayerDoesNotHaveEnoughResourcesToBuySelectedCard, SelectedDeckRanOutOfCards, NotEnoughTokensOnTable, InvalidCardsSelectionOfCardsInReserve, FileNotFoundException, InvalidCardsSelectionOfCardsOnTable, PlayerAlreadyHoldsThreeReserveCards, PlayerDoesNotHaveSelectedCardInReserve, InterruptedException {
+
+        try {
+            // set up testable input and output channels
+            byte[] data = "2\n 5\n 5\n 5\n".getBytes(StandardCharsets.UTF_8);
+            BufferedInputStream in = new BufferedInputStream(new ByteArrayInputStream(data));
+            ByteArrayOutputStream out = new ByteArrayOutputStream();
+            PrintStream output = new PrintStream(out);
+            // redirect the standard channels
+
+            String[] args = null;
+            System.setIn(in);
+            TextBasedInterface.main(null);
+            System.setOut(output);
+
+            // call to method that does standard I/O
+            String result = out.toString().replaceAll("\r","");
+//        System.setOut(output);
+
+//        System.setIn(in); System.setOut(output);
+            String to_contain ="You do not have any cards in reserve. Please choose another option\n" +
+                    "1. Take 2 tokens of the same color from the table(may only be performed if there is 4 or more tokens in the color of your chosing)\n" +
+                    "2. Take 1 token from each of 3 different types of tokens(excluding gold)\n" +
+                    "3. Reserve a card on the table and receive one gold token(keep in mind you may only have three reserved cards maximum. Also, you will not recieve any gold token if there is non on the table)\n" +
+                    "4. Reserve an unknown card from the top of a chosen deck\n" +
+                    "5. Buy a card from your reserved cards\n" +
+                    "6. Buy a card on the table\n" ;
+                    assertFalse(result.contains(to_contain));
+        } catch (Exception e) {
+
         }
     }
     }
