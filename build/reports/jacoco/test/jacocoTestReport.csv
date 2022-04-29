@@ -7,10 +7,10 @@ Final Project,Exceptions,SelectedDeckRanOutOfCards,0,3,0,0,0,1,0,1,0,1
 Final Project,Exceptions,NotEnoughTokensOnTable,0,3,0,0,0,1,0,1,0,1
 Final Project,Exceptions,PlayerAlreadyHoldsThreeReserveCards,0,3,0,0,0,1,0,1,0,1
 Final Project,Exceptions,InvalidCardsSelectionOfCardsOnTable,0,3,0,0,0,1,0,1,0,1
-Final Project,Interface,TextBasedInterface,2503,0,206,0,624,0,123,0,20,0
+Final Project,Interface,TextBasedInterface,1595,908,121,85,438,186,73,50,9,11
 Final Project,Interface,MyFrame,0,57,0,0,0,14,0,1,0,1
 Final Project,Interface,GraphicInterface,848,0,100,0,170,0,61,0,11,0
-Final Project,Interface,MyPanel,4325,435,416,94,830,78,228,36,3,6
+Final Project,Interface,MyPanel,4324,436,416,94,829,79,227,37,2,7
 Final Project,Classes,Player,2,1971,18,200,1,388,18,138,0,47
 Final Project,Classes,Game,4,855,3,119,1,186,3,104,0,46
 Final Project,Classes,Noble,0,207,0,30,0,59,0,29,0,14
