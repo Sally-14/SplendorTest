@@ -21,6 +21,11 @@ Write test cases for implementation of the splendor card game
 | Black box Testing  |   100% rule coverage    |
 | Mutation Testing  |   80% mutation coverage    |
 
+
+##step-by-step instruction how to run the tests againsts the SUT
+
+- open build.gradle and run test { useJUnitPlatform()} and jacocoTestReport.
+
 # White Box Test Results: 
 
 Tokens Class:
@@ -105,7 +110,8 @@ Invalid Cards Selection Of Cards On Table covered
 ## Documentation
 
 * [Presentation link](https://docs.google.com/presentation/d/1QuJjGunwfdOb0rNe0VLK_tA_uJ59DD9UJMSLPqAiZBw/edit#slide=id.g125f649b7c9_0_286)
-
+* [Test plan] (https://docs.google.com/document/d/1_SVA_mgPm_7x3zi08TldqkhqkQFYwO-tJev81cNAvfc/edit)
+* [Github link] (https://github.com/Sally-14/SplendorTest)
 # Demo
 ![alt text](https://github.com/Sally-14/SplendorTest/blob/master/pit-test-image.png)
 ![alt text](https://github.com/Sally-14/SplendorTest/blob/master/testing-result.png)
