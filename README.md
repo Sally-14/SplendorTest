@@ -100,8 +100,15 @@ Player Does Not Have Enough Resources To Buy Selected Card Exception covered
 Selected Deck Ran Out Of CARDS Exception covered 
 Not Enough Tokens On Table Exception covered 
 Player Already Holds Three Reserve Cards covered 
-Invalid Cards Selection Of Cards On Table covered 
+Invalid Cards Selection Of Cards On Table covered
 
+## Documentation
+
+* [Presentation link](https://docs.google.com/presentation/d/1QuJjGunwfdOb0rNe0VLK_tA_uJ59DD9UJMSLPqAiZBw/edit#slide=id.g125f649b7c9_0_286)
+
+# Demo
+![alt text](https://github.com/Sally-14/SplendorTest/blob/master/pit-test-image.png)
+![alt text](https://github.com/Sally-14/SplendorTest/blob/master/testing-result.png)
 # Black Box Test Results:
 
 - 100% coverage of the rules from the Splendor rule book
