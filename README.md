@@ -1,6 +1,31 @@
 # SplendorTest
 Write test cases for implementation of the splendor card game
 
+#Subject
+- In this project, we aim to test a computer implementation of the resource management game Splendor by z1103246. Splendor is a board game designed to be played by between 2-4 players and recommended for any interested player age 10+. The rules for the game play can be found here: https://cdn.1j1ju.com/medias/7f/91/ba-splendor-rulebook.pdf.
+
+- The game is written in Java and contains a text-based terminal interface and a gui interface. The project has a total of 3579 lines of code, 3473 of which is Java code. Below are more detailed breakdown of the language that the project contains:
+
+- The project contains 17 classes and 171 methods [17 (Cards), 46 (Game), 10 (GraphicInterface), 1 (MyFrame), 9 (MyPanel), 14 (Noble), 48 (Player), 19 (TextBasedInterface), 7 (Tokens)].
+
+- We test the program using the following testing strategies:
+- Systematic blackbox testing facilitated by the rulebook for Splendor
+- Systematic whitebox unit testing
+- Mutation testing using PIT
+
+- We will not need to do load testing because Splendor is designed to only have 2-4 players. Mock testing is also not necessary because development of the entire game is finished and it will not interact with new classes or methods in the future. GUI testing is also not needed because the graphical interface is not interactive.
+
+| Task       |  GitHub Username |
+| ----       | --------------- |
+| White box Testing   |   100% method coverage, 90%+ branch coverage     |
+| Black box Testing  |   100% rule coverage    |
+| Mutation Testing  |   80% mutation coverage    |
+
+
+##step-by-step instruction how to run the tests againsts the SUT
+
+- open build.gradle and run test { useJUnitPlatform()} and jacocoTestReport.
+
 # White Box Test Results: 
 
 Tokens Class:
@@ -80,8 +105,16 @@ Player Does Not Have Enough Resources To Buy Selected Card Exception covered
 Selected Deck Ran Out Of CARDS Exception covered 
 Not Enough Tokens On Table Exception covered 
 Player Already Holds Three Reserve Cards covered 
-Invalid Cards Selection Of Cards On Table covered 
+Invalid Cards Selection Of Cards On Table covered
 
+## Documentation
+
+* [Presentation link](https://docs.google.com/presentation/d/1QuJjGunwfdOb0rNe0VLK_tA_uJ59DD9UJMSLPqAiZBw/edit#slide=id.g125f649b7c9_0_286)
+* [Test plan] (https://docs.google.com/document/d/1_SVA_mgPm_7x3zi08TldqkhqkQFYwO-tJev81cNAvfc/edit)
+* [Github link] (https://github.com/Sally-14/SplendorTest)
+# Demo
+![alt text](https://github.com/Sally-14/SplendorTest/blob/master/pit-test-image.png)
+![alt text](https://github.com/Sally-14/SplendorTest/blob/master/testing-result.png)
 # Black Box Test Results:
 
 - 100% coverage of the rules from the Splendor rule book

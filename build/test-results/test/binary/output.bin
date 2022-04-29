@@ -1,3 +1,141 @@
+<<<<<<< HEAD
+=======
+QWelcome to Splendor! How many player(s) do you wish to have(including yourself)?
+2. 2    3. 3.    4. 4
+Check0 completed
+Check1 completed
+Check2 completed
+Check3 completed
+check4 completed
+Awesome! lets start the game!
+
+
+ ***** Player 1 0 Point(s) *****
+HTokens: Onyx x0 ,Sapphire x0 ,Emerlad x0 ,Diamond x0 ,Rubby x0 ,Gold x0
+
+Cards:
+
+	Nobles: 
+
+
+Cards in Reserve x0
+ *******************************
+
+ ***** Player 2 0 Point(s) *****
+HTokens: Onyx x0 ,Sapphire x0 ,Emerlad x0 ,Diamond x0 ,Rubby x0 ,Gold x0
+
+Cards:
+
+	Nobles: 
+
+
+Cards in Reserve x0
+ *******************************
+
+&/////////////////////////////////////
+     Blue Deck
+Blue Card 1: 
+4     Rubby  Town
+Emerald x7 
+
+Blue Card 2: 
+5     Rubby  Town
+Rubby x3 Emerald x7 
+
+Blue Card 3: 
+4     Sapphire  Town
+Diamond x7 Sapphire x3 
+
+Blue Card 4: 
+5     Rubby  Town
+Rubby x3 Emerald x7 
+
+/////////////////////////
+     Yellow Deck
+Yellow Card 1: 
+2     Onyx  Town
+Diamond x5 
+
+Yellow Card 2: 
+1     Emerald  Town
+ Diamond x2 Onyx x2 Sapphire x3 
+
+Yellow Card 3: 
+2     Diamond  Town
+Rubby x5 Onyx x3 
+
+Yellow Card 4: 
+1     Sapphire  Town
+ Emerald x3 Onyx x3 Sapphire x2 
+
+/////////////////////////
+     Green Deck
+Green Card 1: 
+0     Rubby  Town
++Diamond x1 Emerald x1 Onyx x1 Sapphire x1 
+
+Green Card 2: 
+0     Emerald  Town
+
+Rubby x3 
+
+Green Card 3: 
+0     Emerald  Town
+Diamond x2 Sapphire x1 
+
+Green Card 4: 
+0     Emerald  Town
+)Diamond x1 Rubby x1 Onyx x1 Sapphire x1 
+
+&/////////////////////////////////////
+QTokens Avalible: Onyx x4 ,Sapphire x4 ,Emerald x4 ,Diamond x4 ,Rubby x4 ,Gold x4
+
+Nobles Avalible: 
+
++******* Cirilla Fiona Elen Riannon *******
+   Emerald x4    Sapphire x4 
+
+
+******* Triss Merigold *******
+   Diamond x4    Onyx x4 
+
+
+!******* Emhyr var Emreis *******
+)   Diamond x3    Onyx x3    Sapphire x3 
+
+
+
+It is Player 1's turn!
++Player 1, here is what you currently have:
+
+
+ ***** Player 1 0 Point(s) *****
+HTokens: Onyx x0 ,Sapphire x0 ,Emerlad x0 ,Diamond x0 ,Rubby x0 ,Gold x0
+
+**** Cards ****
+
+**** Nobles ****
+
+
+**** Cards in Reserve **** 
+
+
+-Player 1, what do you wish to do this round?
+
+ƒ1. Take 2 tokens of the same color from the table(may only be performed if there is 4 or more tokens in the color of your chosing)
+I2. Take 1 token from each of 3 different types of tokens(excluding gold)
+¿3. Reserve a card on the table and receive one gold token(keep in mind you may only have three reserved cards maximum. Also, you will not recieve any gold token if there is non on the table)
+94. Reserve an unknown card from the top of a chosen deck
+'5. Buy a card from your reserved cards
+6. Buy a card on the table
+Invalid choice made.
+ƒ1. Take 2 tokens of the same color from the table(may only be performed if there is 4 or more tokens in the color of your chosing)
+I2. Take 1 token from each of 3 different types of tokens(excluding gold)
+¿3. Reserve a card on the table and receive one gold token(keep in mind you may only have three reserved cards maximum. Also, you will not recieve any gold token if there is non on the table)
+94. Reserve an unknown card from the top of a chosen deck
+'5. Buy a card from your reserved cards
+6. Buy a card on the table
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 QWelcome to Splendor! How many player(s) do you wish to have(including yourself)?
 2. 2    3. 3.    4. 4
 Check0 completed
@@ -33,6 +171,7 @@
 &/////////////////////////////////////
      Blue Deck
 Blue Card 1: 
+<<<<<<< HEAD
 4     Rubby  Town
 !Rubby x3 Emerald x6 Sapphire x3 
 
@@ -44,6 +183,22 @@
 4     Onyx  Town
 
 Rubby x7 
+=======
+4     Emerald  Town
+#Diamond x3 Emerald x3 Sapphire x6 
+
+Blue Card 2: 
+3     Onyx  Town
+,Diamond x3 Rubby x3 Emerald x5 Sapphire x3 
+
+Blue Card 3: 
+4     Sapphire  Town
+Diamond x7 Sapphire x3 
+
+Blue Card 4: 
+4     Sapphire  Town
+Diamond x7 Sapphire x3 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 Blue Card 4: 
 3     Rubby  Town
@@ -52,6 +207,7 @@ Rubby x7
 /////////////////////////
      Yellow Deck
 Yellow Card 1: 
+<<<<<<< HEAD
 2     Diamond  Town
 
 Rubby x5 
@@ -67,10 +223,28 @@ Rubby x5
 Yellow Card 4: 
 1     Rubby  Town
 Diamond x2 Rubby x2 Onyx x3 
+=======
+3     Emerald  Town
+Emerald x6 
+
+Yellow Card 2: 
+2     Emerald  Town
+Emerald x5 
+
+Yellow Card 3: 
+2     Diamond  Town
+
+Rubby x5 
+
+Yellow Card 4: 
+1     Diamond  Town
+!Diamond x2 Rubby x3 Sapphire x3 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 /////////////////////////
      Green Deck
 Green Card 1: 
+<<<<<<< HEAD
 0     Sapphire  Town
 !Rubby x1 Emerald x3 Sapphire x1 
 
@@ -85,18 +259,39 @@ Rubby x5
 Green Card 4: 
 0     Sapphire  Town
 (Diamond x1 Rubby x1 Emerald x1 Onyx x1 
+=======
+0     Rubby  Town
++Diamond x1 Emerald x1 Onyx x1 Sapphire x2 
+
+Green Card 2: 
+0     Sapphire  Town
+	Onyx x3 
+
+Green Card 3: 
+0     Sapphire  Town
+!Rubby x1 Emerald x3 Sapphire x1 
+
+Green Card 4: 
+0     Sapphire  Town
+!Rubby x1 Emerald x3 Sapphire x1 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 &/////////////////////////////////////
 QTokens Avalible: Onyx x4 ,Sapphire x4 ,Emerald x4 ,Diamond x4 ,Rubby x4 ,Gold x4
 
 Nobles Avalible: 
 
- ******* Geralt of Rivia *******
-   Rubby x4    Emerald x4 
-
-
 +******* Cirilla Fiona Elen Riannon *******
    Emerald x4    Sapphire x4 
+
+
+<<<<<<< HEAD
++******* Cirilla Fiona Elen Riannon *******
+   Emerald x4    Sapphire x4 
+=======
+'******* Yennefer of Vengerberg *******
+   Rubby x4    Onyx x4 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 
 ******* Triss Merigold *******
@@ -169,14 +364,20 @@ Rubby x5
 &/////////////////////////////////////
      Blue Deck
 Blue Card 1: 
+<<<<<<< HEAD
 4     Sapphire  Town
 Diamond x7 Sapphire x3 
+=======
+4     Emerald  Town
+#Diamond x3 Emerald x3 Sapphire x6 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 Blue Card 2: 
 5     Rubby  Town
 Rubby x3 Emerald x7 
 
 Blue Card 3: 
+<<<<<<< HEAD
 4     Diamond  Town
 	Onyx x7 
 
@@ -184,6 +385,14 @@ Rubby x5
 4     Onyx  Town
 
 Rubby x7 
+=======
+4     Sapphire  Town
+Diamond x7 Sapphire x3 
+
+Blue Card 4: 
+4     Emerald  Town
+#Diamond x3 Emerald x3 Sapphire x6 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 /////////////////////////
      Yellow Deck
@@ -193,12 +402,21 @@ Rubby x7
 Rubby x5 
 
 Yellow Card 2: 
+<<<<<<< HEAD
 2     Onyx  Town
 Rubby x3 Emerald x5 
 
 Yellow Card 3: 
 3     Onyx  Town
 	Onyx x6 
+=======
+2     Emerald  Town
+Emerald x3 Sapphire x3 
+
+Yellow Card 3: 
+2     Sapphire  Town
+Diamond x3 Sapphire x3 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 Yellow Card 4: 
 2     Onyx  Town
@@ -207,10 +425,11 @@ Rubby x5
 /////////////////////////
      Green Deck
 Green Card 1: 
-0     Sapphire  Town
-Diamond x1 Onyx x2 
+0     Rubby  Town
++Diamond x1 Emerald x1 Onyx x1 Sapphire x2 
 
 Green Card 2: 
+<<<<<<< HEAD
 0     Rubby  Town
 +Diamond x1 Emerald x1 Onyx x1 Sapphire x2 
 
@@ -221,12 +440,25 @@ Rubby x5
 Green Card 4: 
 0     Sapphire  Town
 (Diamond x1 Rubby x1 Emerald x1 Onyx x1 
+=======
+0     Sapphire  Town
+(Diamond x1 Rubby x1 Emerald x1 Onyx x1 
+
+Green Card 3: 
+0     Emerald  Town
+#Diamond x1 Emerald x1 Sapphire x3 
+
+Green Card 4: 
+0     Emerald  Town
+Rubby x2 Sapphire x2 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 &/////////////////////////////////////
 QTokens Avalible: Onyx x4 ,Sapphire x4 ,Emerald x4 ,Diamond x4 ,Rubby x4 ,Gold x4
 
 Nobles Avalible: 
 
+<<<<<<< HEAD
 ******* Avalac'h *******
    Diamond x4    Sapphire x4 
 
@@ -237,6 +469,18 @@ Rubby x5
 
 !******* Emhyr var Emreis *******
 )   Diamond x3    Onyx x3    Sapphire x3 
+=======
+ ******* Geralt of Rivia *******
+   Rubby x4    Emerald x4 
+
+
++******* Cirilla Fiona Elen Riannon *******
+   Emerald x4    Sapphire x4 
+
+
+******* Triss Merigold *******
+   Diamond x4    Onyx x4 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 
 
@@ -327,6 +571,7 @@ Rubby x5
 &/////////////////////////////////////
      Blue Deck
 Blue Card 1: 
+<<<<<<< HEAD
 4     Diamond  Town
 	Onyx x7 
 
@@ -341,20 +586,50 @@ Rubby x5
 Blue Card 4: 
 4     Emerald  Town
 #Diamond x3 Emerald x3 Sapphire x6 
+=======
+4     Sapphire  Town
+ Diamond x6 Onyx x3 Sapphire x3 
+
+Blue Card 2: 
+3     Onyx  Town
+,Diamond x3 Rubby x3 Emerald x5 Sapphire x3 
+
+Blue Card 3: 
+3     Onyx  Town
+,Diamond x3 Rubby x3 Emerald x5 Sapphire x3 
+
+Blue Card 4: 
+5     Onyx  Town
+Rubby x7 Onyx x3 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 /////////////////////////
      Yellow Deck
 Yellow Card 1: 
+<<<<<<< HEAD
 2     Emerald  Town
  Diamond x4 Onyx x1 Sapphire x2 
+=======
+1     Sapphire  Town
+ Emerald x3 Onyx x3 Sapphire x2 
+
+Yellow Card 2: 
+1     Onyx  Town
+#Diamond x3 Emerald x2 Sapphire x3 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 Yellow Card 2: 
 2     Rubby  Town
 Diamond x3 Onyx x5 
 
 Yellow Card 3: 
+<<<<<<< HEAD
 2     Emerald  Town
  Diamond x4 Onyx x1 Sapphire x2 
+=======
+2     Diamond  Town
+Rubby x5 Onyx x3 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 Yellow Card 4: 
 2     Emerald  Town
@@ -363,6 +638,7 @@ Rubby x5
 /////////////////////////
      Green Deck
 Green Card 1: 
+<<<<<<< HEAD
 0     Sapphire  Town
 Diamond x1 Onyx x2 
 
@@ -377,6 +653,22 @@ Rubby x5
 Green Card 4: 
 0     Emerald  Town
 #Diamond x1 Emerald x1 Sapphire x3 
+=======
+0     Rubby  Town
++Diamond x1 Emerald x1 Onyx x1 Sapphire x2 
+
+Green Card 2: 
+0     Rubby  Town
++Diamond x1 Emerald x1 Onyx x1 Sapphire x2 
+
+Green Card 3: 
+0     Rubby  Town
+Diamond x2 Rubby x2 
+
+Green Card 4: 
+0     Rubby  Town
++Diamond x1 Emerald x1 Onyx x1 Sapphire x1 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 &/////////////////////////////////////
 QTokens Avalible: Onyx x7 ,Sapphire x7 ,Emerald x7 ,Diamond x7 ,Rubby x7 ,Gold x4
@@ -385,18 +677,30 @@ Rubby x5
 
 +******* Cirilla Fiona Elen Riannon *******
    Emerald x4    Sapphire x4 
+<<<<<<< HEAD
 
 
 ******* Triss Merigold *******
    Diamond x4    Onyx x4 
+=======
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 
 !******* Emhyr var Emreis *******
 )   Diamond x3    Onyx x3    Sapphire x3 
 
 
+<<<<<<< HEAD
  ******* Morvran Voorhis *******
 &   Rubby x3    Emerald x3    Onyx x3 
+=======
+!******* Emhyr var Emreis *******
+)   Diamond x3    Onyx x3    Sapphire x3 
+
+
+******* Keira Metz *******
+   Rubby x3    Emerald x3 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 
 ******* Dandelion *******
@@ -491,28 +795,43 @@ Rubby x5
 &/////////////////////////////////////
      Blue Deck
 Blue Card 1: 
+<<<<<<< HEAD
 4     Emerald  Town
 #Diamond x3 Emerald x3 Sapphire x6 
+=======
+5     Diamond  Town
+Diamond x3 Onyx x7 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 Blue Card 2: 
 3     Sapphire  Town
 (Diamond x3 Rubby x3 Emerald x3 Onyx x5 
 
 Blue Card 3: 
+<<<<<<< HEAD
 4     Sapphire  Town
 Diamond x7 Sapphire x3 
 
 Blue Card 4: 
 4     Onyx  Town
 Rubby x6 Emerald x3 Onyx x3 
+=======
+4     Emerald  Town
+#Diamond x3 Emerald x3 Sapphire x6 
+
+Blue Card 4: 
+4     Rubby  Town
+Emerald x7 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 /////////////////////////
      Yellow Deck
 Yellow Card 1: 
-2     Emerald  Town
-Emerald x5 
+1     Diamond  Town
+Rubby x2 Emerald x3 Onyx x2 
 
 Yellow Card 2: 
+<<<<<<< HEAD
 1     Rubby  Town
 Rubby x2 Onyx x3 Sapphire x3 
 
@@ -523,6 +842,18 @@ Rubby x5
 Yellow Card 4: 
 2     Rubby  Town
 Diamond x3 Onyx x5 
+=======
+1     Diamond  Town
+!Diamond x2 Rubby x3 Sapphire x3 
+
+Yellow Card 3: 
+2     Diamond  Town
+Rubby x5 Onyx x3 
+
+Yellow Card 4: 
+1     Diamond  Town
+Rubby x2 Emerald x3 Onyx x2 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 /////////////////////////
      Green Deck
@@ -531,6 +862,7 @@ Rubby x5
 )Diamond x1 Rubby x1 Onyx x2 Sapphire x1 
 
 Green Card 2: 
+<<<<<<< HEAD
 0     Rubby  Town
 +Diamond x1 Emerald x1 Onyx x1 Sapphire x2 
 
@@ -541,6 +873,18 @@ Rubby x5
 Green Card 4: 
 0     Emerald  Town
 )Diamond x1 Rubby x1 Onyx x1 Sapphire x1 
+=======
+0     Emerald  Town
+)Diamond x1 Rubby x1 Onyx x2 Sapphire x1 
+
+Green Card 3: 
+0     Rubby  Town
++Diamond x1 Emerald x1 Onyx x1 Sapphire x1 
+
+Green Card 4: 
+1     Rubby  Town
+Diamond x4 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 &/////////////////////////////////////
 QTokens Avalible: Onyx x7 ,Sapphire x7 ,Emerald x7 ,Diamond x7 ,Rubby x7 ,Gold x4
@@ -551,16 +895,21 @@ Rubby x5
    Rubby x4    Emerald x4 
 
 
-+******* Cirilla Fiona Elen Riannon *******
-   Emerald x4    Sapphire x4 
+******* Avalac'h *******
+   Diamond x4    Sapphire x4 
 
 
 ******* Avalac'h *******
    Diamond x4    Sapphire x4 
 
 
+<<<<<<< HEAD
 '******* Yennefer of Vengerberg *******
    Rubby x4    Onyx x4 
+=======
+ ******* Morvran Voorhis *******
+&   Rubby x3    Emerald x3    Onyx x3 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 
 ******* Triss Merigold *******
@@ -633,10 +982,11 @@ Rubby x5
 &/////////////////////////////////////
      Blue Deck
 Blue Card 1: 
-3     Emerald  Town
-)Diamond x5 Rubby x3 Onyx x3 Sapphire x3 
+3     Sapphire  Town
+(Diamond x3 Rubby x3 Emerald x3 Onyx x5 
 
 Blue Card 2: 
+<<<<<<< HEAD
 3     Sapphire  Town
 (Diamond x3 Rubby x3 Emerald x3 Onyx x5 
 
@@ -647,15 +997,27 @@ Rubby x5
 Blue Card 4: 
 3     Diamond  Town
 )Rubby x5 Emerald x3 Onyx x3 Sapphire x3 
+=======
+4     Sapphire  Town
+ Diamond x6 Onyx x3 Sapphire x3 
+
+Blue Card 3: 
+5     Sapphire  Town
+Diamond x7 Sapphire x3 
+
+Blue Card 4: 
+3     Rubby  Town
+#Diamond x3 Emerald x3 Sapphire x5 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 /////////////////////////
      Yellow Deck
 Yellow Card 1: 
-2     Diamond  Town
-
-Rubby x5 
+3     Emerald  Town
+Emerald x6 
 
 Yellow Card 2: 
+<<<<<<< HEAD
 2     Onyx  Town
 Diamond x5 
 
@@ -666,25 +1028,46 @@ Rubby x5
 Yellow Card 4: 
 3     Diamond  Town
 Diamond x6 
+=======
+2     Diamond  Town
+Rubby x5 Onyx x3 
+
+Yellow Card 3: 
+2     Onyx  Town
+Rubby x3 Emerald x5 
+
+Yellow Card 4: 
+2     Sapphire  Town
+Diamond x3 Sapphire x3 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 /////////////////////////
      Green Deck
 Green Card 1: 
+<<<<<<< HEAD
 0     Sapphire  Town
 !Rubby x1 Emerald x3 Sapphire x1 
+=======
+0     Emerald  Town
+)Diamond x1 Rubby x1 Onyx x1 Sapphire x1 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 Green Card 2: 
-1     Sapphire  Town
-
-Rubby x4 
+0     Sapphire  Town
+	Onyx x3 
 
 Green Card 3: 
 0     Emerald  Town
 )Diamond x1 Rubby x1 Onyx x1 Sapphire x1 
 
 Green Card 4: 
+<<<<<<< HEAD
 0     Rubby  Town
 +Diamond x1 Emerald x1 Onyx x1 Sapphire x1 
+=======
+0     Sapphire  Town
+(Diamond x1 Rubby x2 Emerald x1 Onyx x1 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 &/////////////////////////////////////
 QTokens Avalible: Onyx x4 ,Sapphire x4 ,Emerald x4 ,Diamond x4 ,Rubby x4 ,Gold x4
@@ -780,16 +1163,25 @@ Rubby x4
 &/////////////////////////////////////
      Blue Deck
 Blue Card 1: 
-3     Onyx  Town
-,Diamond x3 Rubby x3 Emerald x5 Sapphire x3 
+4     Emerald  Town
+Sapphire x7 
 
 Blue Card 2: 
+<<<<<<< HEAD
 3     Onyx  Town
 ,Diamond x3 Rubby x3 Emerald x5 Sapphire x3 
 
 Blue Card 3: 
 4     Emerald  Town
 #Diamond x3 Emerald x3 Sapphire x6 
+=======
+4     Diamond  Town
+	Onyx x7 
+
+Blue Card 3: 
+3     Sapphire  Town
+(Diamond x3 Rubby x3 Emerald x3 Onyx x5 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 Blue Card 4: 
 3     Diamond  Town
@@ -798,6 +1190,7 @@ Rubby x4
 /////////////////////////
      Yellow Deck
 Yellow Card 1: 
+<<<<<<< HEAD
 2     Onyx  Town
 Rubby x3 Emerald x5 
 
@@ -812,30 +1205,63 @@ Rubby x4
 Yellow Card 4: 
 3     Sapphire  Town
 Sapphire x6 
+=======
+1     Onyx  Town
+#Diamond x3 Emerald x2 Sapphire x3 
+
+Yellow Card 2: 
+2     Rubby  Town
+#Diamond x1 Emerald x2 Sapphire x4 
+
+Yellow Card 3: 
+2     Sapphire  Town
+Diamond x3 Sapphire x3 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
+
+Yellow Card 4: 
+1     Diamond  Town
+Rubby x2 Emerald x3 Onyx x2 
 
 /////////////////////////
      Green Deck
 Green Card 1: 
-0     Emerald  Town
-Diamond x2 Sapphire x1 
+1     Emerald  Town
+	Onyx x4 
 
 Green Card 2: 
+<<<<<<< HEAD
 0     Rubby  Town
 +Diamond x1 Emerald x1 Onyx x1 Sapphire x2 
+=======
+0     Emerald  Town
+Rubby x2 Onyx x2 Sapphire x1 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 Green Card 3: 
 0     Emerald  Town
 )Diamond x1 Rubby x1 Onyx x2 Sapphire x1 
 
 Green Card 4: 
+<<<<<<< HEAD
 0     Sapphire  Town
  Diamond x1 Rubby x2 Emerald x2 
+=======
+0     Emerald  Town
+#Diamond x1 Emerald x1 Sapphire x3 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 &/////////////////////////////////////
 QTokens Avalible: Onyx x5 ,Sapphire x5 ,Emerald x5 ,Diamond x5 ,Rubby x5 ,Gold x4
 
 Nobles Avalible: 
 
+<<<<<<< HEAD
+=======
+******* Avalac'h *******
+   Diamond x4    Sapphire x4 
+
+
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 '******* Yennefer of Vengerberg *******
    Rubby x4    Onyx x4 
 
@@ -848,10 +1274,13 @@ Rubby x4
 )   Diamond x3    Onyx x3    Sapphire x3 
 
 
+<<<<<<< HEAD
  ******* Morvran Voorhis *******
 &   Rubby x3    Emerald x3    Onyx x3 
 
 
+=======
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 It is Player 1's turn!
 +Player 1, here is what you currently have:
@@ -929,6 +1358,7 @@ Rubby x4
 	&/////////////////////////////////////
 	     Blue Deck
 	Blue Card 1: 
+<<<<<<< HEAD
 	5     Diamond  Town
 	Diamond x3 Onyx x7 
 	
@@ -943,10 +1373,27 @@ Rubby x4
 	Blue Card 4: 
 	4     Diamond  Town
 	Diamond x3 Rubby x3 Onyx x6 
+=======
+	4     Diamond  Town
+		Onyx x7 
+	
+	Blue Card 2: 
+	3     Diamond  Town
+	)Rubby x5 Emerald x3 Onyx x3 Sapphire x3 
+	
+	Blue Card 3: 
+	5     Onyx  Town
+	Rubby x7 Onyx x3 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
+	
+	Blue Card 4: 
+	3     Emerald  Town
+	)Diamond x5 Rubby x3 Onyx x3 Sapphire x3 
 	
 	/////////////////////////
 	     Yellow Deck
 	Yellow Card 1: 
+<<<<<<< HEAD
 	2     Rubby  Town
 	#Diamond x1 Emerald x2 Sapphire x4 
 	
@@ -961,12 +1408,33 @@ Rubby x4
 	Yellow Card 4: 
 	2     Onyx  Town
 	Diamond x5 
+=======
+	1     Onyx  Town
+	#Diamond x3 Emerald x2 Sapphire x3 
+	
+	Yellow Card 2: 
+	1     Diamond  Town
+	Rubby x2 Emerald x3 Onyx x2 
+	
+	Yellow Card 3: 
+	2     Sapphire  Town
+	Diamond x2 Rubby x1 Onyx x4 
+	
+	Yellow Card 4: 
+	2     Diamond  Town
+	Rubby x5 Onyx x3 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 	
 	/////////////////////////
 	     Green Deck
 	Green Card 1: 
+<<<<<<< HEAD
 	1     Emerald  Town
 		Onyx x4 
+=======
+	0     Sapphire  Town
+	Emerald x2 Onyx x2 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 	
 	Green Card 2: 
 	0     Sapphire  Town
@@ -974,24 +1442,41 @@ Rubby x4
 	
 	Green Card 3: 
 	0     Sapphire  Town
+<<<<<<< HEAD
 	!Rubby x1 Emerald x3 Sapphire x1 
 	
 	Green Card 4: 
 	1     Sapphire  Town
 	
 Rubby x4 
+=======
+	 Diamond x1 Rubby x2 Emerald x2 
+	
+	Green Card 4: 
+	0     Rubby  Town
+	+Diamond x1 Emerald x1 Onyx x1 Sapphire x1 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 	
 	&/////////////////////////////////////
 	QTokens Avalible: Onyx x5 ,Sapphire x5 ,Emerald x5 ,Diamond x5 ,Rubby x5 ,Gold x4
 	
 	Nobles Avalible: 
 	
+<<<<<<< HEAD
 	******* Triss Merigold *******
 	   Diamond x4    Onyx x4 
 	
 	
 	!******* Emhyr var Emreis *******
 	)   Diamond x3    Onyx x3    Sapphire x3 
+=======
+	 ******* Geralt of Rivia *******
+	   Rubby x4    Emerald x4 
+	
+	
+	******* Triss Merigold *******
+	   Diamond x4    Onyx x4 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 	
 	
 	******* Keira Metz *******
@@ -1000,6 +1485,10 @@ Rubby x4
 	
 	******* Dandelion *******
 	*   Diamond x3    Rubby x3    Sapphire x3 
+	
+	
+	 ******* Morvran Voorhis *******
+	&   Rubby x3    Emerald x3    Onyx x3 
 	
 	
 	
@@ -1141,33 +1630,55 @@ HTokens: Onyx x0 ,Sapphire x0 ,Emerlad x0 ,Diamond x0 ,Rubby x0 ,Gold x0
 
 Blue Card 1: 
 
-4     Rubby  Town
+4     Emerald  Town
 
+<<<<<<< HEAD
 Emerald x7 
+=======
+Sapphire x7 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 
 
 Blue Card 2: 
 
+<<<<<<< HEAD
 3     Sapphire  Town
 
 (Diamond x3 Rubby x3 Emerald x3 Onyx x5 
+=======
+3     Rubby  Town
+
+#Diamond x3 Emerald x3 Sapphire x5 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 
 
 Blue Card 3: 
 
+<<<<<<< HEAD
 3     Sapphire  Town
 
 (Diamond x3 Rubby x3 Emerald x3 Onyx x5 
+=======
+4     Rubby  Town
+
+Emerald x7 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 
 
 Blue Card 4: 
 
+<<<<<<< HEAD
 3     Diamond  Town
 
 )Rubby x5 Emerald x3 Onyx x3 Sapphire x3 
+=======
+4     Sapphire  Town
+
+Diamond x7 Sapphire x3 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 
 
@@ -1177,25 +1688,43 @@ HTokens: Onyx x0 ,Sapphire x0 ,Emerlad x0 ,Diamond x0 ,Rubby x0 ,Gold x0
 
 Yellow Card 1: 
 
+<<<<<<< HEAD
 1     Diamond  Town
 
 !Diamond x2 Rubby x3 Sapphire x3 
+=======
+1     Sapphire  Town
+
+!Rubby x3 Emerald x2 Sapphire x2 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 
 
 Yellow Card 2: 
 
+<<<<<<< HEAD
 3     Emerald  Town
 
 Emerald x6 
+=======
+1     Sapphire  Town
+
+!Rubby x3 Emerald x2 Sapphire x2 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 
 
 Yellow Card 3: 
 
+<<<<<<< HEAD
 1     Emerald  Town
 
  Diamond x3 Rubby x3 Emerald x2 
+=======
+2     Emerald  Town
+
+Emerald x5 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 
 
@@ -1203,7 +1732,11 @@ HTokens: Onyx x0 ,Sapphire x0 ,Emerlad x0 ,Diamond x0 ,Rubby x0 ,Gold x0
 
 1     Diamond  Town
 
+<<<<<<< HEAD
 Rubby x2 Emerald x3 Onyx x2 
+=======
+	Onyx x5 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 
 
@@ -1213,9 +1746,15 @@ HTokens: Onyx x0 ,Sapphire x0 ,Emerlad x0 ,Diamond x0 ,Rubby x0 ,Gold x0
 
 Green Card 1: 
 
+<<<<<<< HEAD
 1     Rubby  Town
 
 Diamond x4 
+=======
+0     Sapphire  Town
+
+(Diamond x1 Rubby x2 Emerald x1 Onyx x1 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 
 
@@ -1223,16 +1762,26 @@ HTokens: Onyx x0 ,Sapphire x0 ,Emerlad x0 ,Diamond x0 ,Rubby x0 ,Gold x0
 
 0     Sapphire  Town
 
+<<<<<<< HEAD
 	Onyx x3 
+=======
+(Diamond x1 Rubby x1 Emerald x1 Onyx x1 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 
 
 Green Card 3: 
 
+<<<<<<< HEAD
 1     Sapphire  Town
 
 
 Rubby x4 
+=======
+0     Sapphire  Town
+
+!Rubby x1 Emerald x3 Sapphire x1 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 
 
@@ -1240,8 +1789,12 @@ Rubby x4
 
 1     Sapphire  Town
 
+<<<<<<< HEAD
 
 Rubby x4 
+=======
+#Diamond x1 Emerald x1 Sapphire x3 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 
 
@@ -1255,33 +1808,45 @@ QTokens Avalible: Onyx x7 ,Sapphire x7 ,Emerald x7 ,Diamond x7 ,Rubby x7 ,Gold x
 
 
 
+<<<<<<< HEAD
 +******* Cirilla Fiona Elen Riannon *******
 
    Emerald x4    Sapphire x4 
+=======
+******* Triss Merigold *******
+
+   Diamond x4    Onyx x4 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 
 
 
 
-******* Avalac'h *******
+!******* Emhyr var Emreis *******
 
-   Diamond x4    Sapphire x4 
-
-
+)   Diamond x3    Onyx x3    Sapphire x3 
 
 
 
+
+
+<<<<<<< HEAD
 '******* Yennefer of Vengerberg *******
 
    Rubby x4    Onyx x4 
-
-
-
-
-
+=======
 #******* Sigismund Dijkstra *******
 
 ,   Diamond x3    Emerald x3    Sapphire x3 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
+
+
+
+
+
+ ******* Morvran Voorhis *******
+
+&   Rubby x3    Emerald x3    Onyx x3 
 
 
 
@@ -1413,6 +1978,7 @@ I2. Take 1 token from each of 3 different types of tokens(excluding gold)
 &/////////////////////////////////////
      Blue Deck
 Blue Card 1: 
+<<<<<<< HEAD
 5     Sapphire  Town
 Diamond x7 Sapphire x3 
 
@@ -1427,10 +1993,27 @@ I2. Take 1 token from each of 3 different types of tokens(excluding gold)
 Blue Card 4: 
 4     Rubby  Town
 !Rubby x3 Emerald x6 Sapphire x3 
+=======
+4     Sapphire  Town
+ Diamond x6 Onyx x3 Sapphire x3 
+
+Blue Card 2: 
+4     Sapphire  Town
+Diamond x7 Sapphire x3 
+
+Blue Card 3: 
+4     Onyx  Town
+Rubby x6 Emerald x3 Onyx x3 
+
+Blue Card 4: 
+3     Emerald  Town
+)Diamond x5 Rubby x3 Onyx x3 Sapphire x3 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 /////////////////////////
      Yellow Deck
 Yellow Card 1: 
+<<<<<<< HEAD
 2     Emerald  Town
 Emerald x5 
 
@@ -1442,6 +2025,18 @@ I2. Take 1 token from each of 3 different types of tokens(excluding gold)
 2     Diamond  Town
 
 Rubby x5 
+=======
+2     Rubby  Town
+Diamond x3 Onyx x5 
+
+Yellow Card 2: 
+3     Sapphire  Town
+Sapphire x6 
+
+Yellow Card 3: 
+2     Onyx  Town
+Rubby x3 Emerald x5 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 Yellow Card 4: 
 2     Diamond  Town
@@ -1451,6 +2046,7 @@ Rubby x5
 /////////////////////////
      Green Deck
 Green Card 1: 
+<<<<<<< HEAD
 1     Sapphire  Town
 
 Rubby x4 
@@ -1458,38 +2054,66 @@ Rubby x4
 Green Card 2: 
 0     Rubby  Town
 +Diamond x1 Emerald x1 Onyx x1 Sapphire x2 
+=======
+0     Rubby  Town
+Diamond x2 Rubby x2 
+
+Green Card 2: 
+0     Sapphire  Town
+(Diamond x1 Rubby x1 Emerald x1 Onyx x1 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 Green Card 3: 
-0     Emerald  Town
-)Diamond x1 Rubby x1 Onyx x2 Sapphire x1 
+1     Rubby  Town
+Diamond x4 
 
 Green Card 4: 
+<<<<<<< HEAD
 0     Emerald  Town
 #Diamond x1 Emerald x1 Sapphire x3 
+=======
+1     Sapphire  Town
+
+Rubby x4 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 &/////////////////////////////////////
 QTokens Avalible: Onyx x7 ,Sapphire x7 ,Emerald x7 ,Diamond x7 ,Rubby x7 ,Gold x4
 
 Nobles Avalible: 
 
- ******* Geralt of Rivia *******
-   Rubby x4    Emerald x4 
-
-
 +******* Cirilla Fiona Elen Riannon *******
    Emerald x4    Sapphire x4 
+
+
+<<<<<<< HEAD
++******* Cirilla Fiona Elen Riannon *******
+   Emerald x4    Sapphire x4 
+=======
+******* Avalac'h *******
+   Diamond x4    Sapphire x4 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 
 ******* Triss Merigold *******
    Diamond x4    Onyx x4 
 
 
+<<<<<<< HEAD
  ******* Morvran Voorhis *******
 &   Rubby x3    Emerald x3    Onyx x3 
 
 
 ******* Dandelion *******
 *   Diamond x3    Rubby x3    Sapphire x3 
+=======
+#******* Sigismund Dijkstra *******
+,   Diamond x3    Emerald x3    Sapphire x3 
+
+
+ ******* Morvran Voorhis *******
+&   Rubby x3    Emerald x3    Onyx x3 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 
 
@@ -1558,24 +2182,39 @@ Rubby x4
 &/////////////////////////////////////
      Blue Deck
 Blue Card 1: 
+<<<<<<< HEAD
 5     Onyx  Town
 Rubby x7 Onyx x3 
+=======
+4     Diamond  Town
+	Onyx x7 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 Blue Card 2: 
 4     Emerald  Town
 #Diamond x3 Emerald x3 Sapphire x6 
 
 Blue Card 3: 
+<<<<<<< HEAD
 5     Sapphire  Town
 Diamond x7 Sapphire x3 
 
 Blue Card 4: 
 4     Rubby  Town
 Emerald x7 
+=======
+3     Rubby  Town
+#Diamond x3 Emerald x3 Sapphire x5 
+
+Blue Card 4: 
+4     Onyx  Town
+Rubby x6 Emerald x3 Onyx x3 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 /////////////////////////
      Yellow Deck
 Yellow Card 1: 
+<<<<<<< HEAD
 1     Rubby  Town
 Diamond x2 Rubby x2 Onyx x3 
 
@@ -1591,11 +2230,28 @@ Rubby x6
 Yellow Card 4: 
 2     Diamond  Town
 Rubby x4 Emerald x1 Onyx x2 
+=======
+1     Emerald  Town
+ Diamond x3 Rubby x3 Emerald x2 
+
+Yellow Card 2: 
+1     Sapphire  Town
+ Emerald x3 Onyx x3 Sapphire x2 
+
+Yellow Card 3: 
+2     Sapphire  Town
+Diamond x2 Rubby x1 Onyx x4 
+
+Yellow Card 4: 
+2     Emerald  Town
+Emerald x5 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 /////////////////////////
      Green Deck
 Green Card 1: 
 0     Sapphire  Town
+<<<<<<< HEAD
 	Onyx x3 
 
 Green Card 2: 
@@ -1605,6 +2261,17 @@ Rubby x6
 Green Card 3: 
 0     Emerald  Town
 Rubby x2 Onyx x2 Sapphire x1 
+=======
+Emerald x2 Onyx x2 
+
+Green Card 2: 
+0     Sapphire  Town
+Emerald x2 Onyx x2 
+
+Green Card 3: 
+0     Sapphire  Town
+ Diamond x1 Rubby x2 Emerald x2 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 Green Card 4: 
 0     Emerald  Town
@@ -1619,8 +2286,8 @@ Rubby x6
    Rubby x4    Emerald x4 
 
 
-!******* Emhyr var Emreis *******
-)   Diamond x3    Onyx x3    Sapphire x3 
++******* Cirilla Fiona Elen Riannon *******
+   Emerald x4    Sapphire x4 
 
 
 #******* Sigismund Dijkstra *******
@@ -1719,12 +2386,22 @@ Rubby x6
 Rubby x3 Emerald x7 
 
 Blue Card 2: 
+<<<<<<< HEAD
 4     Emerald  Town
 Sapphire x7 
 
 Blue Card 3: 
 3     Rubby  Town
 #Diamond x3 Emerald x3 Sapphire x5 
+=======
+3     Emerald  Town
+)Diamond x5 Rubby x3 Onyx x3 Sapphire x3 
+
+Blue Card 3: 
+4     Onyx  Town
+
+Rubby x7 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 Blue Card 4: 
 5     Emerald  Town
@@ -1733,6 +2410,7 @@ Rubby x6
 /////////////////////////
      Yellow Deck
 Yellow Card 1: 
+<<<<<<< HEAD
 1     Emerald  Town
  Diamond x2 Onyx x2 Sapphire x3 
 
@@ -1748,10 +2426,27 @@ Rubby x5
 Yellow Card 4: 
 2     Onyx  Town
 Rubby x3 Emerald x5 
+=======
+2     Emerald  Town
+Emerald x3 Sapphire x3 
+
+Yellow Card 2: 
+3     Diamond  Town
+Diamond x6 
+
+Yellow Card 3: 
+2     Emerald  Town
+Emerald x3 Sapphire x3 
+
+Yellow Card 4: 
+2     Onyx  Town
+Diamond x5 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 /////////////////////////
      Green Deck
 Green Card 1: 
+<<<<<<< HEAD
 0     Sapphire  Town
 !Rubby x1 Emerald x3 Sapphire x1 
 
@@ -1766,26 +2461,51 @@ Rubby x5
 Green Card 4: 
 0     Sapphire  Town
 	Onyx x3 
+=======
+0     Emerald  Town
+Rubby x2 Sapphire x2 
+
+Green Card 2: 
+0     Emerald  Town
+Rubby x2 Onyx x2 Sapphire x1 
+
+Green Card 3: 
+0     Emerald  Town
+#Diamond x1 Emerald x1 Sapphire x3 
+
+Green Card 4: 
+0     Sapphire  Town
+(Diamond x1 Rubby x1 Emerald x1 Onyx x1 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 &/////////////////////////////////////
 QTokens Avalible: Onyx x7 ,Sapphire x7 ,Emerald x7 ,Diamond x7 ,Rubby x7 ,Gold x4
 
 Nobles Avalible: 
 
+<<<<<<< HEAD
  ******* Geralt of Rivia *******
    Rubby x4    Emerald x4 
 
 
 ******* Avalac'h *******
    Diamond x4    Sapphire x4 
+=======
++******* Cirilla Fiona Elen Riannon *******
+   Emerald x4    Sapphire x4 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 
 !******* Emhyr var Emreis *******
 )   Diamond x3    Onyx x3    Sapphire x3 
 
 
-#******* Sigismund Dijkstra *******
-,   Diamond x3    Emerald x3    Sapphire x3 
+!******* Emhyr var Emreis *******
+)   Diamond x3    Onyx x3    Sapphire x3 
+
+
+ ******* Morvran Voorhis *******
+&   Rubby x3    Emerald x3    Onyx x3 
 
 
  ******* Morvran Voorhis *******
@@ -1858,6 +2578,7 @@ Rubby x5
 &/////////////////////////////////////
      Blue Deck
 Blue Card 1: 
+<<<<<<< HEAD
 4     Onyx  Town
 Rubby x6 Emerald x3 Onyx x3 
 
@@ -1872,10 +2593,27 @@ Rubby x5
 Blue Card 4: 
 5     Sapphire  Town
 Diamond x7 Sapphire x3 
+=======
+5     Onyx  Town
+Rubby x7 Onyx x3 
+
+Blue Card 2: 
+4     Diamond  Town
+Diamond x3 Rubby x3 Onyx x6 
+
+Blue Card 3: 
+4     Rubby  Town
+Emerald x7 
+
+Blue Card 4: 
+3     Rubby  Town
+#Diamond x3 Emerald x3 Sapphire x5 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 /////////////////////////
      Yellow Deck
 Yellow Card 1: 
+<<<<<<< HEAD
 2     Rubby  Town
 	Onyx x5 
 
@@ -1890,6 +2628,24 @@ Rubby x5
 Yellow Card 4: 
 1     Onyx  Town
 #Diamond x3 Emerald x2 Sapphire x3 
+=======
+1     Diamond  Town
+!Diamond x2 Rubby x3 Sapphire x3 
+
+Yellow Card 2: 
+2     Sapphire  Town
+Diamond x2 Rubby x1 Onyx x4 
+
+Yellow Card 3: 
+2     Diamond  Town
+
+Rubby x5 
+
+Yellow Card 4: 
+2     Diamond  Town
+
+Rubby x5 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 /////////////////////////
      Green Deck
@@ -1899,6 +2655,7 @@ Rubby x5
 
 Green Card 2: 
 0     Sapphire  Town
+<<<<<<< HEAD
 (Diamond x1 Rubby x1 Emerald x1 Onyx x1 
 
 Green Card 3: 
@@ -1908,12 +2665,24 @@ Rubby x5
 Green Card 4: 
 0     Emerald  Town
 )Diamond x1 Rubby x1 Onyx x1 Sapphire x1 
+=======
+Emerald x2 Onyx x2 
+
+Green Card 3: 
+0     Emerald  Town
+Rubby x2 Sapphire x2 
+
+Green Card 4: 
+0     Emerald  Town
+Rubby x2 Sapphire x2 
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 
 &/////////////////////////////////////
 QTokens Avalible: Onyx x4 ,Sapphire x4 ,Emerald x4 ,Diamond x4 ,Rubby x4 ,Gold x4
 
 Nobles Avalible: 
 
+<<<<<<< HEAD
  ******* Geralt of Rivia *******
    Rubby x4    Emerald x4 
 
@@ -1922,6 +2691,16 @@ Rubby x5
    Rubby x3    Emerald x3 
 
 
+=======
+#******* Sigismund Dijkstra *******
+,   Diamond x3    Emerald x3    Sapphire x3 
+
+
+******* Keira Metz *******
+   Rubby x3    Emerald x3 
+
+
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
 ******* Dandelion *******
 *   Diamond x3    Rubby x3    Sapphire x3 
 
@@ -1957,6 +2736,7 @@ Rubby x5
 94. Reserve an unknown card from the top of a chosen deck
 '5. Buy a card from your reserved cards
 6. Buy a card on the table
+<<<<<<< HEAD
 QWelcome to Splendor! How many player(s) do you wish to have(including yourself)?
 2. 2    3. 3.    4. 4
 Check0 completed
@@ -3898,3 +4678,173 @@ Rubby x4
 30 30Hola
 ÄÐ650 650Hola
 ÄÑ1580 780Hola
+=======
+QWelcome to Splendor! How many player(s) do you wish to have(including yourself)?
+2. 2    3. 3.    4. 4
+Check0 completed
+Check1 completed
+Check2 completed
+Check3 completed
+check4 completed
+Awesome! lets start the game!
+
+
+ ***** Player 1 0 Point(s) *****
+HTokens: Onyx x0 ,Sapphire x0 ,Emerlad x0 ,Diamond x0 ,Rubby x0 ,Gold x0
+
+Cards:
+
+	Nobles: 
+
+
+Cards in Reserve x0
+ *******************************
+
+ ***** Player 2 0 Point(s) *****
+HTokens: Onyx x0 ,Sapphire x0 ,Emerlad x0 ,Diamond x0 ,Rubby x0 ,Gold x0
+
+Cards:
+
+	Nobles: 
+
+
+Cards in Reserve x0
+ *******************************
+
+&/////////////////////////////////////
+     Blue Deck
+Blue Card 1: 
+3     Sapphire  Town
+(Diamond x3 Rubby x3 Emerald x3 Onyx x5 
+
+Blue Card 2: 
+4     Onyx  Town
+
+Rubby x7 
+
+Blue Card 3: 
+4     Emerald  Town
+#Diamond x3 Emerald x3 Sapphire x6 
+
+Blue Card 4: 
+5     Rubby  Town
+Rubby x3 Emerald x7 
+
+/////////////////////////
+     Yellow Deck
+Yellow Card 1: 
+2     Sapphire  Town
+Sapphire x5 
+
+Yellow Card 2: 
+1     Onyx  Town
+#Diamond x3 Emerald x2 Sapphire x3 
+
+Yellow Card 3: 
+2     Sapphire  Town
+Diamond x2 Rubby x1 Onyx x4 
+
+Yellow Card 4: 
+2     Emerald  Town
+ Diamond x4 Onyx x1 Sapphire x2 
+
+/////////////////////////
+     Green Deck
+Green Card 1: 
+0     Sapphire  Town
+ Diamond x1 Rubby x2 Emerald x2 
+
+Green Card 2: 
+0     Emerald  Town
+)Diamond x1 Rubby x1 Onyx x1 Sapphire x1 
+
+Green Card 3: 
+1     Emerald  Town
+	Onyx x4 
+
+Green Card 4: 
+0     Emerald  Town
+Rubby x2 Sapphire x2 
+
+&/////////////////////////////////////
+QTokens Avalible: Onyx x4 ,Sapphire x4 ,Emerald x4 ,Diamond x4 ,Rubby x4 ,Gold x4
+
+Nobles Avalible: 
+
++******* Cirilla Fiona Elen Riannon *******
+   Emerald x4    Sapphire x4 
+
+
+!******* Emhyr var Emreis *******
+)   Diamond x3    Onyx x3    Sapphire x3 
+
+
+******* Dandelion *******
+*   Diamond x3    Rubby x3    Sapphire x3 
+
+
+
+It is Player 1's turn!
++Player 1, here is what you currently have:
+
+
+ ***** Player 1 0 Point(s) *****
+HTokens: Onyx x0 ,Sapphire x0 ,Emerlad x0 ,Diamond x0 ,Rubby x0 ,Gold x0
+
+**** Cards ****
+
+**** Nobles ****
+
+
+**** Cards in Reserve **** 
+
+
+-Player 1, what do you wish to do this round?
+
+ƒ1. Take 2 tokens of the same color from the table(may only be performed if there is 4 or more tokens in the color of your chosing)
+I2. Take 1 token from each of 3 different types of tokens(excluding gold)
+¿3. Reserve a card on the table and receive one gold token(keep in mind you may only have three reserved cards maximum. Also, you will not recieve any gold token if there is non on the table)
+94. Reserve an unknown card from the top of a chosen deck
+'5. Buy a card from your reserved cards
+6. Buy a card on the table
+ ÅÄFException in thread "AWT-EventQueue-0" java.lang.NullPointerException
+ ÅÄ-	at Interface.MyPanel.paint(MyPanel.java:40)
+ ÅÄK	at java.desktop/javax.swing.JComponent.paintChildren(JComponent.java:907)
+ ÅÄD	at java.desktop/javax.swing.JComponent.paint(JComponent.java:1083)
+ ÅÄK	at java.desktop/javax.swing.JComponent.paintChildren(JComponent.java:907)
+ ÅÄD	at java.desktop/javax.swing.JComponent.paint(JComponent.java:1083)
+ ÅÄG	at java.desktop/javax.swing.JLayeredPane.paint(JLayeredPane.java:590)
+ ÅÄK	at java.desktop/javax.swing.JComponent.paintChildren(JComponent.java:907)
+ ÅÄO	at java.desktop/javax.swing.JComponent.paintToOffscreen(JComponent.java:5262)
+ ÅÄk	at java.desktop/javax.swing.RepaintManager$PaintManager.paintDoubleBufferedImpl(RepaintManager.java:1643)
+ ÅÄg	at java.desktop/javax.swing.RepaintManager$PaintManager.paintDoubleBuffered(RepaintManager.java:1618)
+ ÅÄY	at java.desktop/javax.swing.RepaintManager$PaintManager.paint(RepaintManager.java:1556)
+ ÅÄL	at java.desktop/javax.swing.RepaintManager.paint(RepaintManager.java:1323)
+ ÅÄD	at java.desktop/javax.swing.JComponent.paint(JComponent.java:1060)
+ ÅÄW	at java.desktop/java.awt.GraphicsCallback$PaintCallback.run(GraphicsCallback.java:39)
+ ÅÄZ	at java.desktop/sun.awt.SunGraphicsCallback.runOneComponent(SunGraphicsCallback.java:78)
+ ÅÄY	at java.desktop/sun.awt.SunGraphicsCallback.runComponents(SunGraphicsCallback.java:115)
+ ÅÄ?	at java.desktop/java.awt.Container.paint(Container.java:2002)
+ ÅÄ9	at java.desktop/java.awt.Window.paint(Window.java:3940)
+ ÅÄK	at java.desktop/javax.swing.RepaintManager$4.run(RepaintManager.java:876)
+ ÅÄK	at java.desktop/javax.swing.RepaintManager$4.run(RepaintManager.java:848)
+ ÅÄI	at java.base/java.security.AccessController.doPrivileged(Native Method)
+ ÅÄv	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+ ÅÄW	at java.desktop/javax.swing.RepaintManager.paintDirtyRegions(RepaintManager.java:848)
+ ÅÄW	at java.desktop/javax.swing.RepaintManager.paintDirtyRegions(RepaintManager.java:823)
+ ÅÄZ	at java.desktop/javax.swing.RepaintManager.prePaintDirtyRegions(RepaintManager.java:772)
+ ÅÄ]	at java.desktop/javax.swing.RepaintManager$ProcessingRunnable.run(RepaintManager.java:1890)
+ ÅÄS	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:313)
+ ÅÄL	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770)
+ ÅÄ@	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+ ÅÄ@	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+ ÅÄI	at java.base/java.security.AccessController.doPrivileged(Native Method)
+ ÅÄv	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+ ÅÄH	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:740)
+ ÅÄc	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+ ÅÄ`	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+ ÅÄc	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+ ÅÄW	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+ ÅÄW	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+ ÅÄO	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+>>>>>>> 5e12e46df518eaf5ad9125acb2ddbcafe7b73dea
